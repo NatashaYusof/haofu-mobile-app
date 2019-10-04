@@ -1,0 +1,50 @@
+<ion-split-pane>
+  <ion-menu contentId="content">
+ 
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+ 
+    <ion-content>
+      <ion-list>
+        <ion-item tappable routerLink="/login" routerDirection="root">
+          <ion-icon name="chatbubbles" slot="start"></ion-icon>
+          Mattermost Chart
+        </ion-item>
+
+        <ion-item tappable routerLink="/login" routerDirection="root">
+          <ion-icon name="list" slot="start"></ion-icon>
+          Complete Jobcard
+        </ion-item>
+
+        <ion-item tappable routerLink="/login" routerDirection="root">
+          <ion-icon name="call" slot="start"></ion-icon>
+          Remote Assistence
+        </ion-item>
+ 
+        <ion-item tappable routerLink="/login" routerDirection="root">
+          <ion-icon name="camera" slot="start"></ion-icon>
+          Take Picture
+        </ion-item>
+
+        <ion-item tappable routerLink="/login" routerDirection="root">
+          <ion-icon name="images" slot="start"></ion-icon>
+        Photo Editor
+        </ion-item>
+
+        <ion-item tappable (click)=logout() routerDirection="root">
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          Logout
+        </ion-item>
+ 
+      </ion-list>
+ 
+    </ion-content>
+ 
+  </ion-menu>
+ 
+  <ion-router-outlet id="content" main></ion-router-outlet>
+ 
+</ion-split-pane>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button  defaulthref=""></ion-back-button>
+        </ion-buttons>
+      <ion-title>
+          JOBCARD
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+   
+
+<ion-content padding>
+  
+<!-- <ion-item  *ngFor="let serialno of listJC">
+    <ion-label  routerDirection="forward" >Serial Number: {{serialno.partrecordserialnumber}}</ion-label>
+ </ion-item> -->
+
+<ion-item *ngFor="let item of jobcards">
+  <ion-label>{{item.jobcardtitle}}</ion-label>
+</ion-item>
+
+
+</ion-content>
