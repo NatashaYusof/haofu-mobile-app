@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button  defaulthref=""></ion-back-button>
+        </ion-buttons>
+      <ion-title>
+          JOBCARD
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-item>
+  <ion-label class="font">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>
+
+  <ion-label class="expand">Expand All</ion-label>
+  <ion-toggle slot="end" name="expand" checked mode="md" class="toggle-small" toggle-class="toggle-calm"></ion-toggle>
+</ion-item>
+
+  <ion-card>
+  <ion-item>
+  <ion-label class="font2">{{jcTitle.jobcardtitle}}</ion-label>
+  <ion-badge color="danger">2</ion-badge>
+  <ion-badge color="warning">0</ion-badge>
+  <ion-badge color="success">0</ion-badge>
+  </ion-item>
+ 
+      
+  <ion-card-content class="font"> 
+    Complete Percentage
+    <ion-progress-bar value="0.5"></ion-progress-bar>
+  </ion-card-content>
+  <ion-card-content class="font"> 
+    Short Time
+    <ion-progress-bar value="0.2"></ion-progress-bar>
+  </ion-card-content>
+  <ion-card-content class="font"> 
+    Turn Around Time
+    <ion-progress-bar value="0.1"></ion-progress-bar>
+  </ion-card-content>
+ 
+</ion-card>
+
+<ion-item *ngFor="let jobcardid of id" class="font">
+<ion-label class="ion-text-wrap"><b>{{jobcardid.tasktitle}}</b></ion-label>
+<img src="assets/icon/start.png" tappable width="20" height="20" slot="end" (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle)"/>
+</ion-item>
+
+</ion-content>

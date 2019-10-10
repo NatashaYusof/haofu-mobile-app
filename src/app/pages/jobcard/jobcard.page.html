@@ -12,13 +12,14 @@
 
 <ion-content padding>
   
-<!-- <ion-item  *ngFor="let serialno of listJC">
-    <ion-label  routerDirection="forward" >Serial Number: {{serialno.partrecordserialnumber}}</ion-label>
- </ion-item> -->
+    <ion-label class="font">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>
 
-<ion-item *ngFor="let item of jobcards">
-  <ion-label>{{item.jobcardtitle}}</ion-label>
+<ion-card>
+<ion-item *ngFor="let jctitle of serialNo.jobcards">
+  <ion-label><b>{{jctitle.jobcardtitle}}</b></ion-label>
+  <ion-label tappable class="ocr" (click)="goToTaks(jctitle.jobcardid,jctitle)" >OCR</ion-label>
 </ion-item>
+</ion-card>
 
 
 </ion-content>

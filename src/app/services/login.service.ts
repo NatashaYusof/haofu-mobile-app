@@ -58,4 +58,33 @@ export class LoginService {
     )
 }
 
+getToTask(jobcardid) : Observable<any> {
+  return this.http.get(this.baseURL+'/task?jobcardid='+jobcardid)
+    .pipe(
+      map( response => {
+        console.log(response)
+        return response;
+      }),
+      catchError((err, caught) => {
+        console.log(err)
+        return throwError(err);
+      })
+    )
+}
+
+getChildTask(taskid) : Observable<any> {
+  return this.http.get(this.baseURL+'/task?taskid='+taskid)
+    .pipe(
+      map( response => {
+        console.log(response)
+        return response;
+      }),
+      catchError((err, caught) => {
+        console.log(err)
+        return throwError(err);
+      })
+    )
+}
+
+
 }

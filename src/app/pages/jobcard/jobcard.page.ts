@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { JobcardService } from 'src/app/services/jobcard.service';
 
 @Component({
   selector: 'app-jobcard',
@@ -16,8 +17,9 @@ export class JobcardPage implements OnInit {
   employeeid: any;
   JCard: any;
   serialno: string;
+  serialNo: any;
 
-  constructor(private http: LoginService, private router: Router, public alertController: AlertController) { }
+  constructor(private http: LoginService, private router: Router, public alertController: AlertController,public JobcardService: JobcardService) { }
 
   ngOnInit() {
 
@@ -28,39 +30,20 @@ export class JobcardPage implements OnInit {
 
     this.userDetail =JSON.parse(window.localStorage.getItem('userDetail')) 
     console.log(this.userDetail.employeeid)
-    this.getJobcardByEmployeeId(this.userDetail.employeeid)
+   // this.getJobcardByEmployeeId(this.userDetail.employeeid)
 
-  
-  }
-
-  getJobcardByEmployeeId(id){
-    console.log("sini")
-  
-  this.http.getJobcard(id).subscribe(
-        response => {
-          this.listJCard= response.data;
-         console.log(this.listJCard)
-          this.listJCard.forEach((jobcards)=>{
-            console.log(jobcards);
-            
-            this.JCard=jobcards;
-
-            this.JCard.jobcards.forEach((List)=>{
-              console.log(List.jobcardtitle);
-
-            });
-          }, error => {
-            console.log("error")
-          
-          });
-        }, error => {
-          console.log("error")
-        }
-        );
-  
+  this.serialNo=this.JobcardService.serialNo;
+  console.log(this.serialNo);
   }
 
 
+  goToTaks(id,jctitle){
+    this.JobcardService.jcTitle=jctitle;
+    console.log(this.JobcardService.jcTitle);
+    this.JobcardService.jobcardId=id;
+    console.log(this.JobcardService.jobcardId);
+    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id);
+  }
 
 }
 

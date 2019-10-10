@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },
   { path: 'add-user', loadChildren: './pages/add-user/add-user.module#AddUserPageModule' },
   { path: 'jobcard', loadChildren: './pages/jobcard/jobcard.module#JobcardPageModule' },
+  { path: 'task', loadChildren: './pages/task/task.module#TaskPageModule' },
+  { path: 'childtask', loadChildren: './pages/childtask/childtask.module#ChildtaskPageModule' },
 ];
 
 @NgModule({
