@@ -63,7 +63,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"common":"common","add-user-add-user-module":"add-user-add-user-module","jobcard-jobcard-module":"jobcard-jobcard-module","pages-login-login-module":"pages-login-login-module","tab1-tab1-module":"tab1-tab1-module","details-details-module":"details-details-module","first-with-tabs-first-with-tabs-module":"first-with-tabs-first-with-tabs-module","home-home-module":"home-home-module","pages-menu-menu-module":"pages-menu-menu-module","second-second-module":"second-second-module","tab2-tab2-module":"tab2-tab2-module","tab3-tab3-module":"tab3-tab3-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"common":"common","add-user-add-user-module":"add-user-add-user-module","childtask-childtask-module":"childtask-childtask-module","finding-finding-module":"finding-finding-module","jobcard-jobcard-module":"jobcard-jobcard-module","pages-login-login-module":"pages-login-login-module","tab1-tab1-module":"tab1-tab1-module","task-task-module":"task-task-module","details-details-module":"details-details-module","first-with-tabs-first-with-tabs-module":"first-with-tabs-first-with-tabs-module","home-home-module":"home-home-module","manual-manual-module":"manual-manual-module","pages-menu-menu-module":"pages-menu-menu-module","second-second-module":"second-second-module","tab2-tab2-module":"tab2-tab2-module","tab3-tab3-module":"tab3-tab3-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function

@@ -29,6 +29,14 @@ const routes: Routes = [
         loadChildren: '../childtask/childtask.module#ChildtaskPageModule'
       },
       {
+        path: 'tab1/jobcard/task/:id/childtask/:taskid/finding',
+        loadChildren: '../finding/finding.module#FindingPageModule'
+      },
+      {
+        path: 'tab1/jobcard/task/:id/childtask/:taskid/manual',
+        loadChildren: '../manual/manual.module#ManualPageModule'
+      },
+      {
         path: 'tab2',
         loadChildren: '../tab2/tab2.module#Tab2PageModule'
       },

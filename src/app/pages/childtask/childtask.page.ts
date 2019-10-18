@@ -27,6 +27,7 @@ export class ChildtaskPage implements OnInit {
     this.jobcardId=this.JobcardService.jobcardId;
     this.taskTitle=this.JobcardService.taskTitle;
     this.taskId=this.JobcardService.taskId;
+    console.log(this.taskId);
     this.getChildTask( this.taskId);
     // console.log(this.taskId);
 
@@ -57,4 +58,17 @@ export class ChildtaskPage implements OnInit {
    
    }
 
+   goToFinding(id,taskid){
+    // this.JobcardService.taskTitle=tasktitle;
+    // console.log(this.JobcardService.taskTitle);
+    // this.JobcardService.jobcardId=id;
+    // console.log(this.JobcardService.jobcardId);
+    this.JobcardService.childtaskId=taskid;
+    console.log(this.JobcardService.childtaskId);
+    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid+'/finding');
+   }
+
+   goToManual(id,taskid){
+    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid+'/manual');
+   }
 }

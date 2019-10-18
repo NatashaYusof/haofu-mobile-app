@@ -841,9 +841,19 @@ var map = {
 		"./src/app/pages/add-user/add-user.module.ts",
 		"add-user-add-user-module"
 	],
+	"../childtask/childtask.module": [
+		"./src/app/pages/childtask/childtask.module.ts",
+		"common",
+		"childtask-childtask-module"
+	],
 	"../details/details.module": [
 		"./src/app/pages/details/details.module.ts",
 		"details-details-module"
+	],
+	"../finding/finding.module": [
+		"./src/app/pages/finding/finding.module.ts",
+		"common",
+		"finding-finding-module"
 	],
 	"../first-with-tabs/first-with-tabs.module": [
 		"./src/app/pages/first-with-tabs/first-with-tabs.module.ts",
@@ -853,6 +863,10 @@ var map = {
 		"./src/app/pages/jobcard/jobcard.module.ts",
 		"common",
 		"jobcard-jobcard-module"
+	],
+	"../manual/manual.module": [
+		"./src/app/pages/manual/manual.module.ts",
+		"manual-manual-module"
 	],
 	"../second/second.module": [
 		"./src/app/pages/second/second.module.ts",
@@ -871,6 +885,11 @@ var map = {
 		"./src/app/pages/tab3/tab3.module.ts",
 		"tab3-tab3-module"
 	],
+	"../task/task.module": [
+		"./src/app/pages/task/task.module.ts",
+		"common",
+		"task-task-module"
+	],
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
 		"home-home-module"
@@ -879,9 +898,19 @@ var map = {
 		"./src/app/pages/add-user/add-user.module.ts",
 		"add-user-add-user-module"
 	],
+	"./pages/childtask/childtask.module": [
+		"./src/app/pages/childtask/childtask.module.ts",
+		"common",
+		"childtask-childtask-module"
+	],
 	"./pages/details/details.module": [
 		"./src/app/pages/details/details.module.ts",
 		"details-details-module"
+	],
+	"./pages/finding/finding.module": [
+		"./src/app/pages/finding/finding.module.ts",
+		"common",
+		"finding-finding-module"
 	],
 	"./pages/first-with-tabs/first-with-tabs.module": [
 		"./src/app/pages/first-with-tabs/first-with-tabs.module.ts",
@@ -896,6 +925,10 @@ var map = {
 		"./src/app/pages/login/login.module.ts",
 		"common",
 		"pages-login-login-module"
+	],
+	"./pages/manual/manual.module": [
+		"./src/app/pages/manual/manual.module.ts",
+		"manual-manual-module"
 	],
 	"./pages/menu/menu.module": [
 		"./src/app/pages/menu/menu.module.ts",
@@ -917,6 +950,11 @@ var map = {
 	"./pages/tab3/tab3.module": [
 		"./src/app/pages/tab3/tab3.module.ts",
 		"tab3-tab3-module"
+	],
+	"./pages/task/task.module": [
+		"./src/app/pages/task/task.module.ts",
+		"common",
+		"task-task-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -974,6 +1012,10 @@ var routes = [
     { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },
     { path: 'add-user', loadChildren: './pages/add-user/add-user.module#AddUserPageModule' },
     { path: 'jobcard', loadChildren: './pages/jobcard/jobcard.module#JobcardPageModule' },
+    { path: 'task', loadChildren: './pages/task/task.module#TaskPageModule' },
+    { path: 'childtask', loadChildren: './pages/childtask/childtask.module#ChildtaskPageModule' },
+    { path: 'finding', loadChildren: './pages/finding/finding.module#FindingPageModule' },
+    { path: 'manual', loadChildren: './pages/manual/manual.module#ManualPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1080,6 +1122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/Camera/ngx */ "./node_modules/@ionic-native/Camera/ngx/index.js");
+/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1094,7 +1138,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-//import { HomePage } from './pages/home/home.page';
+
+
 
 
 
@@ -1108,7 +1153,9 @@ var AppModule = /** @class */ (function () {
             imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
+                _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__["File"],
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"],
+                _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_11__["Camera"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -1182,7 +1229,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\ionic4\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\project\natasha\src\main.ts */"./src/main.ts");
 
 
 /***/ })

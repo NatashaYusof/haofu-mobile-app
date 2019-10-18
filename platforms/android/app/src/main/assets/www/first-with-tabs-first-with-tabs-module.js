@@ -42,6 +42,22 @@ var routes = [
                 loadChildren: '../jobcard/jobcard.module#JobcardPageModule'
             },
             {
+                path: 'tab1/jobcard/task/:id',
+                loadChildren: '../task/task.module#TaskPageModule'
+            },
+            {
+                path: 'tab1/jobcard/task/:id/childtask/:taskid',
+                loadChildren: '../childtask/childtask.module#ChildtaskPageModule'
+            },
+            {
+                path: 'tab1/jobcard/task/:id/childtask/:taskid/finding',
+                loadChildren: '../finding/finding.module#FindingPageModule'
+            },
+            {
+                path: 'tab1/jobcard/task/:id/childtask/:taskid/manual',
+                loadChildren: '../manual/manual.module#ManualPageModule'
+            },
+            {
                 path: 'tab2',
                 loadChildren: '../tab2/tab2.module#Tab2PageModule'
             },
@@ -100,7 +116,7 @@ module.exports = "<ion-tabs>\n \n  <ion-tab-bar slot=\"bottom\" color=\"primary\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-tabs {\n  --ion-tabbar-background-color: #black;\n  --ion-tabs-background-color:var (--ion-tabbar-background-color: #ffffff); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmlyc3Qtd2l0aC10YWJzL0M6XFxpb25pYzQvc3JjXFxhcHBcXHBhZ2VzXFxmaXJzdC13aXRoLXRhYnNcXGZpcnN0LXdpdGgtdGFicy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDQSxxQ0FBOEI7RUFDOUIsd0VBQTRCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9maXJzdC13aXRoLXRhYnMvZmlyc3Qtd2l0aC10YWJzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuaW9uLXRhYnN7XG4tLWlvbi10YWJiYXItYmFja2dyb3VuZC1jb2xvcjogI2JsYWNrO1xuLS1pb24tdGFicy1iYWNrZ3JvdW5kLWNvbG9yOnZhciAoLS1pb24tdGFiYmFyLWJhY2tncm91bmQtY29sb3I6ICNmZmZmZmYpO1xufSJdfQ== */"
+module.exports = "ion-tabs {\n  --ion-tabbar-background-color: #black;\n  --ion-tabs-background-color:var (--ion-tabbar-background-color: #ffffff); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmlyc3Qtd2l0aC10YWJzL0M6XFxwcm9qZWN0XFxuYXRhc2hhL3NyY1xcYXBwXFxwYWdlc1xcZmlyc3Qtd2l0aC10YWJzXFxmaXJzdC13aXRoLXRhYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0EscUNBQThCO0VBQzlCLHdFQUE0QixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvZmlyc3Qtd2l0aC10YWJzL2ZpcnN0LXdpdGgtdGFicy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbmlvbi10YWJze1xuLS1pb24tdGFiYmFyLWJhY2tncm91bmQtY29sb3I6ICNibGFjaztcbi0taW9uLXRhYnMtYmFja2dyb3VuZC1jb2xvcjp2YXIgKC0taW9uLXRhYmJhci1iYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmKTtcbn0iXX0= */"
 
 /***/ }),
 

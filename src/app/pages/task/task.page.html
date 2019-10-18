@@ -14,21 +14,21 @@
   <ion-label class="font">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>
 
   <ion-label class="expand">Expand All</ion-label>
-  <ion-toggle slot="end" name="expand" checked mode="md" class="toggle-small" toggle-class="toggle-calm"></ion-toggle>
+  <ion-toggle slot="end" name="expand" mode="md" class="toggle-small" toggle-class="toggle-calm" (click)="hide()"></ion-toggle>
 </ion-item>
 
-  <ion-card>
-  <ion-item>
-  <ion-label class="font2">{{jcTitle.jobcardtitle}}</ion-label>
-  <ion-badge color="danger">2</ion-badge>
-  <ion-badge color="warning">0</ion-badge>
-  <ion-badge color="success">0</ion-badge>
+  <ion-card *ngIf="hideMe" >
+  <ion-item >
+  <ion-label>{{jcTitle.jobcardtitle}}</ion-label>
+  <ion-badge color="danger">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>
+  <ion-badge color="warning">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>
+  <ion-badge color="success">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>
   </ion-item>
  
       
   <ion-card-content class="font"> 
     Complete Percentage
-    <ion-progress-bar value="0.5"></ion-progress-bar>
+    <ion-progress-bar color="success">{{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}</ion-progress-bar>
   </ion-card-content>
   <ion-card-content class="font"> 
     Short Time

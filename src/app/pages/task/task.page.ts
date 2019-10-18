@@ -15,6 +15,7 @@ export class TaskPage implements OnInit {
   jobcardId: string;
   loading: any;
   id: any;
+  hideMe: boolean;
 
   constructor(private http: LoginService, private router: Router, public alertController: AlertController,public loadingCtrl: LoadingController,public JobcardService: JobcardService) { }
 
@@ -50,6 +51,12 @@ export class TaskPage implements OnInit {
    
    }
 
+   hide() {
+      this.hideMe = true;
+  
+   
+  }
+  
    gotoChildTask(id,taskid,tasktitle){
     this.JobcardService.taskTitle=tasktitle;
     console.log(this.JobcardService.taskTitle);

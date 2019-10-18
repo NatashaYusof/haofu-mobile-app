@@ -8,11 +8,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginPage } from './pages/login/login.page';
-//import { HomePage } from './pages/home/home.page';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage';
+import { Camera } from '@ionic-native/Camera/ngx';
+import { File } from '@ionic-native/file/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +20,9 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [BrowserModule, IonicModule.forRoot(),  AppRoutingModule, HttpClientModule,FormsModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
+    File,
     SplashScreen,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

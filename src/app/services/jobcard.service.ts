@@ -11,6 +11,7 @@ export class JobcardService {
   id: string;
   tasktitle: string;
   taskid: string;
+  childtaskid: string;
  
   constructor(private http: HttpClient) {}
 
@@ -53,5 +54,13 @@ export class JobcardService {
 
   set taskId(val: string){
     this.taskid =val;
+  }
+
+  get childtaskId():string{
+    return this.childtaskid;
+  }
+
+  set childtaskId(val: string){
+    this.childtaskid =val;
   }
 }

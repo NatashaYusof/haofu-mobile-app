@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+    <ion-toolbar color="primary">
       <ion-buttons slot="start">
           <ion-back-button  defaulthref=""></ion-back-button>
         </ion-buttons>
@@ -7,7 +7,7 @@
           JOBCARD
       </ion-title>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
 
 <ion-content padding>
   <ion-item>
@@ -15,54 +15,85 @@
 
   <ion-label class="expand">Expand All</ion-label>
   <ion-toggle slot="end" name="expand" checked mode="md" class="toggle-small" toggle-class="toggle-calm"></ion-toggle>
-</ion-item>
+  </ion-item>
 
   <ion-card>
-  <ion-item>
-  <ion-label class="font2">{{jcTitle.jobcardtitle}}</ion-label>
-  <ion-badge color="danger">2</ion-badge>
-  <ion-badge color="warning">0</ion-badge>
-  <ion-badge color="success">0</ion-badge>
+      <ion-item>
+          <ion-label >{{jcTitle.jobcardtitle}}</ion-label>
+          <ion-badge color="danger">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>
+          <ion-badge color="warning">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>
+          <ion-badge color="success">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>
+      </ion-item>
+         
+  
+        
+     <ion-card-content class="font"> 
+      Complete Percentage
+      <ion-progress-bar value="0.5"></ion-progress-bar>
+    </ion-card-content>
+    <ion-card-content class="font"> 
+      Short Time
+      <ion-progress-bar value="0.2"></ion-progress-bar>
+    </ion-card-content>
+    <ion-card-content class="font"> 
+      Turn Around Time
+      <ion-progress-bar value="0.1"></ion-progress-bar>
+    </ion-card-content>
+ 
+  </ion-card>
+
+  <ion-item >
+    <ion-label class="ion-text-wrap" ><b>{{taskTitle}}</b></ion-label>
   </ion-item>
- 
-      
-  <ion-card-content class="font"> 
-    Complete Percentage
-    <ion-progress-bar value="0.5"></ion-progress-bar>
-  </ion-card-content>
-  <ion-card-content class="font"> 
-    Short Time
-    <ion-progress-bar value="0.2"></ion-progress-bar>
-  </ion-card-content>
-  <ion-card-content class="font"> 
-    Turn Around Time
-    <ion-progress-bar value="0.1"></ion-progress-bar>
-  </ion-card-content>
- 
-</ion-card>
 
-<ion-item >
-<ion-label class="ion-text-wrap" ><b>{{taskTitle}}</b></ion-label>
-</ion-item>
+  <ion-card  *ngFor="let task of taskdetail" class="font">
+    <ion-item>
+      <ion-label class="ion-text-wrap">{{task.tasktitle}}</ion-label>
+    </ion-item>
+        <ion-grid> 
+           <ion-row>
+             <ion-col width-50><button style="width:100%" class="button" (click)="goToManual()">MANUAL</button></ion-col>
+             <ion-col width-50><button style="width:100%" class="button1" (click)="goToFinding(jobcardId,task.taskid)">FINDING</button></ion-col>
+           </ion-row>
+        </ion-grid>
+    </ion-card>
 
+    <!-- <ion-grid> 
+      <ion-row>
+        <ion-col width-50><button style="width:100%" class="button3" (click)="goPause()">PAUSE</button></ion-col>
+        <ion-col width-50><button style="width:100%" class="button3" (click)="goFinish()">FINISH</button></ion-col>
+      </ion-row>
+   </ion-grid> -->
+   <!-- <ion-tabs>
 
-<ion-item *ngFor="let task of taskdetail" class="font">
-  <ion-label class="ion-text-wrap">{{task.tasktitle}}</ion-label>
+    <ion-tab-bar slot="bottom:0" >
+      <ion-tab-button tab="pause" >
+        <ion-label class="button3">PAUSE</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="finish">
+        <ion-label class="button3">FINISH</ion-label>
+      </ion-tab-button>
 
-  <ion-tabs>
-    <ion-tab-bar >
-      <ion-tab-button tab="manual">
-        <ion-label  class="font2">MANUAL</ion-label>
-         </ion-tab-button>
-      <ion-tab-button tab="finding">
-        <ion-label  class="font2">FINDING</ion-label>
-       </ion-tab-button>
     </ion-tab-bar>
-    </ion-tabs>
-
-</ion-item>
-
-
+  </ion-tabs> -->
 
 
 </ion-content>
+<!-- <ion-footer>
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom" fixed>
+      <ion-tab-button tab="pause" >
+        <ion-label class="button3">PAUSE</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="finish">
+        <ion-label class="button3">FINISH</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-footer> -->
+
