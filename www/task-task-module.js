@@ -62,7 +62,7 @@ var TaskPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\"></ion-toggle>\n</ion-item>\n\n  <ion-card *ngIf=\"hideMe\" >\n  <ion-item >\n  <ion-label>{{jcTitle.jobcardtitle}}</ion-label>\n  <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n \n      \n  <ion-card-content class=\"font\"> \n    Complete Percentage\n    <ion-progress-bar color=\"success\">{{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}</ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Short Time\n    <ion-progress-bar value=\"0.2\"></ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Turn Around Time\n    <ion-progress-bar value=\"0.1\"></ion-progress-bar>\n  </ion-card-content>\n \n</ion-card>\n\n<ion-item *ngFor=\"let jobcardid of id\" class=\"font\">\n<ion-label class=\"ion-text-wrap\"><b>{{jobcardid.tasktitle}}</b></ion-label>\n<img src=\"assets/icon/start.png\" tappable width=\"20\" height=\"20\" slot=\"end\" (click)=\"gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle)\"/>\n</ion-item>\n\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\" ng-checked=\"checked\" ></ion-toggle>\n</ion-item>\n\n  <ion-card *ngIf=\"hideMe\" >\n  <ion-item >\n  <ion-label>{{jcTitle.jobcardtitle}}</ion-label>\n  <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n \n      \n  <ion-card-content class=\"font\"> \n    Complete Percentage\n    <ion-progress-bar color=\"success\">{{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}</ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Short Time\n    <ion-progress-bar value=\"0.2\"></ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Turn Around Time\n    <ion-progress-bar value=\"0.1\"></ion-progress-bar>\n  </ion-card-content>\n \n</ion-card>\n\n<ion-item *ngFor=\"let jobcardid of id\" class=\"font\">\n<ion-label class=\"ion-text-wrap\"><b>{{jobcardid.tasktitle}}</b></ion-label>\n<img src=\"assets/icon/start.png\" tappable width=\"20\" height=\"20\" slot=\"end\" (click)=\"gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle)\"/>\n</ion-item>\n\n</ion-content>\n"
 
 /***/ }),
 
@@ -187,7 +187,12 @@ var TaskPage = /** @class */ (function () {
         });
     };
     TaskPage.prototype.hide = function () {
-        this.hideMe = true;
+        if (this.hideMe = true) {
+            this.hideMe = true;
+        }
+        else {
+            this.hideMe = false;
+        }
     };
     TaskPage.prototype.gotoChildTask = function (id, taskid, tasktitle) {
         this.JobcardService.taskTitle = tasktitle;

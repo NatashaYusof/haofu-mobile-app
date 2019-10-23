@@ -16,14 +16,23 @@ export class TaskPage implements OnInit {
   loading: any;
   id: any;
   hideMe: boolean;
+  toggle: any;
+  success=0;
+  
+  constructor(private http: LoginService, private router: Router, public alertController: AlertController,public loadingCtrl: LoadingController,
+    public JobcardService: JobcardService) { 
 
-  constructor(private http: LoginService, private router: Router, public alertController: AlertController,public loadingCtrl: LoadingController,public JobcardService: JobcardService) { }
+     
+    }
 
   ngOnInit() {
     this.serialNo=this.JobcardService.serialNo;
     this.jcTitle=this.JobcardService.jcTitle;
     this.jobcardId=this.JobcardService.jobcardId;
     this.getToTask( this.jobcardId);
+
+  
+    // this.success= "{{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}";
   }
 
   
@@ -52,9 +61,12 @@ export class TaskPage implements OnInit {
    }
 
    hide() {
+    //  if(  this.hideMe = true){
       this.hideMe = true;
-  
-   
+    //  }else{
+    //   this.hideMe = false;
+    //  }
+       
   }
   
    gotoChildTask(id,taskid,tasktitle){

@@ -6,6 +6,7 @@
       <ion-title>
           JOBCARD
       </ion-title>
+     
     </ion-toolbar>
   </ion-header>
 
@@ -29,7 +30,7 @@
   <ion-label class="font"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}
     <br><br><br>Task References<br><br>{{childtaskId}}
     <br><br><br>Title<ion-item><ion-textarea placeholder="Enter title here..."></ion-textarea></ion-item>
-    <br><br><br>Description<ion-item><ion-textarea placeholder="Enter description here..."></ion-textarea></ion-item>
+    <br><br>Description<ion-item><ion-textarea placeholder="Enter description here..."></ion-textarea></ion-item>
   </ion-label>
 </ion-item>
 <ion-item>
@@ -41,3 +42,17 @@
   </ion-card>
   <ion-button expand="full" color="primary">Save</ion-button>
 </ion-content>
+
+<ion-toolbar>
+    <ion-tabs>
+    <ion-tab-bar slot="bottom" fixed>
+      <ion-tab-button tab="pause" >
+        <ion-label class="button3">PAUSE</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="finish">
+        <ion-label class="button3">FINISH</ion-label>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs></ion-toolbar>
