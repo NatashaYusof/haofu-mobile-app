@@ -62,7 +62,7 @@ var ChildtaskPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" checked mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\"></ion-toggle>\n  </ion-item>\n\n  <ion-card>\n      <ion-item>\n          <ion-label >{{jcTitle.jobcardtitle}}</ion-label>\n          <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n          <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n          <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n      </ion-item>\n         \n  \n        \n     <ion-card-content class=\"font\"> \n      Complete Percentage\n      <ion-progress-bar value=\"0.5\"></ion-progress-bar>\n    </ion-card-content>\n    <ion-card-content class=\"font\"> \n      Short Time\n      <ion-progress-bar value=\"0.2\"></ion-progress-bar>\n    </ion-card-content>\n    <ion-card-content class=\"font\"> \n      Turn Around Time\n      <ion-progress-bar value=\"0.1\"></ion-progress-bar>\n    </ion-card-content>\n \n  </ion-card>\n\n  <ion-item >\n    <ion-label class=\"ion-text-wrap\" ><b>{{taskTitle}}</b></ion-label>\n  </ion-item>\n\n  <ion-card  *ngFor=\"let task of taskdetail\" class=\"font\">\n    <ion-item>\n      <ion-label class=\"ion-text-wrap\">{{task.tasktitle}}</ion-label>\n    </ion-item>\n        <ion-grid> \n           <ion-row>\n             <ion-col width-50><button style=\"width:100%\" class=\"button\" (click)=\"goToManual()\">MANUAL</button></ion-col>\n             <ion-col width-50><button style=\"width:100%\" class=\"button1\" (click)=\"goToFinding(jobcardId,task.taskid)\">FINDING</button></ion-col>\n           </ion-row>\n        </ion-grid>\n    </ion-card>\n\n    <!-- <ion-grid> \n      <ion-row>\n        <ion-col width-50><button style=\"width:100%\" class=\"button3\" (click)=\"goPause()\">PAUSE</button></ion-col>\n        <ion-col width-50><button style=\"width:100%\" class=\"button3\" (click)=\"goFinish()\">FINISH</button></ion-col>\n      </ion-row>\n   </ion-grid> -->\n   <!-- <ion-tabs>\n\n    <ion-tab-bar slot=\"bottom:0\" >\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\">PAUSE</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\">FINISH</ion-label>\n      </ion-tab-button>\n\n    </ion-tab-bar>\n  </ion-tabs> -->\n\n\n</ion-content>\n<!-- <ion-footer>\n  <ion-tabs>\n\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\">PAUSE</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\">FINISH</ion-label>\n      </ion-tab-button>\n\n    </ion-tab-bar>\n  </ion-tabs>\n\n</ion-footer> -->\n\n"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" checked mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\"></ion-toggle>\n  </ion-item>\n\n  <ion-card>\n      <ion-item>\n          <ion-label >{{jcTitle.jobcardtitle}}</ion-label>\n          <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n          <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n          <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n      </ion-item>\n                   \n  <ion-card-content class=\"font\"> \n    Complete Percentage\n    <ion-progress-bar  color=\"warning\" style=\"height:10px\" value=\"{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}\"></ion-progress-bar> {{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}%</ion-card-content>\n  <ion-card-content class=\"font\"> \n    Short Time\n    <ion-progress-bar color=\"warning\" style=\"height:10px \" value=\"0.2\"></ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Turn Around Time\n    <ion-progress-bar  color=\"warning\" style=\"height:10px \" value=\"0.1\"></ion-progress-bar>\n  </ion-card-content>\n  </ion-card>\n\n  <ion-item >\n    <ion-label class=\"ion-text-wrap\" ><b>{{taskTitle}}</b></ion-label>\n  </ion-item>\n\n  <ion-card  *ngFor=\"let task of taskdetail\" class=\"font\">\n    <ion-item>\n      <ion-label class=\"ion-text-wrap\">{{task.tasktitle}}</ion-label>\n    </ion-item>\n        <ion-grid> \n           <ion-row>\n             <ion-col width-50><button style=\"width:100%\" class=\"button\" (click)=\"goToManual()\">MANUAL</button></ion-col>\n             <ion-col width-50><button style=\"width:100%\" class=\"button1\" (click)=\"goToFinding(jobcardId,task.taskid)\">FINDING</button></ion-col>\n           </ion-row>\n        </ion-grid>\n    </ion-card>\n\n</ion-content>\n<ion-toolbar>\n  <ion-tabs>\n  <ion-tab-bar slot=\"bottom\" fixed>\n    <ion-tab-button tab=\"pause\" >\n      <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"finish\">\n      <ion-label class=\"button3\">FINISH</ion-label>\n    </ion-tab-button>\n\n  </ion-tab-bar>\n</ion-tabs></ion-toolbar>"
 
 /***/ }),
 
@@ -101,41 +101,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 
 
 
@@ -148,6 +113,8 @@ var ChildtaskPage = /** @class */ (function () {
         this.alertController = alertController;
         this.loadingCtrl = loadingCtrl;
         this.JobcardService = JobcardService;
+        // test: String = ''; 
+        this.btn_txt = 'PAUSE';
     }
     ChildtaskPage.prototype.ngOnInit = function () {
         this.serialNo = this.JobcardService.serialNo;
@@ -159,31 +126,19 @@ var ChildtaskPage = /** @class */ (function () {
         this.getChildTask(this.taskId);
         // console.log(this.taskId);
     };
-    ChildtaskPage.prototype.presentLoadingWithOptions = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        _a = this;
-                        return [4 /*yield*/, this.loadingCtrl.create({
-                                message: 'Please wait...',
-                                translucent: true,
-                                cssClass: 'custom-class custom-loading'
-                            })];
-                    case 1:
-                        _a.loading = _b.sent();
-                        return [4 /*yield*/, this.loading.present()];
-                    case 2: return [2 /*return*/, _b.sent()];
-                }
-            });
-        });
-    };
+    // async presentLoadingWithOptions() {
+    //   this.loading = await this.loadingCtrl.create({
+    //     message: 'Please wait...',
+    //     translucent: true,
+    //     cssClass: 'custom-class custom-loading'
+    //   });
+    //   return await this.loading.present();
+    // }
     ChildtaskPage.prototype.getChildTask = function (taskid) {
         var _this = this;
-        this.presentLoadingWithOptions();
+        // this.presentLoadingWithOptions();
         this.http.getChildTask(taskid).subscribe(function (response) {
-            _this.loading.dismiss();
+            // this.loading.dismiss();
             _this.taskdetail = response.Result[0].childtask;
             console.log(_this.taskdetail);
         }, function (error) {
@@ -201,6 +156,15 @@ var ChildtaskPage = /** @class */ (function () {
     };
     ChildtaskPage.prototype.goToManual = function (id, taskid) {
         this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/' + id + '/childtask/' + taskid + '/manual');
+    };
+    ChildtaskPage.prototype.goPause = function () {
+        if (this.btn_txt == "PAUSE") {
+            this.btn_txt = "RESUME";
+            document.body.style.backgroundColor = "red";
+        }
+        else {
+            this.btn_txt = "PAUSE";
+        }
     };
     ChildtaskPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

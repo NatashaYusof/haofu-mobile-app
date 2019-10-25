@@ -14,10 +14,10 @@
   <ion-label class="font">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>
 
   <ion-label class="expand">Expand All</ion-label>
-  <ion-toggle slot="end" name="expand" mode="md" class="toggle-small" toggle-class="toggle-calm" (click)="hide()" ng-checked="checked" ></ion-toggle>
+  <ion-toggle slot="end" name="expand" mode="md" class="toggle-small" toggle-class="toggle-calm" (click)="hide()"></ion-toggle>
 </ion-item>
 
-  <ion-card *ngIf="hideMe" >
+  <ion-card  >
   <ion-item >
   <ion-label>{{jcTitle.jobcardtitle}}</ion-label>
   <ion-badge color="danger">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>
@@ -26,14 +26,14 @@
   </ion-item>
  
       
-  <ion-card-content class="font"> 
+  <ion-card-content class="font" *ngIf="hideMe"> 
     Complete Percentage
     <ion-progress-bar  color="warning" style="height:10px" value="{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}"></ion-progress-bar> {{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}%</ion-card-content>
-  <ion-card-content class="font"> 
+  <ion-card-content class="font" *ngIf="hideMe"> 
     Short Time
     <ion-progress-bar color="warning" style="height:10px " value="0.2"></ion-progress-bar>
   </ion-card-content>
-  <ion-card-content class="font"> 
+  <ion-card-content class="font" *ngIf="hideMe"> 
     Turn Around Time
     <ion-progress-bar  color="warning" style="height:10px " value="0.1"></ion-progress-bar>
   </ion-card-content>
@@ -41,8 +41,9 @@
 </ion-card>
 
 <ion-item *ngFor="let jobcardid of id" class="font">
-<ion-label class="ion-text-wrap"><b>{{jobcardid.tasktitle}}</b></ion-label>
-<img src="assets/icon/start.png" tappable width="20" height="20" slot="end" (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle)"/>
+<ion-label class="ion-text-wrap" ><b>{{jobcardid.tasktitle}}</b></ion-label>
+<img src="{{imej}}" tappable width="20" height="20" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jcTitle.taskstatus)"/>
+<!-- <img src="{{imej1}}" width="20" height="20" slot="end"/> -->
 </ion-item>
 
 </ion-content>

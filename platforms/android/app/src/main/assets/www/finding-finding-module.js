@@ -17701,7 +17701,7 @@ var FindingPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" checked mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\"></ion-toggle>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n  <ion-label class=\"font2\"><b>{{jcTitle.jobcardtitle}}</b></ion-label>\n    <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n<ion-item>\n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n     \n    <img src=\"{{ imgSrc }}\" alt=\"\" />\n  \n  </ion-card>\n  <ion-button expand=\"full\" color=\"primary\">Save</ion-button>\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" checked mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\"></ion-toggle>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n  <ion-label class=\"font2\"><b>{{jcTitle.jobcardtitle}}</b></ion-label>\n    <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n<ion-item>\n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n     \n    <!-- <img src= \"{{ picture }}\" alt=\"\" /> -->\n    <!-- <img src= \"assets/icon/profile.png\" alt=\"\" /> -->\n    <ion-item>\n      <!-- <p>{{ picture }}</p> -->\n      <img src= \"{{ imageSrc  }}\" alt=\"\" />\n\n    </ion-item>\n  \n  </ion-card>\n\n  <ion-button expand=\"full\" color=\"primary\">Save</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
 
 /***/ }),
 
@@ -17712,7 +17712,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-bu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmluZGluZy9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGZpbmRpbmdcXGZpbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvZmluZGluZy9maW5kaW5nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmR7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIG1heC13aWR0aDogNjBweDtcclxufVxyXG5cclxuLmZvbnQye1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbn0iXX0= */"
+module.exports = ".expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n.button3 {\n  font-size: 11.5px;\n  color: darkcyan;\n  text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmluZGluZy9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGZpbmRpbmdcXGZpbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBOztBQUVuQjtFQUNJLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2Ysa0JBQWtCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9maW5kaW5nL2ZpbmRpbmcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZHtcclxuICAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG4gICAgbWF4LXdpZHRoOiA2MHB4O1xyXG59XHJcblxyXG4uZm9udDJ7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIGNvbG9yOiBkYXJrY3lhbjtcclxufVxyXG4uYnV0dG9uM3tcclxuICAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG4gICAgY29sb3I6IGRhcmtjeWFuO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -17788,6 +17788,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 var FindingPage = /** @class */ (function () {
+    // imageSrc: any;
     function FindingPage(http, router, alertController, loadingCtrl, JobcardService, camera, actionSheetController, file) {
         this.http = http;
         this.router = router;
@@ -17797,6 +17798,8 @@ var FindingPage = /** @class */ (function () {
         this.camera = camera;
         this.actionSheetController = actionSheetController;
         this.file = file;
+        this.btn_txt = 'PAUSE';
+        this.photos = [];
         this.croppedImagepath = "";
         this.isLoading = false;
         this.imagePickerOptions = {
@@ -17814,21 +17817,38 @@ var FindingPage = /** @class */ (function () {
         console.log(this.JobcardService.childtaskId);
         this.currentDate = moment__WEBPACK_IMPORTED_MODULE_5__().format('YYYY-MM-DD HH:mm:ss');
     };
+    FindingPage.prototype.goPause = function () {
+        if (this.btn_txt == "PAUSE") {
+            this.btn_txt = "RESUME";
+            document.body.style.backgroundColor = "red";
+        }
+        else {
+            this.btn_txt = "PAUSE";
+        }
+    };
     FindingPage.prototype.pickImage1 = function (sourceType) {
         var _this = this;
         var options = {
             quality: 100,
             sourceType: sourceType,
-            destinationType: this.camera.DestinationType.FILE_URI,
+            // destinationType: this.camera.DestinationType.FILE_URI,
+            destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.JPEG,
             mediaType: this.camera.MediaType.PICTURE
+            // quality: 100,
+            // destinationType: this.camera.DestinationType.FILE_URI,
+            // encodingType: this.camera.EncodingType.JPEG,
+            // mediaType: this.camera.MediaType.PICTURE
         };
         this.camera.getPicture(options).then(function (imageData) {
             // imageData is either a base64 encoded string or a file URI
             // If it's base64 (DATA_URL):
             _this.imageSrc = 'data:image/jpeg;base64,' + imageData;
-            console.log(_this.imageSrc);
-            // this.imageSrc=imageData.replace('file://', '');
+            // this.photos.push(this.imageSrc);
+            // this.photos.reverse();
+            // this.picture = imageSrc.replace('file://', '');
+            // console.log(this.picture);
+            // this.picture=imageData.replace('file://', '');
         }, function (err) {
             // Handle error
         });

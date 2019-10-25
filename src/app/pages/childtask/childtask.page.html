@@ -14,7 +14,7 @@
   <ion-label class="font">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>
 
   <ion-label class="expand">Expand All</ion-label>
-  <ion-toggle slot="end" name="expand" checked mode="md" class="toggle-small" toggle-class="toggle-calm"></ion-toggle>
+  <ion-toggle slot="end" name="expand" mode="md" class="toggle-small" toggle-class="toggle-calm" (click)="hide()"></ion-toggle>
   </ion-item>
 
   <ion-card>
@@ -25,24 +25,27 @@
           <ion-badge color="success">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>
       </ion-item>
                    
-  <ion-card-content class="font"> 
-    Complete Percentage
-    <ion-progress-bar  color="warning" style="height:10px" value="{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}"></ion-progress-bar> {{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}%</ion-card-content>
-  <ion-card-content class="font"> 
-    Short Time
-    <ion-progress-bar color="warning" style="height:10px " value="0.2"></ion-progress-bar>
-  </ion-card-content>
-  <ion-card-content class="font"> 
-    Turn Around Time
-    <ion-progress-bar  color="warning" style="height:10px " value="0.1"></ion-progress-bar>
-  </ion-card-content>
+      <ion-card-content class="font" *ngIf="hideMe"> 
+        Complete Percentage
+        <ion-progress-bar  color="warning" style="height:10px" value="{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}"></ion-progress-bar> {{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}%</ion-card-content>
+      <ion-card-content class="font" *ngIf="hideMe"> 
+        Short Time
+        <ion-progress-bar color="warning" style="height:10px " value="0.2"></ion-progress-bar>
+      </ion-card-content>
+      <ion-card-content class="font" *ngIf="hideMe"> 
+        Turn Around Time
+        <ion-progress-bar  color="warning" style="height:10px " value="0.1"></ion-progress-bar>
+      </ion-card-content>
   </ion-card>
 
   <ion-item >
     <ion-label class="ion-text-wrap" ><b>{{taskTitle}}</b></ion-label>
   </ion-item>
 
-  <ion-card  *ngFor="let task of taskdetail" class="font">
+  <ion-card  *ngFor="let task of taskdetail;let count=index" class="font">
+    <ion-item>
+      <ion-label class="font"><b>SAE TASK {{count + 1}} </b></ion-label>
+    </ion-item>
     <ion-item>
       <ion-label class="ion-text-wrap">{{task.tasktitle}}</ion-label>
     </ion-item>

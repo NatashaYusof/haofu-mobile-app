@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from '../../../../src/app/services/login.service';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
-import { JobcardService } from 'src/app/services/jobcard.service';
+import { JobcardService } from '../../../../src/app/services/jobcard.service';
+
 
 @Component({
   selector: 'app-task',
@@ -18,10 +19,16 @@ export class TaskPage implements OnInit {
   hideMe: boolean;
   toggle: any;
   success=0;
+  imej:any;
+  imej1:any;
+  jobcardprogresstaskcount:any;
+  taskid: boolean;
   
-  constructor(private http: LoginService, private router: Router, public alertController: AlertController,public loadingCtrl: LoadingController,
-    public JobcardService: JobcardService) { 
+  constructor(private http: LoginService, private router: Router, public alertController: AlertController,
+    public loadingCtrl: LoadingController,public JobcardService: JobcardService) { 
 
+      this.imej='assets/icon/start.png';
+      this.imej1='assets/icon/tick.png';
      
     }
 
@@ -50,8 +57,9 @@ export class TaskPage implements OnInit {
    this.http.getToTask(id).subscribe(
            response => {
            this.loading.dismiss(); 
-           this.id = response.Result;
-           console.log(this.id);
+           this.id = response.Result[0].task;
+           console.log(this.id)
+           
            
          }, error => {
            console.log("error")
@@ -69,14 +77,22 @@ export class TaskPage implements OnInit {
        
   }
   
-   gotoChildTask(id,taskid,tasktitle){
-    this.JobcardService.taskTitle=tasktitle;
-    console.log(this.JobcardService.taskTitle);
-    this.JobcardService.jobcardId=id;
-    console.log(this.JobcardService.jobcardId);
-    this.JobcardService.taskId=taskid;
-    console.log(this.JobcardService.taskId);
-    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
+   gotoChildTask(id,taskid,tasktitle,jobcardprogresstaskcount){
+   
+    //  if (jobcardprogresstaskcount.length==1){
+        this.imej;
+        this.JobcardService.taskTitle=tasktitle;
+        console.log(this.JobcardService.taskTitle);
+        this.JobcardService.jobcardId=id;
+        console.log(this.JobcardService.jobcardId);
+        this.JobcardService.taskId=taskid;
+        console.log(this.JobcardService.taskId);
+        this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
+    //  }else{
+    //    this.imej1;
+    //  }
+ 
+  
    }
   }
  

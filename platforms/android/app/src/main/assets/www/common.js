@@ -254,7 +254,7 @@ var LoginService = /** @class */ (function () {
         }));
     };
     LoginService.prototype.getToTask = function (jobcardid) {
-        return this.http.get(this.baseURL + '/task?jobcardid=' + jobcardid)
+        return this.http.get(this.baseURL + '/jobcard?jobcardid=' + jobcardid)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
             console.log(response);
             return response;

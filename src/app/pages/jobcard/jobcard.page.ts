@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from '../../../../src/app/services/login.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { JobcardService } from 'src/app/services/jobcard.service';
+import { JobcardService } from '../../../../src/app/services/jobcard.service';
 
 @Component({
   selector: 'app-jobcard',

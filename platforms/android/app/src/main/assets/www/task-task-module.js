@@ -62,7 +62,7 @@ var TaskPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\" ng-checked=\"checked\" ></ion-toggle>\n</ion-item>\n\n  <ion-card *ngIf=\"hideMe\" >\n  <ion-item >\n  <ion-label>{{jcTitle.jobcardtitle}}</ion-label>\n  <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n \n      \n  <ion-card-content class=\"font\"> \n    Complete Percentage\n    <ion-progress-bar color=\"success\">{{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}</ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Short Time\n    <ion-progress-bar value=\"0.2\"></ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Turn Around Time\n    <ion-progress-bar value=\"0.1\"></ion-progress-bar>\n  </ion-card-content>\n \n</ion-card>\n\n<ion-item *ngFor=\"let jobcardid of id\" class=\"font\">\n<ion-label class=\"ion-text-wrap\"><b>{{jobcardid.tasktitle}}</b></ion-label>\n<img src=\"assets/icon/start.png\" tappable width=\"20\" height=\"20\" slot=\"end\" (click)=\"gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle)\"/>\n</ion-item>\n\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\" ng-checked=\"checked\" ></ion-toggle>\n</ion-item>\n\n  <ion-card *ngIf=\"hideMe\" >\n  <ion-item >\n  <ion-label>{{jcTitle.jobcardtitle}}</ion-label>\n  <ion-badge color=\"danger\">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"warning\">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>\n  <ion-badge color=\"success\">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n \n      \n  <ion-card-content class=\"font\"> \n    Complete Percentage\n    <ion-progress-bar  color=\"warning\" style=\"height:10px\" value=\"{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}\"></ion-progress-bar> {{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}%</ion-card-content>\n  <ion-card-content class=\"font\"> \n    Short Time\n    <ion-progress-bar color=\"warning\" style=\"height:10px \" value=\"0.2\"></ion-progress-bar>\n  </ion-card-content>\n  <ion-card-content class=\"font\"> \n    Turn Around Time\n    <ion-progress-bar  color=\"warning\" style=\"height:10px \" value=\"0.1\"></ion-progress-bar>\n  </ion-card-content>\n \n</ion-card>\n\n<ion-item *ngFor=\"let jobcardid of id\" class=\"font\">\n<ion-label class=\"ion-text-wrap\"><b>{{jobcardid.tasktitle}}</b></ion-label>\n<img src=\"assets/icon/start.png\" tappable width=\"20\" height=\"20\" slot=\"end\" (click)=\"gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle)\"/>\n</ion-item>\n\n</ion-content>\n"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-bu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".font {\n  font-size: 11.5px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n.expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdGFzay9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXHRhc2tcXHRhc2sucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCLEVBQUE7O0FBS3JCO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvdGFzay90YXNrLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb250e1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcblxyXG5cclxufVxyXG5cclxuLmZvbnQye1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbn1cclxuXHJcbi5leHBhbmR7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIG1heC13aWR0aDogNjBweDtcclxufVxyXG5cclxuIl19 */"
+module.exports = ".font {\n  font-size: 11.5px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n.expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdGFzay9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXHRhc2tcXHRhc2sucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCLEVBQUE7O0FBTXJCO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvdGFzay90YXNrLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb250e1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBcclxuXHJcblxyXG59XHJcblxyXG4uZm9udDJ7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIGNvbG9yOiBkYXJrY3lhbjtcclxufVxyXG5cclxuLmV4cGFuZHtcclxuICAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG4gICAgbWF4LXdpZHRoOiA2MHB4O1xyXG59XHJcblxyXG4iXX0= */"
 
 /***/ }),
 
@@ -148,12 +148,14 @@ var TaskPage = /** @class */ (function () {
         this.alertController = alertController;
         this.loadingCtrl = loadingCtrl;
         this.JobcardService = JobcardService;
+        this.success = 0;
     }
     TaskPage.prototype.ngOnInit = function () {
         this.serialNo = this.JobcardService.serialNo;
         this.jcTitle = this.JobcardService.jcTitle;
         this.jobcardId = this.JobcardService.jobcardId;
         this.getToTask(this.jobcardId);
+        // this.success= "{{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}";
     };
     TaskPage.prototype.presentLoadingWithOptions = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -180,19 +182,18 @@ var TaskPage = /** @class */ (function () {
         this.presentLoadingWithOptions();
         this.http.getToTask(id).subscribe(function (response) {
             _this.loading.dismiss();
-            _this.id = response.Result;
+            _this.id = response.Result[0].task;
             console.log(_this.id);
         }, function (error) {
             console.log("error");
         });
     };
     TaskPage.prototype.hide = function () {
-        if (this.hideMe = true) {
-            this.hideMe = true;
-        }
-        else {
-            this.hideMe = false;
-        }
+        //  if(  this.hideMe = true){
+        this.hideMe = true;
+        //  }else{
+        //   this.hideMe = false;
+        //  }
     };
     TaskPage.prototype.gotoChildTask = function (id, taskid, tasktitle) {
         this.JobcardService.taskTitle = tasktitle;
@@ -209,7 +210,8 @@ var TaskPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./task.page.html */ "./src/app/pages/task/task.page.html"),
             styles: [__webpack_require__(/*! ./task.page.scss */ "./src/app/pages/task/task.page.scss")]
         }),
-        __metadata("design:paramtypes", [src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"], src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"]])
+        __metadata("design:paramtypes", [src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"],
+            src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"]])
     ], TaskPage);
     return TaskPage;
 }());

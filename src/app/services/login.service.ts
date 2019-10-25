@@ -59,7 +59,7 @@ export class LoginService {
 }
 
 getToTask(jobcardid) : Observable<any> {
-  return this.http.get(this.baseURL+'/task?jobcardid='+jobcardid)
+  return this.http.get(this.baseURL+'/jobcard?jobcardid='+jobcardid)
     .pipe(
       map( response => {
         console.log(response)

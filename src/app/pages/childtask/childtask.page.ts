@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from '../../../../src/app/services/login.service';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
-import { JobcardService } from 'src/app/services/jobcard.service';
+import { JobcardService } from '../../../../src/app/services/jobcard.service';
 
 @Component({
   selector: 'app-childtask',
@@ -20,8 +20,15 @@ export class ChildtaskPage implements OnInit {
   taskdetail: any;
   // test: String = ''; 
   btn_txt = 'PAUSE';
+  hideMe: boolean;
+  count= 1;
 
-  constructor(private http: LoginService, private router: Router, public alertController: AlertController, public loadingCtrl: LoadingController, public JobcardService: JobcardService) { }
+  constructor(private http: LoginService, private router: Router, public alertController: AlertController, 
+    public loadingCtrl: LoadingController, public JobcardService: JobcardService) {
+
+      this.count=+1;
+      this.count++;
+     }
 
   ngOnInit() {
     this.serialNo = this.JobcardService.serialNo;
@@ -32,25 +39,26 @@ export class ChildtaskPage implements OnInit {
     console.log(this.taskId);
     this.getChildTask(this.taskId);
     // console.log(this.taskId);
+  
 
   }
 
 
-  // async presentLoadingWithOptions() {
-  //   this.loading = await this.loadingCtrl.create({
-  //     message: 'Please wait...',
-  //     translucent: true,
-  //     cssClass: 'custom-class custom-loading'
-  //   });
-  //   return await this.loading.present();
-  // }
+  async presentLoadingWithOptions() {
+    this.loading = await this.loadingCtrl.create({
+      message: 'Please wait...',
+      translucent: true,
+      cssClass: 'custom-class custom-loading'
+    });
+    return await this.loading.present();
+  }
 
 
   getChildTask(taskid) {
-    // this.presentLoadingWithOptions();
+    this.presentLoadingWithOptions();
     this.http.getChildTask(taskid).subscribe(
       response => {
-        // this.loading.dismiss();
+        this.loading.dismiss();
         this.taskdetail = response.Result[0].childtask;
         console.log(this.taskdetail)
       }, error => {
@@ -77,9 +85,18 @@ export class ChildtaskPage implements OnInit {
   goPause() {
     if (this.btn_txt == "PAUSE") {
       this.btn_txt = "RESUME";
-      document.body.style.backgroundColor = "red";
+      // document.body.style.backgroundColor = "red";
     } else {
       this.btn_txt = "PAUSE";
     }
+  }
+
+  hide() {
+    //  if(  this.hideMe = true){
+      this.hideMe = true;
+    //  }else{
+    //   this.hideMe = false;
+    //  }
+       
   }
 }

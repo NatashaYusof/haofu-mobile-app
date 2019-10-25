@@ -37,9 +37,16 @@
     <ion-icon name="attach" ></ion-icon><ion-label (click)="pickImage()" class="font2" tappable >Attach Image</ion-label>
   </ion-item>
      
-    <img src="{{ imgSrc }}" alt="" />
+    <!-- <img src= "{{ picture }}" alt="" /> -->
+    <!-- <img src= "assets/icon/profile.png" alt="" /> -->
+    <ion-item>
+      <!-- <p>{{ picture }}</p> -->
+      <img src= "{{ imageSrc  }}" alt="" />
+
+    </ion-item>
   
   </ion-card>
+
   <ion-button expand="full" color="primary">Save</ion-button>
 </ion-content>
 
@@ -47,7 +54,7 @@
     <ion-tabs>
     <ion-tab-bar slot="bottom" fixed>
       <ion-tab-button tab="pause" >
-        <ion-label class="button3">PAUSE</ion-label>
+        <ion-label class="button3"  (click)="goPause()" >{{btn_txt}}</ion-label>
       </ion-tab-button>
   
       <ion-tab-button tab="finish">
