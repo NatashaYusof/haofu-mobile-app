@@ -3,6 +3,8 @@ import { LoginService } from '../../../../src/app/services/login.service';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { JobcardService } from '../../../../src/app/services/jobcard.service';
+import { TimeService } from '../../../../src/app/services/time.service';
+import * as moment from 'moment';
 
 
 @Component({
@@ -23,9 +25,12 @@ export class TaskPage implements OnInit {
   imej1:any;
   jobcardprogresstaskcount:any;
   taskid: boolean;
+  currentDate: any;
+  userDetail: any;
+  details: any;
   
   constructor(private http: LoginService, private router: Router, public alertController: AlertController,
-    public loadingCtrl: LoadingController,public JobcardService: JobcardService) { 
+    public loadingCtrl: LoadingController,public JobcardService: JobcardService,public TimeService:TimeService) { 
 
       this.imej='assets/icon/start.png';
       this.imej1='assets/icon/tick.png';
@@ -38,14 +43,21 @@ export class TaskPage implements OnInit {
     this.jobcardId=this.JobcardService.jobcardId;
     this.getToTask( this.jobcardId);
 
-  
-    // this.success= "{{jcTitle.jobcardcompletedtaskcount * 100 / jcTitle.jobcardtotaltaskcount}}";
+    this.userDetail = window.localStorage.getItem('userDetail')
+    this.details = JSON.parse(this.userDetail)
+    console.log(this.details)
+ 
+    this.getJobcardByEmployeeId(this.details.employee.employeeid)
+ 
+  }
+  getJobcardByEmployeeId(employeeid: any): any {
+  //  throw new Error("Method not implemented.");
   }
 
   
   async presentLoadingWithOptions() {
     this.loading = await this.loadingCtrl.create({
-      message: 'Please wait...',
+      message: 'Please Wait..',
       translucent: true,
       cssClass: 'custom-class custom-loading'
     });
@@ -69,17 +81,16 @@ export class TaskPage implements OnInit {
    }
 
    hide() {
-    //  if(  this.hideMe = true){
+     if(  this.hideMe = true){
       this.hideMe = true;
-    //  }else{
-    //   this.hideMe = false;
-    //  }
+     }else{
+      this.hideMe = false;
+     } 
        
   }
   
-   gotoChildTask(id,taskid,tasktitle,jobcardprogresstaskcount){
-   
-    //  if (jobcardprogresstaskcount.length==1){
+   gotoChildTask(id,taskid,tasktitle){
+    // this.presentLoadingWithOptions();
         this.imej;
         this.JobcardService.taskTitle=tasktitle;
         console.log(this.JobcardService.taskTitle);
@@ -87,12 +98,34 @@ export class TaskPage implements OnInit {
         console.log(this.JobcardService.jobcardId);
         this.JobcardService.taskId=taskid;
         console.log(this.JobcardService.taskId);
-        this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
-    //  }else{
-    //    this.imej1;
-    //  }
- 
+        this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+        
+        //postApi
+        // let data =[{
+        //   taskid :this.JobcardService.taskId,
+        //   employeeid :this.details.employee.employeeid,
+        //   tasktimemanagementstartdatetime: this.currentDate,
+        //   tasktimemanagementstartstate:1
+        // }
+        // ]
+
+        // let data1 =[{
+        //   taskstatus:[{"taskstatusid":1}],
+        //   employeeid :this.details.employee.employeeid,
+        //   taskid :this.JobcardService.taskId,
+        // }
+        // ]
+        // console.log(data)
+        // console.log(data1)
+        // this.TimeService.postStart(data).subscribe((response) => {
+        //   console.log(response)
+        //   this.TimeService.postStart1(data1).subscribe((response) => {
+        //     this.loading.dismiss(); 
+        //     console.log(response)
+          this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
   
+        //   });
+        // });
    }
   }
  

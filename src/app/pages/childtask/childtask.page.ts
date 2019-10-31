@@ -69,10 +69,6 @@ export class ChildtaskPage implements OnInit {
   }
 
   goToFinding(id, taskid) {
-    // this.JobcardService.taskTitle=tasktitle;
-    // console.log(this.JobcardService.taskTitle);
-    // this.JobcardService.jobcardId=id;
-    // console.log(this.JobcardService.jobcardId);
     this.JobcardService.childtaskId = taskid;
     console.log(this.JobcardService.childtaskId);
     this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/' + id + '/childtask/' + taskid + '/finding');
@@ -85,9 +81,10 @@ export class ChildtaskPage implements OnInit {
   goPause() {
     if (this.btn_txt == "PAUSE") {
       this.btn_txt = "RESUME";
-      // document.body.style.backgroundColor = "red";
+      document.body.style.backgroundColor ="red";
     } else {
       this.btn_txt = "PAUSE";
+      // document.body.style.backgroundColor = 'transparent';
     }
   }
 

@@ -49,6 +49,7 @@ export class FindingPage implements OnInit {
     this.childtaskId=this.JobcardService.childtaskId;
     console.log(this.JobcardService.childtaskId);
     this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+    console.log(this.currentDate)
   }
 
   goPause() {
