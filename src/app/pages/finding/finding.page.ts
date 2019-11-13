@@ -34,6 +34,11 @@ export class FindingPage implements OnInit {
   crop: any;
   picture: string;
   imageSrc: any;
+  userDetail: string;
+  details: any;
+  TimeService: any;
+  loading: any;
+  jobcardDetail: string;
   // imageSrc: any;
 
   constructor(private http: LoginService, private router: Router, public alertController: AlertController,public loadingCtrl: LoadingController,
@@ -48,19 +53,123 @@ export class FindingPage implements OnInit {
     this.taskId=this.JobcardService.taskId;
     this.childtaskId=this.JobcardService.childtaskId;
     console.log(this.JobcardService.childtaskId);
+    this.jobcardDetail = this.JobcardService.jobcardDetails;
     this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
     console.log(this.currentDate)
+
+    this.userDetail = window.localStorage.getItem('userDetail')
+    this.details = JSON.parse(this.userDetail)
+    console.log(this.details)
+ 
+    this.getJobcardByEmployeeId(this.details.employee.employeeid)
+ 
+  }
+  getJobcardByEmployeeId(employeeid: any): any {
+  //  throw new Error("Method not implemented.");
+
   }
 
-  goPause() {
-    if (this.btn_txt == "PAUSE") {
-      this.btn_txt = "RESUME";
-      document.body.style.backgroundColor = "red";
-    } else {
-      this.btn_txt = "PAUSE";
-    }
-  }
+  // goPause() {
+  //   // console.log(taskid)
+  //   if (this.btn_txt == "PAUSE") {
+  //     this.btn_txt = "RESUME";
+  //     // this.JobcardService.taskId=taskid;
+  //     // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+
+  //       //postApi
+  //       let data =[{
+  //         taskid :this.JobcardService.taskId,
+  //         employeeid :this.details.employee.employeeid,
+  //         tasktimemanagementenddatetime: this.currentDate,
+  //         tasktimemanagementendstate:2
+  //       }
+  //       ]
+
+  //       let data1 =[{
+  //         taskstatus:[{"taskstatusid":2}],
+  //         employeeid :this.details.employee.employeeid,
+  //         taskid :this.JobcardService.taskId,
+  //       }
+  //       ]
+  //       console.log(data)
+  //       console.log(data1)
+  //       this.TimeService.postStart(data).subscribe((response) => {
+  //         console.log(response)
+  //         this.TimeService.postStart1(data1).subscribe((response) => {
+  //           this.loading.dismiss(); 
+  //           console.log(response)
+        
+  //         });
+  //       });
+  //     // document.body.style.backgroundColor ='#b8bdc2';
+
+
+  //   } else {
+  //     this.btn_txt = "PAUSE";
+
+  //    // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+
+  //     //postApi
+  //     let data =[{
+  //       taskid :this.JobcardService.taskId,
+  //       employeeid :this.details.employee.employeeid,
+  //       tasktimemanagementstartdatetime: this.currentDate,
+  //       tasktimemanagementstartstate:3
+  //     }
+  //     ]
+
+  //     let data1 =[{
+  //       taskstatus:[{"taskstatusid":3}],
+  //       employeeid :this.details.employee.employeeid,
+  //       taskid :this.JobcardService.taskId,
+  //     }
+  //     ]
+  //     console.log(data)
+  //     console.log(data1)
+  //     this.TimeService.postStart(data).subscribe((response) => {
+  //       console.log(response)
+  //       this.TimeService.postStart1(data1).subscribe((response) => {
+  //         this.loading.dismiss(); 
+  //         console.log(response)
+      
+  //       });
+  //     });
+  //     // document.body.style.backgroundColor = 'transparent';
+  //   }
+  // }
   
+  // goFinish(){
+
+  //   // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+
+  //       //postApi
+  //       let data =[{
+  //         taskid :this.JobcardService.taskId,
+  //         employeeid :this.details.employee.employeeid,
+  //         tasktimemanagementenddatetime: this.currentDate,
+  //         tasktimemanagementendstate:5
+
+  //       }
+  //       ]
+  
+  //       let data1 =[{
+  //         taskstatus:[{"taskstatusid":5}],
+  //         employeeid :this.details.employee.employeeid,
+  //         taskid :this.JobcardService.taskId,
+  //       }
+  //       ]
+  //       console.log(data)
+  //       console.log(data1)
+  //       this.TimeService.postStart(data).subscribe((response) => {
+  //         console.log(response)
+  //         this.TimeService.postStart1(data1).subscribe((response) => {
+  //           this.loading.dismiss(); 
+  //           console.log(response)
+        
+  //         });
+  //       });
+  // }
+
   pickImage1(sourceType) {
     const options: CameraOptions = {
       quality: 100,

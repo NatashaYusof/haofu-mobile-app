@@ -14,17 +14,14 @@
 <ion-content padding>
   <ion-item>
   <ion-label class="font"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>
-
-  <ion-label class="expand">Expand All</ion-label>
-  <ion-toggle slot="end" name="expand" checked mode="md" class="toggle-small" toggle-class="toggle-calm"></ion-toggle>
 </ion-item>
 
   <ion-card>
   <ion-item>
-  <ion-label class="font2"><b>{{jcTitle.jobcardtitle}}</b></ion-label>
-    <ion-badge color="danger">{{jcTitle.jobcardtotaltaskcount-jcTitle.jobcardcompletedtaskcount-jcTitle.jobcardprogresstaskcount}}</ion-badge>
-    <ion-badge color="warning">{{jcTitle.jobcardprogresstaskcount}}</ion-badge>
-    <ion-badge color="success">{{jcTitle.jobcardcompletedtaskcount}}</ion-badge>
+    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>
+    <ion-badge color="danger">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>
+    <ion-badge color="warning">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>
+    <ion-badge color="success">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>
   </ion-item>
   <ion-item>
   <ion-label class="font"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}
@@ -33,7 +30,7 @@
     <br><br>Description<ion-item><ion-textarea placeholder="Enter description here..."></ion-textarea></ion-item>
   </ion-label>
 </ion-item>
-<ion-item>
+  <ion-item>  
     <ion-icon name="attach" ></ion-icon><ion-label (click)="pickImage()" class="font2" tappable >Attach Image</ion-label>
   </ion-item>
      
@@ -42,9 +39,9 @@
     <ion-item>
     
       <img src= "{{ imageSrc  }}" alt="" />
-
+     
     </ion-item>
-  
+    <!-- <ion-button expand="block" color="primary" height="10px"><ion-icon name="create" ></ion-icon>Edit Image</ion-button> -->
   </ion-card>
 
   <ion-button expand="full" color="primary">Save</ion-button>
@@ -58,7 +55,7 @@
       </ion-tab-button>
   
       <ion-tab-button tab="finish">
-        <ion-label class="button3">FINISH</ion-label>
+        <ion-label class="button3" (click)="goFinish()">FINISH</ion-label>
       </ion-tab-button>
   
     </ion-tab-bar>

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'childtask', loadChildren: './pages/childtask/childtask.module#ChildtaskPageModule' },
   { path: 'finding', loadChildren: './pages/finding/finding.module#FindingPageModule' },
   { path: 'manual', loadChildren: './pages/manual/manual.module#ManualPageModule' },
+  { path: 'timedetail', loadChildren: './pages/timedetail/timedetail.module#TimedetailPageModule' },
 ];
 
 @NgModule({

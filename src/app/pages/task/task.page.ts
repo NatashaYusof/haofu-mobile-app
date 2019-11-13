@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../../../src/app/services/login.service';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController,ModalController } from '@ionic/angular';
 import { JobcardService } from '../../../../src/app/services/jobcard.service';
 import { TimeService } from '../../../../src/app/services/time.service';
 import * as moment from 'moment';
+import { TimedetailPage } from '../timedetail/timedetail.page';
 
 
 @Component({
@@ -28,9 +29,12 @@ export class TaskPage implements OnInit {
   currentDate: any;
   userDetail: any;
   details: any;
+  id2: any;
+  alertCtrl: any;
+  dataReturned: any;
   
   constructor(private http: LoginService, private router: Router, public alertController: AlertController,
-    public loadingCtrl: LoadingController,public JobcardService: JobcardService,public TimeService:TimeService) { 
+    public loadingCtrl: LoadingController,public JobcardService: JobcardService,public TimeService:TimeService, public modalController: ModalController) { 
 
       this.imej='assets/icon/start.png';
       this.imej1='assets/icon/tick.png';
@@ -40,7 +44,11 @@ export class TaskPage implements OnInit {
   ngOnInit() {
     this.serialNo=this.JobcardService.serialNo;
     this.jcTitle=this.JobcardService.jcTitle;
+    console.log(this.JobcardService)
+    console.log(this.jcTitle)
+    // console.log(this.jcTitle.jobcardprogresstaskcount)
     this.jobcardId=this.JobcardService.jobcardId;
+    console.log(this.jobcardId)
     this.getToTask( this.jobcardId);
 
     this.userDetail = window.localStorage.getItem('userDetail')
@@ -64,13 +72,24 @@ export class TaskPage implements OnInit {
    return await this.loading.present();
   }
 
+  // async presentLoadingWithOptions1() {
+  //   this.loading = await this.loadingCtrl.create({
+  //     message: 'Start..',
+  //     translucent: true,
+  //     cssClass: 'custom-class custom-loading'
+  //   });
+  //  return await this.loading.present();
+  // }
+
   getToTask(id){
     this.presentLoadingWithOptions();
    this.http.getToTask(id).subscribe(
            response => {
            this.loading.dismiss(); 
            this.id = response.Result[0].task;
+           this.id2=response.Result;
            console.log(this.id)
+           console.log(this.id2)
            
            
          }, error => {
@@ -89,8 +108,8 @@ export class TaskPage implements OnInit {
        
   }
   
-   gotoChildTask(id,taskid,tasktitle){
-    // this.presentLoadingWithOptions();
+   gotoChildTask(id,taskid,tasktitle,jobcardDetail){
+    // this.presentLoadingWithOptions1();
         this.imej;
         this.JobcardService.taskTitle=tasktitle;
         console.log(this.JobcardService.taskTitle);
@@ -98,9 +117,10 @@ export class TaskPage implements OnInit {
         console.log(this.JobcardService.jobcardId);
         this.JobcardService.taskId=taskid;
         console.log(this.JobcardService.taskId);
+        this.JobcardService.jobcardDetails=jobcardDetail;
         this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
         
-        //postApi
+        // //postApi
         // let data =[{
         //   taskid :this.JobcardService.taskId,
         //   employeeid :this.details.employee.employeeid,
@@ -127,6 +147,28 @@ export class TaskPage implements OnInit {
         //   });
         // });
    }
+  
+  async goTime(taskid) {
+    this.JobcardService.taskId=taskid;
+    const modal = await this.modalController.create({
+      component: TimedetailPage,
+      componentProps: {
+        
+        "paramTaskId": taskid,
+        // "paramTitle": "Test Title"
+      }
+    });
+ 
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+ 
+    return await modal.present();
+  }
+
   }
  
 

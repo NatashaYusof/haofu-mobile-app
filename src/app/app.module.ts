@@ -13,11 +13,12 @@ import { FormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { TimedetailPageModule } from './pages/timedetail/timedetail.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(),  AppRoutingModule, HttpClientModule,FormsModule, IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(),  AppRoutingModule, HttpClientModule,FormsModule, TimedetailPageModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     File,

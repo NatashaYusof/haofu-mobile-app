@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError,map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,9 @@ export class TimeService {
       'Something bad happened; please try again later.');
   };
   
-
+//postStart use for start,pause,resume and finish
+//postStart for tasktimemanagement api
+//postStart1 for task_status api
   postStart(item): Observable<any>{
     console.log(item)
     return this.http.post(this.baseURL, JSON.stringify(item), this.httpOptions)
@@ -53,6 +55,22 @@ export class TimeService {
         retry(2),
         catchError(this.handleError)
       )
+  
+  }
+
+  getTimeDetails(taskid) : Observable<any> {
+    return this.http.get(this.baseURL+'?taskid='+taskid)
+      .pipe(
+        map( response => {
+          console.log(response)
+          return response;
+        }),
+        catchError((err, caught) => {
+          console.log(err)
+          return throwError(err);
+        })
+      )
   }
 }
+
 
