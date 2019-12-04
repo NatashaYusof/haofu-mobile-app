@@ -12,3 +12,21 @@
     color: darkcyan;
     text-align: center;
 }
+
+.button{
+    font-size: 11px;
+    color: darkcyan;
+    background-color: transparent;
+    text-align: left;
+}
+
+    .scrolling-wrapper {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+      
+      
+        .card {
+          display: inline-block;
+        }
+      }

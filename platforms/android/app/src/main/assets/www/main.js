@@ -852,6 +852,7 @@ var map = {
 	],
 	"../finding/finding.module": [
 		"./src/app/pages/finding/finding.module.ts",
+		"default~finding-finding-module~task-task-module",
 		"common",
 		"finding-finding-module"
 	],
@@ -887,6 +888,7 @@ var map = {
 	],
 	"../task/task.module": [
 		"./src/app/pages/task/task.module.ts",
+		"default~finding-finding-module~task-task-module",
 		"common",
 		"task-task-module"
 	],
@@ -909,6 +911,7 @@ var map = {
 	],
 	"./pages/finding/finding.module": [
 		"./src/app/pages/finding/finding.module.ts",
+		"default~finding-finding-module~task-task-module",
 		"common",
 		"finding-finding-module"
 	],
@@ -953,8 +956,12 @@ var map = {
 	],
 	"./pages/task/task.module": [
 		"./src/app/pages/task/task.module.ts",
+		"default~finding-finding-module~task-task-module",
 		"common",
 		"task-task-module"
+	],
+	"./pages/timedetail/timedetail.module": [
+		"./src/app/pages/timedetail/timedetail.module.ts"
 	]
 };
 function webpackAsyncContext(req) {
@@ -1016,6 +1023,7 @@ var routes = [
     { path: 'childtask', loadChildren: './pages/childtask/childtask.module#ChildtaskPageModule' },
     { path: 'finding', loadChildren: './pages/finding/finding.module#FindingPageModule' },
     { path: 'manual', loadChildren: './pages/manual/manual.module#ManualPageModule' },
+    { path: 'timedetail', loadChildren: './pages/timedetail/timedetail.module#TimedetailPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1124,12 +1132,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
 /* harmony import */ var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/Camera/ngx */ "./node_modules/@ionic-native/Camera/ngx/index.js");
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
+/* harmony import */ var _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/timedetail/timedetail.module */ "./src/app/pages/timedetail/timedetail.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1150,7 +1160,7 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
             entryComponents: [],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__["TimedetailPageModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
                 _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__["File"],
@@ -1162,6 +1172,378 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/timedetail/timedetail.module.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/pages/timedetail/timedetail.module.ts ***!
+  \*******************************************************/
+/*! exports provided: TimedetailPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimedetailPageModule", function() { return TimedetailPageModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _timedetail_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./timedetail.page */ "./src/app/pages/timedetail/timedetail.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _timedetail_page__WEBPACK_IMPORTED_MODULE_5__["TimedetailPage"]
+    }
+];
+var TimedetailPageModule = /** @class */ (function () {
+    function TimedetailPageModule() {
+    }
+    TimedetailPageModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)
+            ],
+            declarations: [_timedetail_page__WEBPACK_IMPORTED_MODULE_5__["TimedetailPage"]]
+        })
+    ], TimedetailPageModule);
+    return TimedetailPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/timedetail/timedetail.page.html":
+/*!*******************************************************!*\
+  !*** ./src/app/pages/timedetail/timedetail.page.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar text-center >\n    <ion-title>TASK TIME DURATION</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding >\n  <!-- <ion-label ></ion-label>\n  <ion-item>\n  <ion-label slot=\"start\">START</ion-label>\n  <ion-label slot=\"end\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label>\n  </ion-item>\n  <ion-item>\n  <ion-label slot=\"start\">FINISH {{timeDetail.tasktimemanagementenddatetime}}</ion-label>\n</ion-item>\n</ion-label> -->\n\n\n<ion-label  *ngFor=\"let timeDetail of newarr.slice().reverse()\">\n  <ion-item>\n      <ion-grid class=\"gridcolor\"> \n      <ion-row *ngIf=\"timeDetail.newtaskstatus === false\">\n        <ion-col width-50><ion-label style=\"width:100%\">Resumed</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row  *ngIf=\"timeDetail.newtaskstatus === true\">\n        <ion-col width-50><ion-label style=\"width:100%\">Started</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 2\">\n        <ion-col width-50><ion-label style=\"width:100%\">Paused</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 4\">\n        <ion-col width-50><ion-label style=\"width:100%\">Stoped</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 5\">\n        <ion-col width-50><ion-label style=\"width:100%\">Finished</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n   </ion-grid>\n  </ion-item>\n  </ion-label>\n</ion-content>\n\n\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
+
+/***/ }),
+
+/***/ "./src/app/pages/timedetail/timedetail.page.scss":
+/*!*******************************************************!*\
+  !*** ./src/app/pages/timedetail/timedetail.page.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".button {\n  height: 25px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdGltZWRldGFpbC9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXHRpbWVkZXRhaWxcXHRpbWVkZXRhaWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFDSixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvdGltZWRldGFpbC90aW1lZGV0YWlsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idXR0b257XHJcbiAgICBoZWlnaHQ6IDI1cHhcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/pages/timedetail/timedetail.page.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/pages/timedetail/timedetail.page.ts ***!
+  \*****************************************************/
+/*! exports provided: TimedetailPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimedetailPage", function() { return TimedetailPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../src/app/services/jobcard.service */ "./src/app/services/jobcard.service.ts");
+/* harmony import */ var _src_app_services_time_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../src/app/services/time.service */ "./src/app/services/time.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TimedetailPage = /** @class */ (function () {
+    function TimedetailPage(modalController, JobcardService, navParams, TimeService) {
+        this.modalController = modalController;
+        this.JobcardService = JobcardService;
+        this.navParams = navParams;
+        this.TimeService = TimeService;
+        this.newarr = [];
+    }
+    TimedetailPage.prototype.ngOnInit = function () {
+        this.taskId = this.navParams.get('paramTaskId');
+        this.getTimeDetails(this.taskId);
+    };
+    TimedetailPage.prototype.dismiss = function () {
+        this.modalController.dismiss();
+    };
+    TimedetailPage.prototype.getTimeDetails = function (taskid) {
+        var _this = this;
+        this.TimeService.getTimeDetails(taskid).subscribe(function (response) {
+            //  this.details=response.Result;
+            //  console.log(this.details.reverse())   
+            //  for (var i = 0; i < (this.details.reverse().length); i++) {
+            //    console.log(i)
+            //   if(i === this.details.reverse().length-1  ){
+            //     console.log(i)
+            //    this.finish=true
+            //   }else{
+            //     this.finish=false
+            //   }
+            _this.details = response.Result;
+            console.log(_this.details);
+            for (var i = 0; i < (_this.details.length); i++) {
+                _this.newarr.push(_this.details[i]);
+            }
+            console.log(_this.newarr);
+            for (var i = 0; i < (_this.newarr.length); i++) {
+                if (i === _this.newarr.length - 1) {
+                    _this.newarr[i].newtaskstatus = true;
+                }
+                else {
+                    _this.newarr[i].newtaskstatus = false;
+                }
+                console.log(_this.newarr);
+            }
+            //  this.details.reverse().forEach(timeDetail => {
+            //   this.timeDetails=timeDetail;
+            //   console.log(this.timeDetails)
+            //   // this.timeDetails.timeDetail.forEach((List)=>{
+            //   //   console.log(List.Detail)
+            // });
+        }, function (error) {
+            console.log("error");
+        });
+    };
+    TimedetailPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-timedetail',
+            template: __webpack_require__(/*! ./timedetail.page.html */ "./src/app/pages/timedetail/timedetail.page.html"),
+            styles: [__webpack_require__(/*! ./timedetail.page.scss */ "./src/app/pages/timedetail/timedetail.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"], _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_2__["JobcardService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["NavParams"], _src_app_services_time_service__WEBPACK_IMPORTED_MODULE_3__["TimeService"]])
+    ], TimedetailPage);
+    return TimedetailPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/jobcard.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/jobcard.service.ts ***!
+  \*********************************************/
+/*! exports provided: JobcardService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobcardService", function() { return JobcardService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var JobcardService = /** @class */ (function () {
+    function JobcardService(http) {
+        this.http = http;
+    }
+    Object.defineProperty(JobcardService.prototype, "serialNo", {
+        get: function () {
+            return this.serialno;
+        },
+        set: function (val) {
+            this.serialno = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "jcTitle", {
+        get: function () {
+            return this.jctitle;
+        },
+        set: function (val) {
+            this.jctitle = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "jobcardId", {
+        get: function () {
+            return this.id;
+        },
+        set: function (val) {
+            this.id = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "taskTitle", {
+        get: function () {
+            return this.tasktitle;
+        },
+        set: function (val) {
+            this.tasktitle = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "taskId", {
+        get: function () {
+            return this.taskid;
+        },
+        set: function (val) {
+            this.taskid = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "childtaskId", {
+        get: function () {
+            return this.childtaskid;
+        },
+        set: function (val) {
+            this.childtaskid = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "jobcardDetails", {
+        get: function () {
+            return this.jobcardDetail;
+        },
+        set: function (val) {
+            this.jobcardDetail = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    JobcardService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], JobcardService);
+    return JobcardService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/time.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/time.service.ts ***!
+  \******************************************/
+/*! exports provided: TimeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeService", function() { return TimeService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TimeService = /** @class */ (function () {
+    function TimeService(http) {
+        this.http = http;
+        this.baseURL = "https://haofu.airbusdigital.com/api/hof/mro/task-time-management";
+        this.basePath = "https://haofu.airbusdigital.com/api/hof/mro/task";
+        this.httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+    }
+    // Handle API errors
+    TimeService.prototype.handleError = function (error) {
+        if (error.error instanceof ErrorEvent) {
+            // A client-side or network error occurred. Handle it accordingly.
+            console.error('An error occurred:', error.error.message);
+        }
+        else {
+            // The backend returned an unsuccessful response code.
+            // The response body may contain clues as to what went wrong,
+            console.error("Backend returned code " + error.status + ", " +
+                ("body was: " + error.error));
+        }
+        // return an observable with a user-facing error message
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])('Something bad happened; please try again later.');
+    };
+    ;
+    //postStart use for start,pause,resume and finish
+    //postStart for tasktimemanagement api
+    //postStart1 for task_status api
+    TimeService.prototype.postStart = function (item) {
+        console.log(item);
+        return this.http.post(this.baseURL, JSON.stringify(item), this.httpOptions)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+    };
+    TimeService.prototype.postStart1 = function (item1) {
+        console.log(item1);
+        return this.http.post(this.basePath, JSON.stringify(item1), this.httpOptions)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+    };
+    TimeService.prototype.getTimeDetails = function (taskid) {
+        return this.http.get(this.baseURL + '?taskid=' + taskid)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])(err);
+        }));
+    };
+    TimeService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], TimeService);
+    return TimeService;
 }());
 
 

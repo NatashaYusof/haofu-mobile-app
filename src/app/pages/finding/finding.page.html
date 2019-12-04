@@ -36,11 +36,39 @@
      
     
     <!-- <img src= "assets/icon/profile.png" alt="" /> -->
-    <ion-item>
+    <!-- <ion-item> -->
+     <!-- <ion-scroll scrollX="true">androi
+       <div class="scroll-item">
+       <ion-col col-33 >
     
       <img src= "{{ imageSrc  }}" alt="" />
-     
-    </ion-item>
+      <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas">
+      <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas">
+    </ion-col>
+     </div>
+  </ion-scroll> -->
+  <!-- <div scroll direction="x" class="item wide-item"> -->
+    <ion-slides class="card">
+      <ion-slide>    
+        <!-- <div class="scrolling-wrapper"> -->
+            <ion-card class="card">
+             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()">   
+              <!-- <ion-icon *ngFor="let avatar of avatars" name="radio-button-on" class="scroll-item selectable-icon"></ion-icon> -->
+        </ion-card>
+      </ion-slide>
+      <ion-slide>    
+        <ion-card class="card">      
+             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()">
+                <!-- <ion-icon *ngFor="let avatar of avatars" name="radio-button-on" class="scroll-item selectable-icon"></ion-icon> -->
+         </ion-card>     
+      </ion-slide>
+    </ion-slides> 
+  <!-- </div> -->
+  <!-- </div> -->
+
+
+
+    <!-- </ion-item> -->
     <!-- <ion-button expand="block" color="primary" height="10px"><ion-icon name="create" ></ion-icon>Edit Image</ion-button> -->
   </ion-card>
 

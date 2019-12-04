@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-bu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".font {\n  font-size: 11.5px; }\n\n.ocr {\n  color: darkcyan;\n  max-width: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvam9iY2FyZC9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGpvYmNhcmRcXGpvYmNhcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCLEVBQUE7O0FBR3JCO0VBQ0ksZUFBZTtFQUNmLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2pvYmNhcmQvam9iY2FyZC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9udHtcclxuICAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG59XHJcblxyXG4ub2Nye1xyXG4gICAgY29sb3I6IGRhcmtjeWFuO1xyXG4gICAgbWF4LXdpZHRoOiA0MHB4O1xyXG59Il19 */"
+module.exports = ".font {\n  font-size: 11.5px; }\n\n.ocr {\n  color: darkcyan;\n  max-width: 40px; }\n\n.button {\n  font-size: 11px;\n  color: darkcyan;\n  background-color: transparent;\n  text-align: left; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvam9iY2FyZC9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGpvYmNhcmRcXGpvYmNhcmQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCLEVBQUE7O0FBR3JCO0VBQ0ksZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFFbkI7RUFDSSxlQUFlO0VBQ2YsZUFBZTtFQUNmLDZCQUE2QjtFQUM3QixnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2pvYmNhcmQvam9iY2FyZC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9udHtcclxuICAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG59XHJcblxyXG4ub2Nye1xyXG4gICAgY29sb3I6IGRhcmtjeWFuO1xyXG4gICAgbWF4LXdpZHRoOiA0MHB4O1xyXG59XHJcbi5idXR0b257XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -88,10 +88,10 @@ module.exports = ".font {\n  font-size: 11.5px; }\n\n.ocr {\n  color: darkcyan;\
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobcardPage", function() { return JobcardPage; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/login.service */ "./src/app/services/login.service.ts");
+/* harmony import */ var _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../src/app/services/login.service */ "./src/app/services/login.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/jobcard.service */ "./src/app/services/jobcard.service.ts");
+/* harmony import */ var _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../src/app/services/jobcard.service */ "./src/app/services/jobcard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -137,9 +137,110 @@ var JobcardPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./jobcard.page.html */ "./src/app/pages/jobcard/jobcard.page.html"),
             styles: [__webpack_require__(/*! ./jobcard.page.scss */ "./src/app/pages/jobcard/jobcard.page.scss")]
         }),
-        __metadata("design:paramtypes", [src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"]])
+        __metadata("design:paramtypes", [_src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"]])
     ], JobcardPage);
     return JobcardPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/login.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/login.service.ts ***!
+  \*******************************************/
+/*! exports provided: LoginService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginService", function() { return LoginService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var LoginService = /** @class */ (function () {
+    function LoginService(http) {
+        this.http = http;
+        this.baseURL = "https://haofu.airbusdigital.com/api/hof/mro";
+        this.baseURL2 = "https://smartmob.haofu.airbusdigital.com/hof-pdf/public/api/";
+    }
+    // tslint:disable-next-line: variable-name
+    LoginService.prototype.getUser = function (username, userpassword) {
+        console.log(username + " " + userpassword);
+        return this.http.get(this.baseURL + '/user/login?username=' + username + '&userpassword=' + userpassword)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    // getEmployee() : Observable<any> {
+    //   return this.http.get(this.baseURL+'/user')
+    //     .pipe(
+    //       map( response => {
+    //         console.log(response)
+    //         return response;
+    //       }),
+    //       catchError((err, caught) => {
+    //         console.log(err)
+    //         return throwError(err);
+    //       })
+    //     )
+    // }
+    LoginService.prototype.getJobcard = function (employeeid) {
+        return this.http.get(this.baseURL2 + 'get-jobcards/' + employeeid + '?remove=stopped,completed')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    LoginService.prototype.getToTask = function (jobcardid) {
+        return this.http.get(this.baseURL + '/jobcard?jobcardid=' + jobcardid)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    LoginService.prototype.getChildTask = function (taskid) {
+        return this.http.get(this.baseURL + '/task?taskid=' + taskid)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    LoginService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], LoginService);
+    return LoginService;
 }());
 
 

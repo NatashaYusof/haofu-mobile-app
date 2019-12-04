@@ -246,12 +246,19 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
-      "id": "cordova-plugin-background-mode.BackgroundMode",
-      "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
-      "pluginId": "cordova-plugin-background-mode",
+      "id": "com-sarriaroman-photoviewer.PhotoViewer",
+      "file": "plugins/com-sarriaroman-photoviewer/www/PhotoViewer.js",
+      "pluginId": "com-sarriaroman-photoviewer",
       "clobbers": [
-        "cordova.plugins.backgroundMode",
-        "plugin.backgroundMode"
+        "PhotoViewer"
+      ]
+    },
+    {
+      "id": "cordova-sqlite-storage.SQLitePlugin",
+      "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+      "pluginId": "cordova-sqlite-storage",
+      "clobbers": [
+        "SQLitePlugin"
       ]
     }
   ];
@@ -264,6 +271,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "cordova-plugin-camera": "4.1.0",
     "cordova-plugin-file": "6.0.2",
-    "cordova-plugin-background-mode": "0.7.3"
+    "com-sarriaroman-photoviewer": "1.2.4",
+    "cordova-sqlite-storage": "3.4.0"
   };
 });

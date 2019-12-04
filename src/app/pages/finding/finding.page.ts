@@ -6,6 +6,7 @@ import { JobcardService } from '../../../../src/app/services/jobcard.service';
 import * as moment from 'moment';
 import { Camera, CameraOptions } from '@ionic-native/Camera/ngx'
 import { File } from '@ionic-native/file/ngx';
+// import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @Component({
   selector: 'app-finding',
@@ -109,7 +110,7 @@ export class FindingPage implements OnInit {
 
   //    // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  //     //postApi
+  //     //postApi\
   //     let data =[{
   //       taskid :this.JobcardService.taskId,
   //       employeeid :this.details.employee.employeeid,
@@ -219,5 +220,10 @@ export class FindingPage implements OnInit {
       ]
     });
     await actionSheet.present();
+  }
+
+  goToCanvas()
+  {
+    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
   }
 }

@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'finding', loadChildren: './pages/finding/finding.module#FindingPageModule' },
   { path: 'manual', loadChildren: './pages/manual/manual.module#ManualPageModule' },
   { path: 'timedetail', loadChildren: './pages/timedetail/timedetail.module#TimedetailPageModule' },
+  { path: 'canvas', loadChildren: './pages/canvas/canvas.module#CanvasPageModule' },
 ];
 
 @NgModule({

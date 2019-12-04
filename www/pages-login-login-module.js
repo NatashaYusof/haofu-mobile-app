@@ -62,7 +62,7 @@ var LoginPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-grid>\n\t<ion-row justify-content-center>\n\n\t    \n     \t\t<ion-col align-self-center size-md=\"10\" size-lg=\"5\" size-xs=\"12\">\n\n\t  \t\t<div  class=\"logo\">\n\t\t\t\t <img src=\"assets/icon/logo-login.jpg\" width=\"120\" height=\"100\" />\n\t\t\t</div>\n\n\t\t\t<div padding>\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input  required type=\"text\" name=\"username\" placeholder=\"Username\" type=\"text\" [(ngModel)]=\"username\"></ion-input>\n\t\t\t\t</ion-item>\n\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input required type=\"password\"  placeholder=\"Password\" type=\"password\" [(ngModel)]=\"userpassword\"></ion-input>\n\t\t\t\t</ion-item>\n\n  <ion-button expand=\"block\"  (click)=login()>Login</ion-button>\n  <ion-button expand=\"block\" routerLink=\"\">forgot password</ion-button>\n  </div>\n\t</ion-col>\n\t</ion-row>\n\t</ion-grid>\n\n"
+module.exports = "<ion-grid>\n\t<ion-row justify-content-center>\n\n\t    \n     \t\t<ion-col align-self-center size-md=\"10\" size-lg=\"5\" size-xs=\"12\">\n\n\t  \t\t<div  class=\"logo\">\n\t\t\t\t <img src=\"assets/icon/logo.png\"  />\n\t\t\t</div>\n\n\t\t\t<div padding>\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input  required type=\"text\" name=\"username\" placeholder=\"Username\" type=\"text\" [(ngModel)]=\"username\"></ion-input>\n\t\t\t\t</ion-item>\n\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input required type=\"password\"  placeholder=\"Password\" type=\"password\" [(ngModel)]=\"userpassword\"></ion-input>\n\t\t\t\t</ion-item>\n\n  <ion-button expand=\"block\"  (click)=login()>LOGIN</ion-button>\n  <ion-button expand=\"block\" routerLink=\"\">FORGOT PASSWORD</ion-button>\n  </div>\n\t</ion-col>\n\t</ion-row>\n\t</ion-grid>\n\n"
 
 /***/ }),
 
@@ -215,6 +215,107 @@ var LoginPage = /** @class */ (function () {
 //   })
 //   this.loading.present();
 // }
+
+
+/***/ }),
+
+/***/ "./src/app/services/login.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/login.service.ts ***!
+  \*******************************************/
+/*! exports provided: LoginService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginService", function() { return LoginService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var LoginService = /** @class */ (function () {
+    function LoginService(http) {
+        this.http = http;
+        this.baseURL = "https://haofu.airbusdigital.com/api/hof/mro";
+        this.baseURL2 = "https://smartmob.haofu.airbusdigital.com/hof-pdf/public/api/";
+    }
+    // tslint:disable-next-line: variable-name
+    LoginService.prototype.getUser = function (username, userpassword) {
+        console.log(username + " " + userpassword);
+        return this.http.get(this.baseURL + '/user/login?username=' + username + '&userpassword=' + userpassword)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    // getEmployee() : Observable<any> {
+    //   return this.http.get(this.baseURL+'/user')
+    //     .pipe(
+    //       map( response => {
+    //         console.log(response)
+    //         return response;
+    //       }),
+    //       catchError((err, caught) => {
+    //         console.log(err)
+    //         return throwError(err);
+    //       })
+    //     )
+    // }
+    LoginService.prototype.getJobcard = function (employeeid) {
+        return this.http.get(this.baseURL2 + 'get-jobcards/' + employeeid + '?remove=stopped,completed')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    LoginService.prototype.getToTask = function (jobcardid) {
+        return this.http.get(this.baseURL + '/jobcard?jobcardid=' + jobcardid)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    LoginService.prototype.getChildTask = function (taskid) {
+        return this.http.get(this.baseURL + '/task?taskid=' + taskid)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    LoginService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], LoginService);
+    return LoginService;
+}());
+
 
 
 /***/ })

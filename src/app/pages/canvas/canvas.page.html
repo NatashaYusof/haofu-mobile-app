@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button  defaulthref=""></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+      <ion-icon color="dark" (click)="clearCanvasImage()" slot="icon-only" style="font-size: 2em;" name="undo"></ion-icon>
+      </ion-buttons>
+      <ion-title>JOBCARD</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding no-bounce>
+    <div #fixedContainer>
+      <ion-row>
+        <ion-col *ngFor="let color of colors"  [style.background]="color" class="color-block" tappable
+          (click)="selectColor(color)">
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-radio-group ngDefaultControl [(ngModel)]="selectedColor" style="display: contents;">
+          <ion-col *ngFor="let color of colors" text-center>
+            <ion-radio mode="ios" [value]="color"></ion-radio>
+          </ion-col>
+        </ion-radio-group>
+      </ion-row>
+
+      <div class="container" min-height="360px">
+        <canvas #imageCanvas id="layer0" class="canvas" ></canvas>
+        <canvas #Canvas id="layer1" class="canvas" (touchstart)="startDrawing($event)" (touchmove)="moved($event)" (touchend)="touchend($event)"></canvas>
+        <canvas #Shape id="layer2" class="canvas" (touchstart)="startDrawing($event)" (touchmove)="moved($event)" (touchend)="touchend($event)"></canvas>
+      </div>
+      
+        <!-- <ion-input [(ngModel)]='htmlText' placeholder="Task .. "></ion-input> -->
+        <!-- <ion-input #input></ion-input> -->
+
+      <ion-toolbar>
+           <ion-buttons slot="end">
+              <ion-icon style="font-size: 1em;"  color="dark"  (click)="changeSize(5)" name="radio-button-on"></ion-icon>
+              <ion-icon style="font-size: 1.2em;" color="dark"  (click)="changeSize(10)" name="radio-button-on"></ion-icon>
+              <ion-icon style="font-size: 1.6em;" color="dark"  (click)="changeSize(15)" name="radio-button-on"></ion-icon>
+              <ion-icon style="font-size: 2em;" color="dark"  (click)="changeSize(20)" name="radio-button-on"></ion-icon>
+              <ion-icon style="font-size: 2.28em;" color="dark"  (click)="changeSize(30)" name="radio-button-on"></ion-icon>
+          </ion-buttons>
+      </ion-toolbar>
+       
+      <ion-fab horizontal="start" vertical="bottom" slot="fixed">
+          <ion-fab-button color="primary">
+            <ion-icon name="create"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="top">
+              <ion-fab-button color="light">
+                  <img src = "../assets/icon/free.png"  (click)="changeAction('handdraw')">
+                </ion-fab-button>
+                <ion-fab-button color="light">
+                  <img src = "../assets/icon/line.png" width="25px" height="25px"  (click)="changeAction('drawline')">
+                </ion-fab-button>
+            <ion-fab-button color="light">
+              <ion-icon name="square" (click)="changeAction('drawsquare')" ></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button color="light">
+              <ion-icon name="radio-button-off" (click)="changeAction('drawcircle')"></ion-icon>
+            </ion-fab-button>
+            </ion-fab-list>
+          <ion-fab-list side="end">
+              <ion-fab-button color="light">
+                  <img src = "../assets/icon/txt.png" width="20px" height="20px" (click)="changeAction('addtext')">
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                  <img src = "../assets/icon/eraser.png" width="25px" height="25px" (click)="changeAction('eraser')"> 
+              </ion-fab-button>
+              </ion-fab-list>
+        </ion-fab>
+       
+
+      <ion-button class="button" expand="block" (click)="saveCanvasImage()">Save Image</ion-button>
+    </div>
+    
+  
+    <ion-list *ngIf="storedImages.length > 0">
+      <ion-list-header>Previous Drawings</ion-list-header>
+      <ion-card *ngFor="let obj of storedImages; let i = index">
+        <ion-card-content>
+          <img [src]="getImagePath(obj.img)">
+        </ion-card-content>
+        <ion-button expand="block" icon-only color="danger" (click)="removeImageAtIndex(i)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-card>
+    </ion-list>
+  </ion-content>

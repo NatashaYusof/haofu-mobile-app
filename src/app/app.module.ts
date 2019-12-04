@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/file/ngx';
-import { TimedetailPageModule } from './pages/timedetail/timedetail.module';
+import { TimedetailPageModule } from './pages/timedetail/timedetail.module';;
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { TimedetailPageModule } from './pages/timedetail/timedetail.module';
     StatusBar,
     File,
     SplashScreen,
+    WebView,
     Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

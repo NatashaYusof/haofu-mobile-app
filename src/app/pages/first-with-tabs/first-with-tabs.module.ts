@@ -33,6 +33,10 @@ const routes: Routes = [
         loadChildren: '../finding/finding.module#FindingPageModule'
       },
       {
+        path: 'tab1/jobcard/task/childtask/finding/canvas',
+        loadChildren: '../canvas/canvas.module#CanvasPageModule'
+      },
+      {
         path: 'tab1/jobcard/task/:id/childtask/:taskid/manual',
         loadChildren: '../manual/manual.module#ManualPageModule'
       },
