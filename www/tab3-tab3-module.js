@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tab3-tab3-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/tab3/tab3.page.html":
+/*!*********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/tab3/tab3.page.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n  \t<ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>tab3</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/tab3/tab3.module.ts":
 /*!*******************************************!*\
   !*** ./src/app/pages/tab3/tab3.module.ts ***!
@@ -55,17 +66,6 @@ var Tab3PageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/tab3/tab3.page.html":
-/*!*******************************************!*\
-  !*** ./src/app/pages/tab3/tab3.page.html ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n  \t<ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>tab3</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/tab3/tab3.page.scss":
 /*!*******************************************!*\
   !*** ./src/app/pages/tab3/tab3.page.scss ***!
@@ -106,7 +106,7 @@ var Tab3Page = /** @class */ (function () {
     Tab3Page = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-tab3',
-            template: __webpack_require__(/*! ./tab3.page.html */ "./src/app/pages/tab3/tab3.page.html"),
+            template: __webpack_require__(/*! raw-loader!./tab3.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/tab3/tab3.page.html"),
             styles: [__webpack_require__(/*! ./tab3.page.scss */ "./src/app/pages/tab3/tab3.page.scss")]
         }),
         __metadata("design:paramtypes", [])

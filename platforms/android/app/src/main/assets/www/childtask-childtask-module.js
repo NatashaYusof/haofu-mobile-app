@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["childtask-childtask-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/childtask/childtask.page.html":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/childtask/childtask.page.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content padding >\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\"></ion-toggle>\n  </ion-item>\n\n  <ion-card>\n    <ion-item> \n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n   \n   <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Complete Percentage\n      <ion-progress-bar  color=\"warning\" style=\"height:10px\" value=\"{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}\"></ion-progress-bar> {{jobcardDetail.jobcardcompletedpercentage}}%</ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Short Time\n      <ion-progress-bar color=\"warning\" style=\"height:10px \" value=\"0.2\"></ion-progress-bar>\n    </ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Turn Around Time\n      <ion-progress-bar  color=\"warning\" style=\"height:10px \" value=\"0.1\"></ion-progress-bar>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-item >\n    <ion-label class=\"ion-text-wrap\" ><b>{{taskTitle}}</b></ion-label>\n  </ion-item>\n\n  <ion-card  *ngFor=\"let task of taskdetail;let count=index\" class=\"font\">\n    <ion-item>\n      <ion-label class=\"font\"><b>SAE TASK {{count + 1}} </b></ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label class=\"ion-text-wrap\">{{task.tasktitle}}</ion-label>\n    </ion-item>\n        <ion-grid> \n           <ion-row>\n             <ion-col width-50><button style=\"width:100%\" class=\"button\" (click)=\"goToManual()\">MANUAL</button></ion-col>\n             <ion-col width-50><button style=\"width:100%\" class=\"button1\" (click)=\"goToFinding(jobcardId,task.taskid)\">FINDING</button></ion-col>\n           </ion-row>\n        </ion-grid>\n    </ion-card>\n\n</ion-content>\n<ion-toolbar>\n  <ion-tabs>\n  <ion-tab-bar slot=\"bottom\" fixed >\n    <ion-tab-button tab=\"pause\" >\n      <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"finish\">\n      <ion-label class=\"button3\"  (click)=\"goFinish()\" >FINISH</ion-label>\n    </ion-tab-button>\n\n  </ion-tab-bar>\n</ion-tabs></ion-toolbar>"
+
+/***/ }),
+
 /***/ "./src/app/pages/childtask/childtask.module.ts":
 /*!*****************************************************!*\
   !*** ./src/app/pages/childtask/childtask.module.ts ***!
@@ -52,17 +63,6 @@ var ChildtaskPageModule = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/pages/childtask/childtask.page.html":
-/*!*****************************************************!*\
-  !*** ./src/app/pages/childtask/childtask.page.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content padding >\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\"></ion-toggle>\n  </ion-item>\n\n  <ion-card>\n    <ion-item> \n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n   \n   <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Complete Percentage\n      <ion-progress-bar  color=\"warning\" style=\"height:10px\" value=\"{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}\"></ion-progress-bar> {{jobcardDetail.jobcardcompletedpercentage}}%</ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Short Time\n      <ion-progress-bar color=\"warning\" style=\"height:10px \" value=\"0.2\"></ion-progress-bar>\n    </ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Turn Around Time\n      <ion-progress-bar  color=\"warning\" style=\"height:10px \" value=\"0.1\"></ion-progress-bar>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-item >\n    <ion-label class=\"ion-text-wrap\" ><b>{{taskTitle}}</b></ion-label>\n  </ion-item>\n\n  <ion-card  *ngFor=\"let task of taskdetail;let count=index\" class=\"font\">\n    <ion-item>\n      <ion-label class=\"font\"><b>SAE TASK {{count + 1}} </b></ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label class=\"ion-text-wrap\">{{task.tasktitle}}</ion-label>\n    </ion-item>\n        <ion-grid> \n           <ion-row>\n             <ion-col width-50><button style=\"width:100%\" class=\"button\" (click)=\"goToManual()\">MANUAL</button></ion-col>\n             <ion-col width-50><button style=\"width:100%\" class=\"button1\" (click)=\"goToFinding(jobcardId,task.taskid)\">FINDING</button></ion-col>\n           </ion-row>\n        </ion-grid>\n    </ion-card>\n\n</ion-content>\n<ion-toolbar>\n  <ion-tabs>\n  <ion-tab-bar slot=\"bottom\" fixed >\n    <ion-tab-button tab=\"pause\" >\n      <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"finish\">\n      <ion-label class=\"button3\"  (click)=\"goFinish()\" >FINISH</ion-label>\n    </ion-tab-button>\n\n  </ion-tab-bar>\n</ion-tabs></ion-toolbar>"
 
 /***/ }),
 
@@ -290,11 +290,11 @@ var ChildtaskPage = /** @class */ (function () {
     //         taskid :this.JobcardService.taskId,
     //         employeeid :this.details.employee.employeeid,
     //         tasktimemanagementenddatetime: this.currentDate,
-    //         tasktimemanagementendstate:5
+    //         tasktimemanagementendstate:4
     //       }
     //       ]
     //       let data1 =[{
-    //         taskstatus:[{"taskstatusid":5}],
+    //         taskstatus:[{"taskstatusid":4}],
     //         employeeid :this.details.employee.employeeid,
     //         taskid :this.JobcardService.taskId,
     //       }
@@ -317,10 +317,18 @@ var ChildtaskPage = /** @class */ (function () {
         //   this.hideMe = false;
         //  }
     };
+    ChildtaskPage.ctorParameters = function () { return [
+        { type: _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"] },
+        { type: _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"] },
+        { type: _src_app_services_time_service__WEBPACK_IMPORTED_MODULE_5__["TimeService"] }
+    ]; };
     ChildtaskPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-childtask',
-            template: __webpack_require__(/*! ./childtask.page.html */ "./src/app/pages/childtask/childtask.page.html"),
+            template: __webpack_require__(/*! raw-loader!./childtask.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/childtask/childtask.page.html"),
             styles: [__webpack_require__(/*! ./childtask.page.scss */ "./src/app/pages/childtask/childtask.page.scss")]
         }),
         __metadata("design:paramtypes", [_src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
@@ -421,6 +429,9 @@ var LoginService = /** @class */ (function () {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
         }));
     };
+    LoginService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    ]; };
     LoginService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'

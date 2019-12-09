@@ -40,6 +40,7 @@ export class FindingPage implements OnInit {
   TimeService: any;
   loading: any;
   jobcardDetail: string;
+  actionSheet: Promise<void>;
   // imageSrc: any;
 
   constructor(private http: LoginService, private router: Router, public alertController: AlertController,public loadingCtrl: LoadingController,
@@ -148,13 +149,13 @@ export class FindingPage implements OnInit {
   //         taskid :this.JobcardService.taskId,
   //         employeeid :this.details.employee.employeeid,
   //         tasktimemanagementenddatetime: this.currentDate,
-  //         tasktimemanagementendstate:5
+  //         tasktimemanagementendstate:4
 
   //       }
   //       ]
   
   //       let data1 =[{
-  //         taskstatus:[{"taskstatusid":5}],
+  //         taskstatus:[{"taskstatusid":4}],
   //         employeeid :this.details.employee.employeeid,
   //         taskid :this.JobcardService.taskId,
   //       }
@@ -203,18 +204,21 @@ export class FindingPage implements OnInit {
       header: "Select Image source",
       buttons: [{
         text: 'Load from Library',
+        icon: 'images',
         handler: () => {
           this.pickImage1(this.camera.PictureSourceType.PHOTOLIBRARY);
         }
       },
       {
         text: 'Use Camera',
+        icon: 'camera',
         handler: () => {
           this.pickImage1(this.camera.PictureSourceType.CAMERA);
         }
       },
       {
         text: 'Cancel',
+        icon: 'close',
         role: 'cancel'
       }
       ]
@@ -222,8 +226,42 @@ export class FindingPage implements OnInit {
     await actionSheet.present();
   }
 
-  goToCanvas()
-  {
-    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
-  }
+  action()
+{
+  this. presentActionSheet();
+}
+
+presentActionSheet() {
+  this.actionSheet = this.actionSheetController.create({
+    buttons: [{
+      text: 'Delete',
+      role: 'destructive',
+      icon: 'trash',
+      handler: () => {
+        console.log('Delete clicked');
+      }
+    }, {
+      text: 'Edit',
+      icon: 'brush',
+      handler: () => {
+        console.log('Edit clicked');
+        this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
+      }
+    }, {
+      text: 'Cancel',
+      icon: 'close',
+      role: 'cancel',
+      handler: () => {
+        console.log('Cancel clicked');
+      }
+    }]
+  }).then(actionsheet => {
+    actionsheet.present();
+  });
+}
+
+  // goToCanvas()
+  // {
+  //   this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
+  // }
 }

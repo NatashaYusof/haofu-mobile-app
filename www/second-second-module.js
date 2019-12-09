@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["second-second-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/second/second.page.html":
+/*!*************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/second/second.page.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Second Blank</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n  <ion-button expand=\"block\" routerLink=\"/menu/second/details\" routerDirection=\"forward\">\n      Details forward\n    </ion-button>\n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/second/second.module.ts":
 /*!***********************************************!*\
   !*** ./src/app/pages/second/second.module.ts ***!
@@ -55,17 +66,6 @@ var SecondPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/second/second.page.html":
-/*!***********************************************!*\
-  !*** ./src/app/pages/second/second.page.html ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Second Blank</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n  <ion-button expand=\"block\" routerLink=\"/menu/second/details\" routerDirection=\"forward\">\n      Details forward\n    </ion-button>\n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/second/second.page.scss":
 /*!***********************************************!*\
   !*** ./src/app/pages/second/second.page.scss ***!
@@ -106,7 +106,7 @@ var SecondPage = /** @class */ (function () {
     SecondPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-second',
-            template: __webpack_require__(/*! ./second.page.html */ "./src/app/pages/second/second.page.html"),
+            template: __webpack_require__(/*! raw-loader!./second.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/second/second.page.html"),
             styles: [__webpack_require__(/*! ./second.page.scss */ "./src/app/pages/second/second.page.scss")]
         }),
         __metadata("design:paramtypes", [])

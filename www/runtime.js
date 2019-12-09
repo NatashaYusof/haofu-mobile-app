@@ -46,6 +46,7 @@
 /******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
 /******/ 			}
 /******/ 		}
+/******/
 /******/ 		return result;
 /******/ 	}
 /******/
@@ -63,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"common":"common","add-user-add-user-module":"add-user-add-user-module","childtask-childtask-module":"childtask-childtask-module","jobcard-jobcard-module":"jobcard-jobcard-module","pages-login-login-module":"pages-login-login-module","tab1-tab1-module":"tab1-tab1-module","default~finding-finding-module~task-task-module":"default~finding-finding-module~task-task-module","finding-finding-module":"finding-finding-module","task-task-module":"task-task-module","details-details-module":"details-details-module","first-with-tabs-first-with-tabs-module":"first-with-tabs-first-with-tabs-module","home-home-module":"home-home-module","manual-manual-module":"manual-manual-module","pages-menu-menu-module":"pages-menu-menu-module","second-second-module":"second-second-module","tab2-tab2-module":"tab2-tab2-module","tab3-tab3-module":"tab3-tab3-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"common":"common","add-user-add-user-module":"add-user-add-user-module","canvas-canvas-module":"canvas-canvas-module","childtask-childtask-module":"childtask-childtask-module","core-js-js":"core-js-js","css-shim-206ea950-3169f23e-js":"css-shim-206ea950-3169f23e-js","default~finding-finding-module~task-task-module":"default~finding-finding-module~task-task-module","finding-finding-module":"finding-finding-module","task-task-module":"task-task-module","details-details-module":"details-details-module","dom-96781eef-a2fb04dd-js":"dom-96781eef-a2fb04dd-js","dom-js":"dom-js","first-with-tabs-first-with-tabs-module":"first-with-tabs-first-with-tabs-module","home-home-module":"home-home-module","index-69c37885-js":"index-69c37885-js","jobcard-jobcard-module":"jobcard-jobcard-module","manual-manual-module":"manual-manual-module","pages-login-login-module":"pages-login-login-module","pages-menu-menu-module":"pages-menu-menu-module","second-second-module":"second-second-module","shadow-css-4889ae62-23996f3f-js":"shadow-css-4889ae62-23996f3f-js","tab1-tab1-module":"tab1-tab1-module","tab2-tab2-module":"tab2-tab2-module","tab3-tab3-module":"tab3-tab3-module","ios-transition-071bd421-js":"ios-transition-071bd421-js","md-transition-15a81b08-js":"md-transition-15a81b08-js","swipe-back-35ad8e37-js":"swipe-back-35ad8e37-js","focus-visible-70713a0c-js":"focus-visible-70713a0c-js","hardware-back-button-5afe3cb0-js":"hardware-back-button-5afe3cb0-js","input-shims-a4fc53ac-js":"input-shims-a4fc53ac-js","status-tap-a0df8284-js":"status-tap-a0df8284-js","tap-click-ca00ce7f-js":"tap-click-ca00ce7f-js","swiper-bundle-ccdaac54-js":"swiper-bundle-ccdaac54-js"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -122,6 +123,8 @@
 /******/ 				}
 /******/ 				script.src = jsonpScriptSrc(chunkId);
 /******/
+/******/ 				// create error before stack unwound to get useful stacktrace later
+/******/ 				var error = new Error();
 /******/ 				onScriptComplete = function (event) {
 /******/ 					// avoid mem leaks in IE.
 /******/ 					script.onerror = script.onload = null;
@@ -131,7 +134,8 @@
 /******/ 						if(chunk) {
 /******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 /******/ 							var realSrc = event && event.target && event.target.src;
-/******/ 							var error = new Error('Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')');
+/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
 /******/ 							error.type = errorType;
 /******/ 							error.request = realSrc;
 /******/ 							chunk[1](error);

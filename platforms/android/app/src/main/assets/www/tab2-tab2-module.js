@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tab2-tab2-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/tab2/tab2.page.html":
+/*!*********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/tab2/tab2.page.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n  \t<ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>tab2</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-searchbar ></ion-searchbar>\n  <ion-button expand=\"block\" routerLink=\"/menu/first/tabs/tab2/add-user\" routerDirection=\"forward\">\n    Add User Button\n  </ion-button>\n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/tab2/tab2.module.ts":
 /*!*******************************************!*\
   !*** ./src/app/pages/tab2/tab2.module.ts ***!
@@ -55,17 +66,6 @@ var Tab2PageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/tab2/tab2.page.html":
-/*!*******************************************!*\
-  !*** ./src/app/pages/tab2/tab2.page.html ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n  \t<ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>tab2</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-searchbar ></ion-searchbar>\n  <ion-button expand=\"block\" routerLink=\"/menu/first/tabs/tab2/add-user\" routerDirection=\"forward\">\n    Add User Button\n  </ion-button>\n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/tab2/tab2.page.scss":
 /*!*******************************************!*\
   !*** ./src/app/pages/tab2/tab2.page.scss ***!
@@ -106,7 +106,7 @@ var Tab2Page = /** @class */ (function () {
     Tab2Page = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-tab2',
-            template: __webpack_require__(/*! ./tab2.page.html */ "./src/app/pages/tab2/tab2.page.html"),
+            template: __webpack_require__(/*! raw-loader!./tab2.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/tab2/tab2.page.html"),
             styles: [__webpack_require__(/*! ./tab2.page.scss */ "./src/app/pages/tab2/tab2.page.scss")]
         }),
         __metadata("design:paramtypes", [])

@@ -15,6 +15,7 @@ import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { TimedetailPageModule } from './pages/timedetail/timedetail.module';;
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+// import { ActionSheetController } from '@ionic/angular';
 
 @NgModule({
   declarations: [AppComponent],

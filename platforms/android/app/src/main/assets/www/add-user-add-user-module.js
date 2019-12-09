@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["add-user-add-user-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/add-user/add-user.page.html":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/add-user/add-user.page.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>Add User Page</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n \n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/add-user/add-user.module.ts":
 /*!***************************************************!*\
   !*** ./src/app/pages/add-user/add-user.module.ts ***!
@@ -55,17 +66,6 @@ var AddUserPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/add-user/add-user.page.html":
-/*!***************************************************!*\
-  !*** ./src/app/pages/add-user/add-user.page.html ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>Add User Page</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n \n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/add-user/add-user.page.scss":
 /*!***************************************************!*\
   !*** ./src/app/pages/add-user/add-user.page.scss ***!
@@ -106,7 +106,7 @@ var AddUserPage = /** @class */ (function () {
     AddUserPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-add-user',
-            template: __webpack_require__(/*! ./add-user.page.html */ "./src/app/pages/add-user/add-user.page.html"),
+            template: __webpack_require__(/*! raw-loader!./add-user.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/add-user/add-user.page.html"),
             styles: [__webpack_require__(/*! ./add-user.page.scss */ "./src/app/pages/add-user/add-user.page.scss")]
         }),
         __metadata("design:paramtypes", [])

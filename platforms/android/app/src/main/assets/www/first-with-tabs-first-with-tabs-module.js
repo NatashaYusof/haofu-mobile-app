@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["first-with-tabs-first-with-tabs-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/first-with-tabs/first-with-tabs.page.html":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/first-with-tabs/first-with-tabs.page.html ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-tabs>\n \n  <ion-tab-bar slot=\"bottom\" color=\"primary\">\n \n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"home\"></ion-icon>\n    </ion-tab-button>\n \n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"search\"></ion-icon>\n    </ion-tab-button>\n\n\t  <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"notifications\"></ion-icon>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"person\"></ion-icon>\n     </ion-tab-button>\n  </ion-tab-bar>\n \n</ion-tabs>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/first-with-tabs/first-with-tabs.module.ts":
 /*!*****************************************************************!*\
   !*** ./src/app/pages/first-with-tabs/first-with-tabs.module.ts ***!
@@ -54,6 +65,10 @@ var routes = [
                 loadChildren: '../finding/finding.module#FindingPageModule'
             },
             {
+                path: 'tab1/jobcard/task/childtask/finding/canvas',
+                loadChildren: '../canvas/canvas.module#CanvasPageModule'
+            },
+            {
                 path: 'tab1/jobcard/task/:id/childtask/:taskid/manual',
                 loadChildren: '../manual/manual.module#ManualPageModule'
             },
@@ -98,17 +113,6 @@ var FirstWithTabsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/first-with-tabs/first-with-tabs.page.html":
-/*!*****************************************************************!*\
-  !*** ./src/app/pages/first-with-tabs/first-with-tabs.page.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-tabs>\n \n  <ion-tab-bar slot=\"bottom\" color=\"primary\">\n \n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"home\"></ion-icon>\n    </ion-tab-button>\n \n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"search\"></ion-icon>\n    </ion-tab-button>\n\n\t  <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"notifications\"></ion-icon>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"person\"></ion-icon>\n     </ion-tab-button>\n  </ion-tab-bar>\n \n</ion-tabs>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/first-with-tabs/first-with-tabs.page.scss":
 /*!*****************************************************************!*\
   !*** ./src/app/pages/first-with-tabs/first-with-tabs.page.scss ***!
@@ -149,7 +153,7 @@ var FirstWithTabsPage = /** @class */ (function () {
     FirstWithTabsPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-first-with-tabs',
-            template: __webpack_require__(/*! ./first-with-tabs.page.html */ "./src/app/pages/first-with-tabs/first-with-tabs.page.html"),
+            template: __webpack_require__(/*! raw-loader!./first-with-tabs.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/first-with-tabs/first-with-tabs.page.html"),
             styles: [__webpack_require__(/*! ./first-with-tabs.page.scss */ "./src/app/pages/first-with-tabs/first-with-tabs.page.scss")]
         }),
         __metadata("design:paramtypes", [])

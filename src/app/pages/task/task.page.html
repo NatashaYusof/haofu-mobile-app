@@ -45,11 +45,11 @@
 <ion-label  *ngFor="let jobcardid of id">
 <ion-item  class="font">
 <ion-label class="ion-text-wrap" ><b>{{jobcardid.tasktitle}}</b></ion-label>
-<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Resumed'" src="assets/icon/start.png" tappable width="20" height="20" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
-<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Started'" src="assets/icon/start.png" tappable width="20" height="20" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
-<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Not Started'" src="assets/icon/start.png" tappable width="20" height="20" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
-<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Paused'" src="assets/icon/start.png" tappable width="20" height="20" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
-<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Re-Open'" src="assets/icon/start.png" tappable width="20" height="20" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
+<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Resumed'" src="assets/icon/start.jpg" tappable width="30" height="30" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
+<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Started'" src="assets/icon/start.jpg" tappable width="30" height="30" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
+<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Not Started'" src="assets/icon/start.jpg" tappable width="30" height="30" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
+<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Paused'" src="assets/icon/start.jpg" tappable width="30" height="30" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
+<img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Re-Open'" src="assets/icon/start.jpg" tappable width="30" height="30" slot="end"  (click)="gotoChildTask(jobcardid.jobcardid,jobcardid.taskid,jobcardid.tasktitle,jobcardDetail)"/>
 <img *ngIf="jobcardid.taskstatus[0].taskstatus == 'Completed'" src="assets/icon/tick.png" width="18" height="18" slot="end"/>
 </ion-item>
 <ion-grid> 

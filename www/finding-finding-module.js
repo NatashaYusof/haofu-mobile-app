@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["finding-finding-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/finding/finding.page.html":
+/*!***************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/finding/finding.page.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n     \n    \n      <!-- <ion-item> -->\n        <ion-item>\n  <ion-row>\n    <ion-col>\n      <!-- <div class=\"images\">\n        <div class=\"one-images\" *ngFor=\"let img of imageSrc\"> -->\n          <img src= \"{{ imageSrc}}\" alt=\"\" (click)=\"action()\" />\n        <!-- </div>\n      </div> -->\n    </ion-col>\n  </ion-row>\n</ion-item>\n\n    <!-- <ion-slides class=\"card\">\n      <ion-slide>    \n         <div class=\"scrolling-wrapper\"> -->\n            <!-- <ion-card class=\"card\">\n             <img src= \"../../../assets/icon/i1.PNG\" id=\"1\" tappable (click)=\"goToCanvas()\">    -->\n              <!-- <ion-icon *ngFor=\"let avatar of avatars\" name=\"radio-button-on\" class=\"scroll-item selectable-icon\"></ion-icon> -->\n        <!-- </ion-card>\n      </ion-slide>\n      <ion-slide>    \n        <ion-card class=\"card\">      \n             <img src= \"../../../assets/icon/i1.PNG\" id=\"1\" tappable (click)=\"goToCanvas()\"> -->\n                <!-- <ion-icon *ngFor=\"let avatar of avatars\" name=\"radio-button-on\" class=\"scroll-item selectable-icon\"></ion-icon> -->\n         <!-- </ion-card>     \n      </ion-slide>\n    </ion-slides> -->\n  <!-- </div> -->\n  <!-- </div> -->\n\n\n\n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button expand=\"full\" color=\"primary\">Save</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/finding/finding.module.ts":
 /*!*************************************************!*\
   !*** ./src/app/pages/finding/finding.module.ts ***!
@@ -55,17 +66,6 @@ var FindingPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/finding/finding.page.html":
-/*!*************************************************!*\
-  !*** ./src/app/pages/finding/finding.page.html ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n     \n    \n    <!-- <img src= \"assets/icon/profile.png\" alt=\"\" /> -->\n    <!-- <ion-item> -->\n     <!-- <ion-scroll scrollX=\"true\">androi\n       <div class=\"scroll-item\">\n       <ion-col col-33 >\n    \n      <img src= \"{{ imageSrc  }}\" alt=\"\" />\n      <img src= \"../../../assets/icon/i1.PNG\" id=\"1\" tappable (click)=\"goToCanvas\">\n      <img src= \"../../../assets/icon/i1.PNG\" id=\"1\" tappable (click)=\"goToCanvas\">\n    </ion-col>\n     </div>\n  </ion-scroll> -->\n  <div scrollX=\"true\" class=\"scroll\" id=\"myFixZone\">\n      <ion-card>\n          <ion-item>\n              <img src= \"../../../assets/icon/i1.PNG\" id=\"1\" tappable (click)=\"goToCanvas\">\n              <img src= \"../../../assets/icon/profile.png\" id=\"1\" tappable (click)=\"goToCanvas\">\n              <!-- <ion-icon *ngFor=\"let avatar of avatars\" name=\"radio-button-on\" class=\"scroll-item selectable-icon\"></ion-icon> -->\n          </ion-item>\n        </ion-card>\n  </div>\n\n\n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button expand=\"full\" color=\"primary\">Save</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/finding/finding.page.scss":
 /*!*************************************************!*\
   !*** ./src/app/pages/finding/finding.page.scss ***!
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-bu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n.button3 {\n  font-size: 11.5px;\n  color: darkcyan;\n  text-align: center; }\n\ndiv[scrollx=true] .scroll, div[scrolly=true] .scroll {\n  overflow: auto;\n  position: relative;\n  overflow: hidden; }\n\ndiv[scrollx=true] .scroll ::-webkit-scrollbar, div[scrolly=true] .scroll ::-webkit-scrollbar {\n    display: none; }\n\ndiv[scrollx=true] div[scrollx=true], div[scrolly=true] div[scrollx=true] {\n  overflow-x: auto; }\n\ndiv[scrollx=true] div[scrolly=true], div[scrolly=true] div[scrolly=true] {\n  overflow-y: auto; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmluZGluZy9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGZpbmRpbmdcXGZpbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBOztBQUVuQjtFQUNJLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2Ysa0JBQWtCLEVBQUE7O0FBb0JsQjtFQUlJLGNBQWM7RUFDZCxrQkFBa0I7RUFDbEIsZ0JBQWdCLEVBQUE7O0FBTnBCO0lBU00sYUFBYSxFQUFBOztBQVRuQjtFQWNJLGdCQUFnQixFQUFBOztBQWRwQjtFQWtCSSxnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2ZpbmRpbmcvZmluZGluZy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5ke1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBtYXgtd2lkdGg6IDYwcHg7XHJcbn1cclxuXHJcbi5mb250MntcclxuICAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG4gICAgY29sb3I6IGRhcmtjeWFuO1xyXG59XHJcbi5idXR0b24ze1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbiAgICAvLyAuc2Nyb2xsLWl0ZW0ge1xyXG4gICAgLy8gICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIC8vIH1cclxuXHJcbiAgICAvLyBkaXZbc2Nyb2xseD10cnVlXSxkaXZbc2Nyb2xseT10cnVlXSB7XHJcbiAgICAvLyAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgLy8gICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAvLyAgIH1cclxuICAgICAgXHJcbiAgICAvLyAgIGRpdltzY3JvbGx4PXRydWVdIHtcclxuICAgIC8vICAgICBvdmVyZmxvdy14OiBhdXRvO1xyXG4gICAgLy8gICB9XHJcbiAgICAgIFxyXG4gICAgLy8gICBkaXZbc2Nyb2xseT10cnVlXSB7XHJcbiAgICAvLyAgICAgb3ZlcmZsb3cteTogYXV0bztcclxuICAgIC8vICAgfVxyXG5cclxuICAgIGRpdltzY3JvbGx4PXRydWVdLCBkaXZbc2Nyb2xseT10cnVlXSB7XHJcbiAgICAgIFxyXG5cclxuICAgICAgLnNjcm9sbCB7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgIFxyXG4gICAgICAgIDo6LXdlYmtpdC1zY3JvbGxiYXIge1xyXG4gICAgICAgICAgZGlzcGxheTogbm9uZTtcclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgICAgXHJcbiAgICAgIGRpdltzY3JvbGx4PXRydWVdIHtcclxuICAgICAgICBvdmVyZmxvdy14OiBhdXRvO1xyXG4gICAgICB9XHJcbiAgICAgIFxyXG4gICAgICBkaXZbc2Nyb2xseT10cnVlXSB7XHJcbiAgICAgICAgb3ZlcmZsb3cteTogYXV0bztcclxuICAgICAgfVxyXG4gICAgICB9Il19 */"
+module.exports = ".expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n.button3 {\n  font-size: 11.5px;\n  color: darkcyan;\n  text-align: center; }\n\n.button {\n  font-size: 11px;\n  color: darkcyan;\n  background-color: transparent;\n  text-align: left; }\n\n.scrolling-wrapper {\n  overflow-x: scroll;\n  overflow-y: hidden;\n  white-space: nowrap; }\n\n.scrolling-wrapper .card {\n    display: inline-block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmluZGluZy9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGZpbmRpbmdcXGZpbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBOztBQUVuQjtFQUNJLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2Ysa0JBQWtCLEVBQUE7O0FBR3RCO0VBQ0ksZUFBZTtFQUNmLGVBQWU7RUFDZiw2QkFBNkI7RUFDN0IsZ0JBQWdCLEVBQUE7O0FBR2hCO0VBQ0ksa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixtQkFBbUIsRUFBQTs7QUFIdkI7SUFPTSxxQkFBcUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2ZpbmRpbmcvZmluZGluZy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5ke1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBtYXgtd2lkdGg6IDYwcHg7XHJcbn1cclxuXHJcbi5mb250MntcclxuICAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG4gICAgY29sb3I6IGRhcmtjeWFuO1xyXG59XHJcbi5idXR0b24ze1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5idXR0b257XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbn1cclxuXHJcbiAgICAuc2Nyb2xsaW5nLXdyYXBwZXIge1xyXG4gICAgICAgIG92ZXJmbG93LXg6IHNjcm9sbDtcclxuICAgICAgICBvdmVyZmxvdy15OiBoaWRkZW47XHJcbiAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgXHJcbiAgICAgIFxyXG4gICAgICAgIC5jYXJkIHtcclxuICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICB9XHJcbiAgICAgIH0iXX0= */"
 
 /***/ }),
 
@@ -148,6 +148,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+// import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 var FindingPage = /** @class */ (function () {
     // imageSrc: any;
     function FindingPage(http, router, alertController, loadingCtrl, JobcardService, camera, actionSheetController, file) {
@@ -220,7 +221,7 @@ var FindingPage = /** @class */ (function () {
     //   } else {
     //     this.btn_txt = "PAUSE";
     //    // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    //     //postApi
+    //     //postApi\
     //     let data =[{
     //       taskid :this.JobcardService.taskId,
     //       employeeid :this.details.employee.employeeid,
@@ -253,11 +254,11 @@ var FindingPage = /** @class */ (function () {
     //         taskid :this.JobcardService.taskId,
     //         employeeid :this.details.employee.employeeid,
     //         tasktimemanagementenddatetime: this.currentDate,
-    //         tasktimemanagementendstate:5
+    //         tasktimemanagementendstate:4
     //       }
     //       ]
     //       let data1 =[{
-    //         taskstatus:[{"taskstatusid":5}],
+    //         taskstatus:[{"taskstatusid":4}],
     //         employeeid :this.details.employee.employeeid,
     //         taskid :this.JobcardService.taskId,
     //       }
@@ -309,18 +310,21 @@ var FindingPage = /** @class */ (function () {
                             header: "Select Image source",
                             buttons: [{
                                     text: 'Load from Library',
+                                    icon: 'images',
                                     handler: function () {
                                         _this.pickImage1(_this.camera.PictureSourceType.PHOTOLIBRARY);
                                     }
                                 },
                                 {
                                     text: 'Use Camera',
+                                    icon: 'camera',
                                     handler: function () {
                                         _this.pickImage1(_this.camera.PictureSourceType.CAMERA);
                                     }
                                 },
                                 {
                                     text: 'Cancel',
+                                    icon: 'close',
                                     role: 'cancel'
                                 }
                             ]
@@ -335,10 +339,52 @@ var FindingPage = /** @class */ (function () {
             });
         });
     };
+    FindingPage.prototype.action = function () {
+        this.presentActionSheet();
+    };
+    FindingPage.prototype.presentActionSheet = function () {
+        var _this = this;
+        this.actionSheet = this.actionSheetController.create({
+            buttons: [{
+                    text: 'Delete',
+                    role: 'destructive',
+                    icon: 'trash',
+                    handler: function () {
+                        console.log('Delete clicked');
+                    }
+                }, {
+                    text: 'Edit',
+                    icon: 'brush',
+                    handler: function () {
+                        console.log('Edit clicked');
+                        _this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
+                    }
+                }, {
+                    text: 'Cancel',
+                    icon: 'close',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                }]
+        }).then(function (actionsheet) {
+            actionsheet.present();
+        });
+    };
+    FindingPage.ctorParameters = function () { return [
+        { type: _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"] },
+        { type: _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"] },
+        { type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_6__["Camera"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"] },
+        { type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__["File"] }
+    ]; };
     FindingPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-finding',
-            template: __webpack_require__(/*! ./finding.page.html */ "./src/app/pages/finding/finding.page.html"),
+            template: __webpack_require__(/*! raw-loader!./finding.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/finding/finding.page.html"),
             styles: [__webpack_require__(/*! ./finding.page.scss */ "./src/app/pages/finding/finding.page.scss")]
         }),
         __metadata("design:paramtypes", [_src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"],

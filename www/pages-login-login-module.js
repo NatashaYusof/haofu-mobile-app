@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-login-login-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/login/login.page.html":
+/*!***********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/login/login.page.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-grid>\n\t<ion-row justify-content-center>\n\n\t    \n     \t\t<ion-col align-self-center size-md=\"10\" size-lg=\"5\" size-xs=\"12\">\n\n\t  \t\t<div  class=\"logo\">\n\t\t\t\t <img src=\"assets/icon/logo.png\"  />\n\t\t\t</div>\n\n\t\t\t<div padding>\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input  required type=\"text\" name=\"username\" placeholder=\"Username\" type=\"text\" [(ngModel)]=\"username\"></ion-input>\n\t\t\t\t</ion-item>\n\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input required type=\"password\"  placeholder=\"Password\" type=\"password\" [(ngModel)]=\"userpassword\"></ion-input>\n\t\t\t\t</ion-item>\n\n  <ion-button expand=\"block\"  (click)=login()>LOGIN</ion-button>\n  <ion-button expand=\"block\" routerLink=\"\">FORGOT PASSWORD</ion-button>\n  </div>\n\t</ion-col>\n\t</ion-row>\n\t</ion-grid>\n\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/login/login.module.ts":
 /*!*********************************************!*\
   !*** ./src/app/pages/login/login.module.ts ***!
@@ -55,17 +66,6 @@ var LoginPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/login/login.page.html":
-/*!*********************************************!*\
-  !*** ./src/app/pages/login/login.page.html ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-grid>\n\t<ion-row justify-content-center>\n\n\t    \n     \t\t<ion-col align-self-center size-md=\"10\" size-lg=\"5\" size-xs=\"12\">\n\n\t  \t\t<div  class=\"logo\">\n\t\t\t\t <img src=\"assets/icon/logo.png\"  />\n\t\t\t</div>\n\n\t\t\t<div padding>\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input  required type=\"text\" name=\"username\" placeholder=\"Username\" type=\"text\" [(ngModel)]=\"username\"></ion-input>\n\t\t\t\t</ion-item>\n\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-input required type=\"password\"  placeholder=\"Password\" type=\"password\" [(ngModel)]=\"userpassword\"></ion-input>\n\t\t\t\t</ion-item>\n\n  <ion-button expand=\"block\"  (click)=login()>LOGIN</ion-button>\n  <ion-button expand=\"block\" routerLink=\"\">FORGOT PASSWORD</ion-button>\n  </div>\n\t</ion-col>\n\t</ion-row>\n\t</ion-grid>\n\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/login/login.page.scss":
 /*!*********************************************!*\
   !*** ./src/app/pages/login/login.page.scss ***!
@@ -73,7 +73,7 @@ module.exports = "<ion-grid>\n\t<ion-row justify-content-center>\n\n\t    \n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-grid {\n  width: 100%;\n  height: 100%;\n  background: #dfdfdf; }\n\nion-row {\n  height: 100%; }\n\nion-col {\n  border: 1px solid #488aff;\n  background: #fff; }\n\n.logo {\n  width: 40%;\n  height: auto;\n  margin: 0 auto;\n  padding-bottom: 50px;\n  align-items: center; }\n\n.no-border {\n  border-bottom: 0 !important;\n  box-shadow: none !important; }\n\nion-button {\n  font-weight: 300; }\n\n@media (min-width: 240px) and (max-width: 768px) {\n  ion-grid {\n    background: #fff; }\n  ion-col {\n    border: none; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbG9naW4vQzpcXHByb2plY3RcXG5hdGFzaGEvc3JjXFxhcHBcXHBhZ2VzXFxsb2dpblxcbG9naW4ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksV0FBVTtFQUNWLFlBSlk7RUFLWixtQkFBbUIsRUFBQTs7QUFHdkI7RUFDSSxZQVRZLEVBQUE7O0FBWWhCO0VBQ0kseUJBQXlCO0VBQ3pCLGdCQWZjLEVBQUE7O0FBaUJkO0VBQ0csVUFBVTtFQUNWLFlBQVk7RUFDWixjQUFjO0VBQ2Qsb0JBQW9CO0VBQ3ZCLG1CQUFvQixFQUFBOztBQUVuQjtFQUNFLDJCQUEyQjtFQUMzQiwyQkFBMkIsRUFBQTs7QUFHbEM7RUFDSSxnQkFBZ0IsRUFBQTs7QUFHcEI7RUFDSTtJQUNJLGdCQW5DVSxFQUFBO0VBcUNkO0lBQ0ksWUFBWSxFQUFBLEVBQ2YiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9sb2dpbi9sb2dpbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbiR3aGl0ZS1jb2xvcjogI2ZmZjtcbiRoZWlnaHQxMDA6IDEwMCU7XG5cbmlvbi1ncmlkIHtcbiAgICB3aWR0aDoxMDAlO1xuICAgIGhlaWdodDogJGhlaWdodDEwMDtcbiAgICBiYWNrZ3JvdW5kOiAjZGZkZmRmO1xufVxuXG5pb24tcm93IHtcbiAgICBoZWlnaHQ6ICRoZWlnaHQxMDA7XG59XG5cbmlvbi1jb2wge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICM0ODhhZmY7XG4gICAgYmFja2dyb3VuZDogJHdoaXRlLWNvbG9yO1xufVxuICAgIC5sb2dvIHtcbiAgICAgICB3aWR0aDogNDAlO1xuICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgICBtYXJnaW46IDAgYXV0bztcbiAgICAgICBwYWRkaW5nLWJvdHRvbTogNTBweDtcblx0ICAgYWxpZ24taXRlbXMgOiBjZW50ZXI7XG4gICAgIH1cbiAgICAgLm5vLWJvcmRlciB7XG4gICAgICAgYm9yZGVyLWJvdHRvbTogMCAhaW1wb3J0YW50O1xuICAgICAgIGJveC1zaGFkb3c6IG5vbmUgIWltcG9ydGFudDtcbiAgICAgfVxuXG5pb24tYnV0dG9uIHtcbiAgICBmb250LXdlaWdodDogMzAwO1xufVxuXG5AbWVkaWEgKG1pbi13aWR0aDogMjQwcHgpIGFuZCAobWF4LXdpZHRoOiA3NjhweCkge1xuICAgIGlvbi1ncmlkIHtcbiAgICAgICAgYmFja2dyb3VuZDogJHdoaXRlLWNvbG9yO1xuICAgIH1cbiAgICBpb24tY29sIHtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgIH1cbn0iXX0= */"
+module.exports = "ion-grid {\n  width: 100%;\n  height: 100%;\n  background: #dfdfdf; }\n\nion-row {\n  height: 100%; }\n\nion-col {\n  border: 1px solid #488aff;\n  background: #fff; }\n\n.logo {\n  width: 40%;\n  height: auto;\n  margin: 0 auto;\n  padding-bottom: 50px;\n  -webkit-box-align: center;\n          align-items: center; }\n\n.no-border {\n  border-bottom: 0 !important;\n  box-shadow: none !important; }\n\nion-button {\n  font-weight: 300; }\n\n@media (min-width: 240px) and (max-width: 768px) {\n  ion-grid {\n    background: #fff; }\n  ion-col {\n    border: none; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbG9naW4vQzpcXHByb2plY3RcXG5hdGFzaGEvc3JjXFxhcHBcXHBhZ2VzXFxsb2dpblxcbG9naW4ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksV0FBVTtFQUNWLFlBSlk7RUFLWixtQkFBbUIsRUFBQTs7QUFHdkI7RUFDSSxZQVRZLEVBQUE7O0FBWWhCO0VBQ0kseUJBQXlCO0VBQ3pCLGdCQWZjLEVBQUE7O0FBaUJkO0VBQ0csVUFBVTtFQUNWLFlBQVk7RUFDWixjQUFjO0VBQ2Qsb0JBQW9CO0VBQ3ZCLHlCQUFvQjtVQUFwQixtQkFBb0IsRUFBQTs7QUFFbkI7RUFDRSwyQkFBMkI7RUFDM0IsMkJBQTJCLEVBQUE7O0FBR2xDO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBR3BCO0VBQ0k7SUFDSSxnQkFuQ1UsRUFBQTtFQXFDZDtJQUNJLFlBQVksRUFBQSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvbG9naW4vbG9naW4ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4kd2hpdGUtY29sb3I6ICNmZmY7XG4kaGVpZ2h0MTAwOiAxMDAlO1xuXG5pb24tZ3JpZCB7XG4gICAgd2lkdGg6MTAwJTtcbiAgICBoZWlnaHQ6ICRoZWlnaHQxMDA7XG4gICAgYmFja2dyb3VuZDogI2RmZGZkZjtcbn1cblxuaW9uLXJvdyB7XG4gICAgaGVpZ2h0OiAkaGVpZ2h0MTAwO1xufVxuXG5pb24tY29sIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjNDg4YWZmO1xuICAgIGJhY2tncm91bmQ6ICR3aGl0ZS1jb2xvcjtcbn1cbiAgICAubG9nbyB7XG4gICAgICAgd2lkdGg6IDQwJTtcbiAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICAgbWFyZ2luOiAwIGF1dG87XG4gICAgICAgcGFkZGluZy1ib3R0b206IDUwcHg7XG5cdCAgIGFsaWduLWl0ZW1zIDogY2VudGVyO1xuICAgICB9XG4gICAgIC5uby1ib3JkZXIge1xuICAgICAgIGJvcmRlci1ib3R0b206IDAgIWltcG9ydGFudDtcbiAgICAgICBib3gtc2hhZG93OiBub25lICFpbXBvcnRhbnQ7XG4gICAgIH1cblxuaW9uLWJ1dHRvbiB7XG4gICAgZm9udC13ZWlnaHQ6IDMwMDtcbn1cblxuQG1lZGlhIChtaW4td2lkdGg6IDI0MHB4KSBhbmQgKG1heC13aWR0aDogNzY4cHgpIHtcbiAgICBpb24tZ3JpZCB7XG4gICAgICAgIGJhY2tncm91bmQ6ICR3aGl0ZS1jb2xvcjtcbiAgICB9XG4gICAgaW9uLWNvbCB7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICB9XG59Il19 */"
 
 /***/ }),
 
@@ -198,10 +198,16 @@ var LoginPage = /** @class */ (function () {
             _this.presentAlert();
         });
     };
+    LoginPage.ctorParameters = function () { return [
+        { type: _services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["LoadingController"] }
+    ]; };
     LoginPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-login',
-            template: __webpack_require__(/*! ./login.page.html */ "./src/app/pages/login/login.page.html"),
+            template: __webpack_require__(/*! raw-loader!./login.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/login/login.page.html"),
             styles: [__webpack_require__(/*! ./login.page.scss */ "./src/app/pages/login/login.page.scss")]
         }),
         __metadata("design:paramtypes", [_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["LoadingController"]])
@@ -307,6 +313,9 @@ var LoginService = /** @class */ (function () {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
         }));
     };
+    LoginService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    ]; };
     LoginService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'

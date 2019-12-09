@@ -35,34 +35,34 @@
   </ion-item>
      
     
-    <!-- <img src= "assets/icon/profile.png" alt="" /> -->
-    <!-- <ion-item> -->
-     <!-- <ion-scroll scrollX="true">androi
-       <div class="scroll-item">
-       <ion-col col-33 >
-    
-      <img src= "{{ imageSrc  }}" alt="" />
-      <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas">
-      <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas">
+      <!-- <ion-item> -->
+        <ion-item>
+  <ion-row>
+    <ion-col>
+      <!-- <div class="images">
+        <div class="one-images" *ngFor="let img of imageSrc"> -->
+          <img src= "{{ imageSrc}}" alt="" (click)="action()" />
+        <!-- </div>
+      </div> -->
     </ion-col>
-     </div>
-  </ion-scroll> -->
-  <!-- <div scroll direction="x" class="item wide-item"> -->
-    <ion-slides class="card">
+  </ion-row>
+</ion-item>
+
+    <!-- <ion-slides class="card">
       <ion-slide>    
-        <!-- <div class="scrolling-wrapper"> -->
-            <ion-card class="card">
-             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()">   
+         <div class="scrolling-wrapper"> -->
+            <!-- <ion-card class="card">
+             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()">    -->
               <!-- <ion-icon *ngFor="let avatar of avatars" name="radio-button-on" class="scroll-item selectable-icon"></ion-icon> -->
-        </ion-card>
+        <!-- </ion-card>
       </ion-slide>
       <ion-slide>    
         <ion-card class="card">      
-             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()">
+             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()"> -->
                 <!-- <ion-icon *ngFor="let avatar of avatars" name="radio-button-on" class="scroll-item selectable-icon"></ion-icon> -->
-         </ion-card>     
+         <!-- </ion-card>     
       </ion-slide>
-    </ion-slides> 
+    </ion-slides> -->
   <!-- </div> -->
   <!-- </div> -->
 

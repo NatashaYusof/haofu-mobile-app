@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["manual-manual-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/manual/manual.page.html":
+/*!*************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/manual/manual.page.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>manual</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/manual/manual.module.ts":
 /*!***********************************************!*\
   !*** ./src/app/pages/manual/manual.module.ts ***!
@@ -55,17 +66,6 @@ var ManualPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/manual/manual.page.html":
-/*!***********************************************!*\
-  !*** ./src/app/pages/manual/manual.page.html ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>manual</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/manual/manual.page.scss":
 /*!***********************************************!*\
   !*** ./src/app/pages/manual/manual.page.scss ***!
@@ -106,7 +106,7 @@ var ManualPage = /** @class */ (function () {
     ManualPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-manual',
-            template: __webpack_require__(/*! ./manual.page.html */ "./src/app/pages/manual/manual.page.html"),
+            template: __webpack_require__(/*! raw-loader!./manual.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/manual/manual.page.html"),
             styles: [__webpack_require__(/*! ./manual.page.scss */ "./src/app/pages/manual/manual.page.scss")]
         }),
         __metadata("design:paramtypes", [])

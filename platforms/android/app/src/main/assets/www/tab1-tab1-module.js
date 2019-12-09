@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tab1-tab1-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/tab1/tab1.page.html":
+/*!*********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/tab1/tab1.page.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\" mode=\"ios\">\n  \t<ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n      <ion-title>\n          PROFILE\n      </ion-title>\n    <ion-buttons slot=\"end\">\n     \n        <ion-icon slot=\"icon-only\" name=\"more\"></ion-icon>\n     \n    </ion-buttons>\n   \n\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <div  class=\"logo\">\n    <img src=\"assets/icon/profile1.png\" width=\"50\" height=\"50\"/>\n </div>\n   <ion-item text-center>\n     <ion-label><b>{{details.employee.employeeshortdisplayname}}</b><br>SAE ID: {{details.employee.employeeid}}</ion-label>\n    </ion-item>\n  \n    <ion-item>\n    <ion-grid class=\"gridcolor\"> \n        <ion-row>\n          <ion-col width-50><ion-label style=\"width:100%\" class=\"button\">Jobcard</ion-label></ion-col>\n          <ion-col width-50><ion-label style=\"width:100%\" class=\"button\">Man/day</ion-label></ion-col>\n          <ion-col width-50><ion-label style=\"width:100%\" class=\"button\">Chat</ion-label></ion-col>\n        </ion-row>\n     </ion-grid>\n    </ion-item>\n \n    <ion-card>\n    <ion-item  *ngFor=\"let serialno of listJC\">\n    <ion-label tappable class=\"font\" routerDirection=\"forward\" (click)=goToJobcard(serialno) >Serial Number: {{serialno.partrecordserialnumber}}</ion-label>\n </ion-item>\n</ion-card>\n \n    \n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/tab1/tab1.module.ts":
 /*!*******************************************!*\
   !*** ./src/app/pages/tab1/tab1.module.ts ***!
@@ -55,17 +66,6 @@ var Tab1PageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/tab1/tab1.page.html":
-/*!*******************************************!*\
-  !*** ./src/app/pages/tab1/tab1.page.html ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\" mode=\"ios\">\n  \t<ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n      <ion-title>\n          PROFILE\n      </ion-title>\n    <ion-buttons slot=\"end\">\n     \n        <ion-icon slot=\"icon-only\" name=\"more\"></ion-icon>\n     \n    </ion-buttons>\n   \n\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <div  class=\"logo\">\n    <img src=\"assets/icon/profile1.png\" width=\"50\" height=\"50\"/>\n </div>\n   <ion-item text-center>\n     <ion-label><b>{{details.employee.employeeshortdisplayname}}</b><br>SAE ID: {{details.employee.employeeid}}</ion-label>\n    </ion-item>\n  \n    <ion-item>\n    <ion-grid class=\"gridcolor\"> \n        <ion-row>\n          <ion-col width-50><ion-label style=\"width:100%\" class=\"button\">Jobcard</ion-label></ion-col>\n          <ion-col width-50><ion-label style=\"width:100%\" class=\"button\">Man/day</ion-label></ion-col>\n          <ion-col width-50><ion-label style=\"width:100%\" class=\"button\">Chat</ion-label></ion-col>\n        </ion-row>\n     </ion-grid>\n    </ion-item>\n \n    <ion-card>\n    <ion-item  *ngFor=\"let serialno of listJC\">\n    <ion-label tappable class=\"font\" routerDirection=\"forward\" (click)=goToJobcard(serialno) >Serial Number: {{serialno.partrecordserialnumber}}</ion-label>\n </ion-item>\n</ion-card>\n \n    \n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/tab1/tab1.page.scss":
 /*!*******************************************!*\
   !*** ./src/app/pages/tab1/tab1.page.scss ***!
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\" mode=\"ios\">\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".logo {\n  width: 20%;\n  height: auto;\n  margin: auto;\n  padding-bottom: 5px;\n  align-items: center; }\n\n.no-border {\n  border-bottom: 0 !important;\n  box-shadow: none !important; }\n\n.font {\n  color: darkcyan; }\n\n.font1 {\n  font-size: 11.5px; }\n\n.button {\n  font-size: 11px;\n  background-color: transparent;\n  text-align: center; }\n\n.gridcolor {\n  background-color: aliceblue; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdGFiMS9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXHRhYjFcXHRhYjEucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksVUFBVTtFQUNWLFlBQVk7RUFDWixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLG1CQUFvQixFQUFBOztBQUV0QjtFQUNFLDJCQUEyQjtFQUMzQiwyQkFBMkIsRUFBQTs7QUFHN0I7RUFDRSxlQUFlLEVBQUE7O0FBR2pCO0VBQ0MsaUJBQWlCLEVBQUE7O0FBR2xCO0VBQ0UsZUFBZTtFQUNmLDZCQUE2QjtFQUM3QixrQkFBa0IsRUFBQTs7QUFFckI7RUFDRSwyQkFBMkIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3RhYjEvdGFiMS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9nbyB7XHJcbiAgICB3aWR0aDogMjAlO1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDVweDtcclxuICAgIGFsaWduLWl0ZW1zIDogY2VudGVyO1xyXG4gIH1cclxuICAubm8tYm9yZGVyIHtcclxuICAgIGJvcmRlci1ib3R0b206IDAgIWltcG9ydGFudDtcclxuICAgIGJveC1zaGFkb3c6IG5vbmUgIWltcG9ydGFudDtcclxuICB9XHJcblxyXG4gIC5mb250IHtcclxuICAgIGNvbG9yOiBkYXJrY3lhbjtcclxuICB9XHJcblxyXG4gIC5mb250MXtcclxuICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgLy8gIHRleHQtYWxpZ246IGNlbnRlcjsgXHJcbiAgfVxyXG4gIC5idXR0b257XHJcbiAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4gLmdyaWRjb2xvcntcclxuICAgYmFja2dyb3VuZC1jb2xvcjogYWxpY2VibHVlO1xyXG4gfVxyXG5cclxuIl19 */"
+module.exports = ".logo {\n  width: 20%;\n  height: auto;\n  margin: auto;\n  padding-bottom: 5px;\n  -webkit-box-align: center;\n          align-items: center; }\n\n.no-border {\n  border-bottom: 0 !important;\n  box-shadow: none !important; }\n\n.font {\n  color: darkcyan; }\n\n.font1 {\n  font-size: 11.5px; }\n\n.button {\n  font-size: 11px;\n  background-color: transparent;\n  text-align: center; }\n\n.gridcolor {\n  background-color: aliceblue; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdGFiMS9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXHRhYjFcXHRhYjEucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksVUFBVTtFQUNWLFlBQVk7RUFDWixZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLHlCQUFvQjtVQUFwQixtQkFBb0IsRUFBQTs7QUFFdEI7RUFDRSwyQkFBMkI7RUFDM0IsMkJBQTJCLEVBQUE7O0FBRzdCO0VBQ0UsZUFBZSxFQUFBOztBQUdqQjtFQUNDLGlCQUFpQixFQUFBOztBQUdsQjtFQUNFLGVBQWU7RUFDZiw2QkFBNkI7RUFDN0Isa0JBQWtCLEVBQUE7O0FBRXJCO0VBQ0UsMkJBQTJCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy90YWIxL3RhYjEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ28ge1xyXG4gICAgd2lkdGg6IDIwJTtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cHg7XHJcbiAgICBhbGlnbi1pdGVtcyA6IGNlbnRlcjtcclxuICB9XHJcbiAgLm5vLWJvcmRlciB7XHJcbiAgICBib3JkZXItYm90dG9tOiAwICFpbXBvcnRhbnQ7XHJcbiAgICBib3gtc2hhZG93OiBub25lICFpbXBvcnRhbnQ7XHJcbiAgfVxyXG5cclxuICAuZm9udCB7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbiAgfVxyXG5cclxuICAuZm9udDF7XHJcbiAgIGZvbnQtc2l6ZTogMTEuNXB4O1xyXG4gIC8vICB0ZXh0LWFsaWduOiBjZW50ZXI7IFxyXG4gIH1cclxuICAuYnV0dG9ue1xyXG4gICAgZm9udC1zaXplOiAxMXB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuIC5ncmlkY29sb3J7XHJcbiAgIGJhY2tncm91bmQtY29sb3I6IGFsaWNlYmx1ZTtcclxuIH1cclxuXHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -6794,10 +6794,17 @@ var Tab1Page = /** @class */ (function () {
         console.log(this.JobcardService.serialNo);
         this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard');
     };
+    Tab1Page.ctorParameters = function () { return [
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+        { type: _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },
+        { type: _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"] }
+    ]; };
     Tab1Page = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-tab1',
-            template: __webpack_require__(/*! ./tab1.page.html */ "./src/app/pages/tab1/tab1.page.html"),
+            template: __webpack_require__(/*! raw-loader!./tab1.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/tab1/tab1.page.html"),
             styles: [__webpack_require__(/*! ./tab1.page.scss */ "./src/app/pages/tab1/tab1.page.scss")]
         }),
         __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"],
@@ -6898,6 +6905,9 @@ var LoginService = /** @class */ (function () {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
         }));
     };
+    LoginService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    ]; };
     LoginService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'

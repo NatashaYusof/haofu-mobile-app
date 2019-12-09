@@ -187,13 +187,13 @@ export class ChildtaskPage implements OnInit {
   //         taskid :this.JobcardService.taskId,
   //         employeeid :this.details.employee.employeeid,
   //         tasktimemanagementenddatetime: this.currentDate,
-  //         tasktimemanagementendstate:5
+  //         tasktimemanagementendstate:4
 
   //       }
   //       ]
   
   //       let data1 =[{
-  //         taskstatus:[{"taskstatusid":5}],
+  //         taskstatus:[{"taskstatusid":4}],
   //         employeeid :this.details.employee.employeeid,
   //         taskid :this.JobcardService.taskId,
   //       }

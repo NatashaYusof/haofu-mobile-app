@@ -99,11 +99,11 @@ export class CanvasPage implements OnInit {
     let ctx1 = this.canvasElement1.getContext('2d');
     let ctx2 = this.canvasElement2.getContext('2d');
     this.canvasElement.width = window.innerWidth;
-    this.canvasElement.height = 420;   
+    this.canvasElement.height = 460;   
     this.canvasElement1.width = window.innerWidth;
-    this.canvasElement1.height = 420;   
+    this.canvasElement1.height = 460;   
     this.canvasElement2.width = window.innerWidth;
-    this.canvasElement2.height = 420;   
+    this.canvasElement2.height = 460;   
    
     const img = new Image()
     // img.src = "../assets/icon/favicon.png"
@@ -368,10 +368,10 @@ export class CanvasPage implements OnInit {
     toast.present()
     this.canvasElement1 = this.canvas1.nativeElement;
     this.canvasElement1.width = window.innerWidth;
-    this.canvasElement1.height = 420;   
+    this.canvasElement1.height = 460;   
     this.canvasElement2 = this.canvas2.nativeElement;
     this.canvasElement2.width = window.innerWidth;
-    this.canvasElement2.height = 420;   
+    this.canvasElement2.height = 460;   
     }
 
   onPaint(){

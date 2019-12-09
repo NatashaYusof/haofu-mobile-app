@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["jobcard-jobcard-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/jobcard/jobcard.page.html":
+/*!***************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/jobcard/jobcard.page.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n   \n\n<ion-content padding>\n  \n    <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n<ion-card>\n<ion-item *ngFor=\"let jctitle of serialNo.jobcards\">\n  <ion-label><b>{{jctitle.jobcardtitle}}</b></ion-label>\n  <ion-label tappable class=\"ocr\" (click)=\"goToTaks(jctitle.jobcardid,jctitle)\" >OCR</ion-label>\n</ion-item>\n</ion-card>\n\n\n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/jobcard/jobcard.module.ts":
 /*!*************************************************!*\
   !*** ./src/app/pages/jobcard/jobcard.module.ts ***!
@@ -52,17 +63,6 @@ var JobcardPageModule = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/pages/jobcard/jobcard.page.html":
-/*!*************************************************!*\
-  !*** ./src/app/pages/jobcard/jobcard.page.html ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n   \n\n<ion-content padding>\n  \n    <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n<ion-card>\n<ion-item *ngFor=\"let jctitle of serialNo.jobcards\">\n  <ion-label><b>{{jctitle.jobcardtitle}}</b></ion-label>\n  <ion-label tappable class=\"ocr\" (click)=\"goToTaks(jctitle.jobcardid,jctitle)\" >OCR</ion-label>\n</ion-item>\n</ion-card>\n\n\n</ion-content>\n"
 
 /***/ }),
 
@@ -131,10 +131,16 @@ var JobcardPage = /** @class */ (function () {
         console.log(this.JobcardService.jobcardId);
         this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/' + id);
     };
+    JobcardPage.ctorParameters = function () { return [
+        { type: _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
+        { type: _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"] }
+    ]; };
     JobcardPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-jobcard',
-            template: __webpack_require__(/*! ./jobcard.page.html */ "./src/app/pages/jobcard/jobcard.page.html"),
+            template: __webpack_require__(/*! raw-loader!./jobcard.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/jobcard/jobcard.page.html"),
             styles: [__webpack_require__(/*! ./jobcard.page.scss */ "./src/app/pages/jobcard/jobcard.page.scss")]
         }),
         __metadata("design:paramtypes", [_src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"]])
@@ -234,6 +240,9 @@ var LoginService = /** @class */ (function () {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
         }));
     };
+    LoginService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    ]; };
     LoginService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'

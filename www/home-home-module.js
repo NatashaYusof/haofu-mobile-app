@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["home-home-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/home/home.page.html":
+/*!***************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/home/home.page.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>  \t\n  \t<ion-buttons>\n      <ion-icon name=\"funnel\"></ion-icon>\n    </ion-buttons>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>If you get lost, the <a target=\"_blank\" rel=\"noopener\" href=\"https://ionicframework.com/docs/\">docs</a> will be your guide.</p>\n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/home/home.module.ts":
 /*!*************************************!*\
   !*** ./src/app/home/home.module.ts ***!
@@ -54,17 +65,6 @@ var HomePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/home/home.page.html":
-/*!*************************************!*\
-  !*** ./src/app/home/home.page.html ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar>  \t\n  \t<ion-buttons>\n      <ion-icon name=\"funnel\"></ion-icon>\n    </ion-buttons>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>If you get lost, the <a target=\"_blank\" rel=\"noopener\" href=\"https://ionicframework.com/docs/\">docs</a> will be your guide.</p>\n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/home/home.page.scss":
 /*!*************************************!*\
   !*** ./src/app/home/home.page.scss ***!
@@ -100,7 +100,7 @@ var HomePage = /** @class */ (function () {
     HomePage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
-            template: __webpack_require__(/*! ./home.page.html */ "./src/app/home/home.page.html"),
+            template: __webpack_require__(/*! raw-loader!./home.page.html */ "./node_modules/raw-loader/index.js!./src/app/home/home.page.html"),
             styles: [__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")]
         })
     ], HomePage);

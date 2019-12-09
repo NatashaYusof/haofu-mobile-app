@@ -1,16 +1,338 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-b43431d3.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-b43431d3.js ***!
-  \***********************************************************************/
-/*! exports provided: create */
+/***/ "./node_modules/@ionic/core/dist/esm-es5/framework-delegate-c2e2e1f4.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/framework-delegate-c2e2e1f4.js ***!
+  \******************************************************************************/
+/*! exports provided: a, d */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "create", function() { return create; });
-function transitionEnd(t,e){var i,s={passive:!0};function r(){i&&i()}function n(i){t===i.target&&(r(),e(i))}return t&&(t.addEventListener("webkitTransitionEnd",n,s),t.addEventListener("transitionend",n,s),i=function(){t.removeEventListener("webkitTransitionEnd",n,s),t.removeEventListener("transitionend",n,s)}),r}var CSS_VALUE_REGEX=/(^-?\d*\.?\d*)(.*)/,DURATION_MIN=32,TRANSITION_END_FALLBACK_PADDING_MS=400,TRANSFORM_PROPS={translateX:1,translateY:1,translateZ:1,scale:1,scaleX:1,scaleY:1,scaleZ:1,rotate:1,rotateX:1,rotateY:1,rotateZ:1,skewX:1,skewY:1,perspective:1},raf=window.requestAnimationFrame?window.requestAnimationFrame.bind(window):function(t){return t(Date.now())},Animator=function(){function t(){this._hasDur=!1,this._hasTweenEffect=!1,this._isAsync=!1,this._isReverse=!1,this._destroyed=!1,this.hasChildren=!1,this.isPlaying=!1,this.hasCompleted=!1}return t.prototype.addElement=function(t){if(null!=t)if(t.length>0)for(var e=0;e<t.length;e++)this._addEl(t[e]);else this._addEl(t);return this},t.prototype._addEl=function(t){1===t.nodeType&&(this._elements=this._elements||[]).push(t)},t.prototype.add=function(t){return t.parent=this,this.hasChildren=!0,(this._childAnimations=this._childAnimations||[]).push(t),this},t.prototype.getDuration=function(t){return t&&void 0!==t.duration?t.duration:void 0!==this._duration?this._duration:this.parent?this.parent.getDuration():0},t.prototype.isRoot=function(){return!this.parent},t.prototype.duration=function(t){return this._duration=t,this},t.prototype.getEasing=function(){return this._isReverse&&void 0!==this._reversedEasingName?this._reversedEasingName:void 0!==this._easingName?this._easingName:this.parent&&this.parent.getEasing()||null},t.prototype.easing=function(t){return this._easingName=t,this},t.prototype.easingReverse=function(t){return this._reversedEasingName=t,this},t.prototype.from=function(t,e){return this._addProp("from",t,e),this},t.prototype.to=function(t,e,i){void 0===i&&(i=!1);var s=this._addProp("to",t,e);return i&&this.afterClearStyles([s.trans?"transform":t]),this},t.prototype.fromTo=function(t,e,i,s){return this.from(t,e).to(t,i,s)},t.prototype._getProp=function(t){if(this._fxProperties)return this._fxProperties.find(function(e){return e.effectName===t})},t.prototype._addProp=function(t,e,i){var s=this._getProp(e);if(!s){var r=1===TRANSFORM_PROPS[e];s={effectName:e,trans:r,wc:r?"transform":e},(this._fxProperties=this._fxProperties||[]).push(s)}var n={val:i,num:0,effectUnit:""};if(s[t]=n,"string"==typeof i&&i.indexOf(" ")<0){var o=i.match(CSS_VALUE_REGEX);if(o){var a=parseFloat(o[1]);isNaN(a)||(n.num=a),n.effectUnit=o[0]!==o[2]?o[2]:""}}else"number"==typeof i&&(n.num=i);return s},t.prototype.beforeAddClass=function(t){return(this._beforeAddClasses=this._beforeAddClasses||[]).push(t),this},t.prototype.beforeRemoveClass=function(t){return(this._beforeRemoveClasses=this._beforeRemoveClasses||[]).push(t),this},t.prototype.beforeStyles=function(t){return this._beforeStyles=t,this},t.prototype.beforeClearStyles=function(t){this._beforeStyles=this._beforeStyles||{};for(var e=0,i=t;e<i.length;e++)this._beforeStyles[i[e]]="";return this},t.prototype.beforeAddRead=function(t){return(this._readCallbacks=this._readCallbacks||[]).push(t),this},t.prototype.beforeAddWrite=function(t){return(this._writeCallbacks=this._writeCallbacks||[]).push(t),this},t.prototype.afterAddClass=function(t){return(this._afterAddClasses=this._afterAddClasses||[]).push(t),this},t.prototype.afterRemoveClass=function(t){return(this._afterRemoveClasses=this._afterRemoveClasses||[]).push(t),this},t.prototype.afterStyles=function(t){return this._afterStyles=t,this},t.prototype.afterClearStyles=function(t){this._afterStyles=this._afterStyles||{};for(var e=0,i=t;e<i.length;e++)this._afterStyles[i[e]]="";return this},t.prototype.play=function(t){var e=this;this._destroyed||(this._isAsync=this._hasDuration(t),this._clearAsync(),this._playInit(t),raf(function(){raf(function(){e._playDomInspect(t)})}))},t.prototype.playAsync=function(t){var e=this;return new Promise(function(i){return e.onFinish(i,{oneTimeCallback:!0,clearExistingCallbacks:!0}),e.play(t),e})},t.prototype.playSync=function(){if(!this._destroyed){var t={duration:0};this._isAsync=!1,this._clearAsync(),this._playInit(t),this._playDomInspect(t)}},t.prototype._playInit=function(t){this._hasTweenEffect=!1,this.isPlaying=!0,this.hasCompleted=!1,this._hasDur=this.getDuration(t)>DURATION_MIN;var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playInit(t);this._hasDur&&(this._progress(0),this._willChange(!0))},t.prototype._playDomInspect=function(t){var e=this;this._beforeAnimation();var i=this.getDuration(t);this._isAsync&&this._asyncEnd(i,!0),this._playProgress(t),this._isAsync&&!this._destroyed&&raf(function(){e._playToStep(1)})},t.prototype._playProgress=function(t){var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playProgress(t);this._hasDur?this._setTrans(this.getDuration(t),!1):(this._progress(1),this._setAfterStyles(),this._didFinish(!0))},t.prototype._playToStep=function(t){if(!this._destroyed){var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playToStep(t);this._hasDur&&this._progress(t)}},t.prototype._asyncEnd=function(t,e){var i=this;i._unregisterTrnsEnd=transitionEnd(i._transEl(),function(){i._clearAsync(),i._playEnd(),i._didFinishAll(e,!0,!1)}),i._timerId=setTimeout(function(){i._timerId=void 0,i._clearAsync(),i._playEnd(e?1:0),i._didFinishAll(e,!0,!1)},t+TRANSITION_END_FALLBACK_PADDING_MS)},t.prototype._playEnd=function(t){var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playEnd(t);this._hasDur&&(void 0!==t&&(this._setTrans(0,!0),this._progress(t)),this._setAfterStyles(),this._willChange(!1))},t.prototype._hasDuration=function(t){if(this.getDuration(t)>DURATION_MIN)return!0;var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)if(s[i]._hasDuration(t))return!0;return!1},t.prototype._hasDomReads=function(){if(this._readCallbacks&&this._readCallbacks.length>0)return!0;var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)if(i[e]._hasDomReads())return!0;return!1},t.prototype.stop=function(t){void 0===t&&(t=1),this._clearAsync(),this._hasDur=!0,this._playEnd(t)},t.prototype._clearAsync=function(){this._unregisterTrnsEnd&&this._unregisterTrnsEnd(),this._timerId&&clearTimeout(this._timerId),this._timerId=this._unregisterTrnsEnd=void 0},t.prototype._progress=function(t){var e,i=this._elements,s=this._fxProperties;if(i&&0!==i.length&&s&&!this._destroyed){this._isReverse&&(t=1-t);var r,n=0,o=0,a="";for(n=0;n<s.length;n++)if((r=s[n]).from&&r.to){var h=r.from.num,l=r.to.num,f=h!==l;if(f&&(this._hasTweenEffect=!0),0===t?e=r.from.val:1===t?e=r.to.val:f&&(e=(l-h)*t+h+r.to.effectUnit),null!==e){var _=r.effectName;if(r.trans)a+=_+"("+e+") ";else for(o=0;o<i.length;o++)i[o].style.setProperty(_,e)}}if(a.length>0)for((!this._isReverse&&1!==t||this._isReverse&&0!==t)&&(a+="translateZ(0px)"),n=0;n<i.length;n++)i[n].style.setProperty("transform",a)}},t.prototype._setTrans=function(t,e){var i=this._elements;if(i&&0!==i.length&&this._fxProperties)for(var s=e?"linear":this.getEasing(),r=t+"ms",n=0,o=i;n<o.length;n++){var a=o[n].style;t>0?(a.transitionDuration=r,null!==s&&(a.transitionTimingFunction=s)):a.transitionDuration="0"}},t.prototype._beforeAnimation=function(){this._fireBeforeReadFunc(),this._fireBeforeWriteFunc(),this._setBeforeStyles()},t.prototype._setBeforeStyles=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._setBeforeStyles();var s=this._elements;if(s&&0!==s.length&&!this._isReverse)for(var r=this._beforeAddClasses,n=this._beforeRemoveClasses,o=0,a=s;o<a.length;o++){var h=a[o],l=h.classList;if(r)for(var f=0,_=r;f<_.length;f++)l.add(_[f]);if(n)for(var p=0,c=n;p<c.length;p++)l.remove(c[p]);if(this._beforeStyles)for(var d=0,u=Object.entries(this._beforeStyles);d<u.length;d++){var y=u[d];h.style.setProperty(y[0],y[1])}}},t.prototype._fireBeforeReadFunc=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._fireBeforeReadFunc();var s=this._readCallbacks;if(s)for(var r=0,n=s;r<n.length;r++)(0,n[r])()},t.prototype._fireBeforeWriteFunc=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._fireBeforeWriteFunc();var s=this._writeCallbacks;if(s)for(var r=0,n=s;r<n.length;r++)(0,n[r])()},t.prototype._setAfterStyles=function(){var t=this._elements;if(t)for(var e=0,i=t;e<i.length;e++){var s=i[e],r=s.classList;if(s.style.transitionDuration=s.style.transitionTimingFunction="",this._isReverse){var n=this._beforeAddClasses;if(n)for(var o=0,a=n;o<a.length;o++)r.remove(a[o]);var h=this._beforeRemoveClasses;if(h)for(var l=0,f=h;l<f.length;l++)r.add(f[l]);var _=this._beforeStyles;if(_)for(var p=0,c=Object.keys(_);p<c.length;p++)s.style.removeProperty(c[p])}else{var d=this._afterAddClasses;if(d)for(var u=0,y=d;u<y.length;u++)r.add(y[u]);var v=this._afterRemoveClasses;if(v)for(var m=0,g=v;m<g.length;m++)r.remove(g[m]);var A=this._afterStyles;if(A)for(var C=0,b=Object.entries(A);C<b.length;C++){var E=b[C];s.style.setProperty(E[0],E[1])}}}},t.prototype._willChange=function(t){var e,i,s=this._fxProperties;if(t&&s){e=[];for(var r=0,n=s;r<n.length;r++){var o=n[r].wc;"webkitTransform"===o?e.push("transform","-webkit-transform"):void 0!==o&&e.push(o)}i=e.join(",")}else i="";var a=this._elements;if(a)for(var h=0,l=a;h<l.length;h++)l[h].style.setProperty("will-change",i)},t.prototype.progressStart=function(){this._clearAsync(),this._beforeAnimation(),this._progressStart()},t.prototype._progressStart=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._progressStart();this._setTrans(0,!0),this._willChange(!0)},t.prototype.progressStep=function(t){t=Math.min(1,Math.max(0,t));var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i].progressStep(t);this._progress(t)},t.prototype.progressEnd=function(t,e,i){var s=this;void 0===i&&(i=-1),this._isReverse&&(e=1-e);var r=t?1:0,n=Math.abs(e-r);i<0?i=this._duration||0:n<.05&&(i=0),this._isAsync=i>30,this._progressEnd(t,r,i,this._isAsync),this._isAsync&&(this._asyncEnd(i,t),this._destroyed||raf(function(){s._playToStep(r)}))},t.prototype._progressEnd=function(t,e,i,s){var r=this._childAnimations;if(r)for(var n=0,o=r;n<o.length;n++)o[n]._progressEnd(t,e,i,s);s?(this.isPlaying=!0,this.hasCompleted=!1,this._hasDur=!0,this._willChange(!0),this._setTrans(i,!1)):(this._progress(e),this._willChange(!1),this._setAfterStyles(),this._didFinish(t))},t.prototype.onFinish=function(t,e){return e&&e.clearExistingCallbacks&&(this._onFinishCallbacks=this._onFinishOneTimeCallbacks=void 0),e&&e.oneTimeCallback?(this._onFinishOneTimeCallbacks=this._onFinishOneTimeCallbacks||[],this._onFinishOneTimeCallbacks.push(t)):(this._onFinishCallbacks=this._onFinishCallbacks||[],this._onFinishCallbacks.push(t)),this},t.prototype._didFinishAll=function(t,e,i){var s=this._childAnimations;if(s)for(var r=0,n=s;r<n.length;r++)n[r]._didFinishAll(t,e,i);(e&&this._isAsync||i&&!this._isAsync)&&this._didFinish(t)},t.prototype._didFinish=function(t){if(this.isPlaying=!1,this.hasCompleted=t,this._onFinishCallbacks)for(var e=0,i=this._onFinishCallbacks;e<i.length;e++)(0,i[e])(this);if(this._onFinishOneTimeCallbacks){for(var s=0,r=this._onFinishOneTimeCallbacks;s<r.length;s++)(0,r[s])(this);this._onFinishOneTimeCallbacks.length=0}},t.prototype.reverse=function(t){void 0===t&&(t=!0);var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i].reverse(t);return this._isReverse=!!t,this},t.prototype.destroy=function(){this._didFinish(!1),this._destroyed=!0;var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e].destroy();this._clearAsync(),this._elements&&(this._elements.length=0),this._readCallbacks&&(this._readCallbacks.length=0),this._writeCallbacks&&(this._writeCallbacks.length=0),this.parent=void 0,this._childAnimations&&(this._childAnimations.length=0),this._onFinishCallbacks&&(this._onFinishCallbacks.length=0),this._onFinishOneTimeCallbacks&&(this._onFinishOneTimeCallbacks.length=0)},t.prototype._transEl=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++){var s=i[e]._transEl();if(s)return s}return this._hasTweenEffect&&this._hasDur&&void 0!==this._elements&&this._elements.length>0?this._elements[0]:null},t}();function create(t,e,i){return t?t(Animator,e,i):Promise.resolve(new Animator)}
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return attachComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return detachComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/@ionic/core/node_modules/tslib/tslib.es6.js");
+
+var attachComponent = function (delegate, container, component, cssClasses, componentProps) { return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function () {
+    var el;
+    return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                if (delegate) {
+                    return [2 /*return*/, delegate.attachViewToDom(container, component, componentProps, cssClasses)];
+                }
+                if (typeof component !== 'string' && !(component instanceof HTMLElement)) {
+                    throw new Error('framework delegate is missing');
+                }
+                el = (typeof component === 'string')
+                    ? container.ownerDocument && container.ownerDocument.createElement(component)
+                    : component;
+                if (cssClasses) {
+                    cssClasses.forEach(function (c) { return el.classList.add(c); });
+                }
+                if (componentProps) {
+                    Object.assign(el, componentProps);
+                }
+                container.appendChild(el);
+                if (!el.componentOnReady) return [3 /*break*/, 2];
+                return [4 /*yield*/, el.componentOnReady()];
+            case 1:
+                _a.sent();
+                _a.label = 2;
+            case 2: return [2 /*return*/, el];
+        }
+    });
+}); };
+var detachComponent = function (delegate, element) {
+    if (element) {
+        if (delegate) {
+            var container = element.parentElement;
+            return delegate.removeViewFromDom(container, element);
+        }
+        element.remove();
+    }
+    return Promise.resolve();
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm-es5/ion-tab_2.entry.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm-es5/ion-tab_2.entry.js ***!
+  \******************************************************************/
+/*! exports provided: ion_tab, ion_tabs */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_tab", function() { return Tab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_tabs", function() { return Tabs; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/@ionic/core/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./core-ca0488fc.js */ "./node_modules/@ionic/core/dist/esm-es5/core-ca0488fc.js");
+/* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config-3c7f3790.js */ "./node_modules/@ionic/core/dist/esm-es5/config-3c7f3790.js");
+/* harmony import */ var _framework_delegate_c2e2e1f4_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./framework-delegate-c2e2e1f4.js */ "./node_modules/@ionic/core/dist/esm-es5/framework-delegate-c2e2e1f4.js");
+
+
+
+
+var Tab = /** @class */ (function () {
+    function class_1(hostRef) {
+        Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.loaded = false;
+        /** @internal */
+        this.active = false;
+    }
+    class_1.prototype.componentWillLoad = function () {
+    };
+    /** Set the active component for the tab */
+    class_1.prototype.setActive = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.prepareLazyLoaded()];
+                    case 1:
+                        _a.sent();
+                        this.active = true;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_1.prototype.prepareLazyLoaded = function () {
+        if (!this.loaded && this.component != null) {
+            this.loaded = true;
+            try {
+                return Object(_framework_delegate_c2e2e1f4_js__WEBPACK_IMPORTED_MODULE_3__["a"])(this.delegate, this.el, this.component, ['ion-page']);
+            }
+            catch (e) {
+                console.error(e);
+            }
+        }
+        return Promise.resolve(undefined);
+    };
+    class_1.prototype.render = function () {
+        var _a = this, tab = _a.tab, active = _a.active, component = _a.component;
+        return (Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "tabpanel", "aria-hidden": !active ? 'true' : null, "aria-labelledby": "tab-button-" + tab, class: {
+                'ion-page': component === undefined,
+                'tab-hidden': !active
+            } }, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
+    };
+    Object.defineProperty(class_1.prototype, "el", {
+        get: function () { return Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(class_1, "style", {
+        get: function () { return ":host(.tab-hidden){display:none!important}"; },
+        enumerable: true,
+        configurable: true
+    });
+    return class_1;
+}());
+var Tabs = /** @class */ (function () {
+    function class_2(hostRef) {
+        var _this = this;
+        Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.transitioning = false;
+        /** @internal */
+        this.useRouter = false;
+        this.onTabClicked = function (ev) {
+            var _a = ev.detail, href = _a.href, tab = _a.tab;
+            if (_this.useRouter && href !== undefined) {
+                var router = document.querySelector('ion-router');
+                if (router) {
+                    router.push(href);
+                }
+            }
+            else {
+                _this.select(tab);
+            }
+        };
+        this.ionNavWillLoad = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionNavWillLoad", 7);
+        this.ionTabsWillChange = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionTabsWillChange", 3);
+        this.ionTabsDidChange = Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["c"])(this, "ionTabsDidChange", 3);
+    }
+    class_2.prototype.componentWillLoad = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var tabs;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!this.useRouter) {
+                            this.useRouter = !!document.querySelector('ion-router') && !this.el.closest('[no-router]');
+                        }
+                        if (!!this.useRouter) return [3 /*break*/, 2];
+                        tabs = this.tabs;
+                        return [4 /*yield*/, this.select(tabs[0])];
+                    case 1:
+                        _a.sent();
+                        _a.label = 2;
+                    case 2:
+                        this.ionNavWillLoad.emit();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    class_2.prototype.componentWillRender = function () {
+        var tabBar = this.el.querySelector('ion-tab-bar');
+        if (tabBar) {
+            var tab = this.selectedTab ? this.selectedTab.tab : undefined;
+            tabBar.selectedTab = tab;
+        }
+    };
+    /**
+     * Select a tab by the value of its `tab` property or an element reference.
+     *
+     * @param tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property.
+     */
+    class_2.prototype.select = function (tab) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var selectedTab;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        selectedTab = getTab(this.tabs, tab);
+                        if (!this.shouldSwitch(selectedTab)) {
+                            return [2 /*return*/, false];
+                        }
+                        return [4 /*yield*/, this.setActive(selectedTab)];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, this.notifyRouter()];
+                    case 2:
+                        _a.sent();
+                        this.tabSwitch();
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    /**
+     * Get a specific tab by the value of its `tab` property or an element reference.
+     *
+     * @param tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property.
+     */
+    class_2.prototype.getTab = function (tab) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                return [2 /*return*/, getTab(this.tabs, tab)];
+            });
+        });
+    };
+    /**
+     * Get the currently selected tab.
+     */
+    class_2.prototype.getSelected = function () {
+        return Promise.resolve(this.selectedTab ? this.selectedTab.tab : undefined);
+    };
+    /** @internal */
+    class_2.prototype.setRouteId = function (id) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var selectedTab;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        selectedTab = getTab(this.tabs, id);
+                        if (!this.shouldSwitch(selectedTab)) {
+                            return [2 /*return*/, { changed: false, element: this.selectedTab }];
+                        }
+                        return [4 /*yield*/, this.setActive(selectedTab)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/, {
+                                changed: true,
+                                element: this.selectedTab,
+                                markVisible: function () { return _this.tabSwitch(); },
+                            }];
+                }
+            });
+        });
+    };
+    /** @internal */
+    class_2.prototype.getRouteId = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var tabId;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                tabId = this.selectedTab && this.selectedTab.tab;
+                return [2 /*return*/, tabId !== undefined ? { id: tabId, element: this.selectedTab } : undefined];
+            });
+        });
+    };
+    class_2.prototype.setActive = function (selectedTab) {
+        if (this.transitioning) {
+            return Promise.reject('transitioning already happening');
+        }
+        this.transitioning = true;
+        this.leavingTab = this.selectedTab;
+        this.selectedTab = selectedTab;
+        this.ionTabsWillChange.emit({ tab: selectedTab.tab });
+        return selectedTab.setActive();
+    };
+    class_2.prototype.tabSwitch = function () {
+        var selectedTab = this.selectedTab;
+        var leavingTab = this.leavingTab;
+        this.leavingTab = undefined;
+        this.transitioning = false;
+        if (!selectedTab) {
+            return;
+        }
+        if (leavingTab !== selectedTab) {
+            if (leavingTab) {
+                leavingTab.active = false;
+            }
+            this.ionTabsDidChange.emit({ tab: selectedTab.tab });
+        }
+    };
+    class_2.prototype.notifyRouter = function () {
+        if (this.useRouter) {
+            var router = document.querySelector('ion-router');
+            if (router) {
+                return router.navChanged('forward');
+            }
+        }
+        return Promise.resolve(false);
+    };
+    class_2.prototype.shouldSwitch = function (selectedTab) {
+        var leavingTab = this.selectedTab;
+        return selectedTab !== undefined && selectedTab !== leavingTab && !this.transitioning;
+    };
+    Object.defineProperty(class_2.prototype, "tabs", {
+        get: function () {
+            return Array.from(this.el.querySelectorAll('ion-tab'));
+        },
+        enumerable: true,
+        configurable: true
+    });
+    class_2.prototype.render = function () {
+        return (Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onIonTabButtonClick: this.onTabClicked }, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "top" }), Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "tabs-inner" }, Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "bottom" })));
+    };
+    Object.defineProperty(class_2.prototype, "el", {
+        get: function () { return Object(_core_ca0488fc_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(class_2, "style", {
+        get: function () { return ":host{left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;width:100%;height:100%;z-index:0}.tabs-inner,:host{contain:layout size style}.tabs-inner{position:relative;-ms-flex:1;flex:1}"; },
+        enumerable: true,
+        configurable: true
+    });
+    return class_2;
+}());
+var getTab = function (tabs, tab) {
+    var tabEl = (typeof tab === 'string')
+        ? tabs.find(function (t) { return t.tab === tab; })
+        : tab;
+    if (!tabEl) {
+        console.error("tab with id: \"" + tabEl + "\" does not exist");
+    }
+    return tabEl;
+};
+
+
 
 /***/ })
 

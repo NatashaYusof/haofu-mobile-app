@@ -1,5 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["details-details-module"],{
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/details/details.page.html":
+/*!***************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/details/details.page.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>Details Page</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n \n</ion-content>\n"
+
+/***/ }),
+
 /***/ "./src/app/pages/details/details.module.ts":
 /*!*************************************************!*\
   !*** ./src/app/pages/details/details.module.ts ***!
@@ -55,17 +66,6 @@ var DetailsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pages/details/details.page.html":
-/*!*************************************************!*\
-  !*** ./src/app/pages/details/details.page.html ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n    <ion-title>Details Page</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n \n</ion-content>\n"
-
-/***/ }),
-
 /***/ "./src/app/pages/details/details.page.scss":
 /*!*************************************************!*\
   !*** ./src/app/pages/details/details.page.scss ***!
@@ -106,7 +106,7 @@ var DetailsPage = /** @class */ (function () {
     DetailsPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-details',
-            template: __webpack_require__(/*! ./details.page.html */ "./src/app/pages/details/details.page.html"),
+            template: __webpack_require__(/*! raw-loader!./details.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/details/details.page.html"),
             styles: [__webpack_require__(/*! ./details.page.scss */ "./src/app/pages/details/details.page.scss")]
         }),
         __metadata("design:paramtypes", [])
