@@ -15,6 +15,11 @@ import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { TimedetailPageModule } from './pages/timedetail/timedetail.module';;
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { Crop } from '@ionic-native/crop/ngx';
+import { Base64 } from '@ionic-native/base64/ngx';
+
+
 // import { ActionSheetController } from '@ionic/angular';
 
 @NgModule({
@@ -26,7 +31,10 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
     File,
     SplashScreen,
     WebView,
+    Base64,
+    ImagePicker,
     Camera,
+    Crop,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

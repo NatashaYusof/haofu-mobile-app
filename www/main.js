@@ -736,6 +736,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
 /* harmony import */ var _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/timedetail/timedetail.module */ "./src/app/pages/timedetail/timedetail.module.ts");
 /* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
+/* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
+/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
+/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -758,6 +761,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 ;
 
+
+
+
 // import { ActionSheetController } from '@ionic/angular';
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -772,7 +778,10 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__["File"],
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"],
                 _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_14__["WebView"],
+                _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_17__["Base64"],
+                _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_15__["ImagePicker"],
                 _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_11__["Camera"],
+                _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_16__["Crop"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -1045,6 +1054,16 @@ var JobcardService = /** @class */ (function () {
         },
         set: function (val) {
             this.jobcardDetail = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "imageLists", {
+        get: function () {
+            return this.img;
+        },
+        set: function (val) {
+            this.img = val;
         },
         enumerable: true,
         configurable: true

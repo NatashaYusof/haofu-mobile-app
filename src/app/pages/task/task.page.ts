@@ -33,8 +33,15 @@ export class TaskPage implements OnInit {
   alertCtrl: any;
   dataReturned: any;
   
-  constructor(private http: LoginService, private router: Router, public alertController: AlertController,
-    public loadingCtrl: LoadingController,public JobcardService: JobcardService,public TimeService:TimeService, public modalController: ModalController) { 
+  constructor(
+    private http: LoginService,
+    private router: Router,
+    public alertController: AlertController,
+    public loadingCtrl: LoadingController,
+    public JobcardService: JobcardService,
+    public TimeService:TimeService,
+    public modalController: ModalController
+    ) { 
 
       this.imej='assets/icon/start.png';
       this.imej1='assets/icon/tick.png';

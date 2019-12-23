@@ -306,8 +306,13 @@ var TaskPage = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./task.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/task/task.page.html"),
             styles: [__webpack_require__(/*! ./task.page.scss */ "./src/app/pages/task/task.page.scss")]
         }),
-        __metadata("design:paramtypes", [_src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"], _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"], _src_app_services_time_service__WEBPACK_IMPORTED_MODULE_5__["TimeService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]])
+        __metadata("design:paramtypes", [_src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"],
+            _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"],
+            _src_app_services_time_service__WEBPACK_IMPORTED_MODULE_5__["TimeService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]])
     ], TaskPage);
     return TaskPage;
 }());

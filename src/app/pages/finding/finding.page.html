@@ -33,41 +33,34 @@
   <ion-item>  
     <ion-icon name="attach" ></ion-icon><ion-label (click)="pickImage()" class="font2" tappable >Attach Image</ion-label>
   </ion-item>
-     
+
+
+  
+    <ion-slides pager="true" class="card"  >
+      <ion-slide *ngFor="let img of imageLists ;index as i" > 
+        <ion-card>  
+           <div class="scrolling-wrapper"> 
+              <img src="{{img}}" tappable style="height: 330px;width:300px" /> 
+            
+              <!-- <img src="{{imageSrc}}" tappable/>  -->
+            
+            <div class="chipGroup">
+              <ion-chip >
+                <button ion-button outline icon-only (click)="goToCanvas(img, i)"><ion-icon name="brush"></ion-icon></button>
+                <ion-label>Edit</ion-label>
+              </ion-chip>
+              <ion-chip>
+                 <button ion-button outline icon-only (click)="deleteImage(img, i)" > <ion-icon name="trash" ></ion-icon></button>   
+                 <ion-label>Delete</ion-label>
+                 
+              </ion-chip>
+              </div> 
+            </div>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+
     
-      <!-- <ion-item> -->
-        <ion-item>
-  <ion-row>
-    <ion-col>
-      <!-- <div class="images">
-        <div class="one-images" *ngFor="let img of imageSrc"> -->
-          <img src= "{{ imageSrc}}" alt="" (click)="action()" />
-        <!-- </div>
-      </div> -->
-    </ion-col>
-  </ion-row>
-</ion-item>
-
-    <!-- <ion-slides class="card">
-      <ion-slide>    
-         <div class="scrolling-wrapper"> -->
-            <!-- <ion-card class="card">
-             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()">    -->
-              <!-- <ion-icon *ngFor="let avatar of avatars" name="radio-button-on" class="scroll-item selectable-icon"></ion-icon> -->
-        <!-- </ion-card>
-      </ion-slide>
-      <ion-slide>    
-        <ion-card class="card">      
-             <img src= "../../../assets/icon/i1.PNG" id="1" tappable (click)="goToCanvas()"> -->
-                <!-- <ion-icon *ngFor="let avatar of avatars" name="radio-button-on" class="scroll-item selectable-icon"></ion-icon> -->
-         <!-- </ion-card>     
-      </ion-slide>
-    </ion-slides> -->
-  <!-- </div> -->
-  <!-- </div> -->
-
-
-
     <!-- </ion-item> -->
     <!-- <ion-button expand="block" color="primary" height="10px"><ion-icon name="create" ></ion-icon>Edit Image</ion-button> -->
   </ion-card>

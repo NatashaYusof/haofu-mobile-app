@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Base64 } from '@ionic-native/base64/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class JobcardService {
   taskid: string;
   childtaskid: string;
   jobcardDetail:any;
+  img: any;
  
   constructor(private http: HttpClient) {}
 
@@ -71,5 +73,13 @@ export class JobcardService {
 
   set jobcardDetails(val: string){
     this.jobcardDetail =val;
+  }
+
+  get imageLists():any{
+    return this.img;
+  }
+
+  set imageLists(val: any){
+    this.img =val;
   }
 }

@@ -6,6 +6,12 @@ import { JobcardService } from '../../../../src/app/services/jobcard.service';
 import * as moment from 'moment';
 import { Camera, CameraOptions } from '@ionic-native/Camera/ngx'
 import { File } from '@ionic-native/file/ngx';
+import { ImagePickerOptions,ImagePicker } from '@ionic-native/image-picker/ngx';
+import { Crop } from '@ionic-native/crop/ngx';
+import { Base64 } from '@ionic-native/base64/ngx';
+import {DomSanitizer} from '@angular/platform-browser';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+
 // import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @Component({
@@ -23,16 +29,15 @@ export class FindingPage implements OnInit {
   formattedDate: string;
   childtaskId: string;
   btn_txt = 'PAUSE';
-  photos = [];
-
+  
   croppedImagepath = "";
   isLoading = false;
-
+ 
   imagePickerOptions = {
-    maximumImagesCount: 1,
-    quality: 50
+    maximumImagesCount: 5,
+  
+  
   };
-  crop: any;
   picture: string;
   imageSrc: any;
   userDetail: string;
@@ -40,12 +45,37 @@ export class FindingPage implements OnInit {
   TimeService: any;
   loading: any;
   jobcardDetail: string;
-  actionSheet: Promise<void>;
-  // imageSrc: any;
-
-  constructor(private http: LoginService, private router: Router, public alertController: AlertController,public loadingCtrl: LoadingController,
-    public JobcardService: JobcardService,private camera: Camera,public actionSheetController: ActionSheetController,
-    private file: File) { }
+  actionSheet:any;
+  imageLists = []; 
+  photos: string[];
+  cropService: any;
+  imgPreview: any;
+  regData: any;
+  imageResponse:  any; 
+  image: any;
+  img: string;
+  sliderOne: { isBeginningSlide: boolean; isEndSlide: boolean; slidesItem: any[]; };
+  
+  constructor(
+    private http: LoginService,
+     private router: Router,
+      public alertController: AlertController,
+      public loadingCtrl: LoadingController,
+    public JobcardService: JobcardService,
+    private camera: Camera,
+    public actionSheetController: ActionSheetController,
+     public imagePicker: ImagePicker,
+    private crop: Crop,
+     private file: File,
+       private base64: Base64,
+       public _DomSanitizer: DomSanitizer,
+       public webview: WebView) {
+         this.sliderOne={
+           isBeginningSlide:true,
+           isEndSlide:false,
+           slidesItem:this.imageLists
+         }
+        }
 
   ngOnInit() {
     this.serialNo=this.JobcardService.serialNo;
@@ -64,7 +94,7 @@ export class FindingPage implements OnInit {
     console.log(this.details)
  
     this.getJobcardByEmployeeId(this.details.employee.employeeid)
- 
+ console.log(this.imageLists);
   }
   getJobcardByEmployeeId(employeeid: any): any {
   //  throw new Error("Method not implemented.");
@@ -188,7 +218,8 @@ export class FindingPage implements OnInit {
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
-      this.imageSrc = 'data:image/jpeg;base64,' + imageData;
+      this.img = 'data:image/jpeg;base64,' + imageData;
+      this.imageLists.push(this.img)
       // this.photos.push(this.imageSrc);
       // this.photos.reverse();
       // this.picture = imageSrc.replace('file://', '');
@@ -199,6 +230,32 @@ export class FindingPage implements OnInit {
     });
   }
   
+  pickImage2() {
+
+  let options = {
+    outputType: 1
+  };
+  // this.imageResponse = [];
+  this.imagePicker.getPictures(options).then((results) => {
+    for (var i = 0; i < results.length; i++) {
+      console.log( results[i]);
+      this.imageLists.push( this.pathForImage(results[i]));
+      // this.image = this.imageResponse.replace('file://', '');
+    }
+  }, (err) => {
+    alert(err);
+  });
+}
+pathForImage(img) {
+  if (img === null) {
+    return '';
+  } else {
+    let converted = this.webview.convertFileSrc(img);
+    return converted;
+  }
+}
+
+
   async pickImage() {
     const actionSheet = await this.actionSheetController.create({
       header: "Select Image source",
@@ -206,7 +263,7 @@ export class FindingPage implements OnInit {
         text: 'Load from Library',
         icon: 'images',
         handler: () => {
-          this.pickImage1(this.camera.PictureSourceType.PHOTOLIBRARY);
+          this.pickImage2();
         }
       },
       {
@@ -226,42 +283,42 @@ export class FindingPage implements OnInit {
     await actionSheet.present();
   }
 
-  action()
-{
-  this. presentActionSheet();
-}
+//   action()
+// {
+//   this. presentActionSheet();
+// }
 
-presentActionSheet() {
-  this.actionSheet = this.actionSheetController.create({
-    buttons: [{
-      text: 'Delete',
-      role: 'destructive',
-      icon: 'trash',
-      handler: () => {
-        console.log('Delete clicked');
-      }
-    }, {
-      text: 'Edit',
-      icon: 'brush',
-      handler: () => {
-        console.log('Edit clicked');
-        this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
-      }
-    }, {
-      text: 'Cancel',
-      icon: 'close',
-      role: 'cancel',
-      handler: () => {
-        console.log('Cancel clicked');
-      }
-    }]
-  }).then(actionsheet => {
-    actionsheet.present();
-  });
-}
+// presentActionSheet() {
+//   this.actionSheet = this.actionSheetController.create({
+//     buttons: [{
+//         text: 'Edit',
+//         icon: 'brush',
+//         handler: () => {
+//           console.log('Edit clicked');
+//           this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
+//         }
+//           },{
+//           text: 'Delete',
+//           icon: 'trash',
+//           handler: () => {
+//             console.log('Delete clicked');
+//           }
+//         },  {
+//           text: 'Cancel',
+//           icon: 'close',
+//           handler: () => {
+//             console.log('Cancel clicked');
+//           }
+//         }]
+//       }).then(actionsheet => {
+//         actionsheet.present();
+//       });
+//     }
 
-  // goToCanvas()
-  // {
-  //   this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
-  // }
+  goToCanvas(img,i)
+  {
+    this.JobcardService.imageLists=img;
+    console.log(this.JobcardService.imageLists);
+    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/'+ img +'/canvas');
+  }
 }

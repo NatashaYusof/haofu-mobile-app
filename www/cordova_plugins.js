@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
+      "id": "com-badrit-base64.Base64",
+      "file": "plugins/com-badrit-base64/www/Base64.js",
+      "pluginId": "com-badrit-base64",
+      "clobbers": [
+        "navigator.Base64"
+      ]
+    },
+    {
       "id": "com-sarriaroman-photoviewer.PhotoViewer",
       "file": "plugins/com-sarriaroman-photoviewer/www/PhotoViewer.js",
       "pluginId": "com-sarriaroman-photoviewer",
@@ -287,11 +295,27 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "cordova-plugin-crop.CropPlugin",
+      "file": "plugins/cordova-plugin-crop/www/crop.js",
+      "pluginId": "cordova-plugin-crop",
+      "clobbers": [
+        "plugins.crop"
+      ]
+    },
+    {
       "id": "cordova-plugin-device.device",
       "file": "plugins/cordova-plugin-device/www/device.js",
       "pluginId": "cordova-plugin-device",
       "clobbers": [
         "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-image-picker.ImagePicker",
+      "file": "plugins/cordova-plugin-image-picker/www/imagepicker.js",
+      "pluginId": "cordova-plugin-image-picker",
+      "clobbers": [
+        "plugins.imagePicker"
       ]
     },
     {
@@ -336,11 +360,15 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     }
   ];
   module.exports.metadata = {
+    "com-badrit-base64": "0.2.0",
     "com-sarriaroman-photoviewer": "1.2.4",
+    "cordova-android-support-gradle-release": "3.0.1",
     "cordova-plugin-file": "6.0.2",
     "cordova-plugin-advanced-http": "2.3.0",
     "cordova-plugin-camera": "4.1.0",
+    "cordova-plugin-crop": "0.3.1",
     "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-image-picker": "1.1.1",
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "cordova-plugin-ionic-webview": "4.1.2",
     "cordova-plugin-splashscreen": "5.0.2",

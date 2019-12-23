@@ -2,7 +2,8 @@ import { Component, ViewChild, Renderer, OnInit } from '@angular/core';
 import { NavController, Platform, IonContent, ToastController } from '@ionic/angular';
 import { File, IWriteOptions } from '@ionic-native/file/ngx';
 import { Storage } from '@ionic/storage';
-import { WebView } from '@ionic-native/ionic-webview/ngx'
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { JobcardService } from '../../../../src/app/services/jobcard.service';
 
 const STORAGE_KEY = 'IMAGE_LIST';
 
@@ -59,6 +60,20 @@ export class CanvasPage implements OnInit {
   htmlText: any;
   sanitizer: any;
   pattern: any;
+  arrowX: number;
+  arrowTopY: number;
+  arrowBottomY: number;
+  headlen: number;
+  angle: number;
+  PI: any;
+  degreesInRadians225: number;
+  degreesInRadians135: number;
+  x225: any;
+  y225: any;
+  y135: any;
+  x135: any;
+  scale: any;
+  img: any;
  
  constructor(
     private webview: WebView,
@@ -68,6 +83,7 @@ export class CanvasPage implements OnInit {
     private plt: Platform,
     public toastController: ToastController,
     public navCtrl: NavController,
+    public JobcardService: JobcardService,
     
     ) {
     this.storage.ready().then(() => {
@@ -92,6 +108,7 @@ export class CanvasPage implements OnInit {
 
   ngOnInit() {
     // Set the Canvas Element and its size
+  
     this.canvasElement = this.canvas.nativeElement;
     this.canvasElement1 = this.canvas1.nativeElement;
     this.canvasElement2 = this.canvas2.nativeElement;
@@ -106,10 +123,10 @@ export class CanvasPage implements OnInit {
     this.canvasElement2.height = 460;   
    
     const img = new Image()
-    // img.src = "../assets/icon/favicon.png"
-    // img.onload = () => {
-    //   ctx.drawImage(img,(this.canvasElement.width-img.width)/2, (this.canvasElement.height-img.height)/2);
-    // }
+    this.img=this.JobcardService.imageLists;
+    this.img.onload = () => {
+      ctx.drawImage(this.img,(this.canvasElement.width-this.img.width)/2, (this.canvasElement.height-this.img.height)/2);
+    }
 
     
 
@@ -171,6 +188,12 @@ export class CanvasPage implements OnInit {
         x: currentX2 ,y:currentY2
       })
    
+    }else if(this.action =="drawarrow"){
+      // this.drawSquare(ctx,currentX,currentY);
+      this.moveCoordinate.push({
+        x: currentX2 ,y:currentY2
+      })
+   
     }else if(this.action =="addtext"){
        this.addText(ctx1,currentX1,currentY1);
       // this.moveCoordinate.push({
@@ -226,6 +249,10 @@ export class CanvasPage implements OnInit {
       this.drawSquare(ctx2,currentX2,currentY2)
     
     }
+    else if(this.action=="drawarrow"){
+      this.drawArrow(ctx2,currentX2,currentY2)
+    
+    }
     // else if(this.action=="addtext"){
     //   this.addText(ctx1,currentX1,currentY1)
     
@@ -273,6 +300,7 @@ export class CanvasPage implements OnInit {
     // img1.src = "../assets/icon/line2.png"  ;
     this.dx=currentX2 -this.startX2;
     this.dy=currentY2- this.startY2;
+    this.scale=5;
     this.x=this.startX2 + this.dx * 0.5;
     this.y=this.startY2 + this.dy * 0.5;
     this.width=this.dx;
@@ -282,7 +310,8 @@ export class CanvasPage implements OnInit {
     ctx2.strokeStyle = this.selectedColor;
     ctx2.lineWidth = this.brushSize;
     ctx2.beginPath();
-    ctx2.rect(this.startX2,this.startY2,this.width,this.height)
+    ctx2.rect(this.startX2,this.startY2,this.width,this.height);
+    // ctx2.fillStyle='green';
     // this.pattern= ctx2.createPattern(img1,"repeat");
     // console.log("lorek")
     // ctx2.fillStyle=this.pattern;
@@ -296,7 +325,7 @@ export class CanvasPage implements OnInit {
     this.dx=currentX2 -this.startX2;
     this.dy=currentY2- this.startY2;
     this.radius = Math.sqrt(this.dx*this.dx + this.dy*this.dy);
-    
+    // this.scale=5;
     ctx2.lineJoin = 'round';
     ctx2.strokeStyle = this.selectedColor;
     ctx2.lineWidth = 5;
@@ -305,10 +334,53 @@ export class CanvasPage implements OnInit {
     ctx2.save();
     console.log(this.startX2,this.startY2)
     ctx2.arc(this.startX2,this.startY2,this.radius,0, Math.PI*2)
+  
     ctx2.closePath();
     ctx2.stroke();
   }
 
+  drawArrow(ctx2,currentX2,currentY2){
+    this.headlen = 20; // length of head in pixels
+    this.dx = currentX2 - this.startX2;
+    this.dy = currentY2 - this.startY2;
+    this.angle = Math.atan2(this.dy,this.dx);
+    ctx2.strokeStyle = this.selectedColor;
+    ctx2.lineWidth = 3;
+    // ctx2.lineWidth = this.brushSize;
+    ctx2.beginPath();
+    ctx2.moveTo( this.startX2,this.startY2);
+    ctx2.lineTo(currentX2, currentY2);
+    ctx2.lineTo(currentX2 -this. headlen * Math.cos(this.angle - Math.PI / 6), currentY2 - this.headlen * Math.sin(this.angle - Math.PI / 6));
+    ctx2.moveTo(currentX2, currentY2);
+    ctx2.lineTo(currentX2 -this. headlen * Math.cos(this.angle + Math.PI / 6), currentY2 - this.headlen * Math.sin(this.angle + Math.PI / 6));
+    ctx2.closePath();
+    ctx2.stroke();
+
+    // ctx2.beginPath();
+    // this.PI=Math.PI;
+    // this.degreesInRadians225=225*this.PI/180;
+    // this.degreesInRadians135=135*this.PI/180;
+    // this.headlen = 30;
+    // this.dx = currentX2 - this.startX2;
+    // this.dy = currentY2 - this.startY2;
+    // this.angle=Math.atan2(this.dx,this.dy);
+    // this.x225=currentX2+this.headlen*Math.cos(this.angle+this.degreesInRadians225);
+    // this.y225=currentY2+this.headlen*Math.sin(this.angle+this.degreesInRadians225);
+    // this.x135=currentX2+this.headlen*Math.cos(this.angle+this.degreesInRadians135);
+    // this.y135=currentY2+this.headlen*Math.sin(this.angle+this.degreesInRadians135);
+    // ctx2.moveTo(this.startX2,this.startY2);
+    // ctx2.lineTo(currentX2,currentY2);
+    // ctx2.lineWidth = 5;
+    // ctx2.lineWidth = this.brushSize;
+    // ctx2.moveTo(currentX2,currentY2);
+    // ctx2.lineTo(this.x225,this.y225);
+    // ctx2.moveTo(currentX2,currentY2);
+    // ctx2.lineTo(this.x135,this.y135);
+    // ctx2.closePath();
+    // ctx2.stroke();
+
+  }
+    
   addText(ctx1,currentX1,currentY1){
     ctx1.beginPath();
     ctx1.this.myInput.setFocus();
