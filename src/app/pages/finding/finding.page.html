@@ -40,7 +40,7 @@
       <ion-slide *ngFor="let img of imageLists ;index as i" > 
         <ion-card>  
            <div class="scrolling-wrapper"> 
-              <img src="{{img}}" tappable style="height: 330px;width:300px" /> 
+              <img src="{{img}}" tappable /> 
             
               <!-- <img src="{{imageSrc}}" tappable/>  -->
             
@@ -50,7 +50,7 @@
                 <ion-label>Edit</ion-label>
               </ion-chip>
               <ion-chip>
-                 <button ion-button outline icon-only (click)="deleteImage(img, i)" > <ion-icon name="trash" ></ion-icon></button>   
+                 <button ion-button outline icon-only (click)="deleteImage(i)" > <ion-icon name="trash" ></ion-icon></button>   
                  <ion-label>Delete</ion-label>
                  
               </ion-chip>

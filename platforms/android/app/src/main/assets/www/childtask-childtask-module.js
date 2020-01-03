@@ -153,6 +153,7 @@ var ChildtaskPage = /** @class */ (function () {
         this.TimeService = TimeService;
         // test: String = ''; 
         this.btn_txt = 'PAUSE';
+        this.hideMe = false;
         this.count = 1;
         this.count = +1;
         this.count++;
@@ -311,11 +312,7 @@ var ChildtaskPage = /** @class */ (function () {
     //       // this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
     // }
     ChildtaskPage.prototype.hide = function () {
-        //  if(  this.hideMe = true){
-        this.hideMe = true;
-        //  }else{
-        //   this.hideMe = false;
-        //  }
+        this.hideMe = !this.hideMe;
     };
     ChildtaskPage.ctorParameters = function () { return [
         { type: _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },

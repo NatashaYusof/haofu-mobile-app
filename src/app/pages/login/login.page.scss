@@ -11,17 +11,32 @@ ion-grid {
 ion-row {
     height: $height100;
 }
+.item{
+    padding-top: 10%
+}
+p{
+    color: white;
+    text-align: end;
+    font-size: 12px;
+}
+
+.style{
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial
+}
 
 ion-col {
     border: 1px solid #488aff;
-    background: $white-color;
+    // background: $white-color;
 }
     .logo {
-       width: 40%;
+       width: 80%;
        height: auto;
        margin: 0 auto;
-       padding-bottom: 50px;
-	   align-items : center;
+       align-items : center;
+       border-bottom: 1px solid white;
+       
      }
      .no-border {
        border-bottom: 0 !important;
@@ -30,13 +45,15 @@ ion-col {
 
 ion-button {
     font-weight: 300;
+  
 }
 
 @media (min-width: 240px) and (max-width: 768px) {
     ion-grid {
-        background: $white-color;
+        background:linear-gradient(#1DC9DA,#583B8C);
     }
     ion-col {
         border: none;
     }
+
 }

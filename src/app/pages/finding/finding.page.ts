@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../../../src/app/services/login.service';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController, ActionSheetController } from '@ionic/angular';
+import { AlertController, LoadingController, ActionSheetController,ToastController } from '@ionic/angular';
 import { JobcardService } from '../../../../src/app/services/jobcard.service';
 import * as moment from 'moment';
 import { Camera, CameraOptions } from '@ionic-native/Camera/ngx'
 import { File } from '@ionic-native/file/ngx';
 import { ImagePickerOptions,ImagePicker } from '@ionic-native/image-picker/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
-import { Base64 } from '@ionic-native/base64/ngx';
 import {DomSanitizer} from '@angular/platform-browser';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { Base64 } from '@ionic-native/base64/ngx';
+import { alertController } from '@ionic/core';
 
 // import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
@@ -32,13 +33,6 @@ export class FindingPage implements OnInit {
   
   croppedImagepath = "";
   isLoading = false;
- 
-  imagePickerOptions = {
-    maximumImagesCount: 5,
-  
-  
-  };
-  picture: string;
   imageSrc: any;
   userDetail: string;
   details: any;
@@ -47,35 +41,30 @@ export class FindingPage implements OnInit {
   jobcardDetail: string;
   actionSheet:any;
   imageLists = []; 
-  photos: string[];
+  imageSent =[];
   cropService: any;
   imgPreview: any;
   regData: any;
   imageResponse:  any; 
   image: any;
-  img: string;
-  sliderOne: { isBeginningSlide: boolean; isEndSlide: boolean; slidesItem: any[]; };
+  img: any;
+  presentToast: any;
   
   constructor(
     private http: LoginService,
-     private router: Router,
-      public alertController: AlertController,
-      public loadingCtrl: LoadingController,
+    private router: Router,
+    public alertController: AlertController,
+    public loadingCtrl: LoadingController,
     public JobcardService: JobcardService,
     private camera: Camera,
     public actionSheetController: ActionSheetController,
-     public imagePicker: ImagePicker,
+    public imagePicker: ImagePicker,
     private crop: Crop,
-     private file: File,
-       private base64: Base64,
-       public _DomSanitizer: DomSanitizer,
-       public webview: WebView) {
-         this.sliderOne={
-           isBeginningSlide:true,
-           isEndSlide:false,
-           slidesItem:this.imageLists
-         }
-        }
+    private file: File,
+    private base64: Base64,
+    public _DomSanitizer: DomSanitizer,
+    public toastController: ToastController,
+    public webview: WebView) {   }
 
   ngOnInit() {
     this.serialNo=this.JobcardService.serialNo;
@@ -175,14 +164,14 @@ export class FindingPage implements OnInit {
   //   // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
   //       //postApi
-  //       let data =[{
-  //         taskid :this.JobcardService.taskId,
-  //         employeeid :this.details.employee.employeeid,
-  //         tasktimemanagementenddatetime: this.currentDate,
-  //         tasktimemanagementendstate:4
+        // let data =[{
+        //   taskid :this.JobcardService.taskId,
+        //   employeeid :this.details.employee.employeeid,
+        //   tasktimemanagementenddatetime: this.currentDate,
+        //   tasktimemanagementendstate:4
 
-  //       }
-  //       ]
+        // }
+        // ]
   
   //       let data1 =[{
   //         taskstatus:[{"taskstatusid":4}],
@@ -219,7 +208,8 @@ export class FindingPage implements OnInit {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
       this.img = 'data:image/jpeg;base64,' + imageData;
-      this.imageLists.push(this.img)
+      this.imageLists.push(this.img);
+      this.imageSent.push(this.img)
       // this.photos.push(this.imageSrc);
       // this.photos.reverse();
       // this.picture = imageSrc.replace('file://', '');
@@ -240,12 +230,21 @@ export class FindingPage implements OnInit {
     for (var i = 0; i < results.length; i++) {
       console.log( results[i]);
       this.imageLists.push( this.pathForImage(results[i]));
-      // this.image = this.imageResponse.replace('file://', '');
-    }
-  }, (err) => {
-    alert(err);
-  });
-}
+      
+      this.base64.encodeFile(results[i]).then((base64File: string) => {
+      // console.log(base64File);
+      this.img = 'data:image/jpeg;base64,' + base64File;
+      
+      this.imageSent.push(this.img)
+          },
+           (err) => {
+            console.log(err);
+          });
+      }
+    }, (err) => { });
+  }
+
+
 pathForImage(img) {
   if (img === null) {
     return '';
@@ -319,6 +318,38 @@ pathForImage(img) {
   {
     this.JobcardService.imageLists=img;
     console.log(this.JobcardService.imageLists);
-    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/'+ img +'/canvas');
+    this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
   }
+
+ async deleteImage(i)
+  {
+    let alert = alertController.create({
+      header: 'Delete photo',
+      message: 'Do you want to delete this photo?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Delete',
+          role: 'delete',
+          handler: async () => {
+            console.log('delete clicked');
+            this.imageLists.splice(i, 1);
+            let toast = await this.toastController.create({ message: "Delete photo", duration: 1500 })
+            toast.present()
+          }
+        }
+      ]
+    })
+    .then(alert => {
+      alert.present();
+    });
+  }
+
 }
+

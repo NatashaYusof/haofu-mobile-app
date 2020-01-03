@@ -1,9 +1,12 @@
 import { Component, ViewChild, Renderer, OnInit } from '@angular/core';
+import { AlertController} from '@ionic/angular';
 import { NavController, Platform, IonContent, ToastController } from '@ionic/angular';
 import { File, IWriteOptions } from '@ionic-native/file/ngx';
 import { Storage } from '@ionic/storage';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { JobcardService } from '../../../../src/app/services/jobcard.service';
+import { alertController } from '@ionic/core';
+import { Router } from '@angular/router';
 
 const STORAGE_KEY = 'IMAGE_LIST';
 
@@ -17,11 +20,13 @@ export class CanvasPage implements OnInit {
   @ViewChild('imageCanvas', { static: true }) canvas: any;
   @ViewChild('Canvas', { static: true }) canvas1: any;
   @ViewChild('Shape', { static: true }) canvas2: any;
+  @ViewChild('final', { static: true }) canvas3: any;
 
   // @ViewChild('input', { static: false }) myInput:any ;
   canvasElement: any;
   canvasElement1: any;
   canvasElement2: any;
+  canvasElement3: any;
 
   saveX2: number;
   saveY2: number;
@@ -74,6 +79,11 @@ export class CanvasPage implements OnInit {
   x135: any;
   scale: any;
   img: any;
+  angular: any;
+  layer2: any;
+  layer1: any;
+  layer0: any;
+  window: any;
  
  constructor(
     private webview: WebView,
@@ -84,7 +94,8 @@ export class CanvasPage implements OnInit {
     public toastController: ToastController,
     public navCtrl: NavController,
     public JobcardService: JobcardService,
-    
+    public alertController: AlertController,
+    private router: Router,
     ) {
     this.storage.ready().then(() => {
       this.storage.get(STORAGE_KEY).then(data => {
@@ -95,16 +106,16 @@ export class CanvasPage implements OnInit {
     });
   }
 
-  async ionViewDidEnter() {
-    // https://github.com/ionic-team/ionic/issues/9071#issuecomment-362920591
-    // Get the height of the fixed item
-    let itemHeight = this.fixedContainer.nativeElement.offsetHeight;
-    let scroll = this.content.getScrollElement();
+  // async ionViewDidEnter() {
+  //   // https://github.com/ionic-team/ionic/issues/9071#issuecomment-362920591
+  //   // Get the height of the fixed item
+  //   let itemHeight = this.fixedContainer.nativeElement.offsetHeight;
+  //   let scroll = this.content.getScrollElement();
 
-    // Add preexisting scroll margin to fixed container size
-    itemHeight = Number.parseFloat((await (scroll)).style.marginTop.replace("px", "")) + itemHeight;
-    (await (scroll)).style.marginTop = itemHeight + 'px';
-  }
+  //   // Add preexisting scroll margin to fixed container size
+  //   itemHeight = Number.parseFloat((await (scroll)).style.marginTop.replace("px", "")) + itemHeight;
+  //   (await (scroll)).style.marginTop = itemHeight + 'px';
+  // }
 
   ngOnInit() {
     // Set the Canvas Element and its size
@@ -112,23 +123,33 @@ export class CanvasPage implements OnInit {
     this.canvasElement = this.canvas.nativeElement;
     this.canvasElement1 = this.canvas1.nativeElement;
     this.canvasElement2 = this.canvas2.nativeElement;
+    this.canvasElement3 = this.canvas3.nativeElement;
+  
     let ctx = this.canvasElement.getContext('2d');
     let ctx1 = this.canvasElement1.getContext('2d');
     let ctx2 = this.canvasElement2.getContext('2d');
-    this.canvasElement.width = window.innerWidth;
-    this.canvasElement.height = 460;   
-    this.canvasElement1.width = window.innerWidth;
-    this.canvasElement1.height = 460;   
-    this.canvasElement2.width = window.innerWidth;
-    this.canvasElement2.height = 460;   
+    let ctx3 = this.canvasElement3.getContext('2d');
+  
+    // this.canvasElement.width = this.plt.width() + '';
+    // this.canvasElement.height = 460;   
+    // this.canvasElement1.width = this.plt.width() + '';
+    // this.canvasElement1.height = 460;   
+    // this.canvasElement2.width = this.plt.width() + '';
+    // this.canvasElement2.height = 460;   
+  
    
-    const img = new Image()
-    this.img=this.JobcardService.imageLists;
+    this.img = new Image()
+  
+    // this.img=this.JobcardService.imageLists;
     this.img.onload = () => {
-      ctx.drawImage(this.img,(this.canvasElement.width-this.img.width)/2, (this.canvasElement.height-this.img.height)/2);
+      let ctx = this.canvasElement.getContext('2d');
+      ctx.canvas.width=this.img.width;
+      ctx.canvas.height=this.img.height;
+      ctx.drawImage(this.img,0,0,ctx.canvas.width,ctx.canvas.height);
+    
     }
 
-    
+    this.img.src= this.JobcardService.imageLists;    
 
     setInterval(()=>{
       this.onPaint();
@@ -174,7 +195,7 @@ export class CanvasPage implements OnInit {
 
 
   if (this.action =="handdraw"){
-    this.handDraw(ctx1,currentX1,currentY1);
+    this.handDraw(ctx1,currentX1,currentY1); 
 
     }else if(this.action =="drawline"){
       // this.drawLine(ctx,currentX,currentY);
@@ -415,7 +436,21 @@ export class CanvasPage implements OnInit {
   }
 
   saveCanvasImage() {
-    var dataUrl = this.canvasElement.toDataURL();
+    // var test = this.canvasElement1.toDataURL('image/png');
+    // var test1 = this.canvasElement2.toDataURL('image/png');
+    let ctx = this.canvasElement.getContext('2d');
+    let ctx3 = this.canvasElement3.getContext('2d');
+    let ctx1 = this.canvasElement1.getContext('2d');
+
+    ctx3.drawImage(this.canvasElement,0,0);
+    ctx3.drawImage(this.canvasElement1,0,0);
+    ctx3.drawImage(this.canvasElement2,0,0);
+    
+
+    ctx1.drawImage(this.canvasElement3,0,0)
+    
+    var dataUrl = this.canvasElement3.toDataURL();
+    
 
     let name = new Date().getTime() + '.png';
     let path = this.file.dataDirectory;
@@ -434,16 +469,26 @@ export class CanvasPage implements OnInit {
   }
 
   async clearCanvasImage() {
-    let ctx = this.canvasElement1.getContext('2d');
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    // let ctx = this.canvasElement1.getContext('2d');
+    let ctx1 = this.canvasElement1.getContext('2d');
+    let ctx2 = this.canvasElement2.getContext('2d');
+    let ctx3 = this.canvasElement3.getContext('2d');
+    // ctx.clearRect(0, 0, ctx1.canvas.width, ctx1.canvas.height);
+    ctx1.clearRect(0, 0, ctx1.canvas.width, ctx1.canvas.height);
+    ctx2.clearRect(0, 0, ctx2.canvas.width, ctx2.canvas.height);
+    ctx3.clearRect(0, 0, ctx3.canvas.width, ctx3.canvas.height);
     let toast = await this.toastController.create({ message: "Clear image", duration: 1500 })
     toast.present()
-    this.canvasElement1 = this.canvas1.nativeElement;
-    this.canvasElement1.width = window.innerWidth;
-    this.canvasElement1.height = 460;   
-    this.canvasElement2 = this.canvas2.nativeElement;
-    this.canvasElement2.width = window.innerWidth;
-    this.canvasElement2.height = 460;   
+    // this.canvasElement = this.canvas.nativeElement;
+    // this.canvasElement1 = this.canvas1.nativeElement;
+    // this.canvasElement2 = this.canvas2.nativeElement;
+    // this.canvasElement3 = this.canvas3.nativeElement;
+    // this.canvasElement1.width = window.innerWidth;
+    // this.canvasElement1.height = 460;   
+    
+    // this.canvasElement2 = this.canvas2.nativeElement;
+    // this.canvasElement2.width = window.innerWidth;
+    // this.canvasElement2.height = 460;   
     }
 
   onPaint(){

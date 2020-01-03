@@ -22,7 +22,11 @@ export class LoginPage implements OnInit {
   FormGroup;
 
   
-  constructor(private http: LoginService, private router: Router, public alertController: AlertController, public loadingController: LoadingController
+  constructor(
+    private http: LoginService,
+    private router: Router,
+    public alertController: AlertController,
+    public loadingCtrl: LoadingController,
    ) { }
 
   ngOnInit() {
@@ -45,28 +49,34 @@ export class LoginPage implements OnInit {
   }
 
 
-
 login(): void {
 //  console.log('masuk');
   console.log(this.username);
   console.log(this.userpassword);
 
+  
   this.http.getUser(this.username,this.userpassword).subscribe(
         response => {
+       
           this.user = response;
           console.log(this.user)
           window.localStorage.setItem('userDetail', JSON.stringify(this.user));
         
           if (this.user.employee.employeejobtitle == 'Technician') {
+          
             this.router.navigateByUrl('/menu/first');
+           
+         
           } else {
-            this.router.navigateByUrl('/supervisor');
+            this.router.navigateByUrl('/menu/second');
+          
           }
 
         }, error => {
 		// tslint:disable-next-line: indent
     // if error it goes here
     this.presentAlert();
+
         }
       );
     }

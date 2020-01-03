@@ -23,7 +23,7 @@ export class ChildtaskPage implements OnInit {
   taskdetail: any;
   // test: String = ''; 
   btn_txt = 'PAUSE';
-  hideMe: boolean;
+  hideMe:boolean = false;
   count= 1;
   currentDate: any;
   userDetail: string;
@@ -210,13 +210,7 @@ export class ChildtaskPage implements OnInit {
   //       });
   //       // this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
   // }
-
-  hide() {
-    //  if(  this.hideMe = true){
-      this.hideMe = true;
-    //  }else{
-    //   this.hideMe = false;
-    //  }
-       
-  }
+  hide() { 
+    this.hideMe = !this.hideMe;
+    }
 }

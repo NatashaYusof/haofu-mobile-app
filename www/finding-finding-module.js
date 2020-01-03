@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n\n\n  \n    <ion-slides pager=\"true\" class=\"card\"  >\n      <ion-slide *ngFor=\"let img of imageLists ;index as i\" > \n        <ion-card>  \n           <div class=\"scrolling-wrapper\"> \n              <img src=\"{{img}}\" tappable style=\"height: 330px;width:300px\" /> \n            \n              <!-- <img src=\"{{imageSrc}}\" tappable/>  -->\n            \n            <div class=\"chipGroup\">\n              <ion-chip >\n                <button ion-button outline icon-only (click)=\"goToCanvas(img, i)\"><ion-icon name=\"brush\"></ion-icon></button>\n                <ion-label>Edit</ion-label>\n              </ion-chip>\n              <ion-chip>\n                 <button ion-button outline icon-only (click)=\"deleteImage(img, i)\" > <ion-icon name=\"trash\" ></ion-icon></button>   \n                 <ion-label>Delete</ion-label>\n                 \n              </ion-chip>\n              </div> \n            </div>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n    \n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button expand=\"full\" color=\"primary\">Save</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n\n\n  \n    <ion-slides pager=\"true\" class=\"card\"  >\n      <ion-slide *ngFor=\"let img of imageLists ;index as i\" > \n        <ion-card>  \n           <div class=\"scrolling-wrapper\"> \n              <img src=\"{{img}}\" tappable /> \n            \n              <!-- <img src=\"{{imageSrc}}\" tappable/>  -->\n            \n            <div class=\"chipGroup\">\n              <ion-chip >\n                <button ion-button outline icon-only (click)=\"goToCanvas(img, i)\"><ion-icon name=\"brush\"></ion-icon></button>\n                <ion-label>Edit</ion-label>\n              </ion-chip>\n              <ion-chip>\n                 <button ion-button outline icon-only (click)=\"deleteImage(i)\" > <ion-icon name=\"trash\" ></ion-icon></button>   \n                 <ion-label>Delete</ion-label>\n                 \n              </ion-chip>\n              </div> \n            </div>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n    \n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button expand=\"full\" color=\"primary\">Save</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
 
 /***/ }),
 
@@ -98,9 +98,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
 /* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
 /* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
-/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
+/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
+/* harmony import */ var _ionic_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/core */ "./node_modules/@ionic/core/dist/index.mjs");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -158,9 +159,10 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 // import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 var FindingPage = /** @class */ (function () {
-    function FindingPage(http, router, alertController, loadingCtrl, JobcardService, camera, actionSheetController, imagePicker, crop, file, base64, _DomSanitizer, webview) {
+    function FindingPage(http, router, alertController, loadingCtrl, JobcardService, camera, actionSheetController, imagePicker, crop, file, base64, _DomSanitizer, toastController, webview) {
         this.http = http;
         this.router = router;
         this.alertController = alertController;
@@ -173,19 +175,13 @@ var FindingPage = /** @class */ (function () {
         this.file = file;
         this.base64 = base64;
         this._DomSanitizer = _DomSanitizer;
+        this.toastController = toastController;
         this.webview = webview;
         this.btn_txt = 'PAUSE';
         this.croppedImagepath = "";
         this.isLoading = false;
-        this.imagePickerOptions = {
-            maximumImagesCount: 5,
-        };
         this.imageLists = [];
-        this.sliderOne = {
-            isBeginningSlide: true,
-            isEndSlide: false,
-            slidesItem: this.imageLists
-        };
+        this.imageSent = [];
     }
     FindingPage.prototype.ngOnInit = function () {
         this.serialNo = this.JobcardService.serialNo;
@@ -269,13 +265,13 @@ var FindingPage = /** @class */ (function () {
     // goFinish(){
     //   // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
     //       //postApi
-    //       let data =[{
-    //         taskid :this.JobcardService.taskId,
-    //         employeeid :this.details.employee.employeeid,
-    //         tasktimemanagementenddatetime: this.currentDate,
-    //         tasktimemanagementendstate:4
-    //       }
-    //       ]
+    // let data =[{
+    //   taskid :this.JobcardService.taskId,
+    //   employeeid :this.details.employee.employeeid,
+    //   tasktimemanagementenddatetime: this.currentDate,
+    //   tasktimemanagementendstate:4
+    // }
+    // ]
     //       let data1 =[{
     //         taskstatus:[{"taskstatusid":4}],
     //         employeeid :this.details.employee.employeeid,
@@ -311,6 +307,7 @@ var FindingPage = /** @class */ (function () {
             // If it's base64 (DATA_URL):
             _this.img = 'data:image/jpeg;base64,' + imageData;
             _this.imageLists.push(_this.img);
+            _this.imageSent.push(_this.img);
             // this.photos.push(this.imageSrc);
             // this.photos.reverse();
             // this.picture = imageSrc.replace('file://', '');
@@ -330,11 +327,15 @@ var FindingPage = /** @class */ (function () {
             for (var i = 0; i < results.length; i++) {
                 console.log(results[i]);
                 _this.imageLists.push(_this.pathForImage(results[i]));
-                // this.image = this.imageResponse.replace('file://', '');
+                _this.base64.encodeFile(results[i]).then(function (base64File) {
+                    // console.log(base64File);
+                    _this.img = 'data:image/jpeg;base64,' + base64File;
+                    _this.imageSent.push(_this.img);
+                }, function (err) {
+                    console.log(err);
+                });
             }
-        }, function (err) {
-            alert(err);
-        });
+        }, function (err) { });
     };
     FindingPage.prototype.pathForImage = function (img) {
         if (img === null) {
@@ -417,7 +418,51 @@ var FindingPage = /** @class */ (function () {
     FindingPage.prototype.goToCanvas = function (img, i) {
         this.JobcardService.imageLists = img;
         console.log(this.JobcardService.imageLists);
-        this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/' + img + '/canvas');
+        this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/childtask/finding/canvas');
+    };
+    FindingPage.prototype.deleteImage = function (i) {
+        return __awaiter(this, void 0, void 0, function () {
+            var alert;
+            var _this = this;
+            return __generator(this, function (_a) {
+                alert = _ionic_core__WEBPACK_IMPORTED_MODULE_13__["alertController"].create({
+                    header: 'Delete photo',
+                    message: 'Do you want to delete this photo?',
+                    buttons: [
+                        {
+                            text: 'Cancel',
+                            role: 'cancel',
+                            handler: function () {
+                                console.log('Cancel clicked');
+                            }
+                        },
+                        {
+                            text: 'Delete',
+                            role: 'delete',
+                            handler: function () { return __awaiter(_this, void 0, void 0, function () {
+                                var toast;
+                                return __generator(this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0:
+                                            console.log('delete clicked');
+                                            this.imageLists.splice(i, 1);
+                                            return [4 /*yield*/, this.toastController.create({ message: "Delete photo", duration: 1500 })];
+                                        case 1:
+                                            toast = _a.sent();
+                                            toast.present();
+                                            return [2 /*return*/];
+                                    }
+                                });
+                            }); }
+                        }
+                    ]
+                })
+                    .then(function (alert) {
+                    alert.present();
+                });
+                return [2 /*return*/];
+            });
+        });
     };
     FindingPage.ctorParameters = function () { return [
         { type: _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },
@@ -430,9 +475,10 @@ var FindingPage = /** @class */ (function () {
         { type: _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__["ImagePicker"] },
         { type: _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_9__["Crop"] },
         { type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__["File"] },
-        { type: _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_10__["Base64"] },
-        { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__["DomSanitizer"] },
-        { type: _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_12__["WebView"] }
+        { type: _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_12__["Base64"] },
+        { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__["DomSanitizer"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"] },
+        { type: _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_11__["WebView"] }
     ]; };
     FindingPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -450,9 +496,10 @@ var FindingPage = /** @class */ (function () {
             _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__["ImagePicker"],
             _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_9__["Crop"],
             _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__["File"],
-            _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_10__["Base64"],
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_11__["DomSanitizer"],
-            _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_12__["WebView"]])
+            _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_12__["Base64"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__["DomSanitizer"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"],
+            _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_11__["WebView"]])
     ], FindingPage);
     return FindingPage;
 }());

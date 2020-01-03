@@ -19,7 +19,7 @@ export class TaskPage implements OnInit {
   jobcardId: string;
   loading: any;
   id: any;
-  hideMe: boolean;
+  hideMe:boolean = false;
   toggle: any;
   success=0;
   imej:any;
@@ -107,11 +107,8 @@ export class TaskPage implements OnInit {
    }
 
    hide() {
-     if(  this.hideMe = true){
-      this.hideMe = true;
-     }else{
-      this.hideMe = false;
-     } 
+     
+    this.hideMe = !this.hideMe;
        
   }
   

@@ -157,6 +157,7 @@ var TaskPage = /** @class */ (function () {
         this.JobcardService = JobcardService;
         this.TimeService = TimeService;
         this.modalController = modalController;
+        this.hideMe = false;
         this.success = 0;
         this.imej = 'assets/icon/start.png';
         this.imej1 = 'assets/icon/tick.png';
@@ -220,12 +221,7 @@ var TaskPage = /** @class */ (function () {
         });
     };
     TaskPage.prototype.hide = function () {
-        if (this.hideMe = true) {
-            this.hideMe = true;
-        }
-        else {
-            this.hideMe = false;
-        }
+        this.hideMe = !this.hideMe;
     };
     TaskPage.prototype.gotoChildTask = function (id, taskid, tasktitle, jobcardDetail) {
         // this.presentLoadingWithOptions1();

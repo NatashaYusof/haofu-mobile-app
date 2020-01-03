@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-split-pane>\n  <ion-menu contentId=\"content\">\n \n    <ion-header>\n      <ion-toolbar color=\"primary\">\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n \n    <ion-content>\n      <ion-list>\n        <ion-item tappable routerLink=\"/login\" routerDirection=\"root\">\n          <ion-icon name=\"chatbubbles\" slot=\"start\"></ion-icon>\n          Mattermost Chart\n        </ion-item>\n\n        <ion-item tappable routerLink=\"/login\" routerDirection=\"root\">\n          <ion-icon name=\"list\" slot=\"start\"></ion-icon>\n          Complete Jobcard\n        </ion-item>\n\n        <ion-item tappable routerLink=\"/login\" routerDirection=\"root\">\n          <ion-icon name=\"call\" slot=\"start\"></ion-icon>\n          Remote Assistence\n        </ion-item>\n \n        <ion-item tappable routerLink=\"/login\" routerDirection=\"root\">\n          <ion-icon name=\"camera\" slot=\"start\"></ion-icon>\n          Take Picture\n        </ion-item>\n\n        <ion-item tappable routerLink=\"/login\" routerDirection=\"root\">\n          <ion-icon name=\"images\" slot=\"start\"></ion-icon>\n        Photo Editor\n        </ion-item>\n\n        <ion-item tappable (click)=logout() routerDirection=\"root\">\n          <ion-icon name=\"log-out\" slot=\"start\"></ion-icon>\n          Logout\n        </ion-item>\n \n      </ion-list>\n \n    </ion-content>\n \n  </ion-menu>\n \n  <ion-router-outlet id=\"content\" main></ion-router-outlet>\n \n</ion-split-pane>\n"
+module.exports = "<ion-split-pane>\n  <ion-menu contentId=\"content\">\n \n    <ion-header>\n      <ion-toolbar color=\"primary\">\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n \n    <ion-content>\n      <ion-list>\n        <ion-item tappable>\n          <ion-icon name=\"chatbubbles\" slot=\"start\"></ion-icon>\n          Mattermost Chart\n        </ion-item>\n\n        <ion-item tappable >\n          <ion-icon name=\"list\" slot=\"start\"></ion-icon>\n          Complete Jobcard\n        </ion-item>\n\n        <ion-item tappable>\n          <ion-icon name=\"call\" slot=\"start\"></ion-icon>\n          Remote Assistence\n        </ion-item>\n \n        <ion-item tappable >\n          <ion-icon name=\"camera\" slot=\"start\"></ion-icon>\n          Take Picture\n        </ion-item>\n\n        <ion-item tappable >\n          <ion-icon name=\"images\" slot=\"start\"></ion-icon>\n        Photo Editor\n        </ion-item>\n\n        <ion-item tappable (click)=logout() routerDirection=\"root\">\n          <ion-icon name=\"log-out\" slot=\"start\"></ion-icon>\n          Logout\n        </ion-item>\n \n      </ion-list>\n \n    </ion-content>\n \n  </ion-menu>\n \n  <ion-router-outlet id=\"content\" main></ion-router-outlet>\n \n</ion-split-pane>\n"
 
 /***/ }),
 
@@ -148,6 +148,8 @@ var MenuPage = /** @class */ (function () {
         });
     }
     MenuPage.prototype.ngOnInit = function () {
+    };
+    MenuPage.prototype.logout = function () {
     };
     MenuPage.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }
