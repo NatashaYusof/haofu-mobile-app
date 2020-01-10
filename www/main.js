@@ -459,6 +459,10 @@ var map = {
 		"./src/app/pages/childtask/childtask.module.ts",
 		"childtask-childtask-module"
 	],
+	"../dashboard/dashboard.module": [
+		"./src/app/pages/dashboard/dashboard.module.ts",
+		"dashboard-dashboard-module"
+	],
 	"../details/details.module": [
 		"./src/app/pages/details/details.module.ts",
 		"details-details-module"
@@ -480,9 +484,17 @@ var map = {
 		"./src/app/pages/manual/manual.module.ts",
 		"manual-manual-module"
 	],
+	"../prjctmanagement/prjctmanagement.module": [
+		"./src/app/pages/prjctmanagement/prjctmanagement.module.ts",
+		"prjctmanagement-prjctmanagement-module"
+	],
 	"../second/second.module": [
 		"./src/app/pages/second/second.module.ts",
 		"second-second-module"
+	],
+	"../sv-tab1/sv-tab1.module": [
+		"./src/app/pages/sv-tab1/sv-tab1.module.ts",
+		"sv-tab1-sv-tab1-module"
 	],
 	"../tab1/tab1.module": [
 		"./src/app/pages/tab1/tab1.module.ts",
@@ -517,6 +529,10 @@ var map = {
 		"./src/app/pages/childtask/childtask.module.ts",
 		"childtask-childtask-module"
 	],
+	"./pages/dashboard/dashboard.module": [
+		"./src/app/pages/dashboard/dashboard.module.ts",
+		"dashboard-dashboard-module"
+	],
 	"./pages/details/details.module": [
 		"./src/app/pages/details/details.module.ts",
 		"details-details-module"
@@ -546,9 +562,17 @@ var map = {
 		"./src/app/pages/menu/menu.module.ts",
 		"pages-menu-menu-module"
 	],
+	"./pages/prjctmanagement/prjctmanagement.module": [
+		"./src/app/pages/prjctmanagement/prjctmanagement.module.ts",
+		"prjctmanagement-prjctmanagement-module"
+	],
 	"./pages/second/second.module": [
 		"./src/app/pages/second/second.module.ts",
 		"second-second-module"
+	],
+	"./pages/sv-tab1/sv-tab1.module": [
+		"./src/app/pages/sv-tab1/sv-tab1.module.ts",
+		"sv-tab1-sv-tab1-module"
 	],
 	"./pages/tab1/tab1.module": [
 		"./src/app/pages/tab1/tab1.module.ts",
@@ -623,6 +647,7 @@ var routes = [
     { path: 'tab1', loadChildren: './pages/tab1/tab1.module#Tab1PageModule' },
     { path: 'tab2', loadChildren: './pages/tab2/tab2.module#Tab2PageModule' },
     { path: 'tab3', loadChildren: './pages/tab3/tab3.module#Tab3PageModule' },
+    { path: 'sv-tab1', loadChildren: './pages/sv-tab1/sv-tab1.module#SvTab1PageModule' },
     { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },
     { path: 'add-user', loadChildren: './pages/add-user/add-user.module#AddUserPageModule' },
     { path: 'jobcard', loadChildren: './pages/jobcard/jobcard.module#JobcardPageModule' },
@@ -632,6 +657,8 @@ var routes = [
     { path: 'manual', loadChildren: './pages/manual/manual.module#ManualPageModule' },
     { path: 'timedetail', loadChildren: './pages/timedetail/timedetail.module#TimedetailPageModule' },
     { path: 'canvas', loadChildren: './pages/canvas/canvas.module#CanvasPageModule' },
+    { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
+    { path: 'prjctmanagement', loadChildren: './pages/prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1064,6 +1091,16 @@ var JobcardService = /** @class */ (function () {
         },
         set: function (val) {
             this.img = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(JobcardService.prototype, "imageList", {
+        get: function () {
+            return this.image;
+        },
+        set: function (val) {
+            this.image = val;
         },
         enumerable: true,
         configurable: true

@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Second Blank</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content padding>\n  <ion-button expand=\"block\" routerLink=\"/menu/second/details\" routerDirection=\"forward\">\n      Details forward\n    </ion-button>\n</ion-content>\n"
+module.exports = "<ion-tabs>\n \n  <ion-tab-bar slot=\"bottom\" color=\"primary\">\n \n    <ion-tab-button tab=\"sv-tab1\">\n      <ion-icon name=\"home\"></ion-icon>\n    </ion-tab-button>\n \n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"search\"></ion-icon>\n    </ion-tab-button>\n\n\t  <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"notifications\"></ion-icon>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"person\"></ion-icon>\n     </ion-tab-button>\n  </ion-tab-bar>\n \n</ion-tabs>\n"
 
 /***/ }),
 
@@ -41,8 +41,35 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     {
+        path: 'tabs',
+        component: _second_page__WEBPACK_IMPORTED_MODULE_5__["SecondPage"],
+        children: [
+            {
+                path: 'sv-tab1',
+                loadChildren: '../sv-tab1/sv-tab1.module#SvTab1PageModule'
+            },
+            {
+                path: 'sv-tab1/dashboard',
+                loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
+            },
+            {
+                path: 'sv-tab1/prjctmanagement',
+                loadChildren: '../prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule'
+            },
+            {
+                path: 'tab2',
+                loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            },
+            {
+                path: 'tab3',
+                loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            }
+        ]
+    },
+    {
         path: '',
-        component: _second_page__WEBPACK_IMPORTED_MODULE_5__["SecondPage"]
+        redirectTo: 'tabs/sv-tab1',
+        pathMatch: 'full'
     }
 ];
 var SecondPageModule = /** @class */ (function () {

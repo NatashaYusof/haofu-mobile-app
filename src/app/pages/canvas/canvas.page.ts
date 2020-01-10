@@ -131,21 +131,22 @@ export class CanvasPage implements OnInit {
     let ctx3 = this.canvasElement3.getContext('2d');
   
     // this.canvasElement.width = this.plt.width() + '';
-    // this.canvasElement.height = 460;   
+    this.canvasElement.height = 400;   
     // this.canvasElement1.width = this.plt.width() + '';
-    // this.canvasElement1.height = 460;   
+    this.canvasElement1.height = 400;   
     // this.canvasElement2.width = this.plt.width() + '';
-    // this.canvasElement2.height = 460;   
+    this.canvasElement2.height = 400;
+    this.canvasElement3.height = 400;   
   
    
     this.img = new Image()
   
     // this.img=this.JobcardService.imageLists;
     this.img.onload = () => {
-      let ctx = this.canvasElement.getContext('2d');
-      ctx.canvas.width=this.img.width;
-      ctx.canvas.height=this.img.height;
-      ctx.drawImage(this.img,0,0,ctx.canvas.width,ctx.canvas.height);
+      // let ctx = this.canvasElement.getContext('2d');
+      // ctx.canvas.width=this.img.width;
+      // ctx.canvas.height=this.img.height;
+      ctx.drawImage(this.img,10,10,this.canvasElement.width,this.canvasElement.height);
     
     }
 
@@ -435,7 +436,7 @@ export class CanvasPage implements OnInit {
     console.log(this.action)
   }
 
-  saveCanvasImage() {
+  saveCanvasImage(image) {
     // var test = this.canvasElement1.toDataURL('image/png');
     // var test1 = this.canvasElement2.toDataURL('image/png');
     let ctx = this.canvasElement.getContext('2d');
@@ -461,8 +462,12 @@ export class CanvasPage implements OnInit {
 
     this.file.writeFile(path, name, blob, options).then(async res => {
       this.storeImage(name);
+      this.JobcardService.imageList= this.getImagePath(name);
+      console.log(this.JobcardService.imageList);
+      
       let toast = await this.toastController.create({ message: "Image saved", duration: 2000 })
       toast.present()
+
     }, err => {
       console.log('error: ', err);
     });
@@ -520,8 +525,8 @@ export class CanvasPage implements OnInit {
     return blob;
   }
 
-  storeImage(imageName) {
-    let saveObj = { img: imageName };
+  storeImage(image) {
+    let saveObj = { img: image };
     this.storedImages.push(saveObj);
     this.storage.set(STORAGE_KEY, this.storedImages).then(() => {
       setTimeout(() => {
@@ -541,13 +546,12 @@ export class CanvasPage implements OnInit {
     this.storage.set(STORAGE_KEY, this.storedImages);
   }
 
-  getImagePath(imageName) {
-    let path = this.file.dataDirectory + imageName;
+  getImagePath(image) {
+    let path = this.file.dataDirectory + image;
     // https://ionicframework.com/docs/wkwebview/#my-local-resources-do-not-load
     path = this.webview.convertFileSrc(path);
-    return path;
+/*     this.JobcardService.imageList=image;
+    console.log(this.JobcardService.imageList); */
+   return path;
   }
-
-
-
 }

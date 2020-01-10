@@ -142,11 +142,11 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 var LoginPage = /** @class */ (function () {
-    function LoginPage(http, router, alertController, loadingController) {
+    function LoginPage(http, router, alertController, loadingCtrl) {
         this.http = http;
         this.router = router;
         this.alertController = alertController;
-        this.loadingController = loadingController;
+        this.loadingCtrl = loadingCtrl;
         this.username = "test@amic.com";
         this.userpassword = "password";
     }
@@ -190,7 +190,7 @@ var LoginPage = /** @class */ (function () {
                 _this.router.navigateByUrl('/menu/first');
             }
             else {
-                _this.router.navigateByUrl('/menu/second');
+                _this.router.navigateByUrl('/second');
             }
         }, function (error) {
             // tslint:disable-next-line: indent
@@ -210,7 +210,10 @@ var LoginPage = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./login.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/login/login.page.html"),
             styles: [__webpack_require__(/*! ./login.page.scss */ "./src/app/pages/login/login.page.scss")]
         }),
-        __metadata("design:paramtypes", [_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["LoadingController"]])
+        __metadata("design:paramtypes", [_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["LoadingController"]])
     ], LoginPage);
     return LoginPage;
 }());

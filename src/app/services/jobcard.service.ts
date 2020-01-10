@@ -15,6 +15,8 @@ export class JobcardService {
   childtaskid: string;
   jobcardDetail:any;
   img: any;
+  path: any;
+  image: any;
  
   constructor(private http: HttpClient) {}
 
@@ -81,5 +83,13 @@ export class JobcardService {
 
   set imageLists(val: any){
     this.img =val;
+  }
+
+  get imageList():any{
+    return this.image;
+  }
+
+  set imageList(val: any){
+    this.image=val;
   }
 }

@@ -40,7 +40,7 @@
       <ion-slide *ngFor="let img of imageLists ;index as i" > 
         <ion-card>  
            <div class="scrolling-wrapper"> 
-              <img src="{{img}}" tappable /> 
+              <img src="{{img}}" width="300" height="234" tappable /> 
             
               <!-- <img src="{{imageSrc}}" tappable/>  -->
             
@@ -65,7 +65,7 @@
     <!-- <ion-button expand="block" color="primary" height="10px"><ion-icon name="create" ></ion-icon>Edit Image</ion-button> -->
   </ion-card>
 
-  <ion-button expand="full" color="primary">Save</ion-button>
+  <ion-button class="upload" expand="full" color="primary">Upload</ion-button>
 </ion-content>
 
 <ion-toolbar>

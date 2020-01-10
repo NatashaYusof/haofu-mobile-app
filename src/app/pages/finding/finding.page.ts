@@ -46,9 +46,11 @@ export class FindingPage implements OnInit {
   imgPreview: any;
   regData: any;
   imageResponse:  any; 
-  image: any;
+  imageSave: any;
   img: any;
   presentToast: any;
+  path: any;
+  image: any;
   
   constructor(
     private http: LoginService,
@@ -74,6 +76,7 @@ export class FindingPage implements OnInit {
     this.taskId=this.JobcardService.taskId;
     this.childtaskId=this.JobcardService.childtaskId;
     console.log(this.JobcardService.childtaskId);
+    this.JobcardService.imageList="";
     this.jobcardDetail = this.JobcardService.jobcardDetails;
     this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
     console.log(this.currentDate)
@@ -83,12 +86,22 @@ export class FindingPage implements OnInit {
     console.log(this.details)
  
     this.getJobcardByEmployeeId(this.details.employee.employeeid)
- console.log(this.imageLists);
+    console.log(this.imageLists);
   }
   getJobcardByEmployeeId(employeeid: any): any {
   //  throw new Error("Method not implemented.");
 
   }
+
+  ionViewWillEnter() {
+    if (this.JobcardService.imageList != ""){
+      this.image= this.JobcardService.imageList;  
+      this.imageLists.push(this.image);
+      console.log(this.image);
+      this.imageSent.push(this.image); 
+      this.JobcardService.imageList="";
+    }
+}
 
   // goPause() {
   //   // console.log(taskid)
@@ -209,7 +222,8 @@ export class FindingPage implements OnInit {
       // If it's base64 (DATA_URL):
       this.img = 'data:image/jpeg;base64,' + imageData;
       this.imageLists.push(this.img);
-      this.imageSent.push(this.img)
+      this.imageSent.push(this.img);
+          
       // this.photos.push(this.imageSrc);
       // this.photos.reverse();
       // this.picture = imageSrc.replace('file://', '');
@@ -218,8 +232,9 @@ export class FindingPage implements OnInit {
     }, (err) => {
       // Handle error
     });
+    
   }
-  
+
   pickImage2() {
 
   let options = {

@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-toolbar color="primary" >
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+        <ion-title>
+            DASHBOARD
+        </ion-title>
+      <ion-buttons slot="end">
+          <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-buttons>
+     </ion-toolbar>
+     
+  </ion-header>
+
+<ion-content>
+ 
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment" scrollable="true" value="todolist" > 
+    
+        <ion-segment-button value="todolist" >
+          TO DO LIST
+        </ion-segment-button>
+        <ion-segment-button value="status">
+          STATUS
+        </ion-segment-button>
+        <ion-segment-button value="manhours">
+          MAN HOURS
+        </ion-segment-button>
+        <ion-segment-button value="employee">
+         EMPLOYEE
+          </ion-segment-button>
+          <ion-segment-button value="fasttrack">
+          FAST-TRACK        
+        </ion-segment-button>
+        <ion-segment-button value="statistic">
+          STATISTIC
+        </ion-segment-button>
+    
+      </ion-segment>
+    </ion-toolbar>
+
+      <div [ngSwitch]="segment">
+          <ion-grid class="text" *ngSwitchCase="'todolist'">
+           
+              <div class="head1"><br><br>PROJECT<BR>MANAGEMENT</div>        
+              <div class="item1"><br><br><br><br>ACTIVATE</div>              
+              <div class="item1"><br><br><br><br>APPROVE</div>
+          
+              <div class="head1"><br><br>WORKSHOP<br>WORKSHEET</div>
+              <div class="item1"><br><br><br><br>PENDING</div>
+              <div class="item1"><br><br><br><br>VALIDATE</div>
+              <div class="item1"><br><br><br><br>UNASSIGN</div>
+          
+              <div class="head1"><br><br>SMART<br>JOBCARD</div>
+              <div class="item1"><br><br><br><br>SIGN-OFF</div>
+              <div class="head1"></div>
+              <div class="head1"><br><br>EMPLOYEE<br>MANAGEMENT</div>
+              <div class="item1"><br><br><br><br>ACTIVE</div>
+              <div class="item1"><br><br><br><br>ON LEAVE</div> 
+         
+              <div class="head1"><br><br>MESSAGE</div>
+              <div class="item1"><br><br><br><br>UNREAD</div>
+         
+
+        </ion-grid>
+          
+      
+          <div *ngSwitchCase="'status'">
+            <div class="item2"><br><br><br><br>TOTAL IN WORKSHOP</div>
+            <div class="item3"><br><br><br><br>NEW</div>
+            <div class="item3"><br><br><br><br>PAINT</div>
+            <div class="item2"><br><br><br><br>IN-EXECUTION</div>
+            <div class="item3"><br><br><br><br>PICK-UP LIST</div>
+            <div class="item2"><br><br><br><br>COMPLETED</div>
+            <div class="item3"><br><br><br><br>WAITING LIST</div>
+       
+         
+         
+          </div>
+    
+        <ion-card *ngSwitchCase="'manhours'">
+          <ion-card-content>
+              <canvas #hrzBarChart5></canvas>
+          </ion-card-content>
+        </ion-card>
+
+          <div class="container"  *ngSwitchCase="'employee'">
+            <div class="item"><br><br><br><br>SUPERVISOR</div>
+            <div class="item"><br><br><br><br>TECHNICIAN</div>
+            <div class="item"><br><br><br><br>ENGINEER</div>
+            <div class="item"><br><br><br><br>COMPOSITE</div>
+            <div class="item"><br><br><br><br>SHEET METAL</div>
+            <div class="item"><br><br><br><br>PAINT</div>
+          </div>
+        
+        <ion-card *ngSwitchCase="'fasttrack'">
+          <ion-card-header>
+            Change Password
+          </ion-card-header>
+          <ion-card-content>
+            Your change password form here
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngSwitchCase="'statistic'">
+          <ion-card-header>
+            Change Password
+          </ion-card-header>
+          <ion-card-content>
+            Your change password form here
+          </ion-card-content>
+        </ion-card>
+      </div>
+    
+    
+</ion-content>

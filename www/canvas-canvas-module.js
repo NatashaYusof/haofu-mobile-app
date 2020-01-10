@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-buttons slot=\"start\">\n            <ion-back-button  defaulthref=\"\"></ion-back-button>\n      </ion-buttons>\n      <ion-buttons slot=\"end\">\n      <ion-icon (click)=\"clearCanvasImage()\" slot=\"icon-only\" style=\"font-size: 2em;\" name=\"refresh\"></ion-icon>\n      </ion-buttons>\n      <ion-title>JOBCARD</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content padding no-bounce>\n    <div #fixedContainer>\n      <ion-row>\n        <ion-col *ngFor=\"let color of colors\"  [style.background]=\"color\" class=\"color-block\" tappable\n          (click)=\"selectColor(color)\">\n        </ion-col>\n      </ion-row>\n  \n      <ion-row>\n        <ion-radio-group ngDefaultControl [(ngModel)]=\"selectedColor\" style=\"display: contents;\">\n          <ion-col *ngFor=\"let color of colors\" text-center>\n            <ion-radio mode=\"ios\" [value]=\"color\"></ion-radio>\n          </ion-col>\n        </ion-radio-group>\n      </ion-row>\n\n      <ion-card>\n      <div class=\"container\">\n        <canvas #imageCanvas id=\"layer0\" class=\"canvas\" ></canvas>\n        <canvas #final id=\"layer3\" class=\"canvas\" ></canvas>\n        <canvas #Canvas id=\"layer1\" class=\"canvas\" (touchstart)=\"startDrawing($event)\" (touchmove)=\"moved($event)\" (touchend)=\"touchend($event)\"></canvas>\n        <canvas #Shape id=\"layer2\" class=\"canvas\" (touchstart)=\"startDrawing($event)\" (touchmove)=\"moved($event)\" (touchend)=\"touchend($event)\"></canvas>\n        \n      </div>\n    </ion-card>\n      \n        <!-- <ion-input [(ngModel)]='htmlText' placeholder=\"Task .. \"></ion-input> -->\n        <!-- <ion-input #input></ion-input> -->\n\n      <ion-toolbar>\n           <ion-buttons slot=\"end\">\n              <ion-icon style=\"font-size: 1em;\"  color=\"dark\"  (click)=\"changeSize(5)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 1.2em;\" color=\"dark\"  (click)=\"changeSize(10)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 1.6em;\" color=\"dark\"  (click)=\"changeSize(15)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 2em;\" color=\"dark\"  (click)=\"changeSize(20)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 2.28em;\" color=\"dark\"  (click)=\"changeSize(30)\" name=\"radio-button-on\"></ion-icon>\n          </ion-buttons>\n      </ion-toolbar>\n       \n      <ion-fab horizontal=\"start\" vertical=\"bottom\" slot=\"fixed\">\n          <ion-fab-button color=\"primary\">\n            <ion-icon name=\"create\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-list side=\"top\">\n              <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/free.png\"  (click)=\"changeAction('handdraw')\">\n                </ion-fab-button>\n                <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/line.png\" width=\"25px\" height=\"25px\"  (click)=\"changeAction('drawline')\">\n                </ion-fab-button>\n            <ion-fab-button color=\"light\">\n              <ion-icon name=\"square\" (click)=\"changeAction('drawsquare')\" ></ion-icon>\n            </ion-fab-button>\n            <ion-fab-button color=\"light\">\n              <ion-icon name=\"radio-button-off\" (click)=\"changeAction('drawcircle')\"></ion-icon>\n            </ion-fab-button>\n            <ion-fab-button color=\"light\">\n                <ion-icon name=\"arrow-forward\" (click)=\"changeAction('drawarrow')\"></ion-icon>\n              </ion-fab-button>\n            </ion-fab-list>\n          <ion-fab-list side=\"end\">\n              <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/txt.png\" width=\"20px\" height=\"20px\" (click)=\"changeAction('addtext')\">\n              </ion-fab-button>\n              <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/eraser.png\" width=\"25px\" height=\"25px\" (click)=\"changeAction('eraser')\"> \n              </ion-fab-button>\n              </ion-fab-list>\n        </ion-fab>\n       \n\n      <ion-button class=\"button\" expand=\"block\" (click)=\"saveCanvasImage()\">Done Edit</ion-button>\n    </div>\n    \n  \n    <ion-list *ngIf=\"storedImages.length > 0\">\n      <ion-list-header>Previous Drawings</ion-list-header>\n      <ion-card *ngFor=\"let obj of storedImages; let i = index\">\n        <ion-card-content>\n          <img [src]=\"getImagePath(obj.img)\">\n        </ion-card-content>\n        <ion-button expand=\"block\" icon-only color=\"danger\" (click)=\"removeImageAtIndex(i)\">\n          <ion-icon name=\"trash\"></ion-icon>\n        </ion-button>\n      </ion-card>\n    </ion-list>\n  </ion-content>"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n        <ion-buttons slot=\"start\">\n            <ion-back-button  defaulthref=\"\"></ion-back-button>\n      </ion-buttons>\n      <ion-buttons slot=\"end\">\n      <ion-icon (click)=\"clearCanvasImage()\" slot=\"icon-only\" style=\"font-size: 2em;\" name=\"refresh\"></ion-icon>\n      </ion-buttons>\n      <ion-title>JOBCARD</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  \n  <ion-content padding no-bounce>\n    <div #fixedContainer>\n      <ion-row>\n        <ion-col *ngFor=\"let color of colors\"  [style.background]=\"color\" class=\"color-block\" tappable\n          (click)=\"selectColor(color)\">\n        </ion-col>\n      </ion-row>\n  \n      <ion-row>\n        <ion-radio-group ngDefaultControl [(ngModel)]=\"selectedColor\" style=\"display: contents;\">\n          <ion-col *ngFor=\"let color of colors\" text-center>\n            <ion-radio mode=\"ios\" [value]=\"color\"></ion-radio>\n          </ion-col>\n        </ion-radio-group>\n      </ion-row>\n\n      <ion-card>\n      <div class=\"container\">\n        <canvas #imageCanvas id=\"layer0\" class=\"canvas\" ></canvas>\n        <canvas #final id=\"layer3\" class=\"canvas\" ></canvas>\n        <canvas #Canvas id=\"layer1\" class=\"canvas\" (touchstart)=\"startDrawing($event)\" (touchmove)=\"moved($event)\" (touchend)=\"touchend($event)\"></canvas>\n        <canvas #Shape id=\"layer2\" class=\"canvas\" (touchstart)=\"startDrawing($event)\" (touchmove)=\"moved($event)\" (touchend)=\"touchend($event)\"></canvas>\n        \n      </div>\n    </ion-card>\n      \n        <!-- <ion-input [(ngModel)]='htmlText' placeholder=\"Task .. \"></ion-input> -->\n        <!-- <ion-input #input></ion-input> -->\n\n      <ion-toolbar>\n           <ion-buttons slot=\"end\">\n              <ion-icon style=\"font-size: 1em;\"  color=\"dark\"  (click)=\"changeSize(5)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 1.2em;\" color=\"dark\"  (click)=\"changeSize(10)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 1.6em;\" color=\"dark\"  (click)=\"changeSize(15)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 2em;\" color=\"dark\"  (click)=\"changeSize(20)\" name=\"radio-button-on\"></ion-icon>\n              <ion-icon style=\"font-size: 2.28em;\" color=\"dark\"  (click)=\"changeSize(30)\" name=\"radio-button-on\"></ion-icon>\n          </ion-buttons>\n      </ion-toolbar>\n       \n      <ion-fab horizontal=\"start\" vertical=\"bottom\" slot=\"fixed\">\n          <ion-fab-button color=\"primary\">\n            <ion-icon name=\"create\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-list side=\"top\">\n              <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/free.png\"  (click)=\"changeAction('handdraw')\">\n                </ion-fab-button>\n                <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/line.png\" width=\"25px\" height=\"25px\"  (click)=\"changeAction('drawline')\">\n                </ion-fab-button>\n            <ion-fab-button color=\"light\">\n              <ion-icon name=\"square\" (click)=\"changeAction('drawsquare')\" ></ion-icon>\n            </ion-fab-button>\n            <ion-fab-button color=\"light\">\n              <ion-icon name=\"radio-button-off\" (click)=\"changeAction('drawcircle')\"></ion-icon>\n            </ion-fab-button>\n            <ion-fab-button color=\"light\">\n                <ion-icon name=\"arrow-forward\" (click)=\"changeAction('drawarrow')\"></ion-icon>\n              </ion-fab-button>\n            </ion-fab-list>\n          <ion-fab-list side=\"end\">\n              <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/txt.png\" width=\"20px\" height=\"20px\" (click)=\"changeAction('addtext')\">\n              </ion-fab-button>\n              <ion-fab-button color=\"light\">\n                  <img src = \"../assets/icon/eraser.png\" width=\"25px\" height=\"25px\" (click)=\"changeAction('eraser')\"> \n              </ion-fab-button>\n              </ion-fab-list>\n        </ion-fab>\n       \n\n      <ion-button class=\"button\" expand=\"block\" (click)=\"saveCanvasImage(img)\">Save</ion-button>\n    </div>\n    \n  \n    <!-- <ion-list *ngIf=\"storedImages.length > 0\">\n      <ion-list-header>Previous Drawings</ion-list-header>\n      <ion-card *ngFor=\"let obj of storedImages; let i = index\">\n        <ion-card-content>\n          <img [src]=\"getImagePath(obj.img)\">\n        </ion-card-content>\n        <ion-button expand=\"block\" icon-only color=\"danger\" (click)=\"removeImageAtIndex(i)\">\n          <ion-icon name=\"trash\"></ion-icon>\n        </ion-button>\n      </ion-card>\n    </ion-list> -->\n  </ion-content>"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ var CanvasPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".canvas {\n  position: absolute;\n  display: inline-block; }\n\n.container {\n  min-height: 460px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY2FudmFzL0M6XFxwcm9qZWN0XFxuYXRhc2hhL3NyY1xcYXBwXFxwYWdlc1xcY2FudmFzXFxjYW52YXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtBO0VBQ0ksa0JBQWtCO0VBQ2xCLHFCQUFxQixFQUFBOztBQUd6QjtFQUNJLGlCQUFpQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvY2FudmFzL2NhbnZhcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyAuYm90dG9tLXRvb2xiYXIge1xyXG4vLyAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4vLyAgICAgYm90dG9tOiAwO1xyXG4vLyB9XHJcblxyXG4uY2FudmFze1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59XHJcblxyXG4uY29udGFpbmVye1xyXG4gICAgbWluLWhlaWdodDogNDYwcHg7XHJcbiAgICBcclxuICAgIC8vIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLy8gLmJ1dHRvbntcclxuLy8gICAgIGZvbnQtc2l6ZTogMTFweDtcclxuLy8gICAgIGNvbG9yOiBkYXJrY3lhbjtcclxuLy8gICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4vLyAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuLy8gfSJdfQ== */"
+module.exports = ".canvas {\n  position: absolute;\n  display: inline-block; }\n\n.container {\n  min-height: 440px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY2FudmFzL0M6XFxwcm9qZWN0XFxuYXRhc2hhL3NyY1xcYXBwXFxwYWdlc1xcY2FudmFzXFxjYW52YXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtBO0VBQ0ksa0JBQWtCO0VBQ2xCLHFCQUFxQixFQUFBOztBQUd6QjtFQUNJLGlCQUFpQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvY2FudmFzL2NhbnZhcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyAuYm90dG9tLXRvb2xiYXIge1xyXG4vLyAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4vLyAgICAgYm90dG9tOiAwO1xyXG4vLyB9XHJcblxyXG4uY2FudmFze1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59XHJcblxyXG4uY29udGFpbmVye1xyXG4gICAgbWluLWhlaWdodDogNDQwcHg7XHJcbiAgICBcclxuICAgIC8vIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLy8gLmJ1dHRvbntcclxuLy8gICAgIGZvbnQtc2l6ZTogMTFweDtcclxuLy8gICAgIGNvbG9yOiBkYXJrY3lhbjtcclxuLy8gICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4vLyAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuLy8gfSJdfQ== */"
 
 /***/ }),
 
@@ -195,18 +195,19 @@ var CanvasPage = /** @class */ (function () {
         var ctx2 = this.canvasElement2.getContext('2d');
         var ctx3 = this.canvasElement3.getContext('2d');
         // this.canvasElement.width = this.plt.width() + '';
-        // this.canvasElement.height = 460;   
+        this.canvasElement.height = 400;
         // this.canvasElement1.width = this.plt.width() + '';
-        // this.canvasElement1.height = 460;   
+        this.canvasElement1.height = 400;
         // this.canvasElement2.width = this.plt.width() + '';
-        // this.canvasElement2.height = 460;   
+        this.canvasElement2.height = 400;
+        this.canvasElement3.height = 400;
         this.img = new Image();
         // this.img=this.JobcardService.imageLists;
         this.img.onload = function () {
-            var ctx = _this.canvasElement.getContext('2d');
-            ctx.canvas.width = _this.img.width;
-            ctx.canvas.height = _this.img.height;
-            ctx.drawImage(_this.img, 0, 0, ctx.canvas.width, ctx.canvas.height);
+            // let ctx = this.canvasElement.getContext('2d');
+            // ctx.canvas.width=this.img.width;
+            // ctx.canvas.height=this.img.height;
+            ctx.drawImage(_this.img, 10, 10, _this.canvasElement.width, _this.canvasElement.height);
         };
         this.img.src = this.JobcardService.imageLists;
         setInterval(function () {
@@ -447,7 +448,7 @@ var CanvasPage = /** @class */ (function () {
         this.action = action;
         console.log(this.action);
     };
-    CanvasPage.prototype.saveCanvasImage = function () {
+    CanvasPage.prototype.saveCanvasImage = function (image) {
         var _this = this;
         // var test = this.canvasElement1.toDataURL('image/png');
         // var test1 = this.canvasElement2.toDataURL('image/png');
@@ -470,6 +471,8 @@ var CanvasPage = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         this.storeImage(name);
+                        this.JobcardService.imageList = this.getImagePath(name);
+                        console.log(this.JobcardService.imageList);
                         return [4 /*yield*/, this.toastController.create({ message: "Image saved", duration: 2000 })];
                     case 1:
                         toast = _a.sent();
@@ -525,9 +528,9 @@ var CanvasPage = /** @class */ (function () {
         var blob = new Blob(byteArrays, { type: contentType });
         return blob;
     };
-    CanvasPage.prototype.storeImage = function (imageName) {
+    CanvasPage.prototype.storeImage = function (image) {
         var _this = this;
-        var saveObj = { img: imageName };
+        var saveObj = { img: image };
         this.storedImages.push(saveObj);
         this.storage.set(STORAGE_KEY, this.storedImages).then(function () {
             setTimeout(function () {
@@ -554,10 +557,12 @@ var CanvasPage = /** @class */ (function () {
         });
         this.storage.set(STORAGE_KEY, this.storedImages);
     };
-    CanvasPage.prototype.getImagePath = function (imageName) {
-        var path = this.file.dataDirectory + imageName;
+    CanvasPage.prototype.getImagePath = function (image) {
+        var path = this.file.dataDirectory + image;
         // https://ionicframework.com/docs/wkwebview/#my-local-resources-do-not-load
         path = this.webview.convertFileSrc(path);
+        /*     this.JobcardService.imageList=image;
+            console.log(this.JobcardService.imageList); */
         return path;
     };
     CanvasPage.ctorParameters = function () { return [

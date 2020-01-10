@@ -81,11 +81,11 @@
         </ion-fab>
        
 
-      <ion-button class="button" expand="block" (click)="saveCanvasImage()">Done Edit</ion-button>
+      <ion-button class="button" expand="block" (click)="saveCanvasImage(img)">Save</ion-button>
     </div>
     
   
-    <ion-list *ngIf="storedImages.length > 0">
+    <!-- <ion-list *ngIf="storedImages.length > 0">
       <ion-list-header>Previous Drawings</ion-list-header>
       <ion-card *ngFor="let obj of storedImages; let i = index">
         <ion-card-content>
@@ -95,5 +95,5 @@
           <ion-icon name="trash"></ion-icon>
         </ion-button>
       </ion-card>
-    </ion-list>
+    </ion-list> -->
   </ion-content>

@@ -68,7 +68,7 @@ login(): void {
            
          
           } else {
-            this.router.navigateByUrl('/menu/second');
+            this.router.navigateByUrl('/second');
           
           }
 

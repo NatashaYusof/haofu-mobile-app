@@ -1,14 +1,22 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Second Blank</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
  
-<ion-content padding>
-  <ion-button expand="block" routerLink="/menu/second/details" routerDirection="forward">
-      Details forward
-    </ion-button>
-</ion-content>
+  <ion-tab-bar slot="bottom" color="primary">
+ 
+    <ion-tab-button tab="sv-tab1">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+ 
+    <ion-tab-button tab="tab2">
+      <ion-icon name="search"></ion-icon>
+    </ion-tab-button>
+
+	  <ion-tab-button tab="tab2">
+      <ion-icon name="notifications"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3">
+      <ion-icon name="person"></ion-icon>
+     </ion-tab-button>
+  </ion-tab-bar>
+ 
+</ion-tabs>

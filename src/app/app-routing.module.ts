@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'tab1', loadChildren: './pages/tab1/tab1.module#Tab1PageModule' },
   { path: 'tab2', loadChildren: './pages/tab2/tab2.module#Tab2PageModule' },
   { path: 'tab3', loadChildren: './pages/tab3/tab3.module#Tab3PageModule' },
+  { path: 'sv-tab1',loadChildren:'./pages/sv-tab1/sv-tab1.module#SvTab1PageModule'  },
   { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },
   { path: 'add-user', loadChildren: './pages/add-user/add-user.module#AddUserPageModule' },
   { path: 'jobcard', loadChildren: './pages/jobcard/jobcard.module#JobcardPageModule' },
@@ -20,6 +21,9 @@ const routes: Routes = [
   { path: 'manual', loadChildren: './pages/manual/manual.module#ManualPageModule' },
   { path: 'timedetail', loadChildren: './pages/timedetail/timedetail.module#TimedetailPageModule' },
   { path: 'canvas', loadChildren: './pages/canvas/canvas.module#CanvasPageModule' },
+  { path: 'dashboard',loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule'},
+  { path: 'prjctmanagement',loadChildren:'./pages/prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule'},
+
 ];
 
 @NgModule({

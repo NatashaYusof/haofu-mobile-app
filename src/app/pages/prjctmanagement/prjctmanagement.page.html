@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="primary" >
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+        <ion-title>
+            SMART JOBCARD
+        </ion-title>
+      <ion-buttons slot="end">
+          <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-buttons>
+     </ion-toolbar>
+     
+  </ion-header>
+
+<ion-content>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="segment" value="todolist" > 
+              <ion-segment-button value="todolist">
+            <ion-select placeholder="TO-DO LIST" interface="popover">
+                  <ion-select-option  hidden>ACTIVATE ()</ion-select-option>
+                  <ion-select-option  hidden>APPROVE ()</ion-select-option>
+                </ion-select>
+            </ion-segment-button>
+            <ion-segment-button value="follow">
+                <ion-select placeholder="FOLLOW-UP LIST" interface="popover">
+                    <ion-select-option hidden>NEW / PENDING ()</ion-select-option>
+                    <ion-select-option hidden>IN-PROGRESS ()</ion-select-option>
+                    <ion-select-option hidden>COMPLETED ()</ion-select-option>
+                    <ion-select-option hidden>VIEW ALL ()</ion-select-option>
+                  </ion-select>
+            </ion-segment-button>
+        
+          </ion-segment>
+        </ion-toolbar>
+    
+          <div [ngSwitch]="segment">
+            <ion-card *ngSwitchCase="'todolist'">
+              <ion-card-header>
+                Change Password
+              </ion-card-header>
+              <ion-card-content>
+                Your change password form here
+              </ion-card-content>
+            </ion-card>
+    
+            <ion-card *ngSwitchCase="'follow'">
+              <ion-card-header>
+                Change Password
+              </ion-card-header>
+              <ion-card-content>
+              
+              </ion-card-content>
+            </ion-card>
+          </div>
+        
+</ion-content>
