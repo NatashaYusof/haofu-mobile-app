@@ -4,6 +4,7 @@ ion-segment-button {
     color: var(--ion-color-medium);
     border: 0px;
     border-radius: 0px;
+ 
 
     ion-label {
         max-width: calc(90vw / 3);
@@ -55,8 +56,9 @@ ion-segment-button {
     border: 0.5px solid #fff;
     border-radius: 10px;
     padding: 50px;
+    width: 180px;
     height: 170px;
-    font-size: 12px;
+    font-size: 11px;
     text-align: center;
     color:black;
   }
@@ -65,6 +67,7 @@ ion-segment-button {
     background-color:#CFECEC ;
     border: 0.5px solid #fff;
     border-radius: 10px;
+    padding:10px;
     width: 80px;
     height: 80px;
     font-size: 11px;
@@ -75,27 +78,42 @@ ion-segment-button {
 
   //item 2 n 3 status
   .item2 {
-    background-color:#CFECEC ;
+    background-color:#FDD7E4 ;
     border: 0.5px solid #fff;
     border-radius: 10px;
+    padding: 50px;
     width: 180px;
     height: 170px;
     font-size: 11px;
     text-align: center;
     color:black;
-    float: left;
   }
   
-  .item3 {
-    background-color:#FDD7E4 ;
-    border: 0.5px solid #fff;
-    border-radius: 10px;
-    width: 180px;
-    height: 128px;
-    font-size: 11px;
-    text-align: center;
-    color:black;
-    float: right;
+  // .item3 {
+  //   background-color:#FDD7E4 ;
+  //   border: 0.5px solid #fff;
+  //   border-radius: 10px;
+  //   padding: 50px;
+  //   width: 180px;
+  //   height: 128px;
+  //   font-size: 11px;
+  //   text-align: center;
+  //   color:black;
+  //   float: right;
+  // }
+  
+  // ion-slide {
+  //   height: calc(100vh - 150px);
+  // }
+
+  .font{
+    font-size: 30px;
+    color: dodgerblue;
+
   }
-  
-  
+
+  .font1{
+    font-size: 30px;
+    color: gray;
+
+  }

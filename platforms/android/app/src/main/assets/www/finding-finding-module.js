@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n\n\n  \n    <ion-slides pager=\"true\" class=\"card\"  >\n      <ion-slide *ngFor=\"let img of imageLists ;index as i\" > \n        <ion-card>  \n           <div class=\"scrolling-wrapper\"> \n              <img src=\"{{img}}\" width=\"300\" height=\"234\" tappable /> \n            \n              <!-- <img src=\"{{imageSrc}}\" tappable/>  -->\n            \n            <div class=\"chipGroup\">\n              <ion-chip >\n                <button ion-button outline icon-only (click)=\"goToCanvas(img, i)\"><ion-icon name=\"brush\"></ion-icon></button>\n                <ion-label>Edit</ion-label>\n              </ion-chip>\n              <ion-chip>\n                 <button ion-button outline icon-only (click)=\"deleteImage(i)\" > <ion-icon name=\"trash\" ></ion-icon></button>   \n                 <ion-label>Delete</ion-label>\n                 \n              </ion-chip>\n              </div> \n            </div>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n    \n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button class=\"upload\" expand=\"full\" color=\"primary\">Upload</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n\n\n  \n    <ion-slides pager=\"true\" class=\"card\"  >\n      <ion-slide *ngFor=\"let img of imageLists ;index as i\" > \n        <ion-card>  \n           <div class=\"scrolling-wrapper\"> \n              <img src=\"{{img}}\" width=\"300\" height=\"234\" tappable /> \n            \n              <!-- <img src=\"{{imageSrc}}\" tappable/>  -->\n            \n            <div class=\"chipGroup\">\n              <ion-chip >\n                <button ion-button outline icon-only (click)=\"goToCanvas(img, i)\"><ion-icon name=\"brush\"></ion-icon></button>\n                <ion-label>Edit</ion-label>\n              </ion-chip>\n              <ion-chip>\n                 <button ion-button outline icon-only (click)=\"deleteImage(i)\" > <ion-icon name=\"trash\" ></ion-icon></button>   \n                 <ion-label>Delete</ion-label>\n                 \n              </ion-chip>\n              </div> \n            </div>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n    \n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button class=\"upload\" expand=\"full\" color=\"primary\">Upload</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
 
 /***/ }),
 
@@ -88,20 +88,20 @@ module.exports = ".expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n.font
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FindingPage", function() { return FindingPage; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../src/app/services/login.service */ "./src/app/services/login.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../src/app/services/jobcard.service */ "./src/app/services/jobcard.service.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/Camera/ngx */ "./node_modules/@ionic-native/Camera/ngx/index.js");
-/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
-/* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
-/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
-/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
-/* harmony import */ var _ionic_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/core */ "./node_modules/@ionic/core/dist/index.mjs");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../src/app/services/jobcard.service */ "./src/app/services/jobcard.service.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/Camera/ngx */ "./node_modules/@ionic-native/Camera/ngx/index.js");
+/* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
+/* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
+/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
+/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
+/* harmony import */ var _ionic_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/core */ "./node_modules/@ionic/core/dist/index.mjs");
+/* harmony import */ var _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../src/app/services/workorder.service */ "./src/app/services/workorder.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -162,8 +162,9 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 // import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 var FindingPage = /** @class */ (function () {
-    function FindingPage(http, router, alertController, loadingCtrl, JobcardService, camera, actionSheetController, imagePicker, crop, file, base64, _DomSanitizer, toastController, webview) {
-        this.http = http;
+    function FindingPage(
+    // private http: LoginService,
+    router, alertController, loadingCtrl, JobcardService, camera, actionSheetController, imagePicker, crop, file, base64, _DomSanitizer, toastController, webview, http) {
         this.router = router;
         this.alertController = alertController;
         this.loadingCtrl = loadingCtrl;
@@ -177,6 +178,7 @@ var FindingPage = /** @class */ (function () {
         this._DomSanitizer = _DomSanitizer;
         this.toastController = toastController;
         this.webview = webview;
+        this.http = http;
         this.btn_txt = 'PAUSE';
         this.croppedImagepath = "";
         this.isLoading = false;
@@ -193,7 +195,7 @@ var FindingPage = /** @class */ (function () {
         console.log(this.JobcardService.childtaskId);
         this.JobcardService.imageList = "";
         this.jobcardDetail = this.JobcardService.jobcardDetails;
-        this.currentDate = moment__WEBPACK_IMPORTED_MODULE_5__().format('YYYY-MM-DD HH:mm:ss');
+        this.currentDate = moment__WEBPACK_IMPORTED_MODULE_4__().format('YYYY-MM-DD HH:mm:ss');
         console.log(this.currentDate);
         this.userDetail = window.localStorage.getItem('userDetail');
         this.details = JSON.parse(this.userDetail);
@@ -435,7 +437,7 @@ var FindingPage = /** @class */ (function () {
             var alert;
             var _this = this;
             return __generator(this, function (_a) {
-                alert = _ionic_core__WEBPACK_IMPORTED_MODULE_13__["alertController"].create({
+                alert = _ionic_core__WEBPACK_IMPORTED_MODULE_12__["alertController"].create({
                     header: 'Delete photo',
                     message: 'Do you want to delete this photo?',
                     buttons: [
@@ -475,20 +477,20 @@ var FindingPage = /** @class */ (function () {
         });
     };
     FindingPage.ctorParameters = function () { return [
-        { type: _src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"] },
-        { type: _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"] },
-        { type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_6__["Camera"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"] },
-        { type: _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__["ImagePicker"] },
-        { type: _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_9__["Crop"] },
-        { type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__["File"] },
-        { type: _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_12__["Base64"] },
-        { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__["DomSanitizer"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"] },
-        { type: _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_11__["WebView"] }
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"] },
+        { type: _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_3__["JobcardService"] },
+        { type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ActionSheetController"] },
+        { type: _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_7__["ImagePicker"] },
+        { type: _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_8__["Crop"] },
+        { type: _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_6__["File"] },
+        { type: _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_11__["Base64"] },
+        { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"] },
+        { type: _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_10__["WebView"] },
+        { type: _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_13__["WorkorderService"] }
     ]; };
     FindingPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -496,20 +498,20 @@ var FindingPage = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./finding.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/finding/finding.page.html"),
             styles: [__webpack_require__(/*! ./finding.page.scss */ "./src/app/pages/finding/finding.page.scss")]
         }),
-        __metadata("design:paramtypes", [_src_app_services_login_service__WEBPACK_IMPORTED_MODULE_1__["LoginService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"],
-            _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__["JobcardService"],
-            _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_6__["Camera"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
-            _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__["ImagePicker"],
-            _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_9__["Crop"],
-            _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__["File"],
-            _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_12__["Base64"],
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__["DomSanitizer"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"],
-            _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_11__["WebView"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"],
+            _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_3__["JobcardService"],
+            _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ActionSheetController"],
+            _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_7__["ImagePicker"],
+            _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_8__["Crop"],
+            _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_6__["File"],
+            _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_11__["Base64"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"],
+            _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_10__["WebView"],
+            _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_13__["WorkorderService"]])
     ], FindingPage);
     return FindingPage;
 }());

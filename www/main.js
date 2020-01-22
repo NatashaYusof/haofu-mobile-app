@@ -457,10 +457,12 @@ var map = {
 	],
 	"../childtask/childtask.module": [
 		"./src/app/pages/childtask/childtask.module.ts",
+		"common",
 		"childtask-childtask-module"
 	],
 	"../dashboard/dashboard.module": [
 		"./src/app/pages/dashboard/dashboard.module.ts",
+		"common",
 		"dashboard-dashboard-module"
 	],
 	"../details/details.module": [
@@ -470,6 +472,7 @@ var map = {
 	"../finding/finding.module": [
 		"./src/app/pages/finding/finding.module.ts",
 		"default~finding-finding-module~task-task-module",
+		"common",
 		"finding-finding-module"
 	],
 	"../first-with-tabs/first-with-tabs.module": [
@@ -478,6 +481,7 @@ var map = {
 	],
 	"../jobcard/jobcard.module": [
 		"./src/app/pages/jobcard/jobcard.module.ts",
+		"common",
 		"jobcard-jobcard-module"
 	],
 	"../manual/manual.module": [
@@ -498,6 +502,7 @@ var map = {
 	],
 	"../tab1/tab1.module": [
 		"./src/app/pages/tab1/tab1.module.ts",
+		"common",
 		"tab1-tab1-module"
 	],
 	"../tab2/tab2.module": [
@@ -511,6 +516,7 @@ var map = {
 	"../task/task.module": [
 		"./src/app/pages/task/task.module.ts",
 		"default~finding-finding-module~task-task-module",
+		"common",
 		"task-task-module"
 	],
 	"./home/home.module": [
@@ -527,10 +533,12 @@ var map = {
 	],
 	"./pages/childtask/childtask.module": [
 		"./src/app/pages/childtask/childtask.module.ts",
+		"common",
 		"childtask-childtask-module"
 	],
 	"./pages/dashboard/dashboard.module": [
 		"./src/app/pages/dashboard/dashboard.module.ts",
+		"common",
 		"dashboard-dashboard-module"
 	],
 	"./pages/details/details.module": [
@@ -540,6 +548,7 @@ var map = {
 	"./pages/finding/finding.module": [
 		"./src/app/pages/finding/finding.module.ts",
 		"default~finding-finding-module~task-task-module",
+		"common",
 		"finding-finding-module"
 	],
 	"./pages/first-with-tabs/first-with-tabs.module": [
@@ -548,10 +557,12 @@ var map = {
 	],
 	"./pages/jobcard/jobcard.module": [
 		"./src/app/pages/jobcard/jobcard.module.ts",
+		"common",
 		"jobcard-jobcard-module"
 	],
 	"./pages/login/login.module": [
 		"./src/app/pages/login/login.module.ts",
+		"common",
 		"pages-login-login-module"
 	],
 	"./pages/manual/manual.module": [
@@ -576,6 +587,7 @@ var map = {
 	],
 	"./pages/tab1/tab1.module": [
 		"./src/app/pages/tab1/tab1.module.ts",
+		"common",
 		"tab1-tab1-module"
 	],
 	"./pages/tab2/tab2.module": [
@@ -589,6 +601,7 @@ var map = {
 	"./pages/task/task.module": [
 		"./src/app/pages/task/task.module.ts",
 		"default~finding-finding-module~task-task-module",
+		"common",
 		"task-task-module"
 	],
 	"./pages/timedetail/timedetail.module": [

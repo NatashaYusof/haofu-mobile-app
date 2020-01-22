@@ -12,7 +12,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Base64 } from '@ionic-native/base64/ngx';
 import { alertController } from '@ionic/core';
-
+import { WorkorderService } from '../../../../src/app/services/workorder.service';
 // import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @Component({
@@ -51,9 +51,11 @@ export class FindingPage implements OnInit {
   presentToast: any;
   path: any;
   image: any;
+  supervisor: any;
+  
   
   constructor(
-    private http: LoginService,
+    // private http: LoginService,
     private router: Router,
     public alertController: AlertController,
     public loadingCtrl: LoadingController,
@@ -66,7 +68,8 @@ export class FindingPage implements OnInit {
     private base64: Base64,
     public _DomSanitizer: DomSanitizer,
     public toastController: ToastController,
-    public webview: WebView) {   }
+    public webview: WebView,
+    public http: WorkorderService,) {   }
 
   ngOnInit() {
     this.serialNo=this.JobcardService.serialNo;
@@ -87,6 +90,8 @@ export class FindingPage implements OnInit {
  
     this.getJobcardByEmployeeId(this.details.employee.employeeid)
     console.log(this.imageLists);
+
+
   }
   getJobcardByEmployeeId(employeeid: any): any {
   //  throw new Error("Method not implemented.");
@@ -102,6 +107,8 @@ export class FindingPage implements OnInit {
       this.JobcardService.imageList="";
     }
 }
+
+
 
   // goPause() {
   //   // console.log(taskid)

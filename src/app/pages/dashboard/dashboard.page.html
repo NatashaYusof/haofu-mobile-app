@@ -16,94 +16,93 @@
 <ion-content>
  
   <ion-toolbar>
-    <ion-segment [(ngModel)]="segment" scrollable="true" value="todolist" > 
+    <ion-segment  (ionChange)="segmentChanged(segment)" [(ngModel)]="segment"  scrollable="true"> 
     
-        <ion-segment-button value="todolist" >
+        <ion-segment-button id="0" value="0" >
           TO DO LIST
         </ion-segment-button>
-        <ion-segment-button value="status">
+        <ion-segment-button id="1" value="1">
           STATUS
         </ion-segment-button>
-        <ion-segment-button value="manhours">
+        <ion-segment-button id="2" value="2">
           MAN HOURS
         </ion-segment-button>
-        <ion-segment-button value="employee">
+        <ion-segment-button id="3" value="3">
          EMPLOYEE
           </ion-segment-button>
-          <ion-segment-button value="fasttrack">
+          <ion-segment-button id="4" value="4">
           FAST-TRACK        
         </ion-segment-button>
-        <ion-segment-button value="statistic">
+        <ion-segment-button id="5" value="5">
           STATISTIC
         </ion-segment-button>
     
       </ion-segment>
     </ion-toolbar>
 
-      <div [ngSwitch]="segment">
-          <ion-grid class="text" *ngSwitchCase="'todolist'">
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true" >
+
+        <ion-slide>
+          <ion-grid class="text" >
            
-              <div class="head1"><br><br>PROJECT<BR>MANAGEMENT</div>        
-              <div class="item1"><br><br><br><br>ACTIVATE</div>              
-              <div class="item1"><br><br><br><br>APPROVE</div>
+              <div class="head1"><br><br>PROJECT<BR>MANAGEMENT</div>  
+                <div class="item1"> <ion-label class="font">{{approve.length}}</ion-label><br>APPROVE</div>        
+             <div class="item1"> <ion-label class="font">{{activate.length}}</ion-label><br>ACTIVATE</div> 
+                    
           
               <div class="head1"><br><br>WORKSHOP<br>WORKSHEET</div>
-              <div class="item1"><br><br><br><br>PENDING</div>
-              <div class="item1"><br><br><br><br>VALIDATE</div>
-              <div class="item1"><br><br><br><br>UNASSIGN</div>
+             
+              <div class="item1"> <ion-label class="font">{{validateWW.length}}</ion-label><br>VALIDATE</div>  
+              <div class="item1"> <ion-label class="font">{{pendingWW.length}}</ion-label><br>PENDING</div>  
+              
           
               <div class="head1"><br><br>SMART<br>JOBCARD</div>
-              <div class="item1"><br><br><br><br>SIGN-OFF</div>
+              <div class="item1"> <ion-label class="font1">0</ion-label><br>SIGN-OFF</div>  
+              
+              
               <div class="head1"></div>
               <div class="head1"><br><br>EMPLOYEE<br>MANAGEMENT</div>
-              <div class="item1"><br><br><br><br>ACTIVE</div>
-              <div class="item1"><br><br><br><br>ON LEAVE</div> 
-         
+              <div class="item1"> <ion-label class="font1">0</ion-label><br>ON LEAVE</div> 
+              <div class="item1"> <ion-label class="font1">0</ion-label><br>ACTIVE</div> 
+             
+                  
               <div class="head1"><br><br>MESSAGE</div>
-              <div class="item1"><br><br><br><br>UNREAD</div>
-         
-
+              <div class="item1"> <ion-label class="font1">0</ion-label><br>UNREAD</div> 
         </ion-grid>
-          
-      
-          <div *ngSwitchCase="'status'">
-            <div class="item2"><br><br><br><br>TOTAL IN WORKSHOP</div>
-            <div class="item3"><br><br><br><br>NEW</div>
-            <div class="item3"><br><br><br><br>PAINT</div>
-            <div class="item2"><br><br><br><br>IN-EXECUTION</div>
-            <div class="item3"><br><br><br><br>PICK-UP LIST</div>
-            <div class="item2"><br><br><br><br>COMPLETED</div>
-            <div class="item3"><br><br><br><br>WAITING LIST</div>
-       
-         
-         
-          </div>
-    
-        <ion-card *ngSwitchCase="'manhours'">
+      </ion-slide>
+
+      <ion-slide>
+          <div class="container"  >
+            <div class="item"> <ion-label class="font">{{total}}</ion-label><br>TOTAL IN WORKSHOP</div>
+            <div class="item2"> <ion-label class="font">{{newWO.length}}</ion-label><br>NEW</div>
+            <div class="item"> <ion-label class="font">{{inProgressWO.length}}</ion-label><br>IN-PROGRESS</div>
+            <div class="item2"> <ion-label class="font">{{closed}}</ion-label><br>CLOSED</div>
+            <div class="item"> <ion-label class="font">{{completedWO.length}}</ion-label><br>COMPLETED</div>
+            <div class="item2"> <ion-label class="font">{{delayed}}</ion-label><br>DELAYED</div>
+            </div>
+          </ion-slide>
+
+          <ion-slide>
+        <ion-card >
           <ion-card-content>
               <canvas #hrzBarChart5></canvas>
           </ion-card-content>
         </ion-card>
+      </ion-slide>
 
-          <div class="container"  *ngSwitchCase="'employee'">
-            <div class="item"><br><br><br><br>SUPERVISOR</div>
-            <div class="item"><br><br><br><br>TECHNICIAN</div>
-            <div class="item"><br><br><br><br>ENGINEER</div>
-            <div class="item"><br><br><br><br>COMPOSITE</div>
-            <div class="item"><br><br><br><br>SHEET METAL</div>
-            <div class="item"><br><br><br><br>PAINT</div>
+      <ion-slide >
+          <div class="container"  >
+           <div class="item"> <ion-label class="font">{{supervisor}}</ion-label><br>SUPERVISOR</div>
+           <div class="item"> <ion-label class="font">{{technician}}</ion-label><br>TECHNICIAN</div>
+           <div class="item"> <ion-label class="font">{{engineer}}</ion-label><br>ENGINEER</div>
+           <div class="item"> <ion-label class="font1">0</ion-label><br>COMPOSITE</div>
+           <div class="item"> <ion-label class="font1">0</ion-label><br>SHEET METAL</div>
+           <div class="item"> <ion-label class="font1">0</ion-label><br>PAINT</div>
           </div>
-        
-        <ion-card *ngSwitchCase="'fasttrack'">
-          <ion-card-header>
-            Change Password
-          </ion-card-header>
-          <ion-card-content>
-            Your change password form here
-          </ion-card-content>
-        </ion-card>
+        </ion-slide>
 
-        <ion-card *ngSwitchCase="'statistic'">
+        <ion-slide>
+        <ion-card >
           <ion-card-header>
             Change Password
           </ion-card-header>
@@ -111,7 +110,20 @@
             Your change password form here
           </ion-card-content>
         </ion-card>
-      </div>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <ion-card-header>
+            Change Password
+          </ion-card-header>
+          <ion-card-content>
+            Your change password form here
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      
+ </ion-slides>
     
     
 </ion-content>

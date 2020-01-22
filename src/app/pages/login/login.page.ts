@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
 
   user;
   loading: any;
-  username = "test@amic.com";
+  username = "faizal@supervisor.com";
   userpassword = "password";
   FormGroup;
 
@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   this.user= new FormGroup({
-  username: new FormControl('test@amic.com', [Validators.required]),
+  username: new FormControl('faizal@supervisor.com', [Validators.required]),
   userpassword: new FormControl('password', [Validators.required]),
   });
   }

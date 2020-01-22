@@ -7,7 +7,17 @@ ion-segment-button {
     min-width: 200px;
 
 }  
-
-ion-select-option{
-   width: 100% !important;
-}
+.radio .radio-icon {
+    display: none;
+    --color: transparent;
+    --color-checked: transparent;
+    }
+    ion-select-popover ion-list ion-item {
+        --border-width: 0;
+        --inner-border-width: 0;
+      }
+      
+      ion-select-popover ion-list ion-item ion-radio {
+        --color: transparent;
+        --color-checked: transparent;
+      }
