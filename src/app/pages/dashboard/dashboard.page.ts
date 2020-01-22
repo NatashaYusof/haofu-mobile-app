@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import { Chart } from 'chart.js';
+import * as HighCharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
 import { WorkorderService } from '../../../../src/app/services/workorder.service';
+import * as Highcharts from 'highcharts';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,11 +11,10 @@ import { WorkorderService } from '../../../../src/app/services/workorder.service
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  // @ViewChild('hrzBarChart5', { static: true }) hrzBarChart5;
   @ViewChild('slides', { static: true }) slider: IonSlides;
   
   segment = 0;
-  hrzBars5: any;
+  bars: any;
   colorArray: any;
   supervisor: any;
   technician: any;
@@ -40,10 +40,6 @@ export class DashboardPage implements OnInit {
   )
    {   }
 
-  //  ionViewDidEnter() {
-  //   this.generateColorArray(8);
-  //   this.createHrzBarChart5()
-  // }
   ngOnInit() {
 
     this.getSupervisor();
@@ -54,7 +50,10 @@ export class DashboardPage implements OnInit {
     this.getWorkSheet();
     this.getClosed();
     this.getDelayed();
+    this.plotSimpleBarChart();
   }
+
+
   async segmentChanged() {
     this.focusSegment(event['srcElement']['children'][this.segment]['id']);
     await this.slider.slideTo(this.segment);
@@ -210,53 +209,68 @@ getTechnician() {
       );
       }
 
-  // generateColorArray(num) {
-  //   this.colorArray = [];
-  //   for (let i = 0; i < num; i++) {
-  //     this.colorArray.push('#' + Math.floor(Math.random() * 16777215).toString(16));
-  //   }
-  // }
-  // createHrzBarChart5() {
-  //   let ctx = this.hrzBarChart5.nativeElement;
-  //   ctx.height = 400;
-  //   this.hrzBars5 = new Chart(ctx, {
-  //     type: 'bar',
-  //     data: {
-  //       labels: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8'],
-  //       datasets: [{
-  //         label: 'Online viewers in millions',
-  //         data: [2.5, 3.8, 5, 6.9, 6.9, 7.5, 10, 17],
-  //         backgroundColor: 'rgb(245, 229, 27)', // array should have same number of elements as number of dataset
-  //         borderColor: 'rgb(245, 229, 27)',// array should have same number of elements as number of dataset
-  //         borderWidth: 1
-  //       },
-  //       {
-  //         label: 'Offline viewers in millions',
-  //         data: [1.5, 2.8, 3, 3.9, 4.9, 5.5, 7, 12],
-  //         backgroundColor: 'rgb(63, 195, 128)', // array should have same number of elements as number of dataset
-  //         borderColor: 'rgb(63, 195, 128)',// array should have same number of elements as number of dataset
-  //         borderWidth: 1
-  //       }]
-  //     },
-  //     options: {
-  //       scales: {
-  //         xAxes: [{
-  //           barPercentage: 0.9,
-  //           gridLines: {
-  //             offsetGridLines: true
-  //           },
-  //           stacked: true
-  //         }],
-  //         yAxes: [{
-  //           ticks: {
-  //             beginAtZero: true
-  //           },
-  //           stacked: true
-  //         }]
-  //       }
-  //     }
-  //   });
-  // }
-
-    
+      plotSimpleBarChart() {
+        let myChart = HighCharts.chart('highcharts', {
+          chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['Today', 'Tomorrow', 'Day+2', 'Day+3', 'Day+4','Day+5']
+        },
+        yAxis: {
+            min: 0,
+           
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: ( // theme
+                        Highcharts.defaultOptions.title.style &&
+                        Highcharts.defaultOptions.title.style.color
+                    ) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        series: [{
+            name: 'John',
+            type: undefined,
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            type: undefined,
+            data: [2, 2, 3, 2, 1]
+        }, {
+            name: 'Joe',
+            type: undefined,
+            data: [3, 4, 4, 2, 5]
+        }]
+    });
+  }
 }
