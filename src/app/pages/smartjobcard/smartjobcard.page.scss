@@ -1,0 +1,12 @@
+ion-segment-button {
+    
+    font-size: 12px;
+    color: var(--ion-color-medium);
+    border: 0px;
+    border-radius: 0px;
+    
+    ion-label {
+        max-width: calc(100vw / 3);
+    }
+
+}  

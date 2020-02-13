@@ -88,6 +88,20 @@ export class WorkorderService {
         )
     }
 
+     getViewWorkOrder(workorderid) : Observable<any> {
+      return this.http.get(this.baseURL+'/workorder?workorderid='+workorderid)
+        .pipe(
+          map( response => {
+            console.log(response)
+            return response;
+          }),
+          catchError((err, caught) => {
+            console.log(err)
+            return throwError(err);
+          })
+        )
+    }
+
     getWorkSheet() : Observable<any> {
       return this.http.get(this.baseURL+'/worksheet?row=100&join=0')
         .pipe(
@@ -130,5 +144,4 @@ export class WorkorderService {
           })
         )
     }
-
 }

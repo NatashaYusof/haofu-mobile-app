@@ -428,6 +428,17 @@ module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-ap
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/edit/edit.page.html":
+/*!*********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/edit/edit.page.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>Work Order Details </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card >        \n    <ion-card-content  *ngFor=\"let cro of Wo\">\n        <ion-row>\n            <ion-col  size=\"4\">\n        \n              <div class=\"head\">CRO</div>\n            \n            </ion-col>\n            <ion-col  size=\"8\">\n                <ion-item>\n              <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderno}}\"></ion-input>\n              </ion-item>\n            </ion-col>\n          </ion-row>\n          <ion-row >\n            <ion-col  size=\"4\">\n         \n                <div class=\"head\">PART NUMBER</div>\n           \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\"  type=\"text\" value=\"{{cro.partnumber}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n           \n                <div class=\"head\">SERIAL NUMBER</div>\n          \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                <ion-input class=\"body1\"  type=\"text\" value=\"{{cro.partrecordserialnumber}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n             \n                <div class=\"head\">TITLE</div>\n         \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-textarea class=\"body1\" type=\"text\" value=\"{{cro.workordertitle}}\"  rows=\"7\"></ion-textarea>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n               \n                <div class=\"head\">DESCRIPTION</div>\n               \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderdescription}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">ACTION</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderaction}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n                <ion-col  size=\"4\">\n                  <div class=\"head\">REMARKS</div>\n                </ion-col>\n                <ion-col  size=\"8\">\n                    <ion-item>\n                        <ion-input class=\"body1\" type=\"text\" value=\"\"></ion-input>\n                  </ion-item>\n                </ion-col>\n              </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">DATE CREATED</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-datetime class=\"body1\" type=\"text\" value=\"{{cro.workorderprojectcreationdatetime}}\"></ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n             \n                <div class=\"head\">EDD</div>\n              \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-datetime class=\"body1\" type=\"text\" value=\"{{cro.workorderestimateddeliverydatetime }}\"></ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n    </ion-card-content>\n\n    <ion-button class=\"upload\" expand=\"full\" color=\"primary\">Delete</ion-button>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/pages/timedetail/timedetail.page.html":
 /*!*********************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/pages/timedetail/timedetail.page.html ***!
@@ -435,7 +446,18 @@ module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-ap
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar text-center >\n    <ion-title>TASK TIME DURATION</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding >\n  <!-- <ion-label ></ion-label>\n  <ion-item>\n  <ion-label slot=\"start\">START</ion-label>\n  <ion-label slot=\"end\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label>\n  </ion-item>\n  <ion-item>\n  <ion-label slot=\"start\">FINISH {{timeDetail.tasktimemanagementenddatetime}}</ion-label>\n</ion-item>\n</ion-label> -->\n\n\n<ion-label  *ngFor=\"let timeDetail of newarr.slice().reverse()\">\n  <ion-item>\n      <ion-grid class=\"gridcolor\"> \n      <ion-row *ngIf=\"timeDetail.newtaskstatus === false\">\n        <ion-col width-50><ion-label style=\"width:100%\">Resumed</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row  *ngIf=\"timeDetail.newtaskstatus === true\">\n        <ion-col width-50><ion-label style=\"width:100%\">Started</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 2\">\n        <ion-col width-50><ion-label style=\"width:100%\">Paused</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 4\">\n        <ion-col width-50><ion-label style=\"width:100%\">Stoped</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 5\">\n        <ion-col width-50><ion-label style=\"width:100%\">Finished</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n   </ion-grid>\n  </ion-item>\n  </ion-label>\n</ion-content>\n\n\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
+module.exports = "<ion-header>\n  <ion-toolbar text-center >\n    <ion-title>TASK TIME DURATION</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding >\n\n<ion-label  *ngFor=\"let timeDetail of newarr.slice().reverse()\">\n  <ion-item>\n      <ion-grid class=\"gridcolor\"> \n      <ion-row *ngIf=\"timeDetail.newtaskstatus === false\">\n        <ion-col width-50><ion-label style=\"width:100%\">Resumed</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row  *ngIf=\"timeDetail.newtaskstatus === true\">\n        <ion-col width-50><ion-label style=\"width:100%\">Started</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementstartdatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 2\">\n        <ion-col width-50><ion-label style=\"width:100%\">Paused</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 4\">\n        <ion-col width-50><ion-label style=\"width:100%\">Finished</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"timeDetail.tasktimemanagementendstate === 5\">\n        <ion-col width-50><ion-label style=\"width:100%\">Finished</ion-label></ion-col>\n        <ion-col width-50><ion-label style=\"width:100%\">{{timeDetail.tasktimemanagementenddatetime}}</ion-label></ion-col>\n      </ion-row>\n   </ion-grid>\n  </ion-item>\n  </ion-label>\n</ion-content>\n\n\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/view/view.page.html":
+/*!*********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/view/view.page.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>Work Order Details </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card >        \n    <ion-card-content  *ngFor=\"let cro of Wo\">\n        <ion-row>\n            <ion-col  size=\"4\">\n              <div class=\"head\">CRO</div>\n            </ion-col>\n            <ion-col  size=\"8\">\n              <div  class=\"body1\">{{cro.workorderno}}</div>\n            </ion-col>\n          </ion-row>\n          <ion-row >\n            <ion-col  size=\"4\">\n                <div class=\"head\">PART NUMBER</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                <div class=\"body1\">{{cro.partnumber}}</div>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">SERIAL NUMBER</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                <div class=\"body1\">{{cro.partrecordserialnumber}}</div>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">TITLE</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                <div class=\"body1\">{{cro.workordertitle}}</div>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">DESCRIPTION</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                <div class=\"body1\">{{cro.workorderdescription}}</div>\n              </ion-col>\n            </ion-row>\n            <ion-row  *ngFor=\"let cro of Wo1\" >\n              <ion-col  size=\"4\">\n                <div class=\"head\">STATUS</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                <div class=\"body1\">{{cro.workorderstatus}}</div>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">DATE CREATED</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                <div class=\"body1\">{{cro.workorderprojectcreationdatetime |  date:\"MMM dd, yyyy hh:mm:ss\"}}</div>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">EDD</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                <div class=\"body1\">{{cro.workorderestimateddeliverydatetime |  date:\"MMM dd, yyyy hh:mm:ss\"}}</div>\n              </ion-col>\n            </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
 
 /***/ }),
 
@@ -457,12 +479,12 @@ var map = {
 	],
 	"../childtask/childtask.module": [
 		"./src/app/pages/childtask/childtask.module.ts",
+		"default~childtask-childtask-module~finding-finding-module~task-task-module",
 		"common",
 		"childtask-childtask-module"
 	],
 	"../dashboard/dashboard.module": [
 		"./src/app/pages/dashboard/dashboard.module.ts",
-		"common",
 		"dashboard-dashboard-module"
 	],
 	"../details/details.module": [
@@ -471,8 +493,7 @@ var map = {
 	],
 	"../finding/finding.module": [
 		"./src/app/pages/finding/finding.module.ts",
-		"default~finding-finding-module~task-task-module",
-		"common",
+		"default~childtask-childtask-module~finding-finding-module~task-task-module",
 		"finding-finding-module"
 	],
 	"../first-with-tabs/first-with-tabs.module": [
@@ -496,6 +517,10 @@ var map = {
 		"./src/app/pages/second/second.module.ts",
 		"second-second-module"
 	],
+	"../smartjobcard/smartjobcard.module": [
+		"./src/app/pages/smartjobcard/smartjobcard.module.ts",
+		"smartjobcard-smartjobcard-module"
+	],
 	"../sv-tab1/sv-tab1.module": [
 		"./src/app/pages/sv-tab1/sv-tab1.module.ts",
 		"sv-tab1-sv-tab1-module"
@@ -515,7 +540,7 @@ var map = {
 	],
 	"../task/task.module": [
 		"./src/app/pages/task/task.module.ts",
-		"default~finding-finding-module~task-task-module",
+		"default~childtask-childtask-module~finding-finding-module~task-task-module",
 		"common",
 		"task-task-module"
 	],
@@ -533,22 +558,24 @@ var map = {
 	],
 	"./pages/childtask/childtask.module": [
 		"./src/app/pages/childtask/childtask.module.ts",
+		"default~childtask-childtask-module~finding-finding-module~task-task-module",
 		"common",
 		"childtask-childtask-module"
 	],
 	"./pages/dashboard/dashboard.module": [
 		"./src/app/pages/dashboard/dashboard.module.ts",
-		"common",
 		"dashboard-dashboard-module"
 	],
 	"./pages/details/details.module": [
 		"./src/app/pages/details/details.module.ts",
 		"details-details-module"
 	],
+	"./pages/edit/edit.module": [
+		"./src/app/pages/edit/edit.module.ts"
+	],
 	"./pages/finding/finding.module": [
 		"./src/app/pages/finding/finding.module.ts",
-		"default~finding-finding-module~task-task-module",
-		"common",
+		"default~childtask-childtask-module~finding-finding-module~task-task-module",
 		"finding-finding-module"
 	],
 	"./pages/first-with-tabs/first-with-tabs.module": [
@@ -581,6 +608,10 @@ var map = {
 		"./src/app/pages/second/second.module.ts",
 		"second-second-module"
 	],
+	"./pages/smartjobcard/smartjobcard.module": [
+		"./src/app/pages/smartjobcard/smartjobcard.module.ts",
+		"smartjobcard-smartjobcard-module"
+	],
 	"./pages/sv-tab1/sv-tab1.module": [
 		"./src/app/pages/sv-tab1/sv-tab1.module.ts",
 		"sv-tab1-sv-tab1-module"
@@ -600,12 +631,15 @@ var map = {
 	],
 	"./pages/task/task.module": [
 		"./src/app/pages/task/task.module.ts",
-		"default~finding-finding-module~task-task-module",
+		"default~childtask-childtask-module~finding-finding-module~task-task-module",
 		"common",
 		"task-task-module"
 	],
 	"./pages/timedetail/timedetail.module": [
 		"./src/app/pages/timedetail/timedetail.module.ts"
+	],
+	"./pages/view/view.module": [
+		"./src/app/pages/view/view.module.ts"
 	]
 };
 function webpackAsyncContext(req) {
@@ -672,6 +706,9 @@ var routes = [
     { path: 'canvas', loadChildren: './pages/canvas/canvas.module#CanvasPageModule' },
     { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
     { path: 'prjctmanagement', loadChildren: './pages/prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule' },
+    { path: 'smartjobcard', loadChildren: './pages/smartjobcard/smartjobcard.module#SmartjobcardPageModule' },
+    { path: 'edit', loadChildren: './pages/edit/edit.module#EditPageModule' },
+    { path: 'view', loadChildren: './pages/view/view.module#ViewPageModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -775,10 +812,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/Camera/ngx */ "./node_modules/@ionic-native/Camera/ngx/index.js");
 /* harmony import */ var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/file/ngx */ "./node_modules/@ionic-native/file/ngx/index.js");
 /* harmony import */ var _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/timedetail/timedetail.module */ "./src/app/pages/timedetail/timedetail.module.ts");
-/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
-/* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
-/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
-/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
+/* harmony import */ var _pages_view_view_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/view/view.module */ "./src/app/pages/view/view.module.ts");
+/* harmony import */ var _pages_edit_edit_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/edit/edit.module */ "./src/app/pages/edit/edit.module.ts");
+/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
+/* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
+/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
+/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -799,7 +838,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-;
+
+
 
 
 
@@ -812,22 +852,197 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
             entryComponents: [],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__["TimedetailPageModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__["TimedetailPageModule"], _pages_edit_edit_module__WEBPACK_IMPORTED_MODULE_15__["EditPageModule"], _pages_view_view_module__WEBPACK_IMPORTED_MODULE_14__["ViewPageModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
                 _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__["File"],
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"],
-                _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_14__["WebView"],
-                _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_17__["Base64"],
-                _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_15__["ImagePicker"],
+                _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_16__["WebView"],
+                _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_19__["Base64"],
+                _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_17__["ImagePicker"],
                 _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_11__["Camera"],
-                _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_16__["Crop"],
+                _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_18__["Crop"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/edit/edit-routing.module.ts":
+/*!***************************************************!*\
+  !*** ./src/app/pages/edit/edit-routing.module.ts ***!
+  \***************************************************/
+/*! exports provided: EditPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditPageRoutingModule", function() { return EditPageRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _edit_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit.page */ "./src/app/pages/edit/edit.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _edit_page__WEBPACK_IMPORTED_MODULE_2__["EditPage"]
+    }
+];
+var EditPageRoutingModule = /** @class */ (function () {
+    function EditPageRoutingModule() {
+    }
+    EditPageRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
+        })
+    ], EditPageRoutingModule);
+    return EditPageRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/edit/edit.module.ts":
+/*!*******************************************!*\
+  !*** ./src/app/pages/edit/edit.module.ts ***!
+  \*******************************************/
+/*! exports provided: EditPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditPageModule", function() { return EditPageModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _edit_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit-routing.module */ "./src/app/pages/edit/edit-routing.module.ts");
+/* harmony import */ var _edit_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./edit.page */ "./src/app/pages/edit/edit.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var EditPageModule = /** @class */ (function () {
+    function EditPageModule() {
+    }
+    EditPageModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
+                _edit_routing_module__WEBPACK_IMPORTED_MODULE_4__["EditPageRoutingModule"]
+            ],
+            declarations: [_edit_page__WEBPACK_IMPORTED_MODULE_5__["EditPage"]]
+        })
+    ], EditPageModule);
+    return EditPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/edit/edit.page.scss":
+/*!*******************************************!*\
+  !*** ./src/app/pages/edit/edit.page.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".head {\n  font-weight: bold;\n  color: black;\n  font-size: 13px; }\n\n.body1 {\n  color: black;\n  font-size: 13px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZWRpdC9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGVkaXRcXGVkaXQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLFlBQVk7RUFDWixlQUFlLEVBQUE7O0FBR2pCO0VBQ0UsWUFBWTtFQUNaLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2VkaXQvZWRpdC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZHtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgZm9udC1zaXplOiAxM3B4O1xyXG4gIH1cclxuICBcclxuICAuYm9keTF7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBmb250LXNpemU6IDEzcHg7XHJcbiAgXHJcbiAgfSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/pages/edit/edit.page.ts":
+/*!*****************************************!*\
+  !*** ./src/app/pages/edit/edit.page.ts ***!
+  \*****************************************/
+/*! exports provided: EditPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditPage", function() { return EditPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../src/app/services/workorder.service */ "./src/app/services/workorder.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var EditPage = /** @class */ (function () {
+    function EditPage(modalController, navParams, http) {
+        this.modalController = modalController;
+        this.navParams = navParams;
+        this.http = http;
+    }
+    EditPage.prototype.ngOnInit = function () {
+        this.WorkOrderId = this.navParams.get('paramWorkOrderId');
+        console.log(this.WorkOrderId);
+        this.getViewWorkOrder(this.WorkOrderId);
+    };
+    EditPage.prototype.dismiss = function () {
+        this.modalController.dismiss();
+    };
+    EditPage.prototype.getViewWorkOrder = function (workorderid) {
+        var _this = this;
+        this.http.getViewWorkOrder(workorderid).subscribe(function (response) {
+            _this.Wo = response.Result;
+            console.log(_this.Wo);
+            _this.Wo1 = response.Result[0].workorderstatus;
+        }, function (error) {
+            console.log("error");
+        });
+    };
+    EditPage.ctorParameters = function () { return [
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["NavParams"] },
+        { type: _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_2__["WorkorderService"] }
+    ]; };
+    EditPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-edit',
+            template: __webpack_require__(/*! raw-loader!./edit.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/edit/edit.page.html"),
+            styles: [__webpack_require__(/*! ./edit.page.scss */ "./src/app/pages/edit/edit.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["NavParams"],
+            _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_2__["WorkorderService"]])
+    ], EditPage);
+    return EditPage;
 }());
 
 
@@ -1001,6 +1216,181 @@ var TimedetailPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pages/view/view-routing.module.ts":
+/*!***************************************************!*\
+  !*** ./src/app/pages/view/view-routing.module.ts ***!
+  \***************************************************/
+/*! exports provided: ViewPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewPageRoutingModule", function() { return ViewPageRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _view_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./view.page */ "./src/app/pages/view/view.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _view_page__WEBPACK_IMPORTED_MODULE_2__["ViewPage"]
+    }
+];
+var ViewPageRoutingModule = /** @class */ (function () {
+    function ViewPageRoutingModule() {
+    }
+    ViewPageRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
+        })
+    ], ViewPageRoutingModule);
+    return ViewPageRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/view/view.module.ts":
+/*!*******************************************!*\
+  !*** ./src/app/pages/view/view.module.ts ***!
+  \*******************************************/
+/*! exports provided: ViewPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewPageModule", function() { return ViewPageModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _view_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./view-routing.module */ "./src/app/pages/view/view-routing.module.ts");
+/* harmony import */ var _view_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./view.page */ "./src/app/pages/view/view.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var ViewPageModule = /** @class */ (function () {
+    function ViewPageModule() {
+    }
+    ViewPageModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
+                _view_routing_module__WEBPACK_IMPORTED_MODULE_4__["ViewPageRoutingModule"]
+            ],
+            declarations: [_view_page__WEBPACK_IMPORTED_MODULE_5__["ViewPage"]]
+        })
+    ], ViewPageModule);
+    return ViewPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/view/view.page.scss":
+/*!*******************************************!*\
+  !*** ./src/app/pages/view/view.page.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".head {\n  font-weight: bold;\n  color: black;\n  font-size: 13px; }\n\n.body1 {\n  color: black;\n  font-size: 13px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvdmlldy9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXHZpZXdcXHZpZXcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLFlBQVk7RUFDWixlQUFlLEVBQUE7O0FBR2pCO0VBQ0UsWUFBWTtFQUNaLGVBQWUsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3ZpZXcvdmlldy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZHtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgZm9udC1zaXplOiAxM3B4O1xyXG4gIH1cclxuICBcclxuICAuYm9keTF7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBmb250LXNpemU6IDEzcHg7XHJcbiAgXHJcbiAgfSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/pages/view/view.page.ts":
+/*!*****************************************!*\
+  !*** ./src/app/pages/view/view.page.ts ***!
+  \*****************************************/
+/*! exports provided: ViewPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewPage", function() { return ViewPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../src/app/services/workorder.service */ "./src/app/services/workorder.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ViewPage = /** @class */ (function () {
+    function ViewPage(modalController, navParams, http) {
+        this.modalController = modalController;
+        this.navParams = navParams;
+        this.http = http;
+    }
+    ViewPage.prototype.ngOnInit = function () {
+        this.WorkOrderId = this.navParams.get('paramWorkOrderId');
+        console.log(this.WorkOrderId);
+        this.getViewWorkOrder(this.WorkOrderId);
+    };
+    ViewPage.prototype.dismiss = function () {
+        this.modalController.dismiss();
+    };
+    ViewPage.prototype.getViewWorkOrder = function (workorderid) {
+        var _this = this;
+        this.http.getViewWorkOrder(workorderid).subscribe(function (response) {
+            _this.Wo = response.Result;
+            console.log(_this.Wo);
+            _this.Wo1 = response.Result[0].workorderstatus;
+        }, function (error) {
+            console.log("error");
+        });
+    };
+    ViewPage.ctorParameters = function () { return [
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["NavParams"] },
+        { type: _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_2__["WorkorderService"] }
+    ]; };
+    ViewPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-view',
+            template: __webpack_require__(/*! raw-loader!./view.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/view/view.page.html"),
+            styles: [__webpack_require__(/*! ./view.page.scss */ "./src/app/pages/view/view.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["NavParams"],
+            _src_app_services_workorder_service__WEBPACK_IMPORTED_MODULE_2__["WorkorderService"]])
+    ], ViewPage);
+    return ViewPage;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/jobcard.service.ts":
 /*!*********************************************!*\
   !*** ./src/app/services/jobcard.service.ts ***!
@@ -1118,6 +1508,16 @@ var JobcardService = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(JobcardService.prototype, "workorderId", {
+        get: function () {
+            return this.workorderid;
+        },
+        set: function (val) {
+            this.workorderid = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
     JobcardService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
     ]; };
@@ -1166,6 +1566,7 @@ var TimeService = /** @class */ (function () {
         this.http = http;
         this.baseURL = "https://haofu.airbusdigital.com/api/hof/mro/task-time-management";
         this.basePath = "https://haofu.airbusdigital.com/api/hof/mro/task";
+        this.baseFinding = "https://haofu.airbusdigital.com/api/hof/mro/finding";
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
                 'Content-Type': 'application/json'
@@ -1201,6 +1602,11 @@ var TimeService = /** @class */ (function () {
         return this.http.post(this.basePath, JSON.stringify(item1), this.httpOptions)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
+    TimeService.prototype.postFinding = function (finding) {
+        console.log(finding);
+        return this.http.post(this.baseFinding, JSON.stringify(finding), this.httpOptions)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+    };
     TimeService.prototype.getTimeDetails = function (taskid) {
         return this.http.get(this.baseURL + '?taskid=' + taskid)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
@@ -1221,6 +1627,147 @@ var TimeService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], TimeService);
     return TimeService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/workorder.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/services/workorder.service.ts ***!
+  \***********************************************/
+/*! exports provided: WorkorderService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkorderService", function() { return WorkorderService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var WorkorderService = /** @class */ (function () {
+    function WorkorderService(http) {
+        this.http = http;
+        this.baseURL = "https://haofu.airbusdigital.com/api/hof/mro";
+        this.baseURL2 = "https://smartmob.haofu.airbusdigital.com/haofu-api/api/v1/radomes";
+    }
+    WorkorderService.prototype.getTechnician = function () {
+        return this.http.get(this.baseURL + '/employee?employeejobtitle=Technician')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.prototype.getSupervisor = function () {
+        return this.http.get(this.baseURL + '/employee?employeejobtitle=supervisor')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.prototype.getEngineer = function () {
+        return this.http.get(this.baseURL + '/employee?employeejobtitle=engineer')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    //total in workshop
+    WorkorderService.prototype.getTotal = function () {
+        return this.http.get(this.baseURL + '/workorder')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.prototype.getWorkOrder = function () {
+        return this.http.get(this.baseURL + '/workorder?row=100&join=0')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.prototype.getViewWorkOrder = function (workorderid) {
+        return this.http.get(this.baseURL + '/workorder?workorderid=' + workorderid)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.prototype.getWorkSheet = function () {
+        return this.http.get(this.baseURL + '/worksheet?row=100&join=0')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    //get delayed and closed
+    WorkorderService.prototype.getClosed = function () {
+        return this.http.get(this.baseURL2 + '/closed')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.prototype.getDelayed = function () {
+        return this.http.get(this.baseURL2 + '/delayed')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    ]; };
+    WorkorderService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], WorkorderService);
+    return WorkorderService;
 }());
 
 

@@ -17,6 +17,8 @@ export class JobcardService {
   img: any;
   path: any;
   image: any;
+  workorderno: any;
+  workorderid: any;
  
   constructor(private http: HttpClient) {}
 
@@ -91,5 +93,13 @@ export class JobcardService {
 
   set imageList(val: any){
     this.image=val;
+  }
+
+  get workorderId():any{
+    return this.workorderid;
+  }
+
+  set workorderId(val: any){
+    this.workorderid=val;
   }
 }

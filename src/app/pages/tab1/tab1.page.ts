@@ -59,7 +59,7 @@ export class Tab1Page implements OnInit {
   getJobcardByEmployeeId(id){
     console.log(id)
     
-//    this.presentLoadingWithOptions();
+  //  this.presentLoadingWithOptions();
    this.listJC =[{
     "partrecordserialnumber": "1234",
             "jobcards": [
@@ -6652,24 +6652,23 @@ export class Tab1Page implements OnInit {
                 }
             ]
         }]
+      }
 
-        
+  //  use for production\
 
-   //use for production\
-
-//   this.http.getJobcard(id).subscribe(
-//           response => {
-//            this.loading.dismiss(); 
-//           this.listJC = response.data;
-//           console.log(this.listJC);
+  // this.http.getJobcard(id).subscribe(
+  //         response => {
+  //          this.loading.dismiss(); 
+  //         this.listJC = response.data;
+  //         console.log(this.listJC);
           
-//         }, error => {
-//           console.log("error")
-//         }
-//       );
+  //       }, error => {
+  //         console.log("error")
+  //       }
+  //     );
   
-//   }
-  }
+  // }
+  
   
   goToJobcard(serialno){
     this.JobcardService.serialNo=serialno;
@@ -6677,13 +6676,5 @@ export class Tab1Page implements OnInit {
   this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard');
     
   }
-
-  // goToJobcard(){
-  //   this.JobcardService.serialNo="SN2334455";
-  //   //this.serialno= SN2334455;
-  //  console.log( this.JobcardService.serialNo);
-  // this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard');
-    
-  // }
 
 }

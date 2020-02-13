@@ -147,13 +147,13 @@ var LoginPage = /** @class */ (function () {
         this.router = router;
         this.alertController = alertController;
         this.loadingCtrl = loadingCtrl;
-        this.username = "faizal@supervisor.com";
-        this.userpassword = "password";
+        this.username = "";
+        this.userpassword = "";
     }
     LoginPage.prototype.ngOnInit = function () {
         this.user = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
-            username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('faizal@supervisor.com', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
-            userpassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('password', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
+            username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
+            userpassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
         });
     };
     LoginPage.prototype.presentAlert = function () {
@@ -178,8 +178,8 @@ var LoginPage = /** @class */ (function () {
         });
     };
     LoginPage.prototype.login = function () {
-        var _this = this;
         //  console.log('masuk');
+        var _this = this;
         console.log(this.username);
         console.log(this.userpassword);
         this.http.getUser(this.username, this.userpassword).subscribe(function (response) {

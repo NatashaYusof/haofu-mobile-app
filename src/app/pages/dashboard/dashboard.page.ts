@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import * as HighCharts from 'highcharts';
 import { HttpClient } from '@angular/common/http';
 import { WorkorderService } from '../../../../src/app/services/workorder.service';
 import * as Highcharts from 'highcharts';
+import { Chart } from 'chart.js';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,10 +13,12 @@ import * as Highcharts from 'highcharts';
 })
 export class DashboardPage implements OnInit {
   @ViewChild('slides', { static: true }) slider: IonSlides;
-  
-  segment = 0;
+  @ViewChild('barChart', { static: true }) barChart: Element;
+
   bars: any;
   colorArray: any;
+  segment = 0;
+ y;
   supervisor: any;
   technician: any;
   engineer: any;
@@ -34,11 +37,12 @@ export class DashboardPage implements OnInit {
   closed: any;
   delayed: any;
   
+  
   constructor(
     // private http: HttpClient, 
     public http: WorkorderService,
   )
-   {   }
+   {  }
 
   ngOnInit() {
 
@@ -50,25 +54,25 @@ export class DashboardPage implements OnInit {
     this.getWorkSheet();
     this.getClosed();
     this.getDelayed();
-    this.plotSimpleBarChart();
+    // this.plotSimpleBarChart();
   }
 
 
-  async segmentChanged() {
-    this.focusSegment(event['srcElement']['children'][this.segment]['id']);
-    await this.slider.slideTo(this.segment);
-  }
+  // async segmentChanged() {
+  //   this.focusSegment(event['srcElement']['children'][this.segment]['id']);
+  //   await this.slider.slideTo(this.segment);
+  // }
 
-  async slideChanged() {
-    this.segment = await this.slider.getActiveIndex();
-  }
-  focusSegment(segmentId) {
-    document.getElementById(segmentId).scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'center',
-      inline: 'center'
-    });
-}
+//   async slideChanged() {
+//     this.segment = await this.slider.getActiveIndex();
+//   }
+//   focusSegment(segmentId) {
+//     document.getElementById(segmentId).scrollIntoView({ 
+//       behavior: 'smooth',
+//       block: 'center',
+//       inline: 'center'
+//     });
+// }
 
 getSupervisor() {
   this.http.getSupervisor().subscribe(
@@ -209,68 +213,62 @@ getTechnician() {
       );
       }
 
-      plotSimpleBarChart() {
-        let myChart = HighCharts.chart('highcharts', {
-          chart: {
-            type: 'column'
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: ['Today', 'Tomorrow', 'Day+2', 'Day+3', 'Day+4','Day+5']
-        },
-        yAxis: {
-            min: 0,
-           
-            stackLabels: {
-                enabled: true,
-                style: {
-                    fontWeight: 'bold',
-                    color: ( // theme
-                        Highcharts.defaultOptions.title.style &&
-                        Highcharts.defaultOptions.title.style.color
-                    ) || 'gray'
-                }
-            }
-        },
-        legend: {
-            align: 'right',
-            x: -30,
-            verticalAlign: 'top',
-            y: 25,
-            floating: true,
-            backgroundColor:
-                Highcharts.defaultOptions.legend.backgroundColor || 'white',
-            borderColor: '#CCC',
-            borderWidth: 1,
-            shadow: false
-        },
-        tooltip: {
-            headerFormat: '<b>{point.x}</b><br/>',
-            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal',
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        series: [{
-            name: 'John',
-            type: undefined,
-            data: [5, 3, 4, 7, 2]
-        }, {
-            name: 'Jane',
-            type: undefined,
-            data: [2, 2, 3, 2, 1]
-        }, {
-            name: 'Joe',
-            type: undefined,
-            data: [3, 4, 4, 2, 5]
-        }]
-    });
-  }
+      // plotSimpleBarChart() {
+      //   var myChart =  Highcharts.chart('highcharts', {
+          
+      //     chart: {
+      //       type: 'column'
+      //     },
+          
+      //     xAxis: {
+      //       categories: ['Today', 'Tomorrow', 'Day+2', 'Day+3', 'Day+4', 'Day+5']
+      //     },
+      //     yAxis: {
+      //       min: 0,
+        
+      //       stackLabels: {
+      //         enabled: true,
+      //         style: {
+        
+      //           color: ( // theme
+      //             Highcharts.defaultOptions.title.style &&
+      //             Highcharts.defaultOptions.title.style.color
+      //           ) || 'gray'
+      //         }
+      //       }
+      //     },
+      //     legend: {
+      //       align: 'right',
+      //       verticalAlign: 'top',
+      //       floating: true,
+      //       backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || 'white',
+      //       borderColor: '#CCC',
+      //       borderWidth: 1,
+      //       shadow: false
+      //     },
+        
+      //     plotOptions: {
+      //       column: {
+      //         stacking: 'normal',
+      //         dataLabels: {
+      //           enabled: true
+      //         }
+      //       }
+      //     },
+      //     series: [{
+      //       name: 'John',
+      //       type:undefined,
+      //       data: [5, 3, 4, 7, 2, 1]
+      //     }, {
+      //       name: 'Jane',
+      //       type:undefined,
+      //       data: [2, 2, 3, 2, 1, 1]
+      //     }, {
+      //       name: 'Joe',
+      //       type:undefined,
+      //       data: [3, 4, 4, 2, 5, 2]
+      //     }]
+      //   });
+      // }
+        
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../../../src/app/services/login.service';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController, ActionSheetController,ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, ActionSheetController,ToastController,NavController  } from '@ionic/angular';
 import { JobcardService } from '../../../../src/app/services/jobcard.service';
 import * as moment from 'moment';
 import { Camera, CameraOptions } from '@ionic-native/Camera/ngx'
@@ -30,7 +30,8 @@ export class FindingPage implements OnInit {
   formattedDate: string;
   childtaskId: string;
   btn_txt = 'PAUSE';
-  
+  changeColor = false;
+
   croppedImagepath = "";
   isLoading = false;
   imageSrc: any;
@@ -58,6 +59,7 @@ export class FindingPage implements OnInit {
     // private http: LoginService,
     private router: Router,
     public alertController: AlertController,
+    public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public JobcardService: JobcardService,
     private camera: Camera,
@@ -110,106 +112,107 @@ export class FindingPage implements OnInit {
 
 
 
-  // goPause() {
+  goPause() {
   //   // console.log(taskid)
-  //   if (this.btn_txt == "PAUSE") {
-  //     this.btn_txt = "RESUME";
-  //     // this.JobcardService.taskId=taskid;
-  //     // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+    if (this.btn_txt == "PAUSE") {
+      this.btn_txt = "RESUME";
+    this.changeColor = true;
+      // this.JobcardService.taskId=taskid;
+      // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  //       //postApi
-  //       let data =[{
-  //         taskid :this.JobcardService.taskId,
-  //         employeeid :this.details.employee.employeeid,
-  //         tasktimemanagementenddatetime: this.currentDate,
-  //         tasktimemanagementendstate:2
-  //       }
-  //       ]
+        //postApi
+        let data =[{
+          taskid :this.JobcardService.taskId,
+          employeeid :this.details.employee.employeeid,
+          tasktimemanagementenddatetime: this.currentDate,
+          tasktimemanagementendstate:2
+        }
+        ]
 
-  //       let data1 =[{
-  //         taskstatus:[{"taskstatusid":2}],
-  //         employeeid :this.details.employee.employeeid,
-  //         taskid :this.JobcardService.taskId,
-  //       }
-  //       ]
-  //       console.log(data)
-  //       console.log(data1)
-  //       this.TimeService.postStart(data).subscribe((response) => {
-  //         console.log(response)
-  //         this.TimeService.postStart1(data1).subscribe((response) => {
-  //           this.loading.dismiss(); 
-  //           console.log(response)
+        let data1 =[{
+          taskstatus:[{"taskstatusid":2}],
+          employeeid :this.details.employee.employeeid,
+          taskid :this.JobcardService.taskId,
+        }
+        ]
+        console.log(data)
+        console.log(data1)
+        this.TimeService.postStart(data).subscribe((response) => {
+          console.log(response)
+          this.TimeService.postStart1(data1).subscribe((response) => {
+            this.loading.dismiss(); 
+            console.log(response)
         
-  //         });
-  //       });
+          });
+        });
   //     // document.body.style.backgroundColor ='#b8bdc2';
 
 
-  //   } else {
-  //     this.btn_txt = "PAUSE";
-
+    } else {
+      this.btn_txt = "PAUSE";
+      this.changeColor = false;
   //    // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
   //     //postApi\
-  //     let data =[{
-  //       taskid :this.JobcardService.taskId,
-  //       employeeid :this.details.employee.employeeid,
-  //       tasktimemanagementstartdatetime: this.currentDate,
-  //       tasktimemanagementstartstate:3
-  //     }
-  //     ]
+      let data =[{
+        taskid :this.JobcardService.taskId,
+        employeeid :this.details.employee.employeeid,
+        tasktimemanagementstartdatetime: this.currentDate,
+        tasktimemanagementstartstate:3
+      }
+      ]
 
-  //     let data1 =[{
-  //       taskstatus:[{"taskstatusid":3}],
-  //       employeeid :this.details.employee.employeeid,
-  //       taskid :this.JobcardService.taskId,
-  //     }
-  //     ]
-  //     console.log(data)
-  //     console.log(data1)
-  //     this.TimeService.postStart(data).subscribe((response) => {
-  //       console.log(response)
-  //       this.TimeService.postStart1(data1).subscribe((response) => {
-  //         this.loading.dismiss(); 
-  //         console.log(response)
+      let data1 =[{
+        taskstatus:[{"taskstatusid":3}],
+        employeeid :this.details.employee.employeeid,
+        taskid :this.JobcardService.taskId,
+      }
+      ]
+      console.log(data)
+      console.log(data1)
+      this.TimeService.postStart(data).subscribe((response) => {
+        console.log(response)
+        this.TimeService.postStart1(data1).subscribe((response) => {
+          this.loading.dismiss(); 
+          console.log(response)
       
-  //       });
-  //     });
+        });
+      });
   //     // document.body.style.backgroundColor = 'transparent';
-  //   }
-  // }
+    }
+  }
   
-  // goFinish(){
+  goFinish(){
 
-  //   // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+    // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  //       //postApi
-        // let data =[{
-        //   taskid :this.JobcardService.taskId,
-        //   employeeid :this.details.employee.employeeid,
-        //   tasktimemanagementenddatetime: this.currentDate,
-        //   tasktimemanagementendstate:4
+        //postApi
+        let data =[{
+          taskid :this.JobcardService.taskId,
+          employeeid :this.details.employee.employeeid,
+          tasktimemanagementenddatetime: this.currentDate,
+          tasktimemanagementendstate:4
 
-        // }
-        // ]
+        }
+        ]
   
-  //       let data1 =[{
-  //         taskstatus:[{"taskstatusid":4}],
-  //         employeeid :this.details.employee.employeeid,
-  //         taskid :this.JobcardService.taskId,
-  //       }
-  //       ]
-  //       console.log(data)
-  //       console.log(data1)
-  //       this.TimeService.postStart(data).subscribe((response) => {
-  //         console.log(response)
-  //         this.TimeService.postStart1(data1).subscribe((response) => {
-  //           this.loading.dismiss(); 
-  //           console.log(response)
+        let data1 =[{
+          taskstatus:[{"taskstatusid":4}],
+          employeeid :this.details.employee.employeeid,
+          taskid :this.JobcardService.taskId,
+        }
+        ]
+        console.log(data)
+        console.log(data1)
+        this.TimeService.postStart(data).subscribe((response) => {
+          console.log(response)
+          this.TimeService.postStart1(data1).subscribe((response) => {
+            this.loading.dismiss(); 
+            console.log(response)
         
-  //         });
-  //       });
-  // }
+          });
+        });
+  }
 
   pickImage1(sourceType) {
     const options: CameraOptions = {

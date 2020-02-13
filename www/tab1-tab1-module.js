@@ -184,7 +184,7 @@ var Tab1Page = /** @class */ (function () {
     };
     Tab1Page.prototype.getJobcardByEmployeeId = function (id) {
         console.log(id);
-        //    this.presentLoadingWithOptions();
+        //  this.presentLoadingWithOptions();
         this.listJC = [{
                 "partrecordserialnumber": "1234",
                 "jobcards": [
@@ -6777,18 +6777,18 @@ var Tab1Page = /** @class */ (function () {
                     }
                 ]
             }];
-        //use for production\
-        //   this.http.getJobcard(id).subscribe(
-        //           response => {
-        //            this.loading.dismiss(); 
-        //           this.listJC = response.data;
-        //           console.log(this.listJC);
-        //         }, error => {
-        //           console.log("error")
-        //         }
-        //       );
-        //   }
     };
+    //  use for production\
+    // this.http.getJobcard(id).subscribe(
+    //         response => {
+    //          this.loading.dismiss(); 
+    //         this.listJC = response.data;
+    //         console.log(this.listJC);
+    //       }, error => {
+    //         console.log("error")
+    //       }
+    //     );
+    // }
     Tab1Page.prototype.goToJobcard = function (serialno) {
         this.JobcardService.serialNo = serialno;
         console.log(this.JobcardService.serialNo);

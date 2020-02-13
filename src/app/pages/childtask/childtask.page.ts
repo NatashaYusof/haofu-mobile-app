@@ -109,107 +109,107 @@ export class ChildtaskPage implements OnInit {
     this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/' + id + '/childtask/' + taskid + '/manual');
   }
 
-  // goPause() {
-  //   // console.log(taskid)
-  //   if (this.btn_txt == "PAUSE") {
-  //     this.btn_txt = "RESUME";
-  //     // this.JobcardService.taskId=taskid;
-  //     this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+  goPause() {
+    // console.log(taskid)
+    if (this.btn_txt == "PAUSE") {
+      this.btn_txt = "RESUME";
+      // this.JobcardService.taskId=taskid;
+      this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  //       //postApi
-  //       let data =[{
-  //         taskid :this.JobcardService.taskId,
-  //         employeeid :this.details.employee.employeeid,
-  //         tasktimemanagementenddatetime: this.currentDate,
-  //         tasktimemanagementendstate:2
-  //       }
-  //       ]
+        //postApi
+        let data =[{
+          taskid :this.JobcardService.taskId,
+          employeeid :this.details.employee.employeeid,
+          tasktimemanagementenddatetime: this.currentDate,
+          tasktimemanagementendstate:2
+        }
+        ]
 
-  //       let data1 =[{
-  //         taskstatus:[{"taskstatusid":2}],
-  //         employeeid :this.details.employee.employeeid,
-  //         taskid :this.JobcardService.taskId,
-  //       }
-  //       ]
-  //       console.log(data)
-  //       console.log(data1)
-  //       this.TimeService.postStart(data).subscribe((response) => {
-  //         console.log(response)
-  //         this.TimeService.postStart1(data1).subscribe((response) => {
-  //           this.loading.dismiss(); 
-  //           console.log(response)
+        let data1 =[{
+          taskstatus:[{"taskstatusid":2}],
+          employeeid :this.details.employee.employeeid,
+          taskid :this.JobcardService.taskId,
+        }
+        ]
+        console.log(data)
+        console.log(data1)
+        this.TimeService.postStart(data).subscribe((response) => {
+          console.log(response)
+          this.TimeService.postStart1(data1).subscribe((response) => {
+            this.loading.dismiss(); 
+            console.log(response)
         
-  //         });
-  //       });
+          });
+        });
   //     // document.body.style.backgroundColor ='#b8bdc2';
 
 
-  //   } else {
-  //     this.btn_txt = "PAUSE";
+    } else {
+      this.btn_txt = "PAUSE";
 
-  //     this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+      this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  //     //postApi
-  //     let data =[{
-  //       taskid :this.JobcardService.taskId,
-  //       employeeid :this.details.employee.employeeid,
-  //       tasktimemanagementstartdatetime: this.currentDate,
-  //       tasktimemanagementstartstate:3
-  //     }
-  //     ]
+      //postApi
+      let data =[{
+        taskid :this.JobcardService.taskId,
+        employeeid :this.details.employee.employeeid,
+        tasktimemanagementstartdatetime: this.currentDate,
+        tasktimemanagementstartstate:3
+      }
+      ]
 
-  //     let data1 =[{
-  //       taskstatus:[{"taskstatusid":3}],
-  //       employeeid :this.details.employee.employeeid,
-  //       taskid :this.JobcardService.taskId,
-  //     }
-  //     ]
-  //     console.log(data)
-  //     console.log(data1)
-  //     this.TimeService.postStart(data).subscribe((response) => {
-  //       console.log(response)
-  //       this.TimeService.postStart1(data1).subscribe((response) => {
-  //         this.loading.dismiss(); 
-  //         console.log(response)
+      let data1 =[{
+        taskstatus:[{"taskstatusid":3}],
+        employeeid :this.details.employee.employeeid,
+        taskid :this.JobcardService.taskId,
+      }
+      ]
+      console.log(data)
+      console.log(data1)
+      this.TimeService.postStart(data).subscribe((response) => {
+        console.log(response)
+        this.TimeService.postStart1(data1).subscribe((response) => {
+          this.loading.dismiss(); 
+          console.log(response)
       
-  //       });
-  //     });
+        });
+      });
   //     // document.body.style.backgroundColor = 'transparent';
-  //   }
-  // }
+    }
+  }
 
-  // goFinish(){
+  goFinish(){
 
-  //   this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+    this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  //       //postApi
-  //       let data =[{
-  //         taskid :this.JobcardService.taskId,
-  //         employeeid :this.details.employee.employeeid,
-  //         tasktimemanagementenddatetime: this.currentDate,
-  //         tasktimemanagementendstate:4
+        //postApi
+        let data =[{
+          taskid :this.JobcardService.taskId,
+          employeeid :this.details.employee.employeeid,
+          tasktimemanagementenddatetime: this.currentDate,
+          tasktimemanagementendstate:4
 
-  //       }
-  //       ]
+        }
+        ]
   
-  //       let data1 =[{
-  //         taskstatus:[{"taskstatusid":4}],
-  //         employeeid :this.details.employee.employeeid,
-  //         taskid :this.JobcardService.taskId,
-  //       }
-  //       ]
-  //       console.log(data)
-  //       console.log(data1)
-  //       this.TimeService.postStart(data).subscribe((response) => {
-  //         console.log(response)
-  //         this.TimeService.postStart1(data1).subscribe((response) => {
-  //           this.loading.dismiss(); 
-  //           console.log(response)
+        let data1 =[{
+          taskstatus:[{"taskstatusid":4}],
+          employeeid :this.details.employee.employeeid,
+          taskid :this.JobcardService.taskId,
+        }
+        ]
+        console.log(data)
+        console.log(data1)
+        this.TimeService.postStart(data).subscribe((response) => {
+          console.log(response)
+          this.TimeService.postStart1(data1).subscribe((response) => {
+            this.loading.dismiss(); 
+            console.log(response)
         
-  //         });
-  //       });
-  //       // this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
-  // }
+          });
+        });
+        // this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
+  }
   hide() { 
     this.hideMe = !this.hideMe;
     }

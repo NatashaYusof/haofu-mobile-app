@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n\n\n  \n    <ion-slides pager=\"true\" class=\"card\"  >\n      <ion-slide *ngFor=\"let img of imageLists ;index as i\" > \n        <ion-card>  \n           <div class=\"scrolling-wrapper\"> \n              <img src=\"{{img}}\" width=\"300\" height=\"234\" tappable /> \n            \n              <!-- <img src=\"{{imageSrc}}\" tappable/>  -->\n            \n            <div class=\"chipGroup\">\n              <ion-chip >\n                <button ion-button outline icon-only (click)=\"goToCanvas(img, i)\"><ion-icon name=\"brush\"></ion-icon></button>\n                <ion-label>Edit</ion-label>\n              </ion-chip>\n              <ion-chip>\n                 <button ion-button outline icon-only (click)=\"deleteImage(i)\" > <ion-icon name=\"trash\" ></ion-icon></button>   \n                 <ion-label>Delete</ion-label>\n                 \n              </ion-chip>\n              </div> \n            </div>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n    \n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button class=\"upload\" expand=\"full\" color=\"primary\">Upload</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
+module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n     \n    </ion-toolbar>\n  </ion-header>\n\n\n<ion-content padding [ngClass]=\"{'bg-color': changeColor}\">\n  <ion-item>\n  <ion-label class=\"font\"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>\n</ion-item>\n\n  <ion-card>\n  <ion-item>\n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n  <ion-item>\n  <ion-label class=\"font\"><b>FINDING</b><br><br><br>Date<br><br>{{currentDate}}\n    <br><br><br>Task References<br><br>{{childtaskId}}\n    <br><br><br>Title<ion-item><ion-textarea placeholder=\"Enter title here...\"></ion-textarea></ion-item>\n    <br><br>Description<ion-item><ion-textarea placeholder=\"Enter description here...\"></ion-textarea></ion-item>\n  </ion-label>\n</ion-item>\n\n  <ion-item>  \n    <ion-icon name=\"attach\" ></ion-icon><ion-label (click)=\"pickImage()\" class=\"font2\" tappable >Attach Image</ion-label>\n  </ion-item>\n\n\n  \n    <ion-slides pager=\"true\" class=\"card\"  >\n      <ion-slide *ngFor=\"let img of imageLists ;index as i\" > \n        <ion-card>  \n           <div class=\"scrolling-wrapper\"> \n              <img src=\"{{img}}\" width=\"300\" height=\"234\" tappable /> \n            \n              <!-- <img src=\"{{imageSrc}}\" tappable/>  -->\n            \n            <div class=\"chipGroup\">\n              <ion-chip >\n                <button ion-button outline icon-only (click)=\"goToCanvas(img, i)\"><ion-icon name=\"brush\"></ion-icon></button>\n                <ion-label>Edit</ion-label>\n              </ion-chip>\n              <ion-chip>\n                 <button ion-button outline icon-only (click)=\"deleteImage(i)\" > <ion-icon name=\"trash\" ></ion-icon></button>   \n                 <ion-label>Delete</ion-label>\n                 \n              </ion-chip>\n              </div> \n            </div>\n          </ion-card>\n        </ion-slide>\n      </ion-slides>\n\n    \n    <!-- </ion-item> -->\n    <!-- <ion-button expand=\"block\" color=\"primary\" height=\"10px\"><ion-icon name=\"create\" ></ion-icon>Edit Image</ion-button> -->\n  </ion-card>\n\n  <ion-button class=\"upload\" expand=\"full\" color=\"primary\">Upload</ion-button>\n</ion-content>\n\n<ion-toolbar>\n    <ion-tabs>\n    <ion-tab-bar slot=\"bottom\" fixed>\n      <ion-tab-button tab=\"pause\" >\n        <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n      </ion-tab-button>\n  \n      <ion-tab-button tab=\"finish\">\n        <ion-label class=\"button3\" (click)=\"goFinish()\">FINISH</ion-label>\n      </ion-tab-button>\n  \n    </ion-tab-bar>\n  </ion-tabs></ion-toolbar>\n"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ var FindingPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n.button3 {\n  font-size: 11.5px;\n  color: darkcyan;\n  text-align: center; }\n\n.button {\n  font-size: 11px;\n  color: darkcyan;\n  background-color: transparent;\n  text-align: left; }\n\n.scrolling-wrapper {\n  overflow-x: scroll;\n  overflow-y: hidden;\n  white-space: nowrap; }\n\n.scrolling-wrapper .card {\n    display: inline-block; }\n\n.image-container {\n  min-height: 200px;\n  background-size: cover; }\n\n@media (min-width: 0px) {\n  .images {\n    -webkit-column-count: 2;\n       -moz-column-count: 2;\n            column-count: 2; } }\n\n@media (min-width: 420px) {\n  .images {\n    -webkit-column-count: 3;\n       -moz-column-count: 3;\n            column-count: 3; } }\n\n@media (min-width: 720px) {\n  .images {\n    -webkit-column-count: 4;\n       -moz-column-count: 4;\n            column-count: 4; } }\n\n.one-image {\n  margin: 2px; }\n\n.upload {\n  font-size: 12px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmluZGluZy9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGZpbmRpbmdcXGZpbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBOztBQUVuQjtFQUNJLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2Ysa0JBQWtCLEVBQUE7O0FBR3RCO0VBQ0ksZUFBZTtFQUNmLGVBQWU7RUFDZiw2QkFBNkI7RUFDN0IsZ0JBQWdCLEVBQUE7O0FBR2hCO0VBQ0ksa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixtQkFBbUIsRUFBQTs7QUFIdkI7SUFPTSxxQkFBcUIsRUFBQTs7QUFHekI7RUFDRSxpQkFBaUI7RUFDakIsc0JBQXNCLEVBQUE7O0FBR3hCO0VBQ0U7SUFDRSx1QkFBZTtPQUFmLG9CQUFlO1lBQWYsZUFBZSxFQUFBLEVBQ2hCOztBQUdIO0VBQ0U7SUFDRSx1QkFBZTtPQUFmLG9CQUFlO1lBQWYsZUFBZSxFQUFBLEVBQ2hCOztBQUdIO0VBQ0U7SUFDRSx1QkFBZTtPQUFmLG9CQUFlO1lBQWYsZUFBZSxFQUFBLEVBQ2hCOztBQUdIO0VBQ0UsV0FBVyxFQUFBOztBQUdiO0VBQ0UsZUFBZSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvZmluZGluZy9maW5kaW5nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmR7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIG1heC13aWR0aDogNjBweDtcclxufVxyXG5cclxuLmZvbnQye1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbn1cclxuLmJ1dHRvbjN7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIGNvbG9yOiBkYXJrY3lhbjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmJ1dHRvbntcclxuICAgIGZvbnQtc2l6ZTogMTFweDtcclxuICAgIGNvbG9yOiBkYXJrY3lhbjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxufVxyXG5cclxuICAgIC5zY3JvbGxpbmctd3JhcHBlciB7XHJcbiAgICAgICAgb3ZlcmZsb3cteDogc2Nyb2xsO1xyXG4gICAgICAgIG92ZXJmbG93LXk6IGhpZGRlbjtcclxuICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgICBcclxuICAgICAgXHJcbiAgICAgICAgLmNhcmQge1xyXG4gICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAuaW1hZ2UtY29udGFpbmVyIHtcclxuICAgICAgICBtaW4taGVpZ2h0OiAyMDBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gICAgICB9XHJcbiAgICAgICBcclxuICAgICAgQG1lZGlhIChtaW4td2lkdGg6IDBweCkge1xyXG4gICAgICAgIC5pbWFnZXMge1xyXG4gICAgICAgICAgY29sdW1uLWNvdW50OiAyO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAgXHJcbiAgICAgIEBtZWRpYSAobWluLXdpZHRoOiA0MjBweCkge1xyXG4gICAgICAgIC5pbWFnZXMge1xyXG4gICAgICAgICAgY29sdW1uLWNvdW50OiAzO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAgXHJcbiAgICAgIEBtZWRpYSAobWluLXdpZHRoOiA3MjBweCkge1xyXG4gICAgICAgIC5pbWFnZXMge1xyXG4gICAgICAgICAgY29sdW1uLWNvdW50OiA0O1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAgXHJcbiAgICAgIC5vbmUtaW1hZ2Uge1xyXG4gICAgICAgIG1hcmdpbjogMnB4O1xyXG4gICAgICB9XHJcbiAgICAgIFxyXG4gICAgICAudXBsb2Fke1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgfSJdfQ== */"
+module.exports = ".expand {\n  font-size: 11.5px;\n  max-width: 60px; }\n\n.font2 {\n  font-size: 11.5px;\n  color: darkcyan; }\n\n.button3 {\n  font-size: 11.5px;\n  color: darkcyan;\n  text-align: center; }\n\n.button {\n  font-size: 11px;\n  color: darkcyan;\n  background-color: transparent;\n  text-align: left; }\n\n.scrolling-wrapper {\n  overflow-x: scroll;\n  overflow-y: hidden;\n  white-space: nowrap; }\n\n.scrolling-wrapper .card {\n    display: inline-block; }\n\n.image-container {\n  min-height: 200px;\n  background-size: cover; }\n\n@media (min-width: 0px) {\n  .images {\n    -webkit-column-count: 2;\n       -moz-column-count: 2;\n            column-count: 2; } }\n\n@media (min-width: 420px) {\n  .images {\n    -webkit-column-count: 3;\n       -moz-column-count: 3;\n            column-count: 3; } }\n\n@media (min-width: 720px) {\n  .images {\n    -webkit-column-count: 4;\n       -moz-column-count: 4;\n            column-count: 4; } }\n\n.one-image {\n  margin: 2px; }\n\n.upload {\n  font-size: 12px; }\n\n.bg-color {\n  background-color: rgba(222, 222, 222, 0.7); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZmluZGluZy9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGZpbmRpbmdcXGZpbmRpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxpQkFBaUI7RUFDakIsZUFBZSxFQUFBOztBQUVuQjtFQUNJLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2Ysa0JBQWtCLEVBQUE7O0FBR3RCO0VBQ0ksZUFBZTtFQUNmLGVBQWU7RUFDZiw2QkFBNkI7RUFDN0IsZ0JBQWdCLEVBQUE7O0FBR2hCO0VBQ0ksa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixtQkFBbUIsRUFBQTs7QUFIdkI7SUFPTSxxQkFBcUIsRUFBQTs7QUFHekI7RUFDRSxpQkFBaUI7RUFDakIsc0JBQXNCLEVBQUE7O0FBR3hCO0VBQ0U7SUFDRSx1QkFBZTtPQUFmLG9CQUFlO1lBQWYsZUFBZSxFQUFBLEVBQ2hCOztBQUdIO0VBQ0U7SUFDRSx1QkFBZTtPQUFmLG9CQUFlO1lBQWYsZUFBZSxFQUFBLEVBQ2hCOztBQUdIO0VBQ0U7SUFDRSx1QkFBZTtPQUFmLG9CQUFlO1lBQWYsZUFBZSxFQUFBLEVBQ2hCOztBQUdIO0VBQ0UsV0FBVyxFQUFBOztBQUdiO0VBQ0UsZUFBZSxFQUFBOztBQUluQjtFQUVJLDBDQUEwQyxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvZmluZGluZy9maW5kaW5nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmR7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIG1heC13aWR0aDogNjBweDtcclxufVxyXG5cclxuLmZvbnQye1xyXG4gICAgZm9udC1zaXplOiAxMS41cHg7XHJcbiAgICBjb2xvcjogZGFya2N5YW47XHJcbn1cclxuLmJ1dHRvbjN7XHJcbiAgICBmb250LXNpemU6IDExLjVweDtcclxuICAgIGNvbG9yOiBkYXJrY3lhbjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmJ1dHRvbntcclxuICAgIGZvbnQtc2l6ZTogMTFweDtcclxuICAgIGNvbG9yOiBkYXJrY3lhbjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxufVxyXG5cclxuICAgIC5zY3JvbGxpbmctd3JhcHBlciB7XHJcbiAgICAgICAgb3ZlcmZsb3cteDogc2Nyb2xsO1xyXG4gICAgICAgIG92ZXJmbG93LXk6IGhpZGRlbjtcclxuICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgICBcclxuICAgICAgXHJcbiAgICAgICAgLmNhcmQge1xyXG4gICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAuaW1hZ2UtY29udGFpbmVyIHtcclxuICAgICAgICBtaW4taGVpZ2h0OiAyMDBweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG4gICAgICB9XHJcbiAgICAgICBcclxuICAgICAgQG1lZGlhIChtaW4td2lkdGg6IDBweCkge1xyXG4gICAgICAgIC5pbWFnZXMge1xyXG4gICAgICAgICAgY29sdW1uLWNvdW50OiAyO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAgXHJcbiAgICAgIEBtZWRpYSAobWluLXdpZHRoOiA0MjBweCkge1xyXG4gICAgICAgIC5pbWFnZXMge1xyXG4gICAgICAgICAgY29sdW1uLWNvdW50OiAzO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAgXHJcbiAgICAgIEBtZWRpYSAobWluLXdpZHRoOiA3MjBweCkge1xyXG4gICAgICAgIC5pbWFnZXMge1xyXG4gICAgICAgICAgY29sdW1uLWNvdW50OiA0O1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAgXHJcbiAgICAgIC5vbmUtaW1hZ2Uge1xyXG4gICAgICAgIG1hcmdpbjogMnB4O1xyXG4gICAgICB9XHJcbiAgICAgIFxyXG4gICAgICAudXBsb2Fke1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgfVxyXG5cclxuICBcclxuICAgIC5iZy1jb2xvcntcclxuIFxyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjIyLCAyMjIsIDIyMiwgMC43KTtcclxuICAgICAgfVxyXG4gICAgIl19 */"
 
 /***/ }),
 
@@ -164,9 +164,10 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 var FindingPage = /** @class */ (function () {
     function FindingPage(
     // private http: LoginService,
-    router, alertController, loadingCtrl, JobcardService, camera, actionSheetController, imagePicker, crop, file, base64, _DomSanitizer, toastController, webview, http) {
+    router, alertController, navCtrl, loadingCtrl, JobcardService, camera, actionSheetController, imagePicker, crop, file, base64, _DomSanitizer, toastController, webview, http) {
         this.router = router;
         this.alertController = alertController;
+        this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.JobcardService = JobcardService;
         this.camera = camera;
@@ -180,6 +181,7 @@ var FindingPage = /** @class */ (function () {
         this.webview = webview;
         this.http = http;
         this.btn_txt = 'PAUSE';
+        this.changeColor = false;
         this.croppedImagepath = "";
         this.isLoading = false;
         this.imageLists = [];
@@ -215,91 +217,96 @@ var FindingPage = /** @class */ (function () {
             this.JobcardService.imageList = "";
         }
     };
-    // goPause() {
-    //   // console.log(taskid)
-    //   if (this.btn_txt == "PAUSE") {
-    //     this.btn_txt = "RESUME";
-    //     // this.JobcardService.taskId=taskid;
-    //     // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    //       //postApi
-    //       let data =[{
-    //         taskid :this.JobcardService.taskId,
-    //         employeeid :this.details.employee.employeeid,
-    //         tasktimemanagementenddatetime: this.currentDate,
-    //         tasktimemanagementendstate:2
-    //       }
-    //       ]
-    //       let data1 =[{
-    //         taskstatus:[{"taskstatusid":2}],
-    //         employeeid :this.details.employee.employeeid,
-    //         taskid :this.JobcardService.taskId,
-    //       }
-    //       ]
-    //       console.log(data)
-    //       console.log(data1)
-    //       this.TimeService.postStart(data).subscribe((response) => {
-    //         console.log(response)
-    //         this.TimeService.postStart1(data1).subscribe((response) => {
-    //           this.loading.dismiss(); 
-    //           console.log(response)
-    //         });
-    //       });
-    //     // document.body.style.backgroundColor ='#b8bdc2';
-    //   } else {
-    //     this.btn_txt = "PAUSE";
-    //    // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    //     //postApi\
-    //     let data =[{
-    //       taskid :this.JobcardService.taskId,
-    //       employeeid :this.details.employee.employeeid,
-    //       tasktimemanagementstartdatetime: this.currentDate,
-    //       tasktimemanagementstartstate:3
-    //     }
-    //     ]
-    //     let data1 =[{
-    //       taskstatus:[{"taskstatusid":3}],
-    //       employeeid :this.details.employee.employeeid,
-    //       taskid :this.JobcardService.taskId,
-    //     }
-    //     ]
-    //     console.log(data)
-    //     console.log(data1)
-    //     this.TimeService.postStart(data).subscribe((response) => {
-    //       console.log(response)
-    //       this.TimeService.postStart1(data1).subscribe((response) => {
-    //         this.loading.dismiss(); 
-    //         console.log(response)
-    //       });
-    //     });
-    //     // document.body.style.backgroundColor = 'transparent';
-    //   }
-    // }
-    // goFinish(){
-    //   // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    //       //postApi
-    // let data =[{
-    //   taskid :this.JobcardService.taskId,
-    //   employeeid :this.details.employee.employeeid,
-    //   tasktimemanagementenddatetime: this.currentDate,
-    //   tasktimemanagementendstate:4
-    // }
-    // ]
-    //       let data1 =[{
-    //         taskstatus:[{"taskstatusid":4}],
-    //         employeeid :this.details.employee.employeeid,
-    //         taskid :this.JobcardService.taskId,
-    //       }
-    //       ]
-    //       console.log(data)
-    //       console.log(data1)
-    //       this.TimeService.postStart(data).subscribe((response) => {
-    //         console.log(response)
-    //         this.TimeService.postStart1(data1).subscribe((response) => {
-    //           this.loading.dismiss(); 
-    //           console.log(response)
-    //         });
-    //       });
-    // }
+    FindingPage.prototype.goPause = function () {
+        var _this = this;
+        //   // console.log(taskid)
+        if (this.btn_txt == "PAUSE") {
+            this.btn_txt = "RESUME";
+            this.changeColor = true;
+            // this.JobcardService.taskId=taskid;
+            // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+            //postApi
+            var data = [{
+                    taskid: this.JobcardService.taskId,
+                    employeeid: this.details.employee.employeeid,
+                    tasktimemanagementenddatetime: this.currentDate,
+                    tasktimemanagementendstate: 2
+                }
+            ];
+            var data1_1 = [{
+                    taskstatus: [{ "taskstatusid": 2 }],
+                    employeeid: this.details.employee.employeeid,
+                    taskid: this.JobcardService.taskId,
+                }
+            ];
+            console.log(data);
+            console.log(data1_1);
+            this.TimeService.postStart(data).subscribe(function (response) {
+                console.log(response);
+                _this.TimeService.postStart1(data1_1).subscribe(function (response) {
+                    _this.loading.dismiss();
+                    console.log(response);
+                });
+            });
+            //     // document.body.style.backgroundColor ='#b8bdc2';
+        }
+        else {
+            this.btn_txt = "PAUSE";
+            this.changeColor = false;
+            //    // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+            //     //postApi\
+            var data = [{
+                    taskid: this.JobcardService.taskId,
+                    employeeid: this.details.employee.employeeid,
+                    tasktimemanagementstartdatetime: this.currentDate,
+                    tasktimemanagementstartstate: 3
+                }
+            ];
+            var data1_2 = [{
+                    taskstatus: [{ "taskstatusid": 3 }],
+                    employeeid: this.details.employee.employeeid,
+                    taskid: this.JobcardService.taskId,
+                }
+            ];
+            console.log(data);
+            console.log(data1_2);
+            this.TimeService.postStart(data).subscribe(function (response) {
+                console.log(response);
+                _this.TimeService.postStart1(data1_2).subscribe(function (response) {
+                    _this.loading.dismiss();
+                    console.log(response);
+                });
+            });
+            //     // document.body.style.backgroundColor = 'transparent';
+        }
+    };
+    FindingPage.prototype.goFinish = function () {
+        // this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+        var _this = this;
+        //postApi
+        var data = [{
+                taskid: this.JobcardService.taskId,
+                employeeid: this.details.employee.employeeid,
+                tasktimemanagementenddatetime: this.currentDate,
+                tasktimemanagementendstate: 4
+            }
+        ];
+        var data1 = [{
+                taskstatus: [{ "taskstatusid": 4 }],
+                employeeid: this.details.employee.employeeid,
+                taskid: this.JobcardService.taskId,
+            }
+        ];
+        console.log(data);
+        console.log(data1);
+        this.TimeService.postStart(data).subscribe(function (response) {
+            console.log(response);
+            _this.TimeService.postStart1(data1).subscribe(function (response) {
+                _this.loading.dismiss();
+                console.log(response);
+            });
+        });
+    };
     FindingPage.prototype.pickImage1 = function (sourceType) {
         var _this = this;
         var options = {
@@ -479,6 +486,7 @@ var FindingPage = /** @class */ (function () {
     FindingPage.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"] },
         { type: _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_3__["JobcardService"] },
         { type: _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"] },
@@ -500,6 +508,7 @@ var FindingPage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"],
             _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_3__["JobcardService"],
             _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_5__["Camera"],

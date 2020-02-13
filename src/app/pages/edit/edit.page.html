@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Work Order Details </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >        
+    <ion-card-content  *ngFor="let cro of Wo">
+        <ion-row>
+            <ion-col  size="4">
+        
+              <div class="head">CRO</div>
+            
+            </ion-col>
+            <ion-col  size="8">
+                <ion-item>
+              <ion-input class="body1" type="text" value="{{cro.workorderno}}"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col  size="4">
+         
+                <div class="head">PART NUMBER</div>
+           
+              </ion-col>
+              <ion-col  size="8">
+                  <ion-item>
+                      <ion-input class="body1"  type="text" value="{{cro.partnumber}}"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+           
+                <div class="head">SERIAL NUMBER</div>
+          
+              </ion-col>
+              <ion-col  size="8">
+                  <ion-item>
+                <ion-input class="body1"  type="text" value="{{cro.partrecordserialnumber}}"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+             
+                <div class="head">TITLE</div>
+         
+              </ion-col>
+              <ion-col  size="8">
+                  <ion-item>
+                      <ion-textarea class="body1" type="text" value="{{cro.workordertitle}}"  rows="7"></ion-textarea>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+               
+                <div class="head">DESCRIPTION</div>
+               
+              </ion-col>
+              <ion-col  size="8">
+                  <ion-item>
+                      <ion-input class="body1" type="text" value="{{cro.workorderdescription}}"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+                <div class="head">ACTION</div>
+              </ion-col>
+              <ion-col  size="8">
+                  <ion-item>
+                      <ion-input class="body1" type="text" value="{{cro.workorderaction}}"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+                <ion-col  size="4">
+                  <div class="head">REMARKS</div>
+                </ion-col>
+                <ion-col  size="8">
+                    <ion-item>
+                        <ion-input class="body1" type="text" value=""></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+                <div class="head">DATE CREATED</div>
+              </ion-col>
+              <ion-col  size="8">
+                  <ion-item>
+                      <ion-datetime class="body1" type="text" value="{{cro.workorderprojectcreationdatetime}}"></ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+             
+                <div class="head">EDD</div>
+              
+              </ion-col>
+              <ion-col  size="8">
+                  <ion-item>
+                      <ion-datetime class="body1" type="text" value="{{cro.workorderestimateddeliverydatetime }}"></ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+    </ion-card-content>
+
+    <ion-button class="upload" expand="full" color="primary">Delete</ion-button>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-button class="button" expand="full" color="primary" (click)="dismiss()">Close</ion-button>
+</ion-footer>

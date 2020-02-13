@@ -27,7 +27,7 @@
    
    <ion-card-content class="font" *ngIf="hideMe"> 
       Complete Percentage
-      <ion-progress-bar  color="warning" style="height:10px" value="{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}"></ion-progress-bar> {{jobcardDetail.jobcardcompletedpercentage}}%</ion-card-content>
+      <ion-progress-bar  color="warning" style="height:10px" value="{{jobcardDetail.jobcardcompletedtaskcount/jobcardDetail.jobcardtotaltaskcount}}"></ion-progress-bar> {{jobcardDetail.jobcardcompletedpercentage}}%</ion-card-content>
     <ion-card-content class="font" *ngIf="hideMe"> 
       Short Time
       <ion-progress-bar color="warning" style="height:10px " value="0.2"></ion-progress-bar>

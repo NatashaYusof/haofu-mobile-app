@@ -15,43 +15,338 @@
 
 <ion-content>
     <ion-toolbar>
-        <ion-segment [(ngModel)]="segment" value="todolist" > 
-              <ion-segment-button value="todolist">
-            <ion-select placeholder="TO-DO LIST" interface="popover" mode="ios">
-                  <ion-select-option >ACTIVATE ()</ion-select-option>
-                  <ion-select-option  hidden>APPROVE ()</ion-select-option>
+        <ion-segment value="todolist" > 
+              <ion-segment-button value="todolist">TO-DO LIST
+                  <!-- <ion-label stacked>TO-DO LIST</ion-label> -->
+            <ion-select interface="popover" mode="ios" [(ngModel)]="segment" >
+                  <ion-select-option   value="activate" [selected]="true">ACTIVATE ({{activate.length}})</ion-select-option>
+                  <ion-select-option   value="approve">APPROVE ({{approve.length}})</ion-select-option>
                 </ion-select>
             </ion-segment-button>
-            <ion-segment-button value="follow">
-                <ion-select placeholder="FOLLOW-UP LIST" interface="popover">
-                    <ion-select-option hidden>NEW / PENDING ()</ion-select-option>
-                    <ion-select-option hidden>IN-PROGRESS ()</ion-select-option>
-                    <ion-select-option hidden>COMPLETED ()</ion-select-option>
-                    <ion-select-option hidden>VIEW ALL ()</ion-select-option>
+            <ion-segment-button value="follow">FOLLOW-UP LIST
+                <!-- <ion-label stacked>FOLLOW-UP LIST</ion-label> -->
+                <ion-select interface="popover"   [(ngModel)]="segment" >
+                    <ion-select-option value="new">NEW / PENDING ({{newWO.length}})</ion-select-option>
+                    <ion-select-option value="progress">IN-PROGRESS ({{inProgressWO.length}})</ion-select-option>
+                    <ion-select-option value="completed">COMPLETED ({{completedWO.length}})</ion-select-option>
+                    <ion-select-option value="view">VIEW ALL ()</ion-select-option>
                   </ion-select>
             </ion-segment-button>
         
           </ion-segment>
         </ion-toolbar>
-    
+  
           <div [ngSwitch]="segment">
-            <ion-card *ngSwitchCase="'todolist'">
-              <ion-card-header>
-                Change Password
-              </ion-card-header>
+            <div *ngSwitchCase="'activate'">
+              <ion-item  class="show"  >
+                  <ion-label >Show</ion-label>
+                  <ion-select  interface="popover">
+                    <ion-select-option value="10">10</ion-select-option>
+                    <ion-select-option value="25">25</ion-select-option>
+                    <ion-select-option value="50">50</ion-select-option>
+                    <ion-select-option value="100">100</ion-select-option>
+                  </ion-select>
+                  </ion-item> 
+
+            <ion-card >        
               <ion-card-content>
-                Your change password form here
+                  <ion-row>
+                      <ion-col  size="4">
+                        <div class="head">CRO</div>
+                      </ion-col>
+                      <ion-col>
+                        <div  class="head">EDD</div>
+                      </ion-col>
+                      <ion-col size="1.5">
+                        <div  class="head">WW</div>
+                      </ion-col>
+                      <ion-col size="1">
+                        <div  class="head"></div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row  *ngFor="let cro of activate">
+                        <ion-col  size="4" >
+                          <div class="body" (click)=" goView(cro.workorderid)">{{cro.workorderno}}</div>
+                        </ion-col>
+                        <ion-col>
+                          <div class="body1">{{cro.workorderestimateddeliverydatetime | date:"MMM dd, yyyy"}}</div>
+                        </ion-col>
+                        <ion-col size="1.5">
+                          <div class="body"><img src="assets/icon/folder.png" tappable /></div>
+                        </ion-col>
+                        <ion-col size="1">
+                          <div class="body" (click)=" goEdit(cro.workorderid)"><img src="assets/icon/edit2.png" tappable /></div>
+                        </ion-col>
+                      </ion-row>
               </ion-card-content>
             </ion-card>
+          </div>
+
+              <div *ngSwitchCase="'approve'">
+                <ion-item  class="show"  >
+                    <ion-label >Show</ion-label>
+                    <ion-select  interface="popover">
+                      <ion-select-option value="10">10</ion-select-option>
+                      <ion-select-option value="25">25</ion-select-option>
+                      <ion-select-option value="50">50</ion-select-option>
+                      <ion-select-option value="100">100</ion-select-option>
+                    </ion-select>
+                    </ion-item> 
+  
+              <ion-card >        
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col  size="4">
+                          <div class="head">CRO</div>
+                        </ion-col>
+                        <ion-col  size="4">
+                          <div  class="head">EDD</div>
+                        </ion-col>
+                        <ion-col size="1.5">
+                          <div  class="head">WW</div>
+                        </ion-col>
+                        <ion-col size="1.3">
+                            <div  class="head">SJ</div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div  class="head"></div>
+                          </ion-col>
+                      </ion-row>
+                      <ion-row  *ngFor="let cro of approve">
+                          <ion-col  size="4" >
+                            <div class="body"(click)=" goView(cro.workorderid)">{{cro.workorderno}}</div>
+                          </ion-col>
+                          <ion-col  size="4">
+                            <div class="body1">{{cro.workorderestimateddeliverydatetime | date:"MMM dd, yyyy"}}</div>
+                          </ion-col>
+                          <ion-col size="1.5">
+                            <div class="body"><img src="assets/icon/folder.png" tappable /></div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div class="body"><img src="assets/icon/file.png" tappable width="10px" height="20px"/></div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div class="body" (click)=" goEdit(cro.workorderid)"><img src="assets/icon/edit2.png" tappable /></div>
+                          </ion-col>
+                        </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </div>
+  
+            <div *ngSwitchCase="'new'">
+                <ion-item  class="show"  >
+                    <ion-label >Show</ion-label>
+                    <ion-select  interface="popover">
+                      <ion-select-option value="10">10</ion-select-option>
+                      <ion-select-option value="25">25</ion-select-option>
+                      <ion-select-option value="50">50</ion-select-option>
+                      <ion-select-option value="100">100</ion-select-option>
+                    </ion-select>
+                    </ion-item> 
+  
+              <ion-card >        
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col  size="4">
+                          <div class="head">CRO</div>
+                        </ion-col>
+                        <ion-col>
+                          <div  class="head">EDD</div>
+                        </ion-col>
+                        <ion-col size="1.5">
+                          <div  class="head">WW</div>
+                        </ion-col>
+                        <ion-col size="1">
+                          <div  class="head"></div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row  *ngFor="let cro of newWO">
+                          <ion-col  size="4" >
+                            <div class="body" (click)=" goView(cro.workorderid)">{{cro.workorderno}}</div>
+                          </ion-col>
+                          <ion-col>
+                            <div class="body1">{{cro.workorderestimateddeliverydatetime | date:"MMM dd, yyyy"}}</div>
+                          </ion-col>
+                          <ion-col size="1.5">
+                            <div class="body"><img src="assets/icon/folder.png" tappable /></div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div class="body" (click)=" goEdit(cro.workorderid)"><img src="assets/icon/edit2.png" tappable /></div>
+                          </ion-col>
+                        </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </div>
     
-            <ion-card *ngSwitchCase="'follow'">
-              <ion-card-header>
-                Change Password
-              </ion-card-header>
-              <ion-card-content>
-              
-              </ion-card-content>
-            </ion-card>
+                
+            <div *ngSwitchCase="'progress'">
+                <ion-item  class="show"  >
+                    <ion-label >Show</ion-label>
+                    <ion-select  interface="popover">
+                      <ion-select-option value="10">10</ion-select-option>
+                      <ion-select-option value="25">25</ion-select-option>
+                      <ion-select-option value="50">50</ion-select-option>
+                      <ion-select-option value="100">100</ion-select-option>
+                    </ion-select>
+                    </ion-item> 
+  
+              <ion-card >        
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col  size="4">
+                          <div class="head">CRO</div>
+                        </ion-col>
+                        <ion-col  size="4">
+                          <div  class="head">EDD</div>
+                        </ion-col>
+                        <ion-col size="1.5">
+                          <div  class="head">WW</div>
+                        </ion-col>
+                        <ion-col size="1.3">
+                            <div  class="head">SJ</div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div  class="head"></div>
+                          </ion-col>
+                      </ion-row>
+                      <ion-row  *ngFor="let cro of inProgressWO">
+                          <ion-col  size="4" >
+                            <div class="body"(click)=" goView(cro.workorderid)">{{cro.workorderno}}</div>
+                          </ion-col>
+                          <ion-col  size="4">
+                            <div class="body1">{{cro.workorderestimateddeliverydatetime | date:"MMM dd, yyyy"}}</div>
+                          </ion-col>
+                          <ion-col size="1.5">
+                            <div class="body"><img src="assets/icon/folder.png" tappable /></div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div class="body"><img src="assets/icon/file.png" tappable width="10px" height="20px"/></div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div class="body" (click)=" goEdit(cro.workorderid)"><img src="assets/icon/edit2.png" tappable /></div>
+                          </ion-col>
+                        </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </div>
+
+
+            <div *ngSwitchCase="'completed'">
+                <ion-item  class="show"  >
+                    <ion-label >Show</ion-label>
+                    <ion-select  interface="popover">
+                      <ion-select-option value="10">10</ion-select-option>
+                      <ion-select-option value="25">25</ion-select-option>
+                      <ion-select-option value="50">50</ion-select-option>
+                      <ion-select-option value="100">100</ion-select-option>
+                    </ion-select>
+                    </ion-item> 
+  
+              <ion-card >        
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col  col-13>
+                          <div class="head">CRO</div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div  class="head">EDD</div>
+                        </ion-col>
+                        <ion-col col-6>
+                          <div  class="head">WW</div>
+                        </ion-col>
+                        <ion-col col-6>
+                            <div  class="head">SJ</div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div  class="head"></div>
+                          </ion-col>
+                          <ion-col col-6>
+                              <div  class="head">APPROVAL</div>
+                            </ion-col>
+                            <ion-col col-6>
+                                <div  class="head">REPORT</div>
+                              </ion-col>
+                      </ion-row>
+                      <ion-row  *ngFor="let cro of completedWO">
+                          <ion-col col-13 >
+                            <div class="body"(click)=" goView(cro.workorderid)">{{cro.workorderno}}</div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="body1">{{cro.workorderestimateddeliverydatetime | date:"MMM dd, yyyy"}}</div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="body"><img src="assets/icon/folder.png" tappable /></div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="body"><img src="assets/icon/file.png" tappable width="10px" height="20px"/></div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div class="body" (click)=" goEdit(cro.workorderid)"><img src="assets/icon/edit2.png" tappable /></div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div  class="body"></div>
+                          </ion-col>
+                          <ion-col col-6>
+                            <div  class="body"></div>
+                          </ion-col>
+                        </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </div>
+    
+            <div *ngSwitchCase="'view'">
+                <ion-item  class="show"  >
+                    <ion-label >Show</ion-label>
+                    <ion-select  interface="popover">
+                      <ion-select-option value="10">10</ion-select-option>
+                      <ion-select-option value="25">25</ion-select-option>
+                      <ion-select-option value="50">50</ion-select-option>
+                      <ion-select-option value="100">100</ion-select-option>
+                    </ion-select>
+                    </ion-item> 
+  
+              <ion-card >        
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col  size="4">
+                          <div class="head">CRO</div>
+                        </ion-col>
+                        <ion-col  size="4">
+                          <div  class="head">EDD</div>
+                        </ion-col>
+                        <ion-col size="1.5">
+                          <div  class="head">WW</div>
+                        </ion-col>
+                        <ion-col size="1.3">
+                            <div  class="head">SJ</div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div  class="head"></div>
+                          </ion-col>
+                      </ion-row>
+                      <ion-row  *ngFor="let cro of workOrders">
+                          <ion-col  size="4" >
+                            <div class="body"(click)=" goView(cro.workorderid)">{{cro.workorderno}}</div>
+                          </ion-col>
+                          <ion-col  size="4">
+                            <div class="body1">{{cro.workorderestimateddeliverydatetime | date:"MMM dd, yyyy"}}</div>
+                          </ion-col>
+                          <ion-col size="1.5">
+                            <div class="body"><img src="assets/icon/folder.png" tappable /></div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div class="body"><img src="assets/icon/file.png" tappable width="10px" height="20px"/></div>
+                          </ion-col>
+                          <ion-col size="1">
+                            <div class="body" (click)=" goEdit(cro.workorderid)"><img src="assets/icon/edit2.png" tappable /></div>
+                          </ion-col>
+                        </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </div>
+
+    
+    
           </div>
         
 </ion-content>

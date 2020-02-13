@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Work Order Details </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >        
+    <ion-card-content  *ngFor="let cro of Wo">
+        <ion-row>
+            <ion-col  size="4">
+              <div class="head">CRO</div>
+            </ion-col>
+            <ion-col  size="8">
+              <div  class="body1">{{cro.workorderno}}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col  size="4">
+                <div class="head">PART NUMBER</div>
+              </ion-col>
+              <ion-col  size="8">
+                <div class="body1">{{cro.partnumber}}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+                <div class="head">SERIAL NUMBER</div>
+              </ion-col>
+              <ion-col  size="8">
+                <div class="body1">{{cro.partrecordserialnumber}}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+                <div class="head">TITLE</div>
+              </ion-col>
+              <ion-col  size="8">
+                <div class="body1">{{cro.workordertitle}}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+                <div class="head">DESCRIPTION</div>
+              </ion-col>
+              <ion-col  size="8">
+                <div class="body1">{{cro.workorderdescription}}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row  *ngFor="let cro of Wo1" >
+              <ion-col  size="4">
+                <div class="head">STATUS</div>
+              </ion-col>
+              <ion-col  size="8">
+                <div class="body1">{{cro.workorderstatus}}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+                <div class="head">DATE CREATED</div>
+              </ion-col>
+              <ion-col  size="8">
+                <div class="body1">{{cro.workorderprojectcreationdatetime |  date:"MMM dd, yyyy hh:mm:ss"}}</div>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  size="4">
+                <div class="head">EDD</div>
+              </ion-col>
+              <ion-col  size="8">
+                <div class="body1">{{cro.workorderestimateddeliverydatetime |  date:"MMM dd, yyyy hh:mm:ss"}}</div>
+              </ion-col>
+            </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-button class="button" expand="full" color="primary" (click)="dismiss()">Close</ion-button>
+</ion-footer>

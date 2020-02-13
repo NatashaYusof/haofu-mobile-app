@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content padding >\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\"></ion-toggle>\n  </ion-item>\n\n  <ion-card>\n    <ion-item> \n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n   \n   <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Complete Percentage\n      <ion-progress-bar  color=\"warning\" style=\"height:10px\" value=\"{{jcTitle.jobcardcompletedtaskcount * 1 / jcTitle.jobcardtotaltaskcount}}\"></ion-progress-bar> {{jobcardDetail.jobcardcompletedpercentage}}%</ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Short Time\n      <ion-progress-bar color=\"warning\" style=\"height:10px \" value=\"0.2\"></ion-progress-bar>\n    </ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Turn Around Time\n      <ion-progress-bar  color=\"warning\" style=\"height:10px \" value=\"0.1\"></ion-progress-bar>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-item >\n    <ion-label class=\"ion-text-wrap\" ><b>{{taskTitle}}</b></ion-label>\n  </ion-item>\n\n  <ion-card  *ngFor=\"let task of taskdetail;let count=index\" class=\"font\">\n    <ion-item>\n      <ion-label class=\"font\"><b>SAE TASK {{count + 1}} </b></ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label class=\"ion-text-wrap\">{{task.tasktitle}}</ion-label>\n    </ion-item>\n        <ion-grid> \n           <ion-row>\n             <ion-col width-50><button style=\"width:100%\" class=\"button\" (click)=\"goToManual()\">MANUAL</button></ion-col>\n             <ion-col width-50><button style=\"width:100%\" class=\"button1\" (click)=\"goToFinding(jobcardId,task.taskid)\">FINDING</button></ion-col>\n           </ion-row>\n        </ion-grid>\n    </ion-card>\n\n</ion-content>\n<ion-toolbar>\n  <ion-tabs>\n  <ion-tab-bar slot=\"bottom\" fixed >\n    <ion-tab-button tab=\"pause\" >\n      <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"finish\">\n      <ion-label class=\"button3\"  (click)=\"goFinish()\" >FINISH</ion-label>\n    </ion-tab-button>\n\n  </ion-tab-bar>\n</ion-tabs></ion-toolbar>"
+module.exports = "<ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-buttons slot=\"start\">\n          <ion-back-button  defaulthref=\"\"></ion-back-button>\n        </ion-buttons>\n      <ion-title>\n          JOBCARD\n      </ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content padding >\n  <ion-item>\n  <ion-label class=\"font\">Serial Number: {{serialNo.partrecordserialnumber}}</ion-label>\n\n  <ion-label class=\"expand\">Expand All</ion-label>\n  <ion-toggle slot=\"end\" name=\"expand\" mode=\"md\" class=\"toggle-small\" toggle-class=\"toggle-calm\" (click)=\"hide()\"></ion-toggle>\n  </ion-item>\n\n  <ion-card>\n    <ion-item> \n    <ion-label>{{jobcardDetail.jobcardtitle}}</ion-label>\n    <ion-badge color=\"danger\">{{jobcardDetail.jobcardtotaltaskcount-jobcardDetail.jobcardcompletedtaskcount-jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"warning\">{{jobcardDetail.jobcardprogresstaskcount}}</ion-badge>\n    <ion-badge color=\"success\">{{jobcardDetail.jobcardcompletedtaskcount}}</ion-badge>\n  </ion-item>\n   \n   <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Complete Percentage\n      <ion-progress-bar  color=\"warning\" style=\"height:10px\" value=\"{{jobcardDetail.jobcardcompletedtaskcount/jobcardDetail.jobcardtotaltaskcount}}\"></ion-progress-bar> {{jobcardDetail.jobcardcompletedpercentage}}%</ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Short Time\n      <ion-progress-bar color=\"warning\" style=\"height:10px \" value=\"0.2\"></ion-progress-bar>\n    </ion-card-content>\n    <ion-card-content class=\"font\" *ngIf=\"hideMe\"> \n      Turn Around Time\n      <ion-progress-bar  color=\"warning\" style=\"height:10px \" value=\"0.1\"></ion-progress-bar>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-item >\n    <ion-label class=\"ion-text-wrap\" ><b>{{taskTitle}}</b></ion-label>\n  </ion-item>\n\n  <ion-card  *ngFor=\"let task of taskdetail;let count=index\" class=\"font\">\n    <ion-item>\n      <ion-label class=\"font\"><b>SAE TASK {{count + 1}} </b></ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label class=\"ion-text-wrap\">{{task.tasktitle}}</ion-label>\n    </ion-item>\n        <ion-grid> \n           <ion-row>\n             <ion-col width-50><button style=\"width:100%\" class=\"button\" (click)=\"goToManual()\">MANUAL</button></ion-col>\n             <ion-col width-50><button style=\"width:100%\" class=\"button1\" (click)=\"goToFinding(jobcardId,task.taskid)\">FINDING</button></ion-col>\n           </ion-row>\n        </ion-grid>\n    </ion-card>\n\n</ion-content>\n<ion-toolbar>\n  <ion-tabs>\n  <ion-tab-bar slot=\"bottom\" fixed >\n    <ion-tab-button tab=\"pause\" >\n      <ion-label class=\"button3\"  (click)=\"goPause()\" >{{btn_txt}}</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"finish\">\n      <ion-label class=\"button3\"  (click)=\"goFinish()\" >FINISH</ion-label>\n    </ion-tab-button>\n\n  </ion-tab-bar>\n</ion-tabs></ion-toolbar>"
 
 /***/ }),
 
@@ -93,6 +93,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _src_app_services_jobcard_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../src/app/services/jobcard.service */ "./src/app/services/jobcard.service.ts");
 /* harmony import */ var _src_app_services_time_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../src/app/services/time.service */ "./src/app/services/time.service.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -137,6 +139,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+
 
 
 
@@ -225,92 +228,95 @@ var ChildtaskPage = /** @class */ (function () {
     ChildtaskPage.prototype.goToManual = function (id, taskid) {
         this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/' + id + '/childtask/' + taskid + '/manual');
     };
-    // goPause() {
-    //   // console.log(taskid)
-    //   if (this.btn_txt == "PAUSE") {
-    //     this.btn_txt = "RESUME";
-    //     // this.JobcardService.taskId=taskid;
-    //     this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    //       //postApi
-    //       let data =[{
-    //         taskid :this.JobcardService.taskId,
-    //         employeeid :this.details.employee.employeeid,
-    //         tasktimemanagementenddatetime: this.currentDate,
-    //         tasktimemanagementendstate:2
-    //       }
-    //       ]
-    //       let data1 =[{
-    //         taskstatus:[{"taskstatusid":2}],
-    //         employeeid :this.details.employee.employeeid,
-    //         taskid :this.JobcardService.taskId,
-    //       }
-    //       ]
-    //       console.log(data)
-    //       console.log(data1)
-    //       this.TimeService.postStart(data).subscribe((response) => {
-    //         console.log(response)
-    //         this.TimeService.postStart1(data1).subscribe((response) => {
-    //           this.loading.dismiss(); 
-    //           console.log(response)
-    //         });
-    //       });
-    //     // document.body.style.backgroundColor ='#b8bdc2';
-    //   } else {
-    //     this.btn_txt = "PAUSE";
-    //     this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    //     //postApi
-    //     let data =[{
-    //       taskid :this.JobcardService.taskId,
-    //       employeeid :this.details.employee.employeeid,
-    //       tasktimemanagementstartdatetime: this.currentDate,
-    //       tasktimemanagementstartstate:3
-    //     }
-    //     ]
-    //     let data1 =[{
-    //       taskstatus:[{"taskstatusid":3}],
-    //       employeeid :this.details.employee.employeeid,
-    //       taskid :this.JobcardService.taskId,
-    //     }
-    //     ]
-    //     console.log(data)
-    //     console.log(data1)
-    //     this.TimeService.postStart(data).subscribe((response) => {
-    //       console.log(response)
-    //       this.TimeService.postStart1(data1).subscribe((response) => {
-    //         this.loading.dismiss(); 
-    //         console.log(response)
-    //       });
-    //     });
-    //     // document.body.style.backgroundColor = 'transparent';
-    //   }
-    // }
-    // goFinish(){
-    //   this.currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    //       //postApi
-    //       let data =[{
-    //         taskid :this.JobcardService.taskId,
-    //         employeeid :this.details.employee.employeeid,
-    //         tasktimemanagementenddatetime: this.currentDate,
-    //         tasktimemanagementendstate:4
-    //       }
-    //       ]
-    //       let data1 =[{
-    //         taskstatus:[{"taskstatusid":4}],
-    //         employeeid :this.details.employee.employeeid,
-    //         taskid :this.JobcardService.taskId,
-    //       }
-    //       ]
-    //       console.log(data)
-    //       console.log(data1)
-    //       this.TimeService.postStart(data).subscribe((response) => {
-    //         console.log(response)
-    //         this.TimeService.postStart1(data1).subscribe((response) => {
-    //           this.loading.dismiss(); 
-    //           console.log(response)
-    //         });
-    //       });
-    //       // this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
-    // }
+    ChildtaskPage.prototype.goPause = function () {
+        var _this = this;
+        // console.log(taskid)
+        if (this.btn_txt == "PAUSE") {
+            this.btn_txt = "RESUME";
+            // this.JobcardService.taskId=taskid;
+            this.currentDate = moment__WEBPACK_IMPORTED_MODULE_6__().format('YYYY-MM-DD HH:mm:ss');
+            //postApi
+            var data = [{
+                    taskid: this.JobcardService.taskId,
+                    employeeid: this.details.employee.employeeid,
+                    tasktimemanagementenddatetime: this.currentDate,
+                    tasktimemanagementendstate: 2
+                }
+            ];
+            var data1_1 = [{
+                    taskstatus: [{ "taskstatusid": 2 }],
+                    employeeid: this.details.employee.employeeid,
+                    taskid: this.JobcardService.taskId,
+                }
+            ];
+            console.log(data);
+            console.log(data1_1);
+            this.TimeService.postStart(data).subscribe(function (response) {
+                console.log(response);
+                _this.TimeService.postStart1(data1_1).subscribe(function (response) {
+                    _this.loading.dismiss();
+                    console.log(response);
+                });
+            });
+            //     // document.body.style.backgroundColor ='#b8bdc2';
+        }
+        else {
+            this.btn_txt = "PAUSE";
+            this.currentDate = moment__WEBPACK_IMPORTED_MODULE_6__().format('YYYY-MM-DD HH:mm:ss');
+            //postApi
+            var data = [{
+                    taskid: this.JobcardService.taskId,
+                    employeeid: this.details.employee.employeeid,
+                    tasktimemanagementstartdatetime: this.currentDate,
+                    tasktimemanagementstartstate: 3
+                }
+            ];
+            var data1_2 = [{
+                    taskstatus: [{ "taskstatusid": 3 }],
+                    employeeid: this.details.employee.employeeid,
+                    taskid: this.JobcardService.taskId,
+                }
+            ];
+            console.log(data);
+            console.log(data1_2);
+            this.TimeService.postStart(data).subscribe(function (response) {
+                console.log(response);
+                _this.TimeService.postStart1(data1_2).subscribe(function (response) {
+                    _this.loading.dismiss();
+                    console.log(response);
+                });
+            });
+            //     // document.body.style.backgroundColor = 'transparent';
+        }
+    };
+    ChildtaskPage.prototype.goFinish = function () {
+        var _this = this;
+        this.currentDate = moment__WEBPACK_IMPORTED_MODULE_6__().format('YYYY-MM-DD HH:mm:ss');
+        //postApi
+        var data = [{
+                taskid: this.JobcardService.taskId,
+                employeeid: this.details.employee.employeeid,
+                tasktimemanagementenddatetime: this.currentDate,
+                tasktimemanagementendstate: 4
+            }
+        ];
+        var data1 = [{
+                taskstatus: [{ "taskstatusid": 4 }],
+                employeeid: this.details.employee.employeeid,
+                taskid: this.JobcardService.taskId,
+            }
+        ];
+        console.log(data);
+        console.log(data1);
+        this.TimeService.postStart(data).subscribe(function (response) {
+            console.log(response);
+            _this.TimeService.postStart1(data1).subscribe(function (response) {
+                _this.loading.dismiss();
+                console.log(response);
+            });
+        });
+        // this.router.navigateByUrl('/menu/first/tabs/tab1/jobcard/task/'+id+'/childtask/'+taskid);
+    };
     ChildtaskPage.prototype.hide = function () {
         this.hideMe = !this.hideMe;
     };

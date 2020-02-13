@@ -11,7 +11,7 @@
   </ion-header>
 
 
-<ion-content padding>
+<ion-content padding [ngClass]="{'bg-color': changeColor}">
   <ion-item>
   <ion-label class="font"><b>Serial Number: {{serialNo.partrecordserialnumber}}</b></ion-label>
 </ion-item>

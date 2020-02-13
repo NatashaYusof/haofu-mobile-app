@@ -10,6 +10,7 @@ export class TimeService {
 
   private baseURL = "https://haofu.airbusdigital.com/api/hof/mro/task-time-management"
   private basePath ="https://haofu.airbusdigital.com/api/hof/mro/task"
+  private baseFinding ="https://haofu.airbusdigital.com/api/hof/mro/finding"
 
   constructor(private http: HttpClient) { }
 
@@ -57,6 +58,18 @@ export class TimeService {
       )
   
   }
+
+  postFinding(finding): Observable<any>{
+    console.log(finding)
+    return this.http.post(this.baseFinding, JSON.stringify(finding), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  
+  }
+
+
 
   getTimeDetails(taskid) : Observable<any> {
     return this.http.get(this.baseURL+'?taskid='+taskid)

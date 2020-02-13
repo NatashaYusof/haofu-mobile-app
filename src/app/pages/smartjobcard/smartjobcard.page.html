@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title>
+          SMART JOBCARD
+      </ion-title>
+    <ion-buttons slot="end">
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+    </ion-buttons>
+   </ion-toolbar>
+   
+</ion-header>
+<ion-content>
+<ion-toolbar>
+    <!-- (ionChange)="segmentChanged(segment)" -->
+  <ion-segment  [(ngModel)]="segment" > 
+  
+      <ion-segment-button id="0" value="0" >
+        COMPLETED
+      </ion-segment-button>
+      <ion-segment-button id="1" value="1">
+        ON-GOING
+      </ion-segment-button>
+      <ion-segment-button id="2" value="2">
+        NOT STARTED
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+  <div [ngSwitch]="segment">
+    <ion-card *ngSwitchCase="'0'">
+      <ion-card-header>
+        User Info
+      </ion-card-header>
+      <ion-card-content>
+        Your user info content here
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card *ngSwitchCase="'1'">
+      <ion-card-header>
+        Card Info
+      </ion-card-header>
+      <ion-card-content>
+        Your card info content here
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'2'">
+      <ion-card-header>
+        Change Password
+      </ion-card-header>
+      <ion-card-content>
+        Your change password form here
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

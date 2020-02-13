@@ -23,6 +23,9 @@ const routes: Routes = [
   { path: 'canvas', loadChildren: './pages/canvas/canvas.module#CanvasPageModule' },
   { path: 'dashboard',loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule'},
   { path: 'prjctmanagement',loadChildren:'./pages/prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule'},
+  { path: 'smartjobcard', loadChildren:'./pages/smartjobcard/smartjobcard.module#SmartjobcardPageModule'},
+  { path: 'edit', loadChildren:'./pages/edit/edit.module#EditPageModule'},
+  { path: 'view',loadChildren:'./pages/view/view.module#ViewPageModule' }
 
 ];
 
