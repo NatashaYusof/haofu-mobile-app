@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add New Project </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >        
+    <ion-card-content>
+        <ion-row>
+            <ion-col>
+              <ion-label class="head">Work Order No</ion-label><ion-label class="red"> *</ion-label>
+           <ion-item>
+              <ion-input class="body1" type="text" value=""></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col >
+              <ion-label class="head">Part Number</ion-label><ion-label class="red"> *</ion-label>
+            
+                <ion-select  interface="popover" class="body1" placeholder="[Please Select]">
+                  <ion-select-option value="10">D5311047700004</ion-select-option>
+                  <ion-select-option value="25">D53132010000</ion-select-option>
+                  <ion-select-option value="50">D531104770000X-SERIES</ion-select-option>
+                  <ion-select-option value="100">A3403220100000</ion-select-option>
+                  <ion-select-option value="100">F53132010000</ion-select-option>
+                  <ion-select-option value="100">F53132110000</ion-select-option>
+                  <ion-select-option value="100">L53132010000</ion-select-option>
+                  <ion-select-option value="100">L53132110000</ion-select-option>
+                  <ion-select-option value="100">D53132210000</ion-select-option>
+                  <ion-select-option value="100">D53132110000</ion-select-option>
+                  <ion-select-option value="100">V53132110000</ion-select-option>
+                  <ion-select-option value="100">D5311047700007</ion-select-option>
+                  <ion-select-option value="100">D531104770000X</ion-select-option>
+                  <ion-select-option value="100">F53132210000</ion-select-option>
+                  <ion-select-option value="100">V53132010000</ion-select-option>
+                  <ion-select-option value="100">D5311047700006</ion-select-option>
+                  <ion-select-option value="100">D5311047700005</ion-select-option>
+                  <ion-select-option value="100">D5311047700003</ion-select-option>
+                  <ion-select-option value="100">D5311047700002</ion-select-option>
+                  <ion-select-option value="100">D5311047700001</ion-select-option>
+                  <ion-select-option value="100">D5311047700000</ion-select-option>
+                </ion-select>
+     
+         </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col>
+                <ion-label class="head">Serial Number</ion-label><ion-label class="red"> *</ion-label>
+                  <ion-item>
+                <ion-input class="body1"  type="text" value=""></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col>             
+                <div class="head">Title</div>
+                  <ion-item>
+                      <ion-textarea class="body1" type="text" value="INSPECTED/TESTED, REPAIRED, OVERHAULED, AND MODIFIED OF NOSE RADOME"  rows="6"></ion-textarea>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col>
+                <div class="head">Description</div>
+                  <ion-item>
+                      <ion-input class="body1" type="text" value="RADOME NOSE"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col  >
+                <div class="head">Estimated Delivery Date</div>
+                  <ion-item>
+                    <ion-datetime  min="2016" max="2030-12-31" displayFormat="D-MMM-YYYY" pickerFormat="DD MMM YYYY" > </ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col >
+                <div class="head">Start Date</div>
+                  <ion-item>
+                    <ion-datetime  min="2016" max="2030-12-31" displayFormat="D-MMM-YYYY" pickerFormat="DD MMM YYYY" > </ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col >
+                <div class="head">ACTION</div>
+                  <ion-item>
+                      <ion-input class="body1" type="text" value="Perform rectification"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row >
+                <ion-col>
+                  <div class="head">REMARKS</div>
+                    <ion-item>
+                        <ion-input class="body1" type="text" value=""></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+        
+    </ion-card-content>
+
+  <ion-button expand="full" color="primary">Submit</ion-button>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-button class="button" expand="full" color="primary" (click)="dismiss()">Close</ion-button>
+</ion-footer>

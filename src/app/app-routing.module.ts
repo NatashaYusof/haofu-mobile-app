@@ -25,7 +25,8 @@ const routes: Routes = [
   { path: 'prjctmanagement',loadChildren:'./pages/prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule'},
   { path: 'smartjobcard', loadChildren:'./pages/smartjobcard/smartjobcard.module#SmartjobcardPageModule'},
   { path: 'edit', loadChildren:'./pages/edit/edit.module#EditPageModule'},
-  { path: 'view',loadChildren:'./pages/view/view.module#ViewPageModule' }
+  { path: 'view',loadChildren:'./pages/view/view.module#ViewPageModule' },
+  { path: 'addproject', loadChildren:'./pages/addproject/addproject.module#AddprojectPageModule'}
 
 ];
 

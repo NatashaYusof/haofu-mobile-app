@@ -16,6 +16,7 @@ import { File } from '@ionic-native/file/ngx';
 import { TimedetailPageModule } from './pages/timedetail/timedetail.module';
 import { ViewPageModule } from './pages/view/view.module';
 import { EditPageModule } from './pages/edit/edit.module';
+import { AddprojectPageModule } from './pages/addproject/addproject.module';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
@@ -27,7 +28,8 @@ import { Base64 } from '@ionic-native/base64/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(),  AppRoutingModule, HttpClientModule,FormsModule, TimedetailPageModule,EditPageModule,ViewPageModule, IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(),  AppRoutingModule, HttpClientModule,FormsModule, TimedetailPageModule,EditPageModule,ViewPageModule,AddprojectPageModule,
+  IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     File,

@@ -4,6 +4,7 @@ import { AlertController, LoadingController,ModalController } from '@ionic/angul
 import { ViewPage } from '../view/view.page';
 import { JobcardService } from '../../../../src/app/services/jobcard.service';
 import { EditPage } from '../edit/edit.page';
+import { AddprojectPage } from '../addproject/addproject.page';
 
 @Component({
   selector: 'app-prjctmanagement',
@@ -159,6 +160,30 @@ export class PrjctmanagementPage implements OnInit {
       componentProps: {
         
         "paramWorkOrderId": workorderid,
+       
+        // "paramTitle": "Test Title"
+      }
+      
+    });
+ 
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+ 
+    return await modal.present();
+  }
+
+  async goAdd() {
+    console.log();
+    // this.JobcardService.workorderId=workorderid;
+    const modal = await this.modalController.create({
+      component: AddprojectPage,
+      componentProps: {
+        
+        // "paramWorkOrderId": workorderid,
        
         // "paramTitle": "Test Title"
       }
