@@ -27,6 +27,10 @@ export class SvTab1Page implements OnInit {
     this.router.navigateByUrl('/second/tabs/sv-tab1/prjctmanagement');
   }
 
+  worksheet(){
+    this.router.navigateByUrl('/second/tabs/sv-tab1/worksheet');
+  }
+
   smartjobcard(){
     this.router.navigateByUrl('/second/tabs/sv-tab1/smartjobcard');
   }

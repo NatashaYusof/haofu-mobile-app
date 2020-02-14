@@ -428,6 +428,17 @@ module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-ap
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/pages/addproject/addproject.page.html":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/pages/addproject/addproject.page.html ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>Add New Project </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card >        \n    <ion-card-content>\n        <ion-row>\n            <ion-col>\n              <ion-label class=\"head\">Work Order No</ion-label><ion-label class=\"red\"> *</ion-label>\n           <ion-item>\n              <ion-input class=\"body1\" type=\"text\" value=\"\"></ion-input>\n              </ion-item>\n            </ion-col>\n          </ion-row>\n          <ion-row >\n            <ion-col >\n              <ion-label class=\"head\">Part Number</ion-label><ion-label class=\"red\"> *</ion-label>\n            \n                <ion-select  interface=\"popover\" class=\"body1\" placeholder=\"[Please Select]\">\n                  <ion-select-option value=\"10\">D5311047700004</ion-select-option>\n                  <ion-select-option value=\"25\">D53132010000</ion-select-option>\n                  <ion-select-option value=\"50\">D531104770000X-SERIES</ion-select-option>\n                  <ion-select-option value=\"100\">A3403220100000</ion-select-option>\n                  <ion-select-option value=\"100\">F53132010000</ion-select-option>\n                  <ion-select-option value=\"100\">F53132110000</ion-select-option>\n                  <ion-select-option value=\"100\">L53132010000</ion-select-option>\n                  <ion-select-option value=\"100\">L53132110000</ion-select-option>\n                  <ion-select-option value=\"100\">D53132210000</ion-select-option>\n                  <ion-select-option value=\"100\">D53132110000</ion-select-option>\n                  <ion-select-option value=\"100\">V53132110000</ion-select-option>\n                  <ion-select-option value=\"100\">D5311047700007</ion-select-option>\n                  <ion-select-option value=\"100\">D531104770000X</ion-select-option>\n                  <ion-select-option value=\"100\">F53132210000</ion-select-option>\n                  <ion-select-option value=\"100\">V53132010000</ion-select-option>\n                  <ion-select-option value=\"100\">D5311047700006</ion-select-option>\n                  <ion-select-option value=\"100\">D5311047700005</ion-select-option>\n                  <ion-select-option value=\"100\">D5311047700003</ion-select-option>\n                  <ion-select-option value=\"100\">D5311047700002</ion-select-option>\n                  <ion-select-option value=\"100\">D5311047700001</ion-select-option>\n                  <ion-select-option value=\"100\">D5311047700000</ion-select-option>\n                </ion-select>\n     \n         </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col>\n                <ion-label class=\"head\">Serial Number</ion-label><ion-label class=\"red\"> *</ion-label>\n                  <ion-item>\n                <ion-input class=\"body1\"  type=\"text\" value=\"\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col>             \n                <div class=\"head\">Title</div>\n                  <ion-item>\n                      <ion-textarea class=\"body1\" type=\"text\" value=\"INSPECTED/TESTED, REPAIRED, OVERHAULED, AND MODIFIED OF NOSE RADOME\"  rows=\"6\"></ion-textarea>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col>\n                <div class=\"head\">Description</div>\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"RADOME NOSE\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  >\n                <div class=\"head\">Estimated Delivery Date</div>\n                  <ion-item>\n                    <ion-datetime  min=\"2016\" max=\"2030-12-31\" displayFormat=\"D-MMM-YYYY\" pickerFormat=\"DD MMM YYYY\" > </ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col >\n                <div class=\"head\">Start Date</div>\n                  <ion-item>\n                    <ion-datetime  min=\"2016\" max=\"2030-12-31\" displayFormat=\"D-MMM-YYYY\" pickerFormat=\"DD MMM YYYY\" > </ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col >\n                <div class=\"head\">ACTION</div>\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"Perform rectification\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n                <ion-col>\n                  <div class=\"head\">REMARKS</div>\n                    <ion-item>\n                        <ion-input class=\"body1\" type=\"text\" value=\"\"></ion-input>\n                  </ion-item>\n                </ion-col>\n              </ion-row>\n        \n    </ion-card-content>\n\n  <ion-button expand=\"full\" color=\"primary\">Submit</ion-button>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/pages/edit/edit.page.html":
 /*!*********************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/pages/edit/edit.page.html ***!
@@ -435,7 +446,7 @@ module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-ap
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>Work Order Details </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card >        \n    <ion-card-content  *ngFor=\"let cro of Wo\">\n        <ion-row>\n            <ion-col  size=\"4\">\n        \n              <div class=\"head\">CRO</div>\n            \n            </ion-col>\n            <ion-col  size=\"8\">\n                <ion-item>\n              <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderno}}\"></ion-input>\n              </ion-item>\n            </ion-col>\n          </ion-row>\n          <ion-row >\n            <ion-col  size=\"4\">\n         \n                <div class=\"head\">PART NUMBER</div>\n           \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\"  type=\"text\" value=\"{{cro.partnumber}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n           \n                <div class=\"head\">SERIAL NUMBER</div>\n          \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                <ion-input class=\"body1\"  type=\"text\" value=\"{{cro.partrecordserialnumber}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n             \n                <div class=\"head\">TITLE</div>\n         \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-textarea class=\"body1\" type=\"text\" value=\"{{cro.workordertitle}}\"  rows=\"7\"></ion-textarea>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n               \n                <div class=\"head\">DESCRIPTION</div>\n               \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderdescription}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">ACTION</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderaction}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n                <ion-col  size=\"4\">\n                  <div class=\"head\">REMARKS</div>\n                </ion-col>\n                <ion-col  size=\"8\">\n                    <ion-item>\n                        <ion-input class=\"body1\" type=\"text\" value=\"\"></ion-input>\n                  </ion-item>\n                </ion-col>\n              </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">DATE CREATED</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-datetime class=\"body1\" type=\"text\" value=\"{{cro.workorderprojectcreationdatetime}}\"></ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n             \n                <div class=\"head\">EDD</div>\n              \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-datetime class=\"body1\" type=\"text\" value=\"{{cro.workorderestimateddeliverydatetime }}\"></ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n    </ion-card-content>\n\n    <ion-button class=\"upload\" expand=\"full\" color=\"primary\">Delete</ion-button>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>Work Order Details </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card >        \n    <ion-card-content  *ngFor=\"let cro of Wo\">\n        <ion-row>\n            <ion-col  size=\"4\">\n        \n              <div class=\"head\">CRO</div>\n            \n            </ion-col>\n            <ion-col  size=\"8\">\n                <ion-item>\n              <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderno}}\"></ion-input>\n              </ion-item>\n            </ion-col>\n          </ion-row>\n          <ion-row >\n            <ion-col  size=\"4\">\n         \n                <div class=\"head\">PART NUMBER</div>\n           \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\"  type=\"text\" value=\"{{cro.partnumber}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n           \n                <div class=\"head\">SERIAL NUMBER</div>\n          \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                <ion-input class=\"body1\"  type=\"text\" value=\"{{cro.partrecordserialnumber}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n             \n                <div class=\"head\">TITLE</div>\n         \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-textarea class=\"body1\" type=\"text\" value=\"{{cro.workordertitle}}\"  rows=\"7\"></ion-textarea>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n               \n                <div class=\"head\">DESCRIPTION</div>\n               \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderdescription}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">ACTION</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-input class=\"body1\" type=\"text\" value=\"{{cro.workorderaction}}\"></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n                <ion-col  size=\"4\">\n                  <div class=\"head\">REMARKS</div>\n                </ion-col>\n                <ion-col  size=\"8\">\n                    <ion-item>\n                        <ion-input class=\"body1\" type=\"text\" value=\"\"></ion-input>\n                  </ion-item>\n                </ion-col>\n              </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n                <div class=\"head\">DATE CREATED</div>\n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-datetime class=\"body1\" type=\"text\" value=\"{{cro.workorderprojectcreationdatetime}}\"></ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row >\n              <ion-col  size=\"4\">\n             \n                <div class=\"head\">EDD</div>\n              \n              </ion-col>\n              <ion-col  size=\"8\">\n                  <ion-item>\n                      <ion-datetime class=\"body1\" type=\"text\" value=\"{{cro.workorderestimateddeliverydatetime }}\"></ion-datetime>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n    </ion-card-content>\n    <div class=\"ion-text-center\">\n    <ion-button class=\"upload\"  color=\"primary\">Save Changes</ion-button>\n    <ion-button class=\"upload\"  color=\"primary\">Delete Work Order</ion-button>\n    </div>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n  <ion-button class=\"button\" expand=\"full\" color=\"primary\" (click)=\"dismiss()\">Close</ion-button>\n</ion-footer>"
 
 /***/ }),
 
@@ -544,6 +555,10 @@ var map = {
 		"common",
 		"task-task-module"
 	],
+	"../worksheet/worksheet.module": [
+		"./src/app/pages/worksheet/worksheet.module.ts",
+		"worksheet-worksheet-module"
+	],
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
 		"home-home-module"
@@ -551,6 +566,9 @@ var map = {
 	"./pages/add-user/add-user.module": [
 		"./src/app/pages/add-user/add-user.module.ts",
 		"add-user-add-user-module"
+	],
+	"./pages/addproject/addproject.module": [
+		"./src/app/pages/addproject/addproject.module.ts"
 	],
 	"./pages/canvas/canvas.module": [
 		"./src/app/pages/canvas/canvas.module.ts",
@@ -640,6 +658,10 @@ var map = {
 	],
 	"./pages/view/view.module": [
 		"./src/app/pages/view/view.module.ts"
+	],
+	"./pages/worksheet/worksheet.module": [
+		"./src/app/pages/worksheet/worksheet.module.ts",
+		"worksheet-worksheet-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -708,7 +730,9 @@ var routes = [
     { path: 'prjctmanagement', loadChildren: './pages/prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule' },
     { path: 'smartjobcard', loadChildren: './pages/smartjobcard/smartjobcard.module#SmartjobcardPageModule' },
     { path: 'edit', loadChildren: './pages/edit/edit.module#EditPageModule' },
-    { path: 'view', loadChildren: './pages/view/view.module#ViewPageModule' }
+    { path: 'view', loadChildren: './pages/view/view.module#ViewPageModule' },
+    { path: 'addproject', loadChildren: './pages/addproject/addproject.module#AddprojectPageModule' },
+    { path: 'worksheet', loadChildren: './pages/worksheet/worksheet.module#WorksheetPageModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -814,16 +838,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/timedetail/timedetail.module */ "./src/app/pages/timedetail/timedetail.module.ts");
 /* harmony import */ var _pages_view_view_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/view/view.module */ "./src/app/pages/view/view.module.ts");
 /* harmony import */ var _pages_edit_edit_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/edit/edit.module */ "./src/app/pages/edit/edit.module.ts");
-/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
-/* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
-/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
-/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
+/* harmony import */ var _pages_addproject_addproject_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/addproject/addproject.module */ "./src/app/pages/addproject/addproject.module.ts");
+/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ "./node_modules/@ionic-native/ionic-webview/ngx/index.js");
+/* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/ngx/index.js");
+/* harmony import */ var _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/crop/ngx */ "./node_modules/@ionic-native/crop/ngx/index.js");
+/* harmony import */ var _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/base64/ngx */ "./node_modules/@ionic-native/base64/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -852,22 +878,177 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
             entryComponents: [],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__["TimedetailPageModule"], _pages_edit_edit_module__WEBPACK_IMPORTED_MODULE_15__["EditPageModule"], _pages_view_view_module__WEBPACK_IMPORTED_MODULE_14__["ViewPageModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _pages_timedetail_timedetail_module__WEBPACK_IMPORTED_MODULE_13__["TimedetailPageModule"], _pages_edit_edit_module__WEBPACK_IMPORTED_MODULE_15__["EditPageModule"], _pages_view_view_module__WEBPACK_IMPORTED_MODULE_14__["ViewPageModule"], _pages_addproject_addproject_module__WEBPACK_IMPORTED_MODULE_16__["AddprojectPageModule"],
+                _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
                 _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_12__["File"],
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"],
-                _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_16__["WebView"],
-                _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_19__["Base64"],
-                _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_17__["ImagePicker"],
+                _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_17__["WebView"],
+                _ionic_native_base64_ngx__WEBPACK_IMPORTED_MODULE_20__["Base64"],
+                _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_18__["ImagePicker"],
                 _ionic_native_Camera_ngx__WEBPACK_IMPORTED_MODULE_11__["Camera"],
-                _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_18__["Crop"],
+                _ionic_native_crop_ngx__WEBPACK_IMPORTED_MODULE_19__["Crop"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/addproject/addproject-routing.module.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/pages/addproject/addproject-routing.module.ts ***!
+  \***************************************************************/
+/*! exports provided: AddprojectPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddprojectPageRoutingModule", function() { return AddprojectPageRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _addproject_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addproject.page */ "./src/app/pages/addproject/addproject.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _addproject_page__WEBPACK_IMPORTED_MODULE_2__["AddprojectPage"]
+    }
+];
+var AddprojectPageRoutingModule = /** @class */ (function () {
+    function AddprojectPageRoutingModule() {
+    }
+    AddprojectPageRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
+        })
+    ], AddprojectPageRoutingModule);
+    return AddprojectPageRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/addproject/addproject.module.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/pages/addproject/addproject.module.ts ***!
+  \*******************************************************/
+/*! exports provided: AddprojectPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddprojectPageModule", function() { return AddprojectPageModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _addproject_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addproject-routing.module */ "./src/app/pages/addproject/addproject-routing.module.ts");
+/* harmony import */ var _addproject_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./addproject.page */ "./src/app/pages/addproject/addproject.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var AddprojectPageModule = /** @class */ (function () {
+    function AddprojectPageModule() {
+    }
+    AddprojectPageModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
+                _addproject_routing_module__WEBPACK_IMPORTED_MODULE_4__["AddprojectPageRoutingModule"]
+            ],
+            declarations: [_addproject_page__WEBPACK_IMPORTED_MODULE_5__["AddprojectPage"]]
+        })
+    ], AddprojectPageModule);
+    return AddprojectPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/addproject/addproject.page.scss":
+/*!*******************************************************!*\
+  !*** ./src/app/pages/addproject/addproject.page.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".head {\n  font-weight: bold;\n  color: black;\n  font-size: 13px; }\n\n.body1 {\n  color: black;\n  font-size: 13px; }\n\n.red {\n  color: red; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYWRkcHJvamVjdC9DOlxccHJvamVjdFxcbmF0YXNoYS9zcmNcXGFwcFxccGFnZXNcXGFkZHByb2plY3RcXGFkZHByb2plY3QucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWlCO0VBQ2pCLFlBQVk7RUFDWixlQUFlLEVBQUE7O0FBR2pCO0VBQ0UsWUFBWTtFQUNaLGVBQWUsRUFBQTs7QUFJakI7RUFDRyxVQUFVLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9hZGRwcm9qZWN0L2FkZHByb2plY3QucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWR7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGNvbG9yOiBibGFjaztcclxuICAgIGZvbnQtc2l6ZTogMTNweDtcclxuICB9XHJcbiAgXHJcbiAgLmJvZHkxe1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgZm9udC1zaXplOiAxM3B4O1xyXG4gIFxyXG4gIH1cclxuICBcclxuICAucmVke1xyXG4gICAgIGNvbG9yOiByZWQ7XHJcbiAgfSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/pages/addproject/addproject.page.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/pages/addproject/addproject.page.ts ***!
+  \*****************************************************/
+/*! exports provided: AddprojectPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddprojectPage", function() { return AddprojectPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AddprojectPage = /** @class */ (function () {
+    function AddprojectPage(modalController) {
+        this.modalController = modalController;
+    }
+    AddprojectPage.prototype.ngOnInit = function () {
+    };
+    AddprojectPage.prototype.dismiss = function () {
+        this.modalController.dismiss();
+    };
+    AddprojectPage.ctorParameters = function () { return [
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"] }
+    ]; };
+    AddprojectPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-addproject',
+            template: __webpack_require__(/*! raw-loader!./addproject.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/addproject/addproject.page.html"),
+            styles: [__webpack_require__(/*! ./addproject.page.scss */ "./src/app/pages/addproject/addproject.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"]])
+    ], AddprojectPage);
+    return AddprojectPage;
 }());
 
 

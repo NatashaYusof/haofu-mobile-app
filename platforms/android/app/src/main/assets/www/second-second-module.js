@@ -57,6 +57,10 @@ var routes = [
                 loadChildren: '../prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule'
             },
             {
+                path: 'sv-tab1/worksheet',
+                loadChildren: '../worksheet/worksheet.module#WorksheetPageModule'
+            },
+            {
                 path: 'sv-tab1/smartjobcard',
                 loadChildren: '../smartjobcard/smartjobcard.module#SmartjobcardPageModule'
             },

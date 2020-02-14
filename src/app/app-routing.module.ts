@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'smartjobcard', loadChildren:'./pages/smartjobcard/smartjobcard.module#SmartjobcardPageModule'},
   { path: 'edit', loadChildren:'./pages/edit/edit.module#EditPageModule'},
   { path: 'view',loadChildren:'./pages/view/view.module#ViewPageModule' },
-  { path: 'addproject', loadChildren:'./pages/addproject/addproject.module#AddprojectPageModule'}
+  { path: 'addproject', loadChildren:'./pages/addproject/addproject.module#AddprojectPageModule'},
+  { path: 'worksheet', loadChildren:'./pages/worksheet/worksheet.module#WorksheetPageModule'}
 
 ];
 

@@ -1,0 +1,51 @@
+ion-segment-button {
+    width: calc(100% / 2);
+    font-size: 12px;
+    color: var(--ion-color-medium);
+    border: 0px;
+    border-radius: 0px;
+    min-width: 200px;
+  }
+  
+  // ion-segment{
+  //   height:150px;
+  // }
+  
+.radio .radio-icon {
+    display: none;
+    --color: transparent;
+    --color-checked: transparent;
+    }
+    ion-select-popover ion-list ion-item {
+        --border-width: 0;
+        --inner-border-width: 0;
+      }
+      
+      ion-select-popover ion-list ion-item ion-radio {
+        --color: transparent;
+        --color-checked: transparent;
+      }
+
+
+.show{
+  text-align: right;
+}
+
+.head{
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  font-size: 13px;
+}
+
+.body{
+  color: darkcyan;
+  font-size: 13px;
+}
+
+.body1{
+  color: black;
+  font-size: 13px;
+  text-align: center;
+}
+
