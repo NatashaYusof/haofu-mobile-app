@@ -24,6 +24,10 @@ const routes: Routes = [
         path: 'sv-tab1/prjctmanagement',
         loadChildren: '../prjctmanagement/prjctmanagement.module#PrjctmanagementPageModule'
       },
+       {
+        path: 'sv-tab1/prjctmanagement/jobcardlist/:workorderid',
+        loadChildren: '../jobcardlist/jobcardlist.module#JobcardlistPageModule'
+      },
       {
         path: 'sv-tab1/worksheet',
         loadChildren: '../worksheet/worksheet.module#WorksheetPageModule'

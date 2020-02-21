@@ -5,6 +5,7 @@ import { ViewPage } from '../view/view.page';
 import { JobcardService } from '../../../../src/app/services/jobcard.service';
 import { EditPage } from '../edit/edit.page';
 import { AddprojectPage } from '../addproject/addproject.page';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prjctmanagement',
@@ -30,6 +31,7 @@ export class PrjctmanagementPage implements OnInit {
     public http: WorkorderService,
     public modalController: ModalController,
     public JobcardService: JobcardService,
+    private router: Router,
   )
    { 
      this.segment="todolist";
@@ -198,6 +200,11 @@ export class PrjctmanagementPage implements OnInit {
     });
  
     return await modal.present();
+  }
+
+  goJobcard(workorderid){
+    this.JobcardService.workorderId=workorderid;
+    this.router.navigateByUrl('/second/tabs/sv-tab1/prjctmanagement/jobcardlist/'+workorderid);
   }
 
 }

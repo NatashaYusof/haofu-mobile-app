@@ -516,6 +516,10 @@ var map = {
 		"common",
 		"jobcard-jobcard-module"
 	],
+	"../jobcardlist/jobcardlist.module": [
+		"./src/app/pages/jobcardlist/jobcardlist.module.ts",
+		"jobcardlist-jobcardlist-module"
+	],
 	"../manual/manual.module": [
 		"./src/app/pages/manual/manual.module.ts",
 		"manual-manual-module"
@@ -604,6 +608,10 @@ var map = {
 		"./src/app/pages/jobcard/jobcard.module.ts",
 		"common",
 		"jobcard-jobcard-module"
+	],
+	"./pages/jobcardlist/jobcardlist.module": [
+		"./src/app/pages/jobcardlist/jobcardlist.module.ts",
+		"jobcardlist-jobcardlist-module"
 	],
 	"./pages/login/login.module": [
 		"./src/app/pages/login/login.module.ts",
@@ -732,7 +740,8 @@ var routes = [
     { path: 'edit', loadChildren: './pages/edit/edit.module#EditPageModule' },
     { path: 'view', loadChildren: './pages/view/view.module#ViewPageModule' },
     { path: 'addproject', loadChildren: './pages/addproject/addproject.module#AddprojectPageModule' },
-    { path: 'worksheet', loadChildren: './pages/worksheet/worksheet.module#WorksheetPageModule' }
+    { path: 'worksheet', loadChildren: './pages/worksheet/worksheet.module#WorksheetPageModule' },
+    { path: 'jobcardlist', loadChildren: './pages/jobcardlist/jobcardlist.module#JobcardlistPageModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1910,6 +1919,16 @@ var WorkorderService = /** @class */ (function () {
     };
     WorkorderService.prototype.getWorkSheet = function () {
         return this.http.get(this.baseURL + '/worksheet?row=100&join=0')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
+            console.log(response);
+            return response;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err, caught) {
+            console.log(err);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err);
+        }));
+    };
+    WorkorderService.prototype.getViewWorkSheet = function (workorderid) {
+        return this.http.get(this.baseURL + '/worksheet?workorderid=' + workorderid)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
             console.log(response);
             return response;

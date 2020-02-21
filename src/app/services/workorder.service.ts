@@ -116,6 +116,20 @@ export class WorkorderService {
         )
     }
 
+    getViewWorkSheet(workorderid) : Observable<any> {
+      return this.http.get(this.baseURL+'/worksheet?workorderid='+workorderid)
+        .pipe(
+          map( response => {
+            console.log(response)
+            return response;
+          }),
+          catchError((err, caught) => {
+            console.log(err)
+            return throwError(err);
+          })
+        )
+    }
+
     //get delayed and closed
     getClosed(): Observable<any> {
       return this.http.get(this.baseURL2+'/closed')

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button  defaulthref=""></ion-back-button>
+        </ion-buttons>
+      <ion-title>
+          SMART JOBCARD
+      </ion-title>
+     
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-card >        
+        <ion-row>
+            <ion-col size="3" >
+              <div class="head">TITLE</div>
+            </ion-col>
+            <ion-col size="3">
+              <div  class="head">START DATE</div>
+            </ion-col>
+            <ion-col size="3">
+              <div  class="head">END DATE</div>
+            </ion-col>
+            <ion-col size="3">
+                <div  class="head">TECHNICIAN ASSIGNED</div>
+              </ion-col>
+              <ion-col size="1">
+                <div  class="head"></div>
+              </ion-col>
+          </ion-row>
+          <ion-label  *ngFor="let cro of Wo1">
+          <ion-row >
+              <ion-col  size="3" >
+                <div class="head1">{{cro.jobcardtitle}}</div>
+              </ion-col>
+              <ion-col size="3" >
+                <div class="body1">{{cro.jobcardstartdatetime | date:"dd-MMM-yyyy"}}</div>
+              </ion-col>
+              <ion-col size="3">
+                <div class="body1">{{cro.jobcardenddatetime | date:"dd-MMM-yyyy"}}</div>
+              </ion-col>
+              <ion-col size="3">
+                <div class="body"></div>
+              </ion-col>
+              <ion-col size="1">
+                <div class="body" ></div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row  *ngFor="let cro of Wo2" >
+                <ion-col  size="3" >
+                  <div class="body1">{{cro.tasktitle}}</div>
+                </ion-col>
+                <ion-col size="3" >
+                  <div class="body1">{{cro.taskstartdate | date:"dd-MMM-yyyy"}}</div>
+                </ion-col>
+                <ion-col size="3">
+                  <div class="body1">{{cro.taskenddate | date:"dd-MMM-yyyy"}}</div>
+                </ion-col>
+                <ion-col size="3">
+                  <div class="body">{{cro.employeefirstname}}</div>
+                </ion-col>
+                <ion-col size="1">
+                  <div class="body" ></div>
+                </ion-col>
+              </ion-row>
+              </ion-label>
+
+  </ion-card>
+</ion-content>
